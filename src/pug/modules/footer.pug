@@ -1,0 +1,47 @@
+include ../variable/phone-call
+include ../variable/phone-social 
+
+block footer
+    .footer 
+        ul.footer__list 
+            li.footer__item 
+                .footer__logo
+                    img(src=require("../svg/logo-footer.svg"), alt="Логотип Oasis")
+                .footer__official 
+                    span Официальный интернет-магазин 
+                    span компании “Алефтрейд”
+                .footer__phone 
+                    .footer__icon.footer__phone-icon 
+                    .footer__phone-number   
+                        a(href="tel:" + phone_number_call_link  target="_blank" title="Номер телефона") #{phone_number_call_text}
+
+            li.footer__item.footer__item-nav
+                ul.footer__nav-list
+                    li.footer__nav-item #[a(href="about-us.html" target="_blank" title="Страница о нас") О нас] #[.footer__nav-underline]
+                    li.footer__nav-item #[a(href="delivery.html" target="_blank" title="Страница доставка") Доставка] #[.footer__nav-underline]
+                    li.footer__nav-item #[a(href="payment.html" target="_blank" title="Страница оплата") Оплата] #[.footer__nav-underline]
+                    li.footer__nav-item #[a(href="exchange-and-refund" target="_blank" title="Страница обмен и возврат") Обмен и возврат] #[.footer__nav-underline]
+                    li.footer__nav-item #[a(href="articles.html" target="_blank" title="Страница статьи") Статьи] #[.footer__nav-underline]
+                    li.footer__nav-item #[a(href="contacts.html" target="_blank" title="Страница контакты") Контакты] #[.footer__nav-underline]
+            li.footer__item 
+                .footer__address
+                    .footer__address-title 
+                        h3 Адрес:
+                    .footer__address-text 
+                        span Адрес: 123007, г. Москва,
+                        span Хорошевское шоссе, д. 32 А,
+                        span подъезд 2, этаж 1
+                    .footer__phone-social
+                        ul.footer__soccial-list
+                            li.footer__soccial-item
+                                a(href="https://api.whatsapp.com/send/?phone=" + phone_number_social_link target="_blank" title="канал в whatsapp") 
+                            li.footer__soccial-item
+                                a(href="https://t.me/+" + phone_number_social_link target="_blank" title="канал в telegram") 
+                        .footer__phone-number   
+                            a(href="tel:#0"  target="_blank" title="Номер телефона") #{phone_number_social_text}
+        
+        .footer__copyright
+            span Все права защищены, 2024
+
+    
+

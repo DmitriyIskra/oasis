@@ -1,0 +1,108 @@
+.footer {
+    border-top: 1px solid #2F5F6D;
+    background: #2F5F6D;
+}
+
+.footer__list {
+    display: flex;
+    padding: 2.97vw 7.92vw 0.99vw 7.92vw;
+    gap: 3.80vw;
+
+    justify-content: space-between;
+}
+
+.footer__item {
+    width: fit-content;
+}
+
+.footer__item-nav {
+    flex-grow: 1;
+}
+
+.footer__logo {
+    width: 9.53vw;
+    height: 2.14vw;
+}
+
+.footer__official {
+    display: flex;
+    margin-top: 0.57vw;
+
+    flex-direction: column;
+}
+
+.footer__official span {
+    font-family: 'Play';
+    font-size: 18px;
+    font-weight: 400;
+        
+    color: #FFF;
+}
+
+.footer__phone {
+    display: flex;
+    gap: 0.26vw;
+
+    align-items: center;
+}
+
+.footer__icon {
+    width: 1.30vw;
+    height: 1.30vw;
+}
+
+.footer__phone-icon {
+    background: no-repeat url('../svg/phone-white.svg');
+    background-position: center;
+    background-size: 100%;
+}
+
+.footer__phone-number a {
+    font-family: 'Play';
+    font-size: 0.83vw;
+    font-weight: 400;
+
+    color: #fff;
+}
+
+.footer__nav-list {
+    display: flex;
+    padding-top: 0.42vw;
+
+    justify-content: space-between;
+}
+
+.footer__nav-item {
+    position: relative;
+
+    display: flex;
+    
+    justify-content: center;
+}
+
+.footer__nav-underline {
+    position: absolute;
+    bottom: 0;
+
+    height: 0.07vw;
+    width: 0;
+
+    background-color: #fff;
+
+    transition: width 0.3s linear;
+
+    translate: 0 0.78vw;
+}
+
+.footer__nav-item:hover > .footer__nav-underline {
+    width: 115%;
+
+}
+
+.footer__nav-item a {
+    font-family: 'Play';
+    font-size: 1.04vw;
+    font-weight: 400;
+
+    color: #fff;
+}

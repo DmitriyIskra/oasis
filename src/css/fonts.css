@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'Play';
+    font-weight: 400;
+    src: url('../fonts/play/Play-Regular.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Play';
+    font-weight: 700;
+    src: url('../fonts/play/Play-Bold.ttf');
+    font-display: swap;
+}
+
+
+/* -------------------------------------------- */
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/inter/Inter-VariableFont_opsz\,wght.ttf');
+    font-display: swap;
+}
