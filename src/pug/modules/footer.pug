@@ -1,12 +1,10 @@
-include ../variable/phone-call
-include ../variable/phone-social 
-
 block footer
     .footer 
         ul.footer__list 
             li.footer__item 
                 .footer__logo
-                    img(src=require("../svg/logo-footer.svg"), alt="Логотип Oasis")
+                    img(src=require("../svg/logo.svg"), alt="Логотип Oasis")
+                    a(href="/" title="Главная") 
                 .footer__official 
                     span Официальный интернет-магазин 
                     span компании “Алефтрейд”
@@ -33,12 +31,12 @@ block footer
                         span подъезд 2, этаж 1
                     .footer__phone-social
                         ul.footer__soccial-list
-                            li.footer__soccial-item
+                            li.footer__soccial-item.footer__soccial-whatsapp
                                 a(href="https://api.whatsapp.com/send/?phone=" + phone_number_social_link target="_blank" title="канал в whatsapp") 
-                            li.footer__soccial-item
+                            li.footer__soccial-item.footer__soccial-tme
                                 a(href="https://t.me/+" + phone_number_social_link target="_blank" title="канал в telegram") 
                         .footer__phone-number   
-                            a(href="tel:#0"  target="_blank" title="Номер телефона") #{phone_number_social_text}
+                            a(href="tel:" + phone_number_call_link  target="_blank" title="Номер телефона") #{phone_number_social_text}
         
         .footer__copyright
             span Все права защищены, 2024

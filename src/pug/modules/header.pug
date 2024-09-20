@@ -1,2 +1,48 @@
-header.header
-    | хедер
+block header
+    header.header
+        .header__wr-content
+            .header__content 
+                .header__logo
+                    img(src=require("../svg/logo.svg"), alt="")
+                    a(href="/" title="Главная") 
+                nav.header__nav
+                    .header__wr-catalog
+                        //- input(type="text" id="header__catalog") 
+                        //- label.header__catalog(for="header__catalog")
+                        a(href="#header__catalog-list") 
+                            span.header__catalog-icon
+                            span.header__catalog-text Каталог
+                    .header__nav-list 
+                        .header__nav-item Доставка
+                            .header__nav-item-underline
+                        .header__nav-item Оплата
+                            .header__nav-item-underline
+                        .header__nav-item Контакты
+                            .header__nav-item-underline
+                .header__icons-group
+                    .header_wr-search
+                        label.header__search-icon(for="header__search-checkbox")
+                        input(type="checkbox" id="header__search-checkbox")
+                        .header__search-line ==========>
+                    .header__phone-icon 
+                        a(href="") 
+                    .header__favourite-icon
+                    .header__account-icon
+                        a(href="#0" title="вход в аккаунт") 
+                    .header__basket-icon
+                        a(href="#0" title="корзина") 
+
+
+        .header__wr-slider
+            ul.header__catalog-list#header__catalog-list
+                li.header__catalog-item Кофе
+                li.header__catalog-item Чай
+                li.header__catalog-item Сиропы и кордиалы
+                li.header__catalog-item Молоко
+                li.header__catalog-item Вода и напитки
+                li.header__catalog-item Кофемашины
+                li.header__catalog-item Аксессуары
+                li.header__catalog-item Посуда WMF
+                li.header__catalog-item Подарочные наборы и сертификаты
+                li.header__catalog-item Разное
+                li.header__catalog-item Весь каталог
