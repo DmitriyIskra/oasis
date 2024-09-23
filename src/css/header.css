@@ -144,21 +144,27 @@
 
     width: 1.04vw; 
     height: 1.04vw;
-
-    background: no-repeat url('../svg/search-white.svg');
-    background-position: center;
-    background-size: contain;
 }
 
-.header_wr-search label {
+.header__search-icon {
     display: block;
     height: 100%;
     width: 100%;
 
+    background: no-repeat url('../svg/search-white.svg');
+    background-position: center;
+    background-size: contain;
+
     cursor: pointer;
 }
 
-.header_wr-search input {
+.header_wr-search input:checked ~ label {
+    background: no-repeat url('../svg/close-white.svg');
+    background-position: center;
+    background-size: contain;
+}
+
+.header_wr-search [type="checkbox"] {
     display: none;
 }
 
@@ -173,12 +179,12 @@
 
     transition: width 0.3s linear;
 
-    transform: rotate(180deg);
+    transform: scaleX(1);
     translate: -100% 0;
     overflow: hidden;
 }
 
-.header_wr-search input:checked + .header__search-line {
+.header_wr-search input:checked ~ .header__search-line {
     width: 500%;
 }
 
@@ -197,6 +203,74 @@
     position: absolute;
     top: 0;
     left: 0;
+}
+
+.header__favourite-icon {
+    position: relative;
+
+    width: 1.04vw; 
+    height: 1.04vw;
+
+    background: no-repeat url('../svg/favourites-white.svg');
+    background-position: center;
+    background-size: contain;
+
+    cursor: pointer;
+}
+
+.header__account-icon {
+    position: relative;
+
+    width: 1.04vw; 
+    height: 1.04vw;
+
+    background: no-repeat url('../svg/user-white.svg');
+    background-position: center;
+    background-size: contain;
+
+    cursor: pointer;
+}
+
+.header__basket-icon {
+    position: relative;
+
+    display: flex;
+    width: 1.35vw; 
+    height: 1.04vw;
+
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.header__basket-icon_active svg path {
+    fill: #6ae9fb;
+}
+
+.header__basket-counter {
+    position: absolute;
+    top: -39%;
+    right: -23%;
+
+    display: none;
+    width: 0.94vw;
+    height: 0.94vw;
+
+    font-family: 'Play';
+    font-size: 0.68vw;
+    font-weight: 400;
+
+    border-radius: 50%;
+    background-color: #FF3C00;
+    color: #ffffff;
+
+}
+
+.header__basket-icon_active > .header__basket-counter {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
 }
 
 
