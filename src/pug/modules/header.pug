@@ -6,10 +6,8 @@ block header
                     img(src=require("../svg/logo.svg"), alt="")
                     a(href="/" title="Главная") 
                 nav.header__nav
-                    .header__wr-catalog
-                        //- input(type="text" id="header__catalog") 
-                        //- label.header__catalog(for="header__catalog")
-                        a(href="#header__catalog-list") 
+                    .header__wr-catalog-button
+                        label(for="controll-catalog")
                             span.header__catalog-icon
                             span.header__catalog-text Каталог
                     .header__nav-list 
@@ -26,7 +24,7 @@ block header
                         .header__search-line
                             input(type="text" value="Найти на Oasis...")
                     .header__phone-icon 
-                        a(href="") 
+                        a(href="" title="") 
                     .header__favourite-icon
                     .header__account-icon
                         a(href="#0" title="вход в аккаунт") 
@@ -40,15 +38,61 @@ block header
 
 
         .header__wr-slider
-            ul.header__catalog-list#header__catalog-list
-                li.header__catalog-item Кофе
-                li.header__catalog-item Чай
-                li.header__catalog-item Сиропы и кордиалы
-                li.header__catalog-item Молоко
-                li.header__catalog-item Вода и напитки
-                li.header__catalog-item Кофемашины
-                li.header__catalog-item Аксессуары
-                li.header__catalog-item Посуда WMF
-                li.header__catalog-item Подарочные наборы и сертификаты
-                li.header__catalog-item Разное
-                li.header__catalog-item Весь каталог
+            .header__slider
+            input.header__checkbox-catalog(type="checkbox" id="controll-catalog")
+            .header__wr-catalog
+                label.header__wr-catalog-close(for="controll-catalog") 
+                ul.header__catalog-list
+                    li.header__catalog-item 
+                        a.header__catalog-link(href="" title="") Кофе
+                    li.header__catalog-item.header__catalog-item_tea
+                        a.header__catalog-link(href="" title="") Чай
+                    li.header__catalog-item 
+                        a.header__catalog-link(href="" title="") Сиропы и кордиалы
+                    li.header__catalog-item 
+                        a.header__catalog-link(href="" title="") Молоко
+                    li.header__catalog-item 
+                        a.header__catalog-link(href="" title="") Вода и напитки
+                    li.header__catalog-item 
+                        a.header__catalog-link(href="" title="") Кофемашины
+                    li.header__catalog-item 
+                        a.header__catalog-link(href="" title="") Аксессуары
+                    li.header__catalog-item 
+                        a.header__catalog-link(href="" title="") Посуда WMF
+                    li.header__catalog-item 
+                        a.header__catalog-link(href="" title="") Подарочные наборы <br> и сертификаты
+                    li.header__catalog-item 
+                        a.header__catalog-link(href="" title="") Разное
+                    li.header__catalog-item 
+                        a.header__catalog-link(href="" title="") Весь каталог
+
+                    li.header__catalog-item-sub.header__catalog-item-sub-tea
+                        ul.header__sub-catalog-list
+                            li.header__sub-catalog-item 
+                                a.header__sub-catalog-title(href="" title="Althaus") Чай Althaus
+                            li.header__sub-catalog-item 
+                                a.header__sub-catalog-link(href="" title="") Althaus BIO
+                            li.header__sub-catalog-item 
+                                a.header__sub-catalog-link(href="" title="") Deli pack на чашку
+                            li.header__sub-catalog-item 
+                                a.header__sub-catalog-link(href="" title="") Pyra pack в пирамидках
+                            li.header__sub-catalog-item 
+                                a.header__sub-catalog-link(href="" title="") Grand pack на чайник
+                            li.header__sub-catalog-item 
+                                a.header__sub-catalog-link(href="" title="") Чай листовой
+                            li.header__sub-catalog-item 
+                                a.header__sub-catalog-link(href="" title="") Чай Pure tea
+                            
+                            li.header__sub-catalog-item 
+                                a.header__sub-catalog-title(href="" title="") Чай Niktea
+                            li.header__sub-catalog-item 
+                                a.header__sub-catalog-link(href="" title="") Чай в пакетиках
+                            li.header__sub-catalog-item 
+                                a.header__sub-catalog-link(href="" title="") Чай в пирамидках
+                            li.header__sub-catalog-item 
+                                a.header__sub-catalog-link(href="" title="") Чай в пакетиках на чайник
+                            li.header__sub-catalog-item 
+                                a.header__sub-catalog-link(href="" title="") Чай листовой
+                            li.header__sub-catalog-item 
+                                a.header__sub-catalog-link(href="" title="") Чай Niktea Top Selection
+
