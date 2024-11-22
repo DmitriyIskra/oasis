@@ -1,13 +1,14 @@
-.header__checkbox-catalog {
+.nav-cat__checkbox {
     display: none;
 }
 
-.header__wr-catalog {
+.nav-cat__wrapper {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+    z-index: 1000;
 
     transition: opacity 0.2s linear;
 
@@ -15,12 +16,12 @@
     visibility: hidden;
 }
 
-.header__checkbox-catalog:checked + .header__wr-catalog {
+.nav-cat__checkbox:checked + .nav-cat__wrapper {
     opacity: 1;
     visibility: visible;
 }
 
-.header__wr-catalog-close {
+.nav-cat__catalog-close {
     position: absolute;
     top: 0;
     right: 0;
@@ -29,7 +30,7 @@
     z-index: 0;
 }
 
-.header__catalog-list {
+.nav-cat__list {
     position: relative;
     z-index: 1;
 
@@ -46,13 +47,13 @@
     box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.25);
 }
 
-.header__catalog-item {
+.nav-cat__item {
     padding-right: 1.20vw;
 
     cursor: pointer;
 }
 
-.header__catalog-link {
+.nav-cat__link {
     display: inline-block;
     width: 100%;
     padding-left: 1.04vw;
@@ -69,15 +70,15 @@
     border-bottom: 1px solid transparent;
 }
 
-.header__catalog-item:hover > .header__catalog-link {
+.nav-cat__item:hover > .nav-cat__link {
     border-bottom: 1px solid #671993;
 }
 
-.header__catalog-item:hover > .header__catalog-link {
+.nav-cat__item:hover > .nav-cat__link {
     font-weight: 700;
 }
 
-.header__catalog-item-sub {
+.nav-cat__item-sub {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -95,57 +96,57 @@
     visibility: hidden;
 }
 
-.header__catalog-item-sub:hover {
+.nav-cat__item-sub:hover {
     opacity: 1;
     visibility: visible;
 }
 
-.header__catalog-item_coffee:hover ~ .header__catalog-item-sub_coffee {
+.nav-cat__item_coffee:hover ~ .nav-cat__item-sub_coffee {
     opacity: 1;
     visibility: visible;
 }
 
-.header__catalog-item_tea:hover ~ .header__catalog-item-sub_tea {
+.nav-cat__item_tea:hover ~ .nav-cat__item-sub_tea {
     opacity: 1;
     visibility: visible;
 }
 
-.header__catalog-item_syrups:hover ~ .header__catalog-item-sub_syrups {
+.nav-cat__item_syrups:hover ~ .nav-cat__item-sub_syrups {
     opacity: 1;
     visibility: visible;
 }
 
-.header__catalog-item_milk:hover ~ .header__catalog-item-sub_milk {
+.nav-cat__item_milk:hover ~ .nav-cat__item-sub_milk {
     opacity: 1;
     visibility: visible;
 }
 
-.header__catalog-item_water:hover ~ .header__catalog-item-sub_water {
+.nav-cat__item_water:hover ~ .nav-cat__item-sub_water {
     opacity: 1;
     visibility: visible;
 }
 
-.header__catalog-item_machines:hover ~ .header__catalog-item-sub_machines {
+.nav-cat__item_machines:hover ~ .nav-cat__item-sub_machines {
     opacity: 1;
     visibility: visible;
 }
 
-.header__catalog-item_accessories:hover ~ .header__catalog-item-sub_accessories {
+.nav-cat__item_accessories:hover ~ .nav-cat__item-sub_accessories {
     opacity: 1;
     visibility: visible;
 }
 
-.header__catalog-item_wmf:hover ~ .header__catalog-item-sub_wmf {
+.nav-cat__item_wmf:hover ~ .nav-cat__item-sub_wmf {
     opacity: 1;
     visibility: visible;
 }
 
-.header__catalog-item_different:hover ~ .header__catalog-item-sub_different {
+.nav-cat__item_different:hover ~ .nav-cat__item-sub_different {
     opacity: 1;
     visibility: visible;
 }
 
-.header__sub-catalog-list {
+.nav-cat__sub-list {
     display: flex;
     width: 100%;
     height: 100%;
@@ -160,7 +161,7 @@
     /* box-shadow: 3px 0px 7px 0px rgba(0, 0, 0, 0.25),inset 3px 0px 7px 0px rgba(0, 0, 0, 0.17); */
 }
 
-.header__sub-catalog-title {
+.nav-cat__sub-title {
     font-family: 'Play';
     font-size: 0.83vw;
     font-style: normal;
@@ -169,12 +170,12 @@
     color: #2F5F6D;
 }
 
-.header__sub-catalog-title:hover {
+.nav-cat__sub-title:hover {
     text-decoration: underline;
     text-underline-position: under;
 }
 
-.header__sub-catalog-link {
+.nav-cat__sub-catalog-link {
     font-family: 'Play';
     font-size: 0.78vw;
     font-style: normal;
@@ -183,7 +184,7 @@
     color: #2F5F6D;
 }
 
-.header__sub-catalog-link:hover {
+.nav-cat__sub-catalog-link:hover {
     text-decoration: underline;
     text-underline-position: under;
 }

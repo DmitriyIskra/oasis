@@ -2,6 +2,11 @@ block header
     header.header
         .header__wr-content
             .header__content 
+                .header__wr-controll-nav-mob
+                    label.header__controll-nav-mob(for="nav-mobile")
+                        <svg class="header__svg-nav-mob_open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" fill="none">
+                            <path d="M2 8H18.25M2 15.5H28M11.75 23H28" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
                 .header__logo
                     img(src=require("../svg/logo.svg"), alt="")
                     a(href="/" title="Главная") 
@@ -21,8 +26,8 @@ block header
                     .header_wr-search
                         input(type="checkbox" id="header__search-checkbox")
                         label.header__search-icon(for="header__search-checkbox")
-                        .header__search-line
-                            input(type="text" value="Найти на Oasis...")
+                        .header__wr-search-line
+                            input.header__search-line(type="text" placeholder="Найти на Oasis...")
                     .header__phone-icon 
                         a(href="" title="") 
                     .header__favourite-icon
@@ -37,9 +42,7 @@ block header
                         .header__basket-counter 2
 
 
-        .header__wr-slider
-            .header__slider
-            include ../components/nav-catalog.pug
+        
                             
 
 

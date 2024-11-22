@@ -1,0 +1,11 @@
+.header__wr-slider {
+    position: relative;
+
+    height: 36.30vw;
+
+    background: #fff;
+}
+
+.header__slider {
+    height: 100%;
+}

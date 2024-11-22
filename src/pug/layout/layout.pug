@@ -14,9 +14,13 @@ html(lang='ru')
     title Главная
 
 body
+    input#nav-mobile(type="checkbox")
     include ../modules/header
 
-    
-    block content
+    main.main
+      include ../components/nav-catalog.pug
+      block content
 
     include ../modules/footer
+
+    include ../components/nav-bar-mobile

@@ -1,7 +1,7 @@
 block footer
-    .footer 
+    footer.footer 
         ul.footer__list 
-            li.footer__item 
+            li.footer__item.footer__item_logo
                 .footer__logo
                     img(src=require("../svg/logo.svg"), alt="Логотип Oasis")
                     a(href="/" title="Главная") 
@@ -21,7 +21,7 @@ block footer
                     li.footer__nav-item #[a(href="exchange-and-refund" target="_blank" title="Страница обмен и возврат") Обмен и возврат] #[.footer__nav-underline]
                     li.footer__nav-item #[a(href="articles.html" target="_blank" title="Страница статьи") Статьи] #[.footer__nav-underline]
                     li.footer__nav-item #[a(href="contacts.html" target="_blank" title="Страница контакты") Контакты] #[.footer__nav-underline]
-            li.footer__item 
+            li.footer__item.footer__item_address
                 .footer__address
                     .footer__address-title 
                         h3 Адрес:
