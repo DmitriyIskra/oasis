@@ -188,3 +188,9 @@
     text-decoration: underline;
     text-underline-position: under;
 }
+
+@media(max-width: 961px) {
+    .nav-cat__wrapper {
+        display: none;
+    }
+}

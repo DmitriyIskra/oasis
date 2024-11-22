@@ -1,0 +1,45 @@
+.nav-m {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    display: none;
+    width: 69%;
+
+    background: rgba(255, 255, 255, 0.80);
+    box-shadow: 
+    45.07vw 53.60vw 19.73vw 0px rgba(0, 0, 0, 0.00), 
+    28.80vw 34.40vw 17.87vw 0px rgba(0, 0, 0, 0.03), 
+    16.27vw 19.47vw 15.20vw 0px rgba(0, 0, 0, 0.10), 
+    7.20vw 8.53vw 11.20vw 0px rgba(0, 0, 0, 0.17), 
+    1.87vw 2.13vw 6.13vw 0px rgba(0, 0, 0, 0.20);
+}
+
+.nav-m__list {
+    padding-top: 5.33vw;
+    padding-left: 5.33vw;
+    padding-right: 5.33vw;
+}
+
+.nav-m__link {
+    display: block;
+    padding-top: 2.67vw;
+    padding-bottom: 2.67vw;
+
+    font-family: 'Play';
+    font-size: 4.27vw;
+    font-style: normal;
+    font-weight: 400;
+
+    color: #2F5F6D;
+}
+
+
+
+
+@media(max-width: 961px) {
+    .nav-m {
+        display: block;
+    }
+}

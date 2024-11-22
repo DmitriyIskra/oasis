@@ -1,3 +1,7 @@
+#nav-mobile {
+    display: none;
+}
+
 .main {
     position: relative;
 }
