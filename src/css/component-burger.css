@@ -11,12 +11,14 @@
         left: 0;
 
         display: block;
+      
+        font-family: 'Play';
 
         background-color: #fff;
 
         transition: height 0.15s linear;
         
-        z-index: 1002;
+        z-index: 500;
     }
     
     .burger__mobile-list input { /*чекбоксы*/ 
@@ -39,13 +41,13 @@
     .burger__mobile-item-title {
         display: flex;
         width: 100%;
-        padding-left: 7.20vw;
         align-items: center;
-
-        font-size: 4.80vw;
+        justify-content: center;
+        
+        font-size: 4.27vw;
         font-weight: 700;
 
-        color: #464F4E;
+        color: #2F5F6D;
     }
 }
 
@@ -66,13 +68,13 @@
     .burger__mobile-sub-title {
         display: flex;
         width: 100%;
-        padding-left: 7.20vw;
         align-items: center;
+        justify-content: center;
 
-        font-size: 3.73vw;
+        font-size: 4.27vw;
         font-weight: 700;
         
-        color: #555;
+        color: #2F5F6D;
     }
 }
 
@@ -91,19 +93,19 @@
     .burger__mobile-link-item a {
         display: flex;
         width: 100%;
-        padding-left: 7.20vw;
         align-items: center;
+        justify-content: center;
 
-        font-size: 2.93vw;
+        font-size: 4vw;
         font-weight: 400;
 
-        color: #555;
+        color: #4D96AB;
     }
 }
 
 @media(max-width: 961px) {
     .burger__item_open {
-        height: 13.33vw;
+        height: 10.67vw;
 
         border-bottom: 1px solid #268351;
     }
