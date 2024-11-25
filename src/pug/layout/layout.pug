@@ -14,12 +14,13 @@ html(lang='ru')
     title Главная
 
 body
-    input#nav-mobile(type="checkbox")
     include ../modules/header
+    input#nav-mobile(type="checkbox")
 
     main.main
       include ../components/nav-catalog.pug
       include ../components/nav-mobile
+      include ../components/nav-catalog-burger-mobile
       block content
 
     include ../modules/footer

@@ -1,11 +1,11 @@
 .nav-m {
     position: absolute;
     top: 0;
-    bottom: 0;
     left: 0;
 
     display: none;
     width: 69%;
+    height: 100vh;
 
     background: rgba(255, 255, 255, 0.80);
     box-shadow: 
@@ -14,6 +14,24 @@
     16.27vw 19.47vw 15.20vw 0px rgba(0, 0, 0, 0.10), 
     7.20vw 8.53vw 11.20vw 0px rgba(0, 0, 0, 0.17), 
     1.87vw 2.13vw 6.13vw 0px rgba(0, 0, 0, 0.20);
+
+    transition: opacity 0.2s linear;
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+#nav-mobile:checked + main > .nav-m {
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-m__close-cover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
 .nav-m__list {

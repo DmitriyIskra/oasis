@@ -1,0 +1,114 @@
+.burger__mobile-list {
+    display: none;
+}
+
+/* навигация */
+@media(max-width: 961px) {
+    .burger__mobile-list {
+        position: absolute;
+        right: 0;
+        top: 0;
+        left: 0;
+
+        display: block;
+
+        background-color: #fff;
+
+        transition: height 0.15s linear;
+        
+        z-index: 1002;
+    }
+    
+    .burger__mobile-list input { /*чекбоксы*/ 
+        display: none;
+    }
+}
+
+/* первый уровень */
+@media(max-width: 961px) {
+    .burger__mobile-item {
+        display: flex;
+        height: 0;
+        width: 100%;
+        
+        transition: height 0.15s linear;
+
+        overflow: hidden;
+    }
+
+    .burger__mobile-item-title {
+        display: flex;
+        width: 100%;
+        padding-left: 7.20vw;
+        align-items: center;
+
+        font-size: 4.80vw;
+        font-weight: 700;
+
+        color: #464F4E;
+    }
+}
+
+/* второй уровень */
+@media(max-width: 961px) {
+    .burger__mobile-sub-item {
+        display: flex;
+        height: 0;
+        width: 100%;
+
+        transition: height 0.15s linear;
+
+        overflow: hidden;
+    }
+}
+
+@media(max-width: 961px) {
+    .burger__mobile-sub-title {
+        display: flex;
+        width: 100%;
+        padding-left: 7.20vw;
+        align-items: center;
+
+        font-size: 3.73vw;
+        font-weight: 700;
+        
+        color: #555;
+    }
+}
+
+/* непосредственно ссылки */
+@media(max-width: 961px) {
+    .burger__mobile-link-item {
+        display: flex;
+        height: 0;
+        width: 100%;
+
+        transition: height 0.15s linear;
+
+        overflow: hidden;
+    }
+
+    .burger__mobile-link-item a {
+        display: flex;
+        width: 100%;
+        padding-left: 7.20vw;
+        align-items: center;
+
+        font-size: 2.93vw;
+        font-weight: 400;
+
+        color: #555;
+    }
+}
+
+@media(max-width: 961px) {
+    .burger__item_open {
+        height: 13.33vw;
+
+        border-bottom: 1px solid #268351;
+    }
+
+    .burger__item_open.burger__mobile-item:first-child {
+        border-top: 0.54vw solid #268351;
+    } 
+}
