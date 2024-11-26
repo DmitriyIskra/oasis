@@ -1,13 +1,141 @@
-.header__wr-slider {
+.main__wr-slider {
+    position: relative;
+
     height: 36.30vw;
 
     background: #fff;
 }
 
-.header__slider {
+.main__slider {
     height: 100%;
+    width: 100%;
 }
 
-.any {
-    height: 200vw;
+.main__slider-img {
+    height: 100%;
+    width: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+.main__slider-pagination {
+    position: absolute;
+    bottom: 3.80vw;
+    left: 50%;
+    z-index: 3;
+
+    transform: translateX(-50%);
+}
+
+.main__slider-pagination-bullets {
+    display: flex;
+    gap: 1.04vw;
+}
+
+.swiper-pagination-bullet {
+    width: 0.78vw;
+    height: 0.78vw;
+
+    background: #FFF;
+    border-radius: initial;
+
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background: linear-gradient(270deg, #2F5F6D 0%, #6AE9FB 100%);
+}
+
+.main__slider-arrow {
+    width: 0.89vw;
+    height: 1.77vw;
+
+    cursor: pointer;
+}
+
+.main__slider-arrow.main__slider-prev {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    z-index: 2;
+
+    transform: translateY(-50%);
+}
+
+.main__slider-arrow.main__slider-next {
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    z-index: 2;
+
+    transform: translateY(-50%);
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.goods-day {
+    width: 84.87%;
+    padding-top: 4.06vw;
+}
+
+.goods-day__wr-title h2 {
+    font-family: 'Play';
+    font-size: 1.88vw;
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+    
+    color: #2F5F6D;
+}
+
+.goods-day__content {
+    display: flex;
+    margin-top: 1.15vw;
+    padding-top: 2.34vw;
+    padding-right: 5.63vw;
+    padding-bottom: 1.93vw;
+    padding-left: 2.92vw;
+    gap: 4%;
+
+    border-radius: 0.52vw 0.52vw 0 0;
+    background: #F5F5F5;
+    box-shadow: 1.30vw 1.61vw 2.08vw 0px rgba(0, 0, 0, 0.06), 0.31vw 0.42vw 1.15vw 0px rgba(0, 0, 0, 0.07);
+}
+
+.goods-day__wr-img {
+    position: relative;
+
+    height: 24.53vw;
+    width: 123%;
+}
+
+.goods-day__wr-text {
+   
+}
+
+.goods-day__wr-img > img {
+    height: 100%;
+    width: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+.goods-day__wr-img > a {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.goods-promo {
+    width: 84.87%;
+
+    border-radius: 0 0 0.52vw 0.52vw;
+    background: #F5F5F5;
+    box-shadow: 1.30vw 1.61vw 2.08vw 0px rgba(0, 0, 0, 0.06), 0.31vw 0.42vw 1.15vw 0px rgba(0, 0, 0, 0.07);
 }

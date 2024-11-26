@@ -14,7 +14,10 @@ export default class RedrawBurger {
         this.activeThirdItems = null;
         this.activeThirdBox = null;
 
-        this.currentActiveItems = null;
+        // поля получившые высоты, т.е. активные
+        this.currentItemFirstLevel = null;
+
+
     }
 
     // Начало открытие закрытие меню (элементам первого уровня задаем высоту)
@@ -63,6 +66,10 @@ export default class RedrawBurger {
     openSecond(parent) {
         const secondNav = parent.nextElementSibling;
 
+        // Декорируем активный элемент первого уровня
+        this.currentItemFirstLevel = parent;
+        this.currentItemFirstLevel.classList.add('burger__item_deco');
+
         this.activeSecondsItems = secondNav.querySelectorAll('.burger__mobile-sub_second');
         
         [...this.activeSecondsItems].forEach(item => {
@@ -71,6 +78,10 @@ export default class RedrawBurger {
     }
 
     closeSecond() {
+        // Убирем декорирование активный элемент первого уровня
+        this.currentItemFirstLevel.classList.remove('burger__item_deco');
+        this.currentItemFirstLevel = null;
+
         [...this.activeSecondsItems].forEach(item => {
             item.classList.remove('burger__item_open');
         })

@@ -85,9 +85,15 @@
         height: 0;
         width: 100%;
 
+        border-bottom: 0 !important;
+
         transition: height 0.15s linear;
 
         overflow: hidden;
+    }
+
+    .burger__item_open.burger__mobile-link-item:last-child {
+        border-bottom: 1px solid #671993 !important;
     }
 
     .burger__mobile-link-item a {
@@ -107,10 +113,18 @@
     .burger__item_open {
         height: 10.67vw;
 
-        border-bottom: 1px solid #268351;
+        border-bottom: 1px solid #671993;
     }
 
     .burger__item_open.burger__mobile-item:first-child {
-        border-top: 0.54vw solid #268351;
+        border-top: 0.54vw solid #671993;
     } 
+
+    .burger__item_deco {
+        background: linear-gradient(270deg, #2F5F6D 0%, #6AE9FB 100%);
+    }
+
+    .burger__item_deco label {
+        color: #fff;
+    }
 }

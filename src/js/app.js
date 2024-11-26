@@ -8,6 +8,13 @@ import controllSearch from "./header/controll-search";
 // Закрытие каталога меню, при открытии мобильной навигации
 import navMobileButton from "./header/nav-mobileButton";
 
+// Свайпер для слайдеров
+import Swiper from "swiper";
+import { Navigation, Pagination } from 'swiper/modules';
+
+// Слайдер на главной странице с банннерами
+import mainSlider from "./main-slider/main-slider";
+
 // Чекбокс для управления мобильным меню
 const checkboxNavMobile = document.querySelector('#nav-mobile');
 
@@ -25,6 +32,25 @@ if(navMobile) {
     const controll = new ControllBurger(redraw);
     controll.init();
 } 
+
+// Главный слайдер, на главной странице
+const sliderMain = document.querySelector('.main__slider');
+if(mainSlider) {
+    const modules = {
+        Swiper,
+        Pagination,
+        Navigation,
+    }
+
+    const classes = [
+        '.main__slider',
+        '.main__slider-next',
+        '.main__slider-prev',
+        '.main__slider-pagination',
+    ]
+
+    mainSlider(modules, classes);
+}
 
 // MOBILE
 // Скрытие лого при открытии строки поиска

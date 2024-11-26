@@ -2,7 +2,73 @@ extends layout/layout
 
 block content
     .main-wrapper
-        .header__wr-slider
-            .header__slider
-        .any
-        
+        .main__wr-slider
+            .swiper.main__slider
+                .swiper-wrapper
+                    .swiper-slide
+                        img.main__slider-img(src=require('../img/content/banner-main-slider-1-content.webp') alt="")
+                    .swiper-slide
+                        img.main__slider-img(src=require('../img/content/banner-main-slider-2-content.webp') alt="")
+                    .swiper-slide
+                        img.main__slider-img(src=require('../img/content/banner-main-slider-3-content.webp') alt="")
+
+                .main__slider-pagination
+
+                .main__slider-arrow.main__slider-prev
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 38" fill="none">
+                        <path d="M20 2L3 19L20 36" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                .main__slider-arrow.main__slider-next
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 38" fill="none">
+                        <path d="M2 2L19 19L2 36" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+        .main-content 
+            section.goods-day.goods-day__section
+                .goods-day__wr-title 
+                    h2 Товар дня
+                .goods-day__content
+                    .goods-day__wr-img 
+                        img(src=require('../img/content/goods-of-day-content.webp') title="")
+                        a(href="#0" title="") 
+                    .goods-day__wr-text 
+                        .goods-day__wr-tm-name
+                            h2 monin
+                            p новая коллеция
+                            p более 60 вкусов
+                        .goods-day__text
+                            p Чайные пирамидки с ярлыком для разовой заварки в индивидуальных конвертах.Чай черный байховый «NIKTEA»® среднелистовой с добавками растительного сырья с ароматом лесных ягод «Сибирский Сбор»15 пирамидок по 2.7 г
+                            p Искусно купажированный чай с плантаций Индии и Цейлона.Очень ароматный сбор на основе крепкого черного чая с душистыми таежными ягодами. Вкус многогранный, с живой кислинкой и лесной ноткой.
+            section.goods-promo.goods-promo__section
+                .goods-promo__wr-title 
+                    h2 Товары по акции
+                .goods-promo__wr-slider 
+                    .goods-promo__slider
+                        .swiper-wrapper
+                            .swiper-slide
+                                .goods-promo__wr-slide-link 
+                                    a(href="#0" title="") 
+                                .goods-promo__wr-slide-img
+                                    img.goods-promo__slide-img(src=require('../img/content/goods-promo-slider-img-content.webp') alt="")
+                                .goods-promo__wr-slide-icons 
+                                    .goods-promo__slide-favorites 
+                                    .goods-promo__wr-slide-basket
+                            .swiper-slide
+                                .goods-promo__wr-slide-link 
+                                    a(href="#0" title="") 
+                                .goods-promo__wr-slide-img
+                                    img.goods-promo__slide-img(src=require('../img/content/goods-promo-slider-img-content.webp') alt="")
+                                .goods-promo__wr-slide-icons 
+                                    .goods-promo__slide-favorites 
+                                    .goods-promo__wr-slide-basket
+                            .swiper-slide
+                                .goods-promo__wr-slide-link 
+                                    a(href="#0" title="") 
+                                .goods-promo__wr-slide-img
+                                    img.goods-promo__slide-img(src=require('../img/content/goods-promo-slider-img-content.webp') alt="")
+                                .goods-promo__wr-slide-icons 
+                                    .goods-promo__slide-favorites 
+                                    .goods-promo__wr-slide-basket
+                        
+                        
+                        .goods-promo__arrow.goods-promo__arrow-prev
+                        .goods-promo__arrow.goods-promo__arrow-next
