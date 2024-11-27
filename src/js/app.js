@@ -15,6 +15,9 @@ import { Navigation, Pagination } from 'swiper/modules';
 // Слайдер на главной странице с банннерами
 import mainSlider from "./main-slider/main-slider";
 
+// Слайдер товары по акции
+import promoSlider from "./promo-slider/promoSlider";
+
 // Чекбокс для управления мобильным меню
 const checkboxNavMobile = document.querySelector('#nav-mobile');
 
@@ -51,6 +54,24 @@ if(mainSlider) {
 
     mainSlider(modules, classes);
 }
+
+// Слайдер товары по акции
+const sliderPromo =  document.querySelector('.goods-promo__slider');
+if(sliderPromo) {
+    const modules = {
+        Swiper,
+        Navigation,
+    }
+
+    const classes = [
+        '.goods-promo__slider',
+        '.goods-promo__arrow-next',
+        '.goods-promo__arrow-prev',
+    ]
+
+    promoSlider(modules, classes);
+}
+
 
 // MOBILE
 // Скрытие лого при открытии строки поиска

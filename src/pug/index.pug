@@ -42,9 +42,9 @@ block content
                 .goods-promo__wr-title 
                     h2 Товары по акции
                 .goods-promo__wr-slider 
-                    .goods-promo__slider
-                        .swiper-wrapper
-                            .swiper-slide
+                    .swiper.goods-promo__slider
+                        .swiper-wrapper.goods-promo__wrapper
+                            .swiper-slide.goods-promo__slide
                                 .goods-promo__wr-slide-link 
                                     a(href="#0" title="") 
                                 .goods-promo__wr-slide-img
@@ -52,7 +52,7 @@ block content
                                 .goods-promo__wr-slide-icons 
                                     .goods-promo__slide-favorites 
                                     .goods-promo__wr-slide-basket
-                            .swiper-slide
+                            .swiper-slide.goods-promo__slide
                                 .goods-promo__wr-slide-link 
                                     a(href="#0" title="") 
                                 .goods-promo__wr-slide-img
@@ -60,7 +60,23 @@ block content
                                 .goods-promo__wr-slide-icons 
                                     .goods-promo__slide-favorites 
                                     .goods-promo__wr-slide-basket
-                            .swiper-slide
+                            .swiper-slide.goods-promo__slide
+                                .goods-promo__wr-slide-link 
+                                    a(href="#0" title="") 
+                                .goods-promo__wr-slide-img
+                                    img.goods-promo__slide-img(src=require('../img/content/goods-promo-slider-img-content.webp') alt="")
+                                .goods-promo__wr-slide-icons 
+                                    .goods-promo__slide-favorites 
+                                    .goods-promo__wr-slide-basket
+                            .swiper-slide.goods-promo__slide
+                                .goods-promo__wr-slide-link 
+                                    a(href="#0" title="") 
+                                .goods-promo__wr-slide-img
+                                    img.goods-promo__slide-img(src=require('../img/content/goods-promo-slider-img-content.webp') alt="")
+                                .goods-promo__wr-slide-icons 
+                                    .goods-promo__slide-favorites 
+                                    .goods-promo__wr-slide-basket
+                            .swiper-slide.goods-promo__slide
                                 .goods-promo__wr-slide-link 
                                     a(href="#0" title="") 
                                 .goods-promo__wr-slide-img
@@ -69,6 +85,6 @@ block content
                                     .goods-promo__slide-favorites 
                                     .goods-promo__wr-slide-basket
                         
-                        
-                        .goods-promo__arrow.goods-promo__arrow-prev
-                        .goods-promo__arrow.goods-promo__arrow-next
+                        .goods-promo__slider-wr-arrows
+                            .goods-promo__arrow.goods-promo__arrow-prev
+                            .goods-promo__arrow.goods-promo__arrow-next
