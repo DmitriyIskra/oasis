@@ -379,6 +379,8 @@
 .sales-hits {
     width: 84.87%;
     margin-top: 4.17vw;
+
+    margin-bottom: 8.59vw;
 }
 
 .sales-hits__title {
@@ -393,14 +395,20 @@
 
 .sales-hits__content {
     margin-top: 1.56vw;
+
+    box-shadow: 
+        1.30vw 1.61vw 2.08vw 0px rgba(0, 0, 0, 0.06),
+        0.31vw 0.42vw 1.15vw 0px rgba(0, 0, 0, 0.07);
 }
 
-.sales-hits__tab-list {
+.sales-hits__tabs-list {
     display: flex;
     height: 3.13vw;
+
+    background: #E5E4E9;
 }
 
-.sales-hits__tab-item {
+.sales-hits__tabs-item {
     position: relative;
 
     display: grid;
@@ -417,46 +425,70 @@
     text-align: center;
 
     color: #2F5F6D;
+    background: linear-gradient(270deg, rgba(47, 95, 109, 0) 0%, rgba(106, 233, 251, 0) 100%);
+
+    transition: color 0.25s linear, background-image 0.25s linear;
 
     cursor: pointer;
 }
 
-.sales-hits__tab-item:hover {
+.sales-hits__tabs-item:hover {
+    color: #fff;
+    background: linear-gradient(270deg, rgba(47, 95, 109, 1) 0%, rgba(106, 233, 251, 1) 100%);
+    background-repeat: no-repeat;
+}
+
+.sales-hits__tabs-item_active {
     color: #fff;
     background: linear-gradient(270deg, #2F5F6D 0%, #6AE9FB 100%);
 }
 
-.sales-hits__tab-item_active {
-    color: #fff;
-    background: linear-gradient(270deg, #2F5F6D 0%, #6AE9FB 100%);
-}
-
-.sales-hits__goods-list {
-    position: relative;
-    
+.sales-hits__goods-list {    
     display: flex;
     flex-wrap: wrap;
     height: 36.67vw;
 
-    overflow: hidden;
+    background: #F5F5F5;
+
+    /* overflow: hidden; */
 }
 
 .sales-hits__goods-item {
+    position: relative;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 50%;
     width: 25%;
+
+    transition: transform 0.2s linear, box-shadow 0.2s linear;
+
+    cursor: pointer;
+}
+
+.sales-hits__goods-item:hover {
+    transform: scale(104%);
+
+    box-shadow: 0px 0px 1.56vw 0.42vw rgba(0, 0, 0, 0.25);
 }
 
 .sales-hits__goods-img {
     width: 28%;
     height: 62%;
+
+    transition: width 0.2s linear;
+}
+
+.sales-hits__goods-item:hover > .sales-hits__goods-img {
+    width: 35%;
 }
 
 .sales-hits__goods-img img {
     height: 100%;
     width: 100%;
+
+    filter: drop-shadow(-0.5vw 0.7vw 0.7vw rgba(0, 0, 0, 0.2));
 
     object-fit: contain;
     object-position: bottom;
@@ -464,6 +496,12 @@
 
 .sales-hits__goods-title {
     margin-top: 11%;
+
+    transition: margin-top 0.2s linear;
+}
+
+.sales-hits__goods-item:hover > .sales-hits__goods-title {
+    margin-top: 2.5%;
 }
 
 .sales-hits__goods-title h2 {
@@ -477,7 +515,7 @@
 }
 
 .sales-hits__goods-price {
-    margin-top: 0.42vw;
+    margin-top: 2%;
     
     font-family: "SofiaSans";
     font-size: 1.04vw;
@@ -485,4 +523,76 @@
     font-weight: 400; 
     
     color: #8E8E8E;
+
+    transition: margin-top 0.2s linear;
+}
+
+.sales-hits__goods-item:hover > .sales-hits__goods-price {
+    margin-top: 0.2%;
+}
+
+.sales-hits__goods-description {
+    height: 0;
+    width: 42%;
+    margin-top: 0.21vw;
+
+    text-align: center;
+    font-family: "SofiaSans";
+    font-size: 0.73vw;
+    font-style: normal;
+    font-weight: 400;
+
+    color: #505050;
+
+    transition: height 0.2s linear, opacity 0.2s linear 0.2s;
+
+    opacity: 0;
+    overflow: hidden;
+}
+
+.sales-hits__goods-item:hover > .sales-hits__goods-description {
+    height: 19%; /*14%*/
+
+    opacity: 1;
+}
+
+.sales-hits__goods-icons {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.35vw;
+
+    opacity: 0;
+
+    transition: opacity 0.2s linear;
+}
+
+.sales-hits__goods-item:hover > .sales-hits__goods-icons {
+    opacity: 1;
+}
+
+.sales-hits__goods-favourites {
+    height: 1.25vw;
+    width: 1.25vw;
+
+    background: no-repeat url('../svg/favorites-heart-black.svg');
+    background-position: center;
+    background-size: contain;
+
+    cursor: pointer;
+}
+
+.sales-hits__goods-basket {
+    width: 1.41vw;
+    height: 1.15vw;
+    
+    background: no-repeat url('../svg/basket-black.svg');
+    background-position: center;
+    background-size: contain;
+
+    cursor: pointer;
 }
