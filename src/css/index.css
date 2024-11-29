@@ -1,3 +1,4 @@
+/* START ГЛАВНЫЙ СЛАЙДЕР */
 .main__wr-slider {
     position: relative;
 
@@ -25,12 +26,10 @@
     left: 50%;
     z-index: 3;
 
-    transform: translateX(-50%);
-}
-
-.main__slider-pagination-bullets {
     display: flex;
     gap: 1.04vw;
+
+    transform: translateX(-50%);
 }
 
 .swiper-pagination-bullet {
@@ -72,11 +71,16 @@
     transform: translateY(-50%);
 }
 
+/* END ГЛАВНЫЙ СЛАЙДЕР */
+
 .main-content {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
+
+/* START ТОВАР ДНЯ */
 
 .goods-day {
     width: 84.87%;
@@ -176,6 +180,11 @@
     
     color: #615F5D;
 }
+
+/* END ТОВАР ДНЯ */
+
+
+/* START ТОВАРЫ ПО АКЦИИ */
 
 .goods-promo {
     width: 84.87%;
@@ -293,6 +302,11 @@
     background-position: center;
 }
 
+/* END ТОВАРЫ ПО АКЦИИ */
+
+
+/* START С НАМИ УДОБНО */
+
 .comfortable {
     width: 84.87%;
     margin-top: 5.68vw;
@@ -376,6 +390,11 @@
     color: #2F5F6D;
 }
 
+/* END С НАМИ УДОБНО */
+
+
+/* START С НАМИ УДОБНО */
+
 .sales-hits {
     width: 84.87%;
     margin-top: 4.17vw;
@@ -436,7 +455,6 @@
     background-repeat: no-repeat;
 }
 
-/* .sales-hits__thumbs-slide_active { */
 .sales-hits__thumbs-slide.swiper-slide-thumb-active {
     color: #fff;
     background: linear-gradient(270deg, #2F5F6D 0%, #6AE9FB 100%);
@@ -452,8 +470,6 @@
     height: 36.67vw;
 
     background: #F5F5F5;
-
-    /* overflow: hidden; */
 }
 
 .sales-hits__goods-item {
@@ -605,4 +621,242 @@
     background-size: contain;
 
     cursor: pointer;
+}
+
+/* END С НАМИ УДОБНО */
+
+
+
+/* START ГЛАВНЫЙ СЛАЙДЕР */
+
+@media(max-width: 961px) {
+    .main__wr-slider {
+        height: 80.53vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .main__slider-pagination {
+        bottom: 5.33vw;
+
+        gap: 4vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .swiper-pagination-bullet {
+        width: 2.67vw;
+        height: 2.67vw;
+    }
+}
+
+/* END ГЛАВНЫЙ СЛАЙДЕР */
+
+
+/* START ТОВАР ДНЯ */
+
+@media(max-width: 961px) {
+    .goods-day {
+        width: 100%;
+        padding-top: 10.67vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .goods-day__wr-title h2 {
+        font-size: 5.33vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .goods-day__content {
+        margin-top: 5.07vw;
+        padding-top: 9.60vw;
+        padding-right: 4.80vw;
+        padding-bottom: 4.53vw;
+        padding-left: 4.80vw;
+        flex-direction: column;
+        gap: 4.53vw;
+
+        border-radius: 0 0 0 0;
+    }
+}
+
+@media(max-width: 961px) {
+    .goods-day__wr-img {
+        height: 65.87vw;
+        width: 100%;
+    }
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
+}
+
+@media(max-width: 961px) {
+
 }

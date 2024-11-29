@@ -9,8 +9,7 @@ export default function mainSlider(modules, classes) {
 
     loop: true,
     
-    speed: 1500, 
-    allowTouchMove: false,
+    speed: 1500,
     // If we need pagination
     pagination: {
       el: pagination,
@@ -23,15 +22,15 @@ export default function mainSlider(modules, classes) {
       nextEl: next,
       prevEl: prev,
     },
-    // breakpoints: {
-    //   // when window width is >= 320px
-    //   320: {
-    //     slidesPerView: 4,
-    //   },
-    //   // when window width is >= 962px
-    //   962: {
-    //     slidesPerView: 7,
-    //   }
-    // }
+    breakpoints: {
+      // when window width is <= 961px && window width >= 320px 
+      320: {
+        allowTouchMove: true,
+      },
+      // when window width is >= 962px
+      962: {
+        allowTouchMove: false,
+      }
+    }
   });
 }
