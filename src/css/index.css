@@ -401,19 +401,18 @@
         0.31vw 0.42vw 1.15vw 0px rgba(0, 0, 0, 0.07);
 }
 
-.sales-hits__tabs-list {
-    display: flex;
+.sales-hits__thumbs-list {
+    /* display: flex; */
     height: 3.13vw;
 
     background: #E5E4E9;
 }
 
-.sales-hits__tabs-item {
-    position: relative;
-
+.sales-hits__thumbs-slide {
     display: grid;
     place-items: center;
     min-width: 7.81vw;  
+    width: auto !important;
     padding-left: 0.88vw;
     padding-right: 0.88vw;
 
@@ -425,22 +424,26 @@
     text-align: center;
 
     color: #2F5F6D;
-    background: linear-gradient(270deg, rgba(47, 95, 109, 0) 0%, rgba(106, 233, 251, 0) 100%);
 
-    transition: color 0.25s linear, background-image 0.25s linear;
+    transition: color 0.25s linear;
 
     cursor: pointer;
 }
 
-.sales-hits__tabs-item:hover {
+.sales-hits__thumbs-slide:hover {
     color: #fff;
     background: linear-gradient(270deg, rgba(47, 95, 109, 1) 0%, rgba(106, 233, 251, 1) 100%);
     background-repeat: no-repeat;
 }
 
-.sales-hits__tabs-item_active {
+/* .sales-hits__thumbs-slide_active { */
+.sales-hits__thumbs-slide.swiper-slide-thumb-active {
     color: #fff;
     background: linear-gradient(270deg, #2F5F6D 0%, #6AE9FB 100%);
+}
+
+.sales-hits__goods {
+    overflow: visible;
 }
 
 .sales-hits__goods-list {    
@@ -500,6 +503,7 @@
 }
 
 .sales-hits__goods-title {
+    width: 80%;
     margin-top: 11%;
 
     transition: margin-top 0.2s linear;
@@ -515,6 +519,7 @@
     font-style: normal;
     font-weight: 400;
     text-transform: uppercase;
+    text-align: center;
 
     color: #000;
 }

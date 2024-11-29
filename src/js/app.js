@@ -10,13 +10,16 @@ import navMobileButton from "./header/nav-mobileButton";
 
 // Свайпер для слайдеров
 import Swiper from "swiper";
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay, EffectFade, Thumbs } from 'swiper/modules';
 
 // Слайдер на главной странице с банннерами
 import mainSlider from "./main-slider/main-slider";
 
 // Слайдер товары по акции
 import promoSlider from "./promo-slider/promoSlider";
+
+// Слайдер хиты продаж
+import salesHitsSlider from "./sales-hits-slider/salesHitsSlider";
 
 // Чекбокс для управления мобильным меню
 const checkboxNavMobile = document.querySelector('#nav-mobile');
@@ -72,6 +75,23 @@ if(sliderPromo) {
     promoSlider(modules, classes);
 }
 
+// Слайдер хиты продаж
+const salesHits = document.querySelector('.sales-hits');
+if(salesHits) {
+    const modules = {
+        Swiper,
+        Autoplay,
+        EffectFade,
+        Thumbs,
+    }
+
+    const classes = [
+        '.sales-hits__thumbs',
+        '.sales-hits__goods',
+    ]
+
+    salesHitsSlider(modules, classes);
+}
 
 // MOBILE
 // Скрытие лого при открытии строки поиска
