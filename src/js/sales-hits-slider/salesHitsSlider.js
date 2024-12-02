@@ -5,7 +5,6 @@ export default function salesHitsSlider(modules, classes) {
     // Кнопки управление
     const thumbs = new Swiper(sThumbs, {
         slidesPerView: 10,
-        loop: true,
         allowTouchMove: false,
         breakpoints: {
             // when window width is <= 961px && window width >= 320px 

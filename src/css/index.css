@@ -216,6 +216,11 @@
     padding-left: 0.55%;
 }
 
+.goods-promo__wrapper {
+    margin: 0 auto; 
+    max-width: fit-content;
+}
+
 .goods-promo__slide {
     display: flex;
     padding: 1.30vw 1.30vw 2.19vw;
