@@ -8,25 +8,26 @@ export default function promoSlider(modules, classes) {
       slidesPerView: 4,
   
       loop: true,
-      
       speed: 1000, 
-      allowTouchMove: false,
-      spaceBetween: 21,
+      
     
       // Navigation arrows
       navigation: {
         nextEl: next,
         prevEl: prev,
       },
-      // breakpoints: {
-      //   // when window width is >= 320px
-      //   320: {
-      //     slidesPerView: 4,
-      //   },
-      //   // when window width is >= 962px
-      //   962: {
-      //     slidesPerView: 7,
-      //   }
-      // }
+      breakpoints: {
+        // when window width is >= 320px
+        320: {
+          slidesPerView: 1.22,
+          centeredSlides: true,
+          spaceBetween: 8,
+        },
+        // when window width is >= 962px
+        962: {
+          allowTouchMove: false,
+          spaceBetween: 21,
+        }
+      }
     });
   }

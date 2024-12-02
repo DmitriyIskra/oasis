@@ -196,10 +196,6 @@
     box-shadow: 1.30vw 1.61vw 2.08vw 0px rgba(0, 0, 0, 0.06), 0.31vw 0.42vw 1.15vw 0px rgba(0, 0, 0, 0.07);
 }
 
-.goods-promo {
-    margin-top: 1.93vw;
-}
-
 .goods-promo__wr-title > h2 {
     font-family: 'Play';
     font-size: 1.88vw;
@@ -321,6 +317,7 @@
     background-size: auto 96.5%;
     background-position: center;
     border-radius: 0.52vw;
+    border: 0.42vw solid #EFEEE9;
     box-shadow: 1.30vw 1.61vw 2.08vw 0px rgba(0, 0, 0, 0.06), 
     0.31vw 0.42vw 1.15vw 0px rgba(0, 0, 0, 0.07);
 }
@@ -421,19 +418,19 @@
 }
 
 .sales-hits__thumbs-list {
-    /* display: flex; */
     height: 3.13vw;
 
     background: #E5E4E9;
 }
 
 .sales-hits__thumbs-slide {
-    display: grid;
-    place-items: center;
+    display: flex;
     min-width: 7.81vw;  
     width: auto !important;
     padding-left: 0.88vw;
     padding-right: 0.88vw;
+    flex-direction: column;
+    justify-content: center;
 
     font-family: 'Play';
     font-size: 1.04vw;
@@ -464,6 +461,15 @@
     overflow: visible;
 }
 
+
+
+/* -------------------------------------------------- */
+
+.sales-hits__sub-slider {
+    overflow: visible;
+}
+
+/* ---- */
 .sales-hits__goods-list {    
     display: flex;
     flex-wrap: wrap;
@@ -472,6 +478,15 @@
     background: #F5F5F5;
 }
 
+.sales-hits__sub-wrapper {
+    /* display: flex;
+    flex-wrap: wrap; */
+    height: 36.67vw;
+
+    background: #F5F5F5;
+}
+/* ---- */
+/* ---- */
 .sales-hits__goods-item {
     position: relative;
     z-index: 1;
@@ -489,6 +504,24 @@
     cursor: pointer;
 }
 
+.sales-hits__sub-slide {
+    /* position: relative;
+    z-index: 1; */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* height: 50%; */
+    /* width: 25%; */
+
+    background: #F5F5F5;
+
+    transition: transform 0.2s linear, box-shadow 0.2s linear !important;
+
+    pointer-events: initial !important;
+    cursor: pointer;
+}
+
 .sales-hits__goods-item:hover {
     z-index: 2;
 
@@ -497,6 +530,14 @@
     box-shadow: 0px 0px 1.56vw 0.42vw rgba(0, 0, 0, 0.25);
 }
 
+.sales-hits__sub-slide:hover {
+    z-index: 2;
+
+    transform: scale(104%);
+
+    box-shadow: 0px 0px 1.56vw 0.42vw rgba(0, 0, 0, 0.25);
+}
+/* ---- */
 .sales-hits__goods-img {
     width: 28%;
     height: 62%;
@@ -623,6 +664,10 @@
     cursor: pointer;
 }
 
+
+/* ---------------------------------------------------------------------- */
+
+
 /* END С НАМИ УДОБНО */
 
 
@@ -673,12 +718,13 @@
         margin-top: 5.07vw;
         padding-top: 9.60vw;
         padding-right: 4.80vw;
-        padding-bottom: 4.53vw;
+        padding-bottom: 12.80vw;
         padding-left: 4.80vw;
         flex-direction: column;
         gap: 4.53vw;
 
         border-radius: 0 0 0 0;
+        box-shadow: none;
     }
 }
 
@@ -690,7 +736,98 @@
 }
 
 @media(max-width: 961px) {
+    .goods-day__wr-tm-name > h2 {
+        font-size: 8.53vw;
+        text-align: center;
+    }
+}
 
+@media(max-width: 961px) {
+    .goods-day__wr-tm-name > p {
+        font-size: 5.33vw;
+        text-align: center;
+    }
+}
+
+@media(max-width: 961px) {
+    .goods-day__wr-tm-name > p:last-child {
+        width: 100%;
+        margin-top: 1.07vw;
+        padding-top: 1.87vw;
+        padding-bottom: 1.87vw;
+        padding-left: 0;
+    }
+}
+
+@media(max-width: 961px) {
+    .goods-day__text {
+        margin-top: 3.20vw;
+        gap: 5.33vw;
+
+        font-size: 3.73vw;
+        text-align: center;
+    }
+}
+
+/* END ТОВАР ДНЯ */
+
+
+/* START ТОВАРЫ ПО АКЦИИ */
+
+@media(max-width: 961px) {
+    .goods-promo {
+        width: 100%;
+        padding-right: 0;
+        padding-left: 0;
+
+        border-radius: 0 0 0 0;
+        box-shadow: none; 
+    }
+}
+
+@media(max-width: 961px) {
+    .goods-promo__wr-title > h2 {
+        font-size: 5.33vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .goods-promo__wr-slider {
+        margin-top: 9.33vw;
+        padding-bottom: 10.87vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .goods-promo__slider {
+        padding-top: 2.5%;
+        padding-bottom: 2.5%;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+@media(max-width: 961px) {
+    .goods-promo__slide {
+        padding: 6.67vw 6.67vw 11.73vw;
+
+        box-shadow: 0px 0px 2.13vw 0.53vw rgba(0, 0, 0, 0.25);
+    }
+}
+
+@media(max-width: 961px) {
+    .goods-promo__slide-favorites {
+        height: 8.27vw;
+        width: 8.27vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .goods-promo__wr-slide-basket {
+        height: 8.27vw;
+        width: 8.27vw;
+        margin-top: 6.40vw;
+    }
 }
 
 @media(max-width: 961px) {
@@ -702,7 +839,9 @@
 }
 
 @media(max-width: 961px) {
-
+    .goods-promo__wr-slide-icons {
+        margin-left: 5.33vw;
+    }
 }
 
 @media(max-width: 961px) {
@@ -710,71 +849,119 @@
 }
 
 @media(max-width: 961px) {
+    .goods-promo__slider-wr-arrows {
+        display: none;
+    }
+}
 
+/* END ТОВАРЫ ПО АКЦИИ */
+
+/* START С НАМИ УДОБНО */
+
+@media(max-width: 961px) {
+    .comfortable {
+        display: flex;
+        width: 90.67%;
+        margin-top: 21.07vw;
+        padding-top: 7.20vw;
+        padding-right: 0;
+        padding-bottom: 13.33vw;
+        padding-left: 0;
+        flex-direction: column;
+        align-items: center;
+
+        background-image: url('../svg/comfortable-background-oasis-mobile.svg');
+        background-size: auto 97%;
+        background-position: center;
+        border-radius: 2.67vw;
+        border: 2px solid #EFEEE9;
+        box-shadow: none;
+    }
 }
 
 @media(max-width: 961px) {
-
+    .comfortable__title {
+        font-size: 5.33vw;
+    }
 }
 
 @media(max-width: 961px) {
-
+    .comfortable__content-list {
+        margin-top: 14.67vw;
+        flex-direction: column;
+        justify-content: initial;
+        gap: 13.87vw;
+    }
 }
 
 @media(max-width: 961px) {
-
+    .comfortable__content-item {
+        gap: 1.33vw;
+    }
 }
 
 @media(max-width: 961px) {
-
+    .comfortable__content-icon {
+        height: 41.60vw;
+        width: 41.60vw;
+    }
 }
 
 @media(max-width: 961px) {
+    .comfortable__content-text {
+        font-size: 4.27vw;
+    }
+}
 
+/* END С НАМИ УДОБНО */
+
+
+/* START ХИТЫ ПРОДАЖ */
+
+@media(max-width: 961px) {
+    .sales-hits {
+        width: 100%;
+        margin-top: 13.87vw;
+        margin-bottom: 28.27vw;
+    }
 }
 
 @media(max-width: 961px) {
-
+    .sales-hits__title {
+        font-size: 5.33vw;
+    }
 }
 
 @media(max-width: 961px) {
-
+    .sales-hits__content {
+        margin-top: 7.20vw;
+        box-shadow: none;
+    }
 }
 
 @media(max-width: 961px) {
-
+    .sales-hits__thumbs-list {
+        height: auto;
+    }
 }
 
 @media(max-width: 961px) {
+    .sales-hits__thumbs-slide {
+        min-width: initial;  
+        padding-top: 3.47vw;
+        padding-right: 0;
+        padding-bottom: 3.47vw;
+        padding-left: 0;
+        flex-direction: row;
 
+        font-size: 5.33vw;
+    }
 }
 
 @media(max-width: 961px) {
-
-}
-
-@media(max-width: 961px) {
-
-}
-
-@media(max-width: 961px) {
-
-}
-
-@media(max-width: 961px) {
-
-}
-
-@media(max-width: 961px) {
-
-}
-
-@media(max-width: 961px) {
-
-}
-
-@media(max-width: 961px) {
-
+    .swiper.sales-hits__goods {
+        margin-top: 5.87vw;
+    }
 }
 
 @media(max-width: 961px) {

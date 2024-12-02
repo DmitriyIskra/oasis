@@ -10,7 +10,14 @@ import navMobileButton from "./header/nav-mobileButton";
 
 // Свайпер для слайдеров
 import Swiper from "swiper";
-import { Navigation, Pagination, Autoplay, EffectFade, Thumbs } from 'swiper/modules';
+import { 
+    Navigation, 
+    Pagination, 
+    Autoplay, 
+    EffectFade, 
+    Thumbs,
+    Grid,
+} from 'swiper/modules';
 
 // Слайдер на главной странице с банннерами
 import mainSlider from "./main-slider/main-slider";
@@ -83,11 +90,13 @@ if(salesHits) {
         Autoplay,
         EffectFade,
         Thumbs,
+        Grid
     }
 
     const classes = [
         '.sales-hits__thumbs',
         '.sales-hits__goods',
+        '.sales-hits__sub-slider',
     ]
 
     salesHitsSlider(modules, classes);
