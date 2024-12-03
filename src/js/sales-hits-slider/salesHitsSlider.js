@@ -1,6 +1,6 @@
-export default function salesHitsSlider(modules, classes) {
+export default function salesHitsSlider(modules, classes, fewSliders) {
     const {Swiper, Autoplay, EffectFade, Thumbs, Grid} = modules;
-    const [sThumbs, sGoods, sSub] = classes;
+    const [sThumbs, sGoods] = classes;
 
     // Кнопки управление
     const thumbs = new Swiper(sThumbs, {
@@ -24,21 +24,71 @@ export default function salesHitsSlider(modules, classes) {
         modules: [EffectFade, Thumbs, Autoplay],
         effect: 'fade',
         speed: 1000,
+        allowTouchMove: false,
         thumbs: {
             swiper: thumbs,
         },
-        // autoplay: {
-        //     delay: 2500
-        // }
+        autoplay: {
+            delay: 2500
+        }
     })
 
     // Слайдеры непосредственно с карточками товаров
-    new Swiper(sSub, {
-        modules: [Grid],
-        slidesPerView: 4,
-        grid: {
-            fill: 'row',
-            rows: '2'
-        },
+    const swipers = [];
+
+    // Инициализация swiper desctop
+    function initSwiperDesctop() {
+        if(swipers.length) swipers.length = 0;
+
+        fewSliders.forEach(item => {
+            const s = new Swiper(item, {
+                modules: [Grid],
+                slidesPerView: 4,
+                allowTouchMove: false,
+                centeredSlides: false,
+                spaceBetween: 0,
+                grid: {
+                    fill: 'row',
+                    rows: '2'
+                }
+            })
+
+            swipers.push(s);
+        });
+    }
+
+    // Инициализация swiper mobile
+    function initSwiperMobile() {
+        if(swipers.length) swipers.length = 0;
+
+        fewSliders.forEach(item => {
+            const s = new Swiper(item, {
+                loop: true,
+                allowTouchMove: true,
+                centeredSlides: true,
+                slidesPerView: 1.22, // 1.22
+                spaceBetween: 8,
+            })
+    
+            swipers.push(s);
+        });
+    }
+
+    // Первая инициализация (загрузка страницы)
+    if(innerWidth > 961) initSwiperDesctop();
+
+    if(innerWidth <= 961) initSwiperMobile();
+    
+
+    // Переиницализация
+    window.addEventListener('resize', () => {
+        if(innerWidth > 961 && swipers.length) {
+            swipers.forEach(sw => sw.destroy());
+            initSwiperDesctop();
+            return;
+        }
+
+        swipers.forEach(sw => sw.destroy());
+        initSwiperMobile();
     })
 }

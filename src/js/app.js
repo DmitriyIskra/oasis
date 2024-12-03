@@ -96,10 +96,12 @@ if(salesHits) {
     const classes = [
         '.sales-hits__thumbs',
         '.sales-hits__goods',
-        '.sales-hits__sub-slider',
+        
     ]
 
-    salesHitsSlider(modules, classes);
+    const fewSliders = [...document.querySelectorAll('.sales-hits__sub-slider')];
+
+    salesHitsSlider(modules, classes, fewSliders);
 }
 
 // MOBILE
