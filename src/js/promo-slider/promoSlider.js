@@ -14,6 +14,7 @@ export default function promoSlider(modules, classes) {
         nextEl: next,
         prevEl: prev,
       },
+      
       /**
        * ОТЛАДИТЬ (все мобильная версия)
        * Слайдов > 3 
