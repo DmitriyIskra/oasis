@@ -1,0 +1,12 @@
+.bread-crumbs__wrapper {
+    margin-top: 2.86vw;
+    margin-left: 8.1%;
+}
+
+
+@media(max-width: 961px) {
+    .bread-crumbs__wrapper {
+        margin-left: 5.4%;
+        margin-top: 6.67vw;
+    }
+}

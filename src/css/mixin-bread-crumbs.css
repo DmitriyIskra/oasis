@@ -1,0 +1,44 @@
+.crumbs {
+    display: flex;
+}
+
+.crumbs > span {
+    font-family: 'Play';
+    font-size: 0.73vw;
+    font-style: normal;
+    font-weight: 400;
+
+    color: #2F5F6D;
+}
+
+
+.crumbs > span:first-child::first-letter {
+    text-transform: uppercase;
+}
+
+.crumbs > span:last-child {
+    font-weight: 700;
+}
+
+.crumbs > span:not(:last-child)::after {
+    content: "/";
+
+    margin-right: 0.26vw;
+
+    font-family: 'Play';
+    font-size: 0.73vw;
+    font-style: normal;
+    font-weight: 400;
+
+    color: #2F5F6D;
+}
+
+@media(max-width: 961px) {
+    .crumbs > span {
+        font-size: 2.67vw;
+    }
+
+    .crumbs > span:not(:last-child)::after {
+        font-size: 2.67vw;
+    }
+}

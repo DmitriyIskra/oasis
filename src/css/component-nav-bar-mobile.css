@@ -37,6 +37,12 @@
     border: 1px solid #79747E;
 }
 
+.bar__item svg {
+    display: block;
+    height: 100;
+    width: 100%;
+}
+
 .bar__item:first-child {
     border-radius: 26.67vw 0 0 26.67vw;
 }

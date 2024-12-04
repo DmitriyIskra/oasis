@@ -1,0 +1,36 @@
+extends layout/layout
+
+include mixines/bread-crumbs/bread-crumbs
+
+block content
+    .bread-crumbs__wrapper
+        +bread-crumbs(bread_crumbs)
+
+    .card-wrapper
+        .product 
+            .product__wr-images
+                .product__wr-slider
+                    
+                    .swiper 
+                        .swiper-wrapper 
+                            .swiper-slide 
+                                img(src=require('../img/content/sales-hits-image-content.webp') alt="")
+                            .swiper-slide 
+                                img(src=require('../img/content/sales-hits-image-content.webp') alt="")
+                            .swiper-slide 
+                                img(src=require('../img/content/sales-hits-image-content.webp') alt="")
+                            .swiper-slide 
+                                img(src=require('../img/content/sales-hits-image-content.webp') alt="")
+                .product__wr-thumbs
+                    .swiper 
+                        .swiper-wrapper 
+                            .swiper-slide 
+                                img(src=require('../img/content/sales-hits-image-content.webp') alt="")
+                            .swiper-slide 
+                                img(src=require('../img/content/sales-hits-image-content.webp') alt="")
+                            .swiper-slide 
+                                img(src=require('../img/content/sales-hits-image-content.webp') alt="")
+                            .swiper-slide 
+                                img(src=require('../img/content/sales-hits-image-content.webp') alt="")
+            .product__wr-info 
+

@@ -1,0 +1,5 @@
+mixin bread-crumbs(data)
+    .crumbs
+        each item in data 
+            span #{item.title} 
+                a(href=item.link title=item.title) 
