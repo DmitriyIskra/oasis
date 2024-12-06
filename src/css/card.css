@@ -64,10 +64,6 @@
     margin: 0 auto;
 }
 
-/* .product__thumb-slide {
-    pointer-events: none;
-} */
-
 .product__thumb-slide > img {
     height: 100%;
     width: 100%;
@@ -129,5 +125,11 @@
     .bread-crumbs__wrapper {
         margin-left: 5.4%;
         margin-top: 6.67vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .product__goods-wr-arrow {
+        display: none;
     }
 }

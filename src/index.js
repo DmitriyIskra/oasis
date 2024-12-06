@@ -11,6 +11,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 import 'swiper/css/effect-fade';
 import 'swiper/css/grid';
+import 'swiper/css/thumbs';
 import './css/header.css';
 import './css/index.css';
 import './css/card.css';

@@ -13,6 +13,8 @@ export default function(modules, classes) {
     const thumbs = new Swiper(sThumbs, {
         modules: [Navigation],
         slidesPerView: 3,
+        spaceBetween: 10,
+        freeMode: true, watchSlidesProgress: true,
         loop: true,
         speed: speed,
         breakpoints: {
@@ -31,6 +33,7 @@ export default function(modules, classes) {
     // внутри каждой свой слайдер с товарами
     const goods = new Swiper(sGoods, {
         modules: [EffectFade, Thumbs, Navigation],
+        effect: 'fade',
         slidesPerView: 1,
         loop: true,
         speed: speed,
@@ -48,6 +51,9 @@ export default function(modules, classes) {
             },
             // when window width is >= 962px
             962: {
+                thumbs: {
+                    swiper: null,
+                },
                 allowTouchMove: false,
             }
         }
