@@ -28,6 +28,11 @@ import promoSlider from "./promo-slider/promoSlider";
 // Слайдер хиты продаж
 import salesHitsSlider from "./sales-hits-slider/salesHitsSlider";
 
+// Слайдер карточка товара
+import cardSlider from "./card-slider/card-slider";
+
+// ---------------------------------------------------------------------
+
 // Чекбокс для управления мобильным меню
 const checkboxNavMobile = document.querySelector('#nav-mobile');
 
@@ -102,6 +107,27 @@ if(salesHits) {
     const fewSliders = [...document.querySelectorAll('.sales-hits__sub-slider')];
 
     salesHitsSlider(modules, classes, fewSliders);
+}
+
+// Слайдер хиты продаж
+const sliderCard = document.querySelector('.product__wr-images');
+if(sliderCard) {
+    const modules = {
+        Swiper,
+        Navigation,
+        EffectFade,
+        Thumbs,
+    }
+
+    const classes = [
+        '.product__slider',
+        '.product__thumbs',
+        '.product__thumb-slide',
+        '.product__goods-prev',
+        '.product__goods-next',
+    ]
+
+    cardSlider(modules, classes);
 }
 
 // MOBILE

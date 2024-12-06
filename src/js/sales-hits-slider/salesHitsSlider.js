@@ -33,6 +33,9 @@ export default function salesHitsSlider(modules, classes, fewSliders) {
         }
     })
 
+    /** 
+     * Все что ниже служит для адаптации слайдера при переходе breakpoints
+     * */ 
     // Слайдеры непосредственно с карточками товаров
     const swipers = [];
 
