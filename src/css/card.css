@@ -75,34 +75,48 @@
     object-position: center;
 }
 
-.product__goods-arrow {
+
+.product__goods-wr-arrow {
     position: absolute;
     top: 50%;
-    z-index: 2;
 
     height: 1.77vw;
     width: 0.89vw;
+    
+    cursor: pointer;
+}
+
+.product__goods-wr-arrow-prev {
+    left: 0;
+
+    transform: translate(-100%, -50%);
+}
+
+.product__goods-wr-arrow-next {
+    right: 0;
+
+    transform: translate(100%, -50%);
+}
+
+.product__goods-arrow {
+    height: 100%;
+    width: 100%;
 
     cursor: pointer;
 }
 
-.product__goods-prev {
-    left: 0;
 
+.product__goods-prev {
     background: no-repeat url('../svg/card-product-arrow-prev.svg');
     background-size: contain;
     background-position: center;
-
-    transform: translate(-100%, -50%);
 }
-.product__goods-next {
-    right: 0;
 
+
+.product__goods-next {
     background: no-repeat url('../svg/card-product-arrow-next.svg');
     background-size: contain;
     background-position: center;
-
-    transform: translate(100%, -50%);
 }
 
 

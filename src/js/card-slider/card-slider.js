@@ -2,17 +2,19 @@ export default function(modules, classes) {
     const {Swiper, Navigation, EffectFade, Thumbs} = modules;
     const [sGoods, sThumbs, thumbSlide, goodsPrev, goodsNext] = classes;
 
-    const thumbEl = document.querySelector(sThumbs)
-    const amountPerView = document.querySelectorAll(thumbSlide).length;
-    const next = document.querySelector(goodsNext)
-    const prev = document.querySelector(goodsPrev)
+    const thumbEl = document.querySelector(sThumbs);
+    const next = document.querySelector(goodsNext);
+    const prev = document.querySelector(goodsPrev);
+
+    // Скорость перелистывания
+    const speed = 300;
 
     // Кнопки управление
     const thumbs = new Swiper(sThumbs, {
         modules: [Navigation],
         slidesPerView: 3,
         loop: true,
-        // watchOverflow: amountPerView === 1 ? true : false, 
+        speed: speed,
         breakpoints: {
             // when window width is <= 961px && window width >= 320px 
             320: {
@@ -31,42 +33,66 @@ export default function(modules, classes) {
         modules: [EffectFade, Thumbs, Navigation],
         slidesPerView: 1,
         loop: true,
-        speed: 1000,
+        speed: speed,
         navigation: {
             prevEl: goodsPrev,
             nextEl: goodsNext,
         },
-        
-        // thumbs: {
-        //     swiper: thumbs,
-        // },
         breakpoints: {
             // when window width is <= 961px && window width >= 320px 
             320: {
-                allowTouchMove: true,
+                thumbs: {
+                    swiper: thumbs,
+                },
+                allowTouchMove: false,
             },
             // when window width is >= 962px
             962: {
-                allowTouchMove: true,
+                allowTouchMove: false,
             }
         }
     })
 
+    
+    let timeOutID = null;
+
+    // Перелистывание слайда, по клику на слайд в thumbs
     thumbEl.addEventListener('click', (e) => {
         if(e.target.closest(thumbSlide)) {
             const slide = e.target.closest(thumbSlide)
             const index = +slide.getAttribute('data-swiper-slide-index');
-            console.log(index)
-            goods.slideToLoop(index, 300)
-            thumbs.slideToLoop(index, 300)
-            // thumbs.slideReset(index, 300)
+
+            goods.slideToLoop(index, speed)
+            thumbs.slideToLoop(index, speed)
         }
     })
 
-    next.addEventListener('click', () => {
-        thumbs.slideNext(300)
+    // Блокировка и разблокировка элементов управления
+    const blockArrow = (el) => el.style.pointerEvents = 'none';
+    const unBlockArrow = (el) => el.style.pointerEvents = 'initial';
+
+
+    // События клика по элеметам управления
+    next.addEventListener('click', (e) => {
+        if(timeOutID) return;
+
+        thumbs.slideNext(speed); // next slide for thumbs
+        blockArrow(e.target);
+        
+        setTimeout(() => {
+            unBlockArrow(e.target);
+            clearTimeout(timeOutID);
+        }, speed + 50)
     })
-    prev.addEventListener('click', () => {
-        thumbs.slidePrev(300)
+    prev.addEventListener('click', (e) => {
+        if(timeOutID) return;
+        
+        thumbs.slidePrev(speed); // next slide for thumbs
+        blockArrow(e.target);
+        
+        setTimeout(() => {
+            unBlockArrow(e.target);
+            clearTimeout(timeOutID);
+        }, speed + 50)
     })
 }
