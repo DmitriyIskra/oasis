@@ -444,12 +444,53 @@
 }
 
 .product-desc {
+    width: 71%;
     margin-top: 1.67vw;
+}
+
+#product-desc__controll {
+    display: none;
 }
 
 .product-desc__controll {
     display: flex;
     gap: 0.52vw;
+}
+
+.product-desc__button {
+    display: grid;
+    width: 12.29vw;
+    height: 2.08vw;
+    place-items: center;
+    
+    font-family: 'Play';
+    font-size: 0.83vw;
+    font-weight: 400;
+    
+    color: #FFF;
+    background: #4D96AB;
+    border-radius: 8px;
+    box-shadow: -0.21vw 0.21vw 0.42vw 0px #9AA4A7;
+    
+    user-select: none;
+    cursor: pointer;
+}
+
+.product-desc__description {
+    background: #671993;
+
+    pointer-events: none;
+}
+
+#product-desc__controll:checked + .product-desc__controll > .product-desc__description {
+    background: #4D96AB;
+
+    pointer-events: initial;
+}
+#product-desc__controll:checked + .product-desc__controll > .product-desc__reviews {
+    background: #671993;
+
+    pointer-events: none;
 }
 
 

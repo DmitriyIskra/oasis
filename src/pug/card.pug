@@ -103,10 +103,11 @@ block content
                                 .characteristics__wr-maybe
                                     button.characteristics__button.characteristics__maybe(type="button") Возможно вас заинтересует
                                     button.characteristics__button.characteristics__maybe-buy(type="button") Купить
-        .product-desc             
+        .product-desc       
+            input#product-desc__controll(type="checkbox")      
             .product-desc__controll
-                .product-desc__button.product-desc__button_active(data-type="0") Описание
-                .product-desc__button(data-type="1") Отзывы
+                label.product-desc__button.product-desc__description(for="product-desc__controll") Описание
+                label.product-desc__button.product-desc__reviews(for="product-desc__controll") Отзывы
             
             .product-desc__wr-content 
                 .product-desc__content.product-desc__content-about(data-type="0") 
