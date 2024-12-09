@@ -30,6 +30,11 @@ import salesHitsSlider from "./sales-hits-slider/salesHitsSlider";
 
 // Слайдер карточка товара
 import cardSlider from "./card-slider/card-slider";
+import ControllCardSlider from "./card-slider/ControllCardSlider";
+import RedrawCaredSlider from "./card-slider/RedrawCaredSlider";
+
+// Работа "состав" в карточке товара
+import productCardOpenComposition from "./product-card-open-composition/product-card-open-composition";
 
 // ---------------------------------------------------------------------
 
@@ -109,7 +114,7 @@ if(salesHits) {
     salesHitsSlider(modules, classes, fewSliders);
 }
 
-// Слайдер хиты продаж
+// Слайдер карточка товара
 const sliderCard = document.querySelector('.product__wr-images');
 if(sliderCard) {
     const modules = {
@@ -119,7 +124,17 @@ if(sliderCard) {
         Thumbs,
     }
 
-    const classes = [
+    const classes = {
+        mainSlider: '.product__slider',
+        mainSlide: '.product__slide',
+        thumbsSlider: '.product__thumbs',
+        thumbSlide: '.product__thumb-slide',
+        prev: '.product__goods-prev',
+        next: '.product__goods-next',
+    }
+        
+    
+    const classes2 = [
         '.product__slider',
         '.product__thumbs',
         '.product__thumb-slide',
@@ -127,9 +142,18 @@ if(sliderCard) {
         '.product__goods-next',
     ]
 
-    cardSlider(modules, classes);
+    const redraw = new RedrawCaredSlider(sliderCard, modules, classes);
+    const controll = new ControllCardSlider(redraw);
+    controll.init();
+    // cardSlider(modules, classes2);
 }
 
+// Работа "состав" в карточке товара
+const characteristicsComposition = document.querySelector('.characteristics__composition');
+if(characteristicsComposition) {
+    const arrow = document.querySelector('.characteristics__data-arrow');
+    productCardOpenComposition(characteristicsComposition, arrow);
+}
 // MOBILE
 // Скрытие лого при открытии строки поиска
 controllSearch();

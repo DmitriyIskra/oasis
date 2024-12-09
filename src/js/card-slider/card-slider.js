@@ -82,23 +82,23 @@ export default function(modules, classes) {
     next.addEventListener('click', (e) => {
         if(timeOutID) return;
 
-        thumbs.slideNext(speed); // next slide for thumbs
+        thumbs.slideNext(this.d.speed); // next slide for thumbs
         blockArrow(e.target);
         
         setTimeout(() => {
             unBlockArrow(e.target);
             clearTimeout(timeOutID);
-        }, speed + 50)
+        }, this.d.speed + 50)
     })
     prev.addEventListener('click', (e) => {
         if(timeOutID) return;
         
-        thumbs.slidePrev(speed); // next slide for thumbs
+        thumbs.slidePrev(this.d.speed); // next slide for thumbs
         blockArrow(e.target);
         
         setTimeout(() => {
             unBlockArrow(e.target);
             clearTimeout(timeOutID);
-        }, speed + 50)
+        }, this.d.speed + 50)
     })
 }
