@@ -11,7 +11,7 @@ block content
         .product 
             .product__wr-images
                 .product__wr-slider
-                    .product__new
+                    .product__new.product__new_active
                     .swiper.product__slider
                         .swiper-wrapper.product__slider-wrapper
                             .swiper-slide.product__slide
@@ -57,7 +57,7 @@ block content
                         .characteristics__title Состав
                         .characteristics__wr-composition
                             .characteristics__data.characteristics__composition 
-                                p Чай черный среднелистовой индийский, ягоды рябины черноплодной, ягоды брусники, лепестки василька, лепестки календулы, ароматизатор «Лесные ягоды». 
+                                p Чай черный среднелистовой индийский, ягоды рябины черноплодной, ягоды брусники, лепестки василька, лепестки календулы, ароматизатор «Лесные ягоды».
                             .characteristics__data-arrow(for="characteristics__composition")
                     li.characteristics__item
                         .characteristics__title Производство
@@ -67,12 +67,12 @@ block content
                         .characteristics__data Индия
                     li.characteristics__item
                         .characteristics__title Наличие
-                        .characteristics__data.characteristics__data-wrapper
+                        .characteristics__data.characteristics__wr-available
                             .characteristics__available-state
-                                span Есть в наличии
-                                span Ожидается поступление 
-                                span Снято с продажи
-                                span Под заказ
+                                span.characteristics__available-item.characteristics__available_active(data-type="available") Есть в наличии
+                                span.characteristics__available-item(data-type="awaiting") Ожидается поступление 
+                                span.characteristics__available-item(data-type="withdrawn") Снято с продажи
+                                span.characteristics__available-item(data-type="order") Под заказ
                             .characteristics__wr-amount 
                                 .characteristics__amount 
                                     span.characteristics__amount-num 15
@@ -81,23 +81,28 @@ block content
                     li.characteristics__item
                         .characteristics__title Код производителя
                         .characteristics__data ЧП265895
-                    li.characteristics__item
+                    li.characteristics__item.characteristics__item-price
                         .characteristics__price
-                            .characteristics__price-current
-                            .characteristics__price-old
-                    li.characteristics__item
+                            .characteristics__wr-price-current #[span 450] р
+                            .characteristics__wr-price-old #[span 650]
+                    li.characteristics__item.characteristics__buttons
                         ul.characteristics__activity-list
-                            li.characteristics__activity-item
-                                .characteristics__wr-add 
-                                    button.characteristics__decrement
+                            li.characteristics__activity-item.characteristics__activity-buy
+                                //- .characteristics__wr-add_active
+                                .characteristics__wr-add
+                                    button.characteristics__add-piece.characteristics__decrement
                                     input.characteristics__added-pieces(type="text")
-                                    button.characteristics__increment
-                                button.characteristics__maybe(type="button") Купить
+                                    button.characteristics__add-piece.characteristics__increment
+                                button.characteristics__button.characteristics__buy.characteristics__buy_active(type="button") Купить
+                                button.characteristics__button.characteristics__in-basket(type="button") #[span В корзине] #[span перейти]
                             li.characteristics__activity-item
-                                button.characteristics__in-basket(type="button") #[span В корзине] #[span перейти]
-                                button.characteristics__inform(type="button") Сообщить о поступлении
-                                button.characteristics__communication(type="button") Связаться с менеджером
-
+                                button.characteristics__button.characteristics__inform(type="button") Сообщить о поступлении
+                            li.characteristics__activity-item
+                                button.characteristics__button.characteristics__communication(type="button") Связаться с менеджером
+                            li.characteristics__activity-item.characteristics__activity_active
+                                .characteristics__wr-maybe
+                                    button.characteristics__button.characteristics__maybe(type="button") Возможно вас заинтересует
+                                    button.characteristics__button.characteristics__maybe-buy(type="button") Купить
         .product-desc             
             .product-desc__controll
                 .product-desc__button.product-desc__button_active(data-type="0") Описание

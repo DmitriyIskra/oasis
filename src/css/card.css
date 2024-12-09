@@ -41,6 +41,24 @@
     padding-bottom: 2.97vw;
 }
 
+.product__new {
+    position: absolute;
+    top: 0.5vw;
+    left: 7%;
+
+    display: none;
+    width: 6.98vw;
+    height: 6.09vw;
+
+    background: no-repeat url('../svg/product-new.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.product__new_active {
+    display: block;
+}
+
 .product__slide {
     opacity: 0 !important;
 }
@@ -53,6 +71,21 @@
     width: 100%;
     object-fit: contain;
     object-position: center;
+}
+
+.product__favorites {
+    position: absolute;
+    top: 2.7vw;
+    right: 1.6%;
+
+    width: 1.56vw;
+    height: 1.56vw;
+
+    background: no-repeat url('../svg/favorites-heart-black.svg');
+    background-size: contain;
+    background-position: center;
+
+    cursor: pointer;
 }
 
 .product__wr-thumbs {
@@ -211,6 +244,216 @@
 .characteristics__data-arrow[data-state="active"] {
     transform: rotate(180deg);
 }
+
+.characteristics__wr-available {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    color: #FF7A00;
+}
+
+.characteristics__available-item {
+    display: none;
+}
+
+.characteristics__available_active {
+    display: block;
+}
+
+.characteristics__amount {
+    text-align: right;
+}
+
+.characteristics__item.characteristics__buttons {
+    margin-top: 1.4vw;
+}
+
+.characteristics__activity-item {
+    display: none;
+}
+
+.characteristics__activity_active {
+    display: grid;
+}
+
+.characteristics__item-price {
+    margin-top: 0;
+    margin-right: 1%;
+}
+
+.characteristics__price {
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    align-items: flex-end;
+    gap: 0.94vw;
+}
+
+.characteristics__wr-price-current {
+    font-family: 'Play';
+    font-size: 1.46vw;
+    font-weight: 400;
+    
+    color: #671993;
+}
+
+.characteristics__wr-price-old {
+    position: relative;
+
+    font-family: 'Play';
+    font-size: 1.25vw;
+    font-weight: 400;
+
+    color: #615F5D;
+}
+
+.characteristics__wr-price-old::after {
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    width: 133%;
+    height: 1px;
+
+    background: #505050;
+
+    transform: translate(-50%, -50%) rotate(-15deg);
+}
+
+.characteristics__activity-list {
+    width: 100%;
+}
+
+.characteristics__activity-buy {
+    grid-template-columns: 1fr 1fr;
+}
+
+.characteristics__wr-add {
+    display: none;
+    gap: 0.36vw;
+    justify-self: start;
+    grid-column: 1;
+}
+
+.characteristics__wr-add_active {
+    display: flex;
+}
+
+.characteristics__add-piece {
+    display: grid;
+    place-items: center;
+    width: 2.60vw;
+    height: 2.08vw;
+
+    font-family: "SofiaSans";
+    font-size: 1.04vw;
+    font-weight: 400;
+
+    color: #fff;
+    border: 1px solid #FFF;
+    background-color: #4D96AB;
+}
+
+.characteristics__decrement::before {
+    content: "-";
+}
+
+.characteristics__added-pieces {
+    width: 3.49vw;
+
+    font-family: 'Play';
+    font-size: 1.04vw;
+    font-weight: 400;
+    text-align: center;
+    
+    color: #726B68;
+    border: none;
+    outline: none;
+}
+
+.characteristics__increment::before {
+    content: "+";
+}
+
+.characteristics__button {
+    display: flex;
+    height: 2.08vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    font-family: 'Play';
+    font-size: 0.83vw;
+    font-weight: 400;
+    
+    color: #FFF;
+    background-color: #4D96AB;
+    border-radius: 0.42vw;
+    border: none;
+    outline: none;
+
+    box-shadow: -0.21vw 0.21vw 0.47vw 0px #9AA4A7;
+
+    user-select: none;
+    cursor: pointer;
+}
+
+.characteristics__buy,
+.characteristics__in-basket {
+    display: none;
+    width: 86.2%;
+    justify-self: end;
+    grid-column: 2;
+}
+
+.characteristics__in-basket {
+    background-color: #671993;
+}
+
+.characteristics__in-basket > span:last-child {
+    font-size: 0.73vw;
+}
+
+.characteristics__buy_active {
+    display: flex;
+}
+
+.characteristics__inform,
+.characteristics__communication {
+    width: 37.7%;
+    justify-self: end;
+}
+
+.characteristics__wr-maybe {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 5.33%;
+}
+
+.characteristics__maybe {
+    width: 44.02%;
+}
+
+.characteristics__maybe-buy {
+    width: 47.7%;
+
+    pointer-events: none;
+}
+
+.product-desc {
+    margin-top: 1.67vw;
+}
+
+.product-desc__controll {
+    display: flex;
+    gap: 0.52vw;
+}
+
+
+
 
 
 
