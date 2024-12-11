@@ -87,7 +87,7 @@ block content
                             .characteristics__wr-price-old #[span 650]
                     li.characteristics__item.characteristics__buttons
                         ul.characteristics__activity-list
-                            li.characteristics__activity-item.characteristics__activity-buy
+                            li.characteristics__activity-item.characteristics__activity-buy.characteristics__activity_active
                                 //- .characteristics__wr-add_active
                                 .characteristics__wr-add
                                     button.characteristics__add-piece.characteristics__decrement
@@ -99,25 +99,25 @@ block content
                                 button.characteristics__button.characteristics__inform(type="button") Сообщить о поступлении
                             li.characteristics__activity-item
                                 button.characteristics__button.characteristics__communication(type="button") Связаться с менеджером
-                            li.characteristics__activity-item.characteristics__activity_active
+                            li.characteristics__activity-item
                                 .characteristics__wr-maybe
                                     button.characteristics__button.characteristics__maybe(type="button") Возможно вас заинтересует
                                     button.characteristics__button.characteristics__maybe-buy(type="button") Купить
         .product-desc       
-            input#product-desc__controll(type="checkbox")      
+            input#product-desc__controll(type="checkbox" checked)      
             .product-desc__controll
                 label.product-desc__button.product-desc__description(for="product-desc__controll") Описание
                 label.product-desc__button.product-desc__reviews(for="product-desc__controll") Отзывы
             
             .product-desc__wr-content 
-                .product-desc__content.product-desc__content-about(data-type="0") 
+                .product-desc__content.product-desc__content-about
                     .product-desc__wr-title
                         h2 Сибирский сбор / Siberian Berries
                     .product-desc__text 
-                        p Чайные пирамидки с ярлыком для разовой заварки в индивидуальных конвертах. <br> Чай черный байховый «NIKTEA»® среднелистовой с добавками растительного сырья с ароматом лесных ягод «Сибирский Сбор»15 пирамидок по 2.7 г
+                        p Чайные пирамидки с ярлыком для разовой з аварки в индивидуальных конвертах. <br> Чай черный байховый «NIKTEA»® среднелистовой с добавками растительного сырья с ароматом лесных ягод «Сибирский Сбор»15 пирамидок по 2.7 г
                         p Искусно купажированный чай с плантаций Индии и Цейлона. <br> Очень ароматный сбор на основе крепкого черного чая с душистыми таежными ягодами. Вкус многогранный, с живой кислинкой и лесной ноткой.
-                .product-desc__content.product-desc__content-review(data-type="1") 
-                    a.product-desc__add-review(href="add-review") Написать отзыв
+                .product-desc__content.product-desc__content-review
+                    a.product-desc__add-review(href="#0" title="add-reviews") Написать отзыв
                     ul.reviews__list
                         li.reviews__item 
                             ul.reviews__head-list 
@@ -125,19 +125,69 @@ block content
                                 li.reviews__head-item.reviews__info
                                     .reviews__name Василий Петров
                                     .reviews__date 25.26.2024
-                                li.reviews__head-item
+                                li.reviews__head-item.reviews__stars
+                                    ul.reviews__stars-list 
+                                        li.reviews__stars-item.reviews__stars_active
+                                        li.reviews__stars-item.reviews__stars_active
+                                        li.reviews__stars-item.reviews__stars_active
+                                        li.reviews__stars-item.reviews__stars_active
+                                        li.reviews__stars-item
+                            .reviews__content
+                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, dolorum explicabo, repellat culpa ipsam laudantium nobis, modi repudiandae ea incidunt nisi. Natus aspernatur nesciunt ex adipisci enim quia reprehenderit? Perspiciatis?
+                            .reviews__read-more
+                                a(href="#0") Читать дальше 
+                        li.reviews__item 
+                            ul.reviews__head-list 
+                                li.reviews__head-item.reviews__avatar
+                                li.reviews__head-item.reviews__info
+                                    .reviews__name Василий Петров
+                                    .reviews__date 25.26.2024
+                                li.reviews__head-item.reviews__stars
+                                    ul.reviews__stars-list 
+                                        li.reviews__stars-item.reviews__stars_active
+                                        li.reviews__stars-item.reviews__stars_active
+                                        li.reviews__stars-item.reviews__stars_active
+                                        li.reviews__stars-item.reviews__stars_active
+                                        li.reviews__stars-item
+                            .reviews__content
+                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, dolorum explicabo, repellat culpa ipsam laudantium nobis, modi repudiandae ea incidunt nisi. Natus aspernatur nesciunt ex adipisci enim quia reprehenderit? Perspiciatis?
+                            .reviews__read-more
+                                a(href="#0") Читать дальше 
+                        li.reviews__item 
+                            ul.reviews__head-list 
+                                li.reviews__head-item.reviews__avatar
+                                li.reviews__head-item.reviews__info
+                                    .reviews__name Василий Петров
+                                    .reviews__date 25.26.2024
+                                li.reviews__head-item.reviews__stars
+                                    ul.reviews__stars-list 
+                                        li.reviews__stars-item.reviews__stars_active
+                                        li.reviews__stars-item.reviews__stars_active
+                                        li.reviews__stars-item.reviews__stars_active
+                                        li.reviews__stars-item.reviews__stars_active
+                                        li.reviews__stars-item
+                            .reviews__content
+                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, dolorum explicabo, repellat culpa ipsam laudantium nobis, modi repudiandae ea incidunt nisi. Natus aspernatur nesciunt ex adipisci enim quia reprehenderit? Perspiciatis?
+                            .reviews__read-more
+                                a(href="#0") Читать дальше 
+                        li.reviews__item 
+                            ul.reviews__head-list 
+                                li.reviews__head-item.reviews__avatar
+                                li.reviews__head-item.reviews__info
+                                    .reviews__name Василий Петров
+                                    .reviews__date 25.26.2024
+                                li.reviews__head-item.reviews__stars
                                     ul.reviews__stars-list 
                                         li.reviews__stars-item.reviews__stars_active
                                         li.reviews__stars-item.reviews__stars_active
                                         li.reviews__stars-item.reviews__stars_active
                                         li.reviews__stars-item.reviews__stars_active
                                         li.reviews__stars-item.reviews__stars_active
-                        li.reviews__item
                             .reviews__content
                                 p Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, dolorum explicabo, repellat culpa ipsam laudantium nobis, modi repudiandae ea incidunt nisi. Natus aspernatur nesciunt ex adipisci enim quia reprehenderit? Perspiciatis?
-                        li.reviews__item
                             .reviews__read-more
                                 a(href="#0") Читать дальше 
+
                     ul.reviews__pagination-list
                         li.reviews__pagination-item.reviews__pagination_start
                         li.reviews__pagination-item.reviews__pagination_prev
@@ -148,3 +198,21 @@ block content
                         li.reviews__pagination-item.reviews__pagination_num 10
                         li.reviews__pagination-item.reviews__pagination_next
                         li.reviews__pagination-item.reviews__pagination_end
+        .interesting 
+            .interesting__wr-title 
+                h2 Вам может быть интересно
+            .swiper.interesting-sl
+                .swiper-wrapper.interesting-sl__wrapper 
+                    .swiper-slide.interesting-sl__slide
+                        .interesting-sl__wr-img
+                           img(src="#0")
+                        .interesting-sl__wr-title 
+                            h2 Colombia andino
+                        .interesting-sl__wr-price
+                            p 450 р
+                        .interesting-sl__wr-button
+                            a(href="#0") Подробнее
+
+                .interesting-sl__arrows
+                    .interesting-sl__prev
+                    .interesting-sl__next
