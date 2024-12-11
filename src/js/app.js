@@ -29,12 +29,15 @@ import promoSlider from "./promo-slider/promoSlider";
 import salesHitsSlider from "./sales-hits-slider/salesHitsSlider";
 
 // Слайдер карточка товара
-import cardSlider from "./card-slider/card-slider";
+// import cardSlider from "./card-slider/card-slider";
 import ControllCardSlider from "./card-slider/ControllCardSlider";
 import RedrawCaredSlider from "./card-slider/RedrawCaredSlider";
 
 // Работа "состав" в карточке товара
 import productCardOpenComposition from "./product-card-open-composition/product-card-open-composition";
+
+// Слайдер "может быть интересно"
+import interestingSlider from "./interesting-slider/interestingSlider";
 
 // ---------------------------------------------------------------------
 
@@ -132,20 +135,11 @@ if(sliderCard) {
         prev: '.product__goods-prev',
         next: '.product__goods-next',
     }
-        
-    
-    const classes2 = [
-        '.product__slider',
-        '.product__thumbs',
-        '.product__thumb-slide',
-        '.product__goods-prev',
-        '.product__goods-next',
-    ]
+
 
     const redraw = new RedrawCaredSlider(sliderCard, modules, classes);
     const controll = new ControllCardSlider(redraw);
     controll.init();
-    // cardSlider(modules, classes2);
 }
 
 // Работа "состав" в карточке товара
@@ -154,6 +148,25 @@ if(characteristicsComposition) {
     const arrow = document.querySelector('.characteristics__data-arrow');
     productCardOpenComposition(characteristicsComposition, arrow);
 }
+
+const sliderInteresting = document.querySelector('.interesting-sl');
+if(sliderInteresting) {
+    const modules = {
+        Swiper,
+        Navigation,
+        EffectFade,
+        Thumbs,
+    }
+
+    const classes = [
+        '.interesting-sl',
+        '.interesting-sl__prev',
+        '.interesting-sl__next',
+    ]
+
+    interestingSlider(modules, classes)
+}
+
 // MOBILE
 // Скрытие лого при открытии строки поиска
 controllSearch();

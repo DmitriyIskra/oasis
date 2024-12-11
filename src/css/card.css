@@ -749,10 +749,148 @@
 }
 
 
-/* Вам может быть интересно */
+
+
 .interesting {
+    width: 85%;
+    margin-top: 5.68vw;
+    margin-bottom: 5.31vw;
+}
+
+.interesting__wr-title h2 {
+    font-family: 'Play';
+    font-size: 1.88vw;
+    font-weight: 700;
+    text-align: center;
+    
+    color: #2F5F6D;
+}
+
+.interesting-sl {
+    margin-top: 3.80vw;
+}
+
+.interesting-sl__wrapper {
+    height: 24.79vw;
+    width: fit-content;
+    margin: 0 auto;
+    align-items: center;
+
+    transition-timing-function: linear !important;
+}
+
+.interesting-sl__slide {
+    display: flex;
+    height: 86.3%;
+    width: 16.483vw;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 1.04vw;
+
+    border: 1px solid #DEDBD3;
+    background: #EEE;
+    /* box-shadow: 
+        -4.01vw 5.21vw 1.82vw 0px rgba(0, 0, 0, 0.00), 
+        -2.60vw 3.33vw 1.67vw 0px rgba(0, 0, 0, 0.01), 
+        -1.46vw 1.88vw 1.41vw 0px rgba(0, 0, 0, 0.05), 
+        -0.63vw 0.83vw 1.04vw 0px rgba(0, 0, 0, 0.09), 
+        -0.16vw 0.21vw 0.57vw 0px rgba(0, 0, 0, 0.10); */
+
+    transition: height 0.9s linear, width 0.9s linear;
+}
+
+.interesting-sl__slide.swiper-slide-active {
+    height: 100%;
+    width: 18.33vw;
+}
+
+.interesting-sl__wr-img {
+    width: 42%;
+    margin: 0 auto;
+}
+
+.interesting-sl__wr-img img {
+    height: 100%;
+    width: 100%;
+    
+    filter: drop-shadow(-4px 2px 12px rgba(0, 0, 0, 0.5));
+
+    object-fit: contain;
+    object-position: bottom;
 
 }
+
+.interesting-sl__wr-title {
+    margin-top: 1.88vw;
+}
+
+.interesting-sl__wr-title h2 {
+    font-family: 'Play';
+    font-size: 1.04vw;
+    font-weight: 400;
+    text-align: center;
+
+    color: #000;
+}
+
+
+.interesting-sl__wr-price p {
+    font-family: 'Play';
+    font-size: 1.04vw;
+    font-weight: 400;
+    text-align: center;
+
+    color: #671993;
+}
+
+.interesting-sl__wr-button {
+    margin-top: 0.42vw;
+}
+
+.interesting-sl__wr-button a {
+    display: grid;
+    place-items: center;
+    width: 8.75vw;
+    height: 2.60vw;
+    margin: 0 auto;
+    
+    font-family: 'Play';
+    font-size: 0.83vw;
+    font-weight: 400;
+    
+    color: #FFF;
+    border-radius: 0.42vw;
+    background: #4D96AB;
+    box-shadow: -0.21vw 0.21vw 0.42vw 0px #9AA4A7;
+}
+
+.interesting-sl__arrows {
+    display: flex;
+    margin-top: 2.08vw;
+    gap: 0.73vw;
+    justify-content: center;
+}
+
+.interesting-sl__arrow {
+    width: 2.40vw;
+    height: 0.73vw;
+
+    cursor: pointer;
+}
+
+.interesting-sl__prev {
+    background: no-repeat url('../svg/arrow-promo-slider-prev.svg');
+    background-size: 100% auto;
+    background-position: center;
+}
+
+.interesting-sl__next {
+    background: no-repeat url('../svg/arrow-promo-slider-next.svg');
+    background-size: 100% auto;
+    background-position: center;
+}
+
+
 
 
 
