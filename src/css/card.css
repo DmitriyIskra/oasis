@@ -720,6 +720,13 @@
     cursor: pointer;
 }
 
+.reviews__pagination_active {
+    background: #671993;
+    color: #FFF;
+
+    pointer-events: none;
+}
+
 .reviews__pagination_start {
     background-image: url('../svg/reviews-pagination-arrow-start.svg');
     background-repeat: no-repeat;
@@ -767,11 +774,15 @@
 }
 
 .interesting-sl {
-    margin-top: 3.80vw;
+    margin-top: 1.9vw;
+
+    filter: drop-shadow(-1vw 1vw 2vw rgba(0, 0, 0, 0.18));
+
+    --timing: 0.9s;
 }
 
 .interesting-sl__wrapper {
-    height: 24.79vw;
+    height: 27vw;
     width: fit-content;
     margin: 0 auto;
     align-items: center;
@@ -781,7 +792,7 @@
 
 .interesting-sl__slide {
     display: flex;
-    height: 86.3%;
+    height: 79.1%;
     width: 16.483vw;
     flex-direction: column;
     justify-content: flex-end;
@@ -789,24 +800,33 @@
 
     border: 1px solid #DEDBD3;
     background: #EEE;
-    /* box-shadow: 
-        -4.01vw 5.21vw 1.82vw 0px rgba(0, 0, 0, 0.00), 
-        -2.60vw 3.33vw 1.67vw 0px rgba(0, 0, 0, 0.01), 
-        -1.46vw 1.88vw 1.41vw 0px rgba(0, 0, 0, 0.05), 
-        -0.63vw 0.83vw 1.04vw 0px rgba(0, 0, 0, 0.09), 
-        -0.16vw 0.21vw 0.57vw 0px rgba(0, 0, 0, 0.10); */
 
-    transition: height 0.9s linear, width 0.9s linear;
+    transition: 
+        height var(--timing) linear, 
+        width var(--timing) linear, 
+        padding-bottom var(--timing) linear,
+        box-shadow var(--timing) linear;
 }
 
 .interesting-sl__slide.swiper-slide-active {
-    height: 100%;
+    z-index: 2;
+    
+    height: 86.43%;
     width: 18.33vw;
+    padding-bottom: 1.35vw;
+
+    box-shadow: 0px 0px 1.56vw 0.42vw rgba(0, 0, 0, 0.25);
 }
 
 .interesting-sl__wr-img {
     width: 42%;
     margin: 0 auto;
+
+    transition: width var(--timing) linear;
+}
+
+.swiper-slide-active .interesting-sl__wr-img {
+    width: 46.4%;
 }
 
 .interesting-sl__wr-img img {
@@ -821,7 +841,13 @@
 }
 
 .interesting-sl__wr-title {
-    margin-top: 1.88vw;
+    margin-top: 2.3vw;
+
+    transition: margin-top var(--timing) linear;
+}
+
+.swiper-slide-active .interesting-sl__wr-title {
+    margin-top: 1.76vw;
 }
 
 .interesting-sl__wr-title h2 {
@@ -831,8 +857,21 @@
     text-align: center;
 
     color: #000;
+
+    transition: font-size var(--timing) linear;
 }
 
+.swiper-slide-active .interesting-sl__wr-title h2 {
+    font-size: 1.25vw;
+}
+
+.interesting-sl__wr-price {
+    transition: margin-top var(--timing) linear;
+}
+
+.swiper-slide-active .interesting-sl__wr-price {
+    margin-top: 0.4vw;
+}
 
 .interesting-sl__wr-price p {
     font-family: 'Play';
@@ -841,10 +880,17 @@
     text-align: center;
 
     color: #671993;
+
 }
 
 .interesting-sl__wr-button {
     margin-top: 0.42vw;
+
+    transition: margin-top var(--timing) linear;
+}
+
+.swiper-slide-active .interesting-sl__wr-button {
+    margin-top: 0.78vw;
 }
 
 .interesting-sl__wr-button a {
@@ -862,12 +908,18 @@
     border-radius: 0.42vw;
     background: #4D96AB;
     box-shadow: -0.21vw 0.21vw 0.42vw 0px #9AA4A7;
+
+    transition: width var(--timing) linear;
+}
+
+.swiper-slide-active .interesting-sl__wr-button a {
+    width: 10.42vw;
 }
 
 .interesting-sl__arrows {
     display: flex;
-    margin-top: 2.08vw;
-    gap: 0.73vw;
+    margin-top: 1vw;
+    gap: 1.28vw;
     justify-content: center;
 }
 
