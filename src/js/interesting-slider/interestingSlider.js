@@ -10,7 +10,6 @@ export default function interestingSlider(modules, classes) {
         speed: 900,
         on: {
             init: function() {
-                console.log(this.params)
                 if(this.slides.length > 5) {
                     this.params.centeredSlides = true
                     // this.params.centerInsufficientSlides = true

@@ -23,6 +23,11 @@ block content
                             .swiper-slide.product__slide
                                 img(src=require('../img/content/sales-hits-strawberry-content.webp') alt="")
                     .product__favorites
+
+                    .product__goods-wr-arrow_mobile.product__goods-wr-arrow_mobile-prev
+                        .product__goods-arrow_mobile.product__goods-prev_mobile
+                    .product__goods-wr-arrow_mobile.product__goods-wr-arrow_mobile-next
+                        .product__goods-arrow_mobile.product__goods-next_mobile
                 .product__wr-thumbs
                     .swiper.product__thumbs
                         .swiper-wrapper.product__thumbs-wrapper
@@ -40,9 +45,19 @@ block content
                     .product__goods-wr-arrow.product__goods-wr-arrow-next
                         .product__goods-arrow.product__goods-next
             .product__wr-info 
-                .produc__wr-title 
+                .product__wr-title 
                     h1.product__title Чай черный NIKTEA Сибирский Сбор
                     h2.product__sub-title Siberian Berries
+                .product__wr-title_m
+                    h2.product__title_m
+                        span Чай черный NIKTEA Сибирский Сбор
+                        span Siberian Berries
+                .characteristics__price.characteristics__price_m
+                    .characteristics__wr-price-current #[span 450] р
+                    .characteristics__wr-price-old #[span 650]
+                //- .product__tab-button_m-active
+                .product__tab-button_m.product__char-tab-button_m
+                    | Характеристики
                 ul.product__characteristics.characteristics__list
                     li.characteristics__item
                         .characteristics__title Формат
@@ -58,7 +73,7 @@ block content
                         .characteristics__wr-composition
                             .characteristics__data.characteristics__composition 
                                 p Чай черный среднелистовой индийский, ягоды рябины черноплодной, ягоды брусники, лепестки василька, лепестки календулы, ароматизатор «Лесные ягоды».
-                            .characteristics__data-arrow(for="characteristics__composition")
+                            .characteristics__data-arrow
                     li.characteristics__item
                         .characteristics__title Производство
                         .characteristics__data Россия
@@ -104,7 +119,7 @@ block content
                                     button.characteristics__button.characteristics__maybe(type="button") Возможно вас заинтересует
                                     button.characteristics__button.characteristics__maybe-buy(type="button") Купить
         .product-desc       
-            input#product-desc__controll(type="checkbox" checked)      
+            input#product-desc__controll(type="checkbox")      
             .product-desc__controll
                 label.product-desc__button.product-desc__description(for="product-desc__controll") Описание
                 label.product-desc__button.product-desc__reviews(for="product-desc__controll") Отзывы

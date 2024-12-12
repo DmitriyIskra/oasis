@@ -134,6 +134,8 @@ if(sliderCard) {
         thumbSlide: '.product__thumb-slide',
         prev: '.product__goods-prev',
         next: '.product__goods-next',
+        prev_m: '.product__goods-wr-arrow_mobile-prev',
+        next_m: '.product__goods-wr-arrow_mobile-next',
     }
 
 

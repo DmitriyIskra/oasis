@@ -2,9 +2,11 @@ export default class ControllCardSlider {
     constructor(d) {
         this.d = d;
     
-        let timeOutID = null;
+        this.timeOutID = null;
+        this.timeOutResizeID = null;
 
         this.click = this.click.bind(this);
+        this.resize = this.resize.bind(this);
     }
 
     init() {
@@ -14,6 +16,7 @@ export default class ControllCardSlider {
 
     registerEvents() {
         this.d.slider.addEventListener('click', this.click);
+        window.addEventListener('resize', this.resize);
     }
 
     click(e) {
@@ -22,8 +25,8 @@ export default class ControllCardSlider {
             const slide = e.target.closest(this.d.classes.thumbSlide);
             const index = +slide.getAttribute('data-swiper-slide-index');
 
-            this.d.instanceSlider.slideToLoop(index, this.d.speed)
-            this.d.instanceThumbs.slideToLoop(index, this.d.speed)
+            this.d.instanceSlider.slideToLoop(index, this.d.speed);
+            this.d.instanceThumbs.slideToLoop(index, this.d.speed);
         }
 
         // События клика по элеметам управления
@@ -49,5 +52,32 @@ export default class ControllCardSlider {
                 clearTimeout(this.timeOutID);
             }, this.d.speed + 50)
         }
+    }
+
+    resize(e) {
+        this.d.lastSize = innerWidth;
+        if(this.timeOutResizeID) clearTimeout(this.timeOutResizeID);
+        
+        this.timeOutResizeID = setTimeout(() => {
+            try {
+                this.d.instanceSlider.destroy();
+
+                // было mobile, стало desctop
+                if(this.d.lastSize > 961) {
+                    this.d.initSlider();
+                    this.d.initThumbs();
+
+                    return;
+                }
+
+                // // было desctop, стало mobile
+                this.d.instanceThumbs.destroy();
+                this.d.initSlider();
+            } catch (error) {
+                location.reload();
+            }
+            
+        }, 50)
+        
     }
 }

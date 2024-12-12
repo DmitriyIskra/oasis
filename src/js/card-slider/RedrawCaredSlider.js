@@ -19,9 +19,57 @@ export default class RedrawCaredSlider {
 
         // Скорость перелистывания
         this.speed = 700;
+        this.lastSize = innerWidth;
     }
 
     initSliders() {
+        if(this.lastSize > 961) {
+            this.initThumbs();
+        }
+        
+        this.initSlider();
+    }
+
+    initSlider() {
+        // Карточки соответственно кнопкам управления
+        // внутри каждой свой слайдер с товарами
+        this.instanceSlider = new this.modules.Swiper(this.classes.mainSlider, {
+            modules: [
+                this.modules.EffectFade, this.modules.Thumbs, this.modules.Navigation,
+            ],
+            effect: innerWidth < 962 ? 'slide' : 'fade',
+            slidesPerView: 1,
+            loop: true,
+            speed: this.speed,
+            navigation: {
+                prevEl: innerWidth < 962 ? this.classes.prev_m : this.classes.prev,
+                nextEl: innerWidth < 962 ? this.classes.next_m : this.classes.next,
+            },
+            breakpoints: {
+                // when window width is <= 961px && window width >= 320px 
+                320: {
+                    // thumbs: {
+                    //     swiper: this.instanceThumbs,
+                    // },
+                    allowTouchMove: true,
+                    spaceBetween: 10,
+                },
+                // when window width is >= 962px
+                962: {
+                    // effect: 'fade',
+                    thumbs: {
+                        swiper: null,
+                    },
+                    allowTouchMove: false,
+                    spaceBetween: 0,
+                }
+            }
+        })
+
+        if(this.mainSlides.length === 1) this.hideThumbs();
+    }
+
+    initThumbs() {
         // Кнопки управление
         this.instanceThumbs = new this.modules.Swiper(this.classes.thumbsSlider, {
             modules: [this.modules.Navigation],
@@ -42,40 +90,6 @@ export default class RedrawCaredSlider {
                 }
             }
         })
-
-        // Карточки соответственно кнопкам управления
-        // внутри каждой свой слайдер с товарами
-        this.instanceSlider = new this.modules.Swiper(this.classes.mainSlider, {
-            modules: [
-                this.modules.EffectFade, this.modules.Thumbs, this.modules.Navigation,
-            ],
-            effect: 'fade',
-            slidesPerView: 1,
-            loop: true,
-            speed: this.speed,
-            navigation: {
-                prevEl: this.classes.prev,
-                nextEl: this.classes.next,
-            },
-            breakpoints: {
-                // when window width is <= 961px && window width >= 320px 
-                320: {
-                    thumbs: {
-                        swiper: this.instanceThumbs,
-                    },
-                    allowTouchMove: false,
-                },
-                // when window width is >= 962px
-                962: {
-                    thumbs: {
-                        swiper: null,
-                    },
-                    allowTouchMove: false,
-                }
-            }
-        })
-
-        if(this.mainSlides.length === 1) this.hideThumbs();
     }
 
     // Блокировка и разблокировка элементов управления
@@ -83,8 +97,7 @@ export default class RedrawCaredSlider {
     unBlockArrow(el) {el.style.pointerEvents = 'initial';}
 
     hideThumbs() {
-        console.log(this.thumbSlider)
-        this.instanceThumbs.destroy();
+        if(this.instanceThumbs) this.instanceThumbs.destroy();
         this.thumbSlider.style.display = "none";
     }
 }
