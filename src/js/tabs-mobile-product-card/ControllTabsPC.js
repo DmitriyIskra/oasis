@@ -20,5 +20,7 @@ export default class ControllTabsPC {
         const target = e.target.closest('.product__tab-button_m');
         const el = target.nextElementSibling.nextElementSibling;
         this.d.openContent(el);
+
+        // НУЖНО СТАВИТЬ ФЛАГ ЧТО ОТКРЫТО ЧТОБ ПОНИМАТЬ ЧТО ВЫЗЫВАТЬ ОТКРЫТЬ ИЛИ ЗАКРЫТЬ
     }
 }
