@@ -55,9 +55,10 @@ block content
                 .characteristics__price.characteristics__price_m
                     .characteristics__wr-price-current #[span 450] р
                     .characteristics__wr-price-old #[span 650]
-                //- .product__tab-button_m-active
-                .product__tab-button_m.product__char-tab-button_m
+                //- .product__tab-button_m-active - подкрашивает активную кнопку
+                label.product__tab-button_m.product__char-tab-button_m(for="product__tab-char")
                     | Характеристики
+                input#product__tab-char(type="checkbox")
                 ul.product__characteristics.characteristics__list
                     li.characteristics__item
                         .characteristics__title Формат
@@ -81,7 +82,7 @@ block content
                         .characteristics__title Регион
                         .characteristics__data Индия
                     li.characteristics__item
-                        .characteristics__title Наличие
+                        .characteristics__title.characteristics__available-title Наличие
                         .characteristics__data.characteristics__wr-available
                             .characteristics__available-state
                                 span.characteristics__available-item.characteristics__available_active(data-type="available") Есть в наличии
@@ -125,12 +126,21 @@ block content
                 label.product-desc__button.product-desc__reviews(for="product-desc__controll") Отзывы
             
             .product-desc__wr-content 
+                //- .product__tab-button_m-active - подкрашивает активную кнопку
+                label.product__tab-button_m.product__about-tab-button_m(for="product__tab-about")
+                    | Описание
+                input#product__tab-about(type="checkbox")
                 .product-desc__content.product-desc__content-about
                     .product-desc__wr-title
                         h2 Сибирский сбор / Siberian Berries
                     .product-desc__text 
                         p Чайные пирамидки с ярлыком для разовой з аварки в индивидуальных конвертах. <br> Чай черный байховый «NIKTEA»® среднелистовой с добавками растительного сырья с ароматом лесных ягод «Сибирский Сбор»15 пирамидок по 2.7 г
                         p Искусно купажированный чай с плантаций Индии и Цейлона. <br> Очень ароматный сбор на основе крепкого черного чая с душистыми таежными ягодами. Вкус многогранный, с живой кислинкой и лесной ноткой.
+                
+                //- .product__tab-button_m-active - подкрашивает активную кнопку
+                label.product__tab-button_m.product__review-tab-button_m(for="product__tab-review")
+                    | Отзывы
+                input#product__tab-review(type="checkbox")
                 .product-desc__content.product-desc__content-review
                     a.product-desc__add-review(href="#0" title="add-reviews") Написать отзыв
                     ul.reviews__list
