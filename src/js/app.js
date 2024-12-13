@@ -1,13 +1,10 @@
 // Бургер меню
 import ControllBurger from "./burger-menu/ControllBurger";
 import RedrawBurger from "./burger-menu/RedrawBurger";
-
 // Скрытие лого при открытии строки поиска
 import controllSearch from "./header/controll-search"; 
-
 // Закрытие каталога меню, при открытии мобильной навигации
 import navMobileButton from "./header/nav-mobileButton";
-
 // Свайпер для слайдеров
 import Swiper from "swiper";
 import { 
@@ -18,26 +15,23 @@ import {
     Thumbs,
     Grid,
 } from 'swiper/modules';
-
 // Слайдер на главной странице с банннерами
 import mainSlider from "./main-slider/main-slider";
-
 // Слайдер товары по акции
 import promoSlider from "./promo-slider/promoSlider";
-
 // Слайдер хиты продаж
 import salesHitsSlider from "./sales-hits-slider/salesHitsSlider";
-
 // Слайдер карточка товара
 // import cardSlider from "./card-slider/card-slider";
 import ControllCardSlider from "./card-slider/ControllCardSlider";
 import RedrawCaredSlider from "./card-slider/RedrawCaredSlider";
-
 // Работа "состав" в карточке товара
 import productCardOpenComposition from "./product-card-open-composition/product-card-open-composition";
-
 // Слайдер "может быть интересно"
 import interestingSlider from "./interesting-slider/interestingSlider";
+// Табы в карточке товара Характеристики описание отзывы
+import ControllTabsPC from "./tabs-mobile-product-card/ControllTabsPC";
+import RedrawTabsPC from "./tabs-mobile-product-card/RedrawTabsPC";
 
 // ---------------------------------------------------------------------
 
@@ -175,3 +169,11 @@ controllSearch();
 
 // Закрытие каталога меню, при открытии мобильной навигации
 navMobileButton(checkboxNavMobile);
+
+// Табы в карточке товара Характеристики описание отзывы
+const tabsProdCard = [...document.querySelectorAll('.product__tab-button_m')];
+if(tabsProdCard) {
+    const redraw = new RedrawTabsPC();
+    const controll = new ControllTabsPC(redraw, tabsProdCard);
+    controll.init();
+}
