@@ -55,10 +55,9 @@ block content
                 .characteristics__price.characteristics__price_m
                     .characteristics__wr-price-current #[span 450] р
                     .characteristics__wr-price-old #[span 650]
-                //- .product__tab-button_m-active - подкрашивает активную кнопку
-                label.product__tab-button_m.product__char-tab-button_m(for="product__tab-char")
+                //- .product__tab-active - подкрашивает активную кнопку
+                .product__tab-button_m.product__char-tab-button_m
                     | Характеристики
-                input#product__tab-char(type="checkbox")
                 ul.product__characteristics.characteristics__list
                     li.characteristics__item
                         .characteristics__title Формат
@@ -126,10 +125,9 @@ block content
                 label.product-desc__button.product-desc__reviews(for="product-desc__controll") Отзывы
             
             .product-desc__wr-content 
-                //- .product__tab-button_m-active - подкрашивает активную кнопку
-                label.product__tab-button_m.product__about-tab-button_m(for="product__tab-about")
+                //- .product__tab-active - подкрашивает активную кнопку
+                .product__tab-button_m.product__about-tab-button_m
                     | Описание
-                input#product__tab-about(type="checkbox")
                 .product-desc__content.product-desc__content-about
                     .product-desc__wr-title
                         h2 Сибирский сбор / Siberian Berries
@@ -137,10 +135,9 @@ block content
                         p Чайные пирамидки с ярлыком для разовой з аварки в индивидуальных конвертах. <br> Чай черный байховый «NIKTEA»® среднелистовой с добавками растительного сырья с ароматом лесных ягод «Сибирский Сбор»15 пирамидок по 2.7 г
                         p Искусно купажированный чай с плантаций Индии и Цейлона. <br> Очень ароматный сбор на основе крепкого черного чая с душистыми таежными ягодами. Вкус многогранный, с живой кислинкой и лесной ноткой.
                 
-                //- .product__tab-button_m-active - подкрашивает активную кнопку
-                label.product__tab-button_m.product__review-tab-button_m(for="product__tab-review")
+                //- .product__tab-active - подкрашивает активную кнопку
+                .product__tab-button_m.product__review-tab-button_m
                     | Отзывы
-                input#product__tab-review(type="checkbox")
                 .product-desc__content.product-desc__content-review
                     a.product-desc__add-review(href="#0" title="add-reviews") Написать отзыв
                     ul.reviews__list
@@ -212,7 +209,6 @@ block content
                                 p Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, dolorum explicabo, repellat culpa ipsam laudantium nobis, modi repudiandae ea incidunt nisi. Natus aspernatur nesciunt ex adipisci enim quia reprehenderit? Perspiciatis?
                             .reviews__read-more
                                 a(href="#0") Читать дальше 
-
                     ul.reviews__pagination-list
                         li.reviews__pagination-item.reviews__pagination_start
                         li.reviews__pagination-item.reviews__pagination_prev
@@ -223,6 +219,7 @@ block content
                         li.reviews__pagination-item.reviews__pagination_num 10
                         li.reviews__pagination-item.reviews__pagination_next
                         li.reviews__pagination-item.reviews__pagination_end
+        
         .interesting 
             .interesting__wr-title 
                 h2 Вам может быть интересно

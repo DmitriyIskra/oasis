@@ -18,9 +18,14 @@ export default class ControllTabsPC {
 
     click(e) {
         const target = e.target.closest('.product__tab-button_m');
-        const el = target.nextElementSibling.nextElementSibling;
-        this.d.openContent(el);
+        const isActive = target.classList.contains('product__tab-active');
+        const el = target.nextElementSibling;
 
-        // НУЖНО СТАВИТЬ ФЛАГ ЧТО ОТКРЫТО ЧТОБ ПОНИМАТЬ ЧТО ВЫЗЫВАТЬ ОТКРЫТЬ ИЛИ ЗАКРЫТЬ
+        if(isActive) {
+            this.d.close(el, target);
+            return;
+        }
+        
+        this.d.open(el, target);
     }
 }

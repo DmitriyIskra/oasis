@@ -14,7 +14,7 @@ import 'swiper/css/grid';
 import 'swiper/css/thumbs';
 import './css/header.css';
 import './css/index.css';
-import './css/card.css';
+import './css/product-card.css';
 import './css/component-nav-catalog.css';
 import './css/component-burger.css';
 import './css/component-nav-bar-mobile.css';

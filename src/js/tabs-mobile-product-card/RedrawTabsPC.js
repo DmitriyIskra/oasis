@@ -3,20 +3,27 @@ export default class RedrawTabsPC {
         
     }
 
-    openContent(el) {
-        console.log(el)
+    open(el, target) {
         const childs = [...el.children];
-        console.log('childs - ', childs)
-        console.log('childs[0].clientHeight - ', childs[0].clientHeight)
         let height = 0;
-
-        childs.forEach(child => height += child.clientHeight);
-        console.log(height);
-        // return
+        
+        childs.forEach(child => {
+            height += child.clientHeight
+        });
         el.style.height = `${height}px`;
+
+        // el.addEventListener('transitionend', () => {
+        //     const padTop =  parseFloat(getComputedStyle(el).paddingTop);
+        //     const padBottom = parseFloat(getComputedStyle(el).paddingBottom);
+        //     const gap = parseFloat(getComputedStyle(el).gap);
+        //     el.style.height = `${height + padTop + padBottom + gap}px`;
+        // }, {once: true})
+
+        target.classList.add('product__tab-active');
     }
 
-    closeContent(el) {
+    close(el, target) {
         el.style.height = 0;
+        target.classList.remove('product__tab-active');
     }
 }
