@@ -6,6 +6,8 @@ export default class RedrawCaredSlider {
 
         // Слайдер с thumbs
         this.thumbSlider = this.slider.querySelector(this.classes.thumbsSlider);
+        // Контейнер над слайдами для thumbs
+        this.thumbSlidesWrapper = this.slider.querySelector('.product__thumbs-wrapper');
 
         // Слайды слайдера
         this.mainSlides = this.slider.querySelectorAll(this.classes.mainSlide);
@@ -18,7 +20,7 @@ export default class RedrawCaredSlider {
         this.instanceSlider = null;
 
         // Скорость перелистывания
-        this.speed = 700;
+        this.speed = 300;
         this.lastSize = innerWidth;
     }
 
@@ -30,7 +32,7 @@ export default class RedrawCaredSlider {
         this.initSlider();
     }
 
-    initSlider() {
+    initSlider() { 
         // Карточки соответственно кнопкам управления
         // внутри каждой свой слайдер с товарами
         this.instanceSlider = new this.modules.Swiper(this.classes.mainSlider, {
@@ -48,18 +50,11 @@ export default class RedrawCaredSlider {
             breakpoints: {
                 // when window width is <= 961px && window width >= 320px 
                 320: {
-                    // thumbs: {
-                    //     swiper: this.instanceThumbs,
-                    // },
                     allowTouchMove: true,
                     spaceBetween: 10,
                 },
                 // when window width is >= 962px
                 962: {
-                    // effect: 'fade',
-                    thumbs: {
-                        swiper: null,
-                    },
                     allowTouchMove: false,
                     spaceBetween: 0,
                 }
@@ -73,7 +68,7 @@ export default class RedrawCaredSlider {
         // Кнопки управление
         this.instanceThumbs = new this.modules.Swiper(this.classes.thumbsSlider, {
             modules: [this.modules.Navigation],
-            slidesPerView: 3,
+            slidesPerView: this.mainSlides.length > 3 ? 3 : this.mainSlides.length === 3 ? 2 : 1,
             spaceBetween: 10,
             freeMode: true, 
             watchSlidesProgress: true,

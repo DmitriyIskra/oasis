@@ -22,11 +22,31 @@ export default class ControllCardSlider {
     click(e) {
         // Перелистывание слайда, по клику на слайд в thumbs
         if(e.target.closest(this.d.classes.thumbSlide)) {
+            // слайд по которому случился клик
             const slide = e.target.closest(this.d.classes.thumbSlide);
-            const index = +slide.getAttribute('data-swiper-slide-index');
 
+            if(slide.classList.contains('swiper-slide-active')) return;
+
+            // Прокручмваем слайдер
+            // индекс слайда по которому случился клик
+            const index = +slide.getAttribute('data-swiper-slide-index');
+            // Прокручиваем слайд на слайдере
             this.d.instanceSlider.slideToLoop(index, this.d.speed);
-            this.d.instanceThumbs.slideToLoop(index, this.d.speed);
+            
+            // Прокручиваем thumbs
+            // предыдущий слайд от того по которому произошел клик
+            const prevSlide = slide.previousElementSibling;
+            // является ли предыдущий слайд слайдом next
+            const prevSlideIsNext = prevSlide && prevSlide.classList.contains('swiper-slide-next');
+
+            // Прокручиваем слайд на thumbs
+            this.d.instanceThumbs.slideNext(this.d.speed);
+            if(prevSlideIsNext) {
+                this.d.thumbSlidesWrapper.addEventListener('transitionend', () => {
+                    this.d.instanceThumbs.slideNext(this.d.speed);
+                }, {once: true})
+            }
+            
         }
 
         // События клика по элеметам управления
@@ -62,7 +82,7 @@ export default class ControllCardSlider {
             try {
                 this.d.instanceSlider.destroy();
 
-                // было mobile, стало desctop
+                // было mobile, стало desctop 
                 if(this.d.lastSize > 961) {
                     this.d.initSlider();
                     this.d.initThumbs();

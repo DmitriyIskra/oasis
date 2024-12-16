@@ -2,6 +2,8 @@ export default function salesHitsSlider(modules, classes, fewSliders) {
     const {Swiper, Autoplay, EffectFade, Thumbs, Grid} = modules;
     const [sThumbs, sGoods] = classes;
 
+    let timeOutId = null;
+
     // Кнопки управление
     const thumbs = new Swiper(sThumbs, {
         slidesPerView: 10,
@@ -85,13 +87,17 @@ export default function salesHitsSlider(modules, classes, fewSliders) {
 
     // Переиницализация
     window.addEventListener('resize', () => {
-        if(innerWidth > 961 && swipers.length) {
-            swipers.forEach(sw => sw.destroy());
-            initSwiperDesctop();
-            return;
-        }
+        clearTimeout(timeOutId);
 
-        swipers.forEach(sw => sw.destroy());
-        initSwiperMobile();
+        timeOutId = setTimeout(() => {
+            if(innerWidth > 961 && swipers.length) {
+                swipers.forEach(sw => sw.destroy());
+                initSwiperDesctop();
+                return;
+            }
+    
+            swipers.forEach(sw => sw.destroy());
+            initSwiperMobile();
+        }, 50)
     })
 }

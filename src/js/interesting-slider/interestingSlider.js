@@ -19,8 +19,9 @@ export default function interestingSlider(modules, classes) {
             modules: [Navigation],
     
             loop: true,
-            speed: 900,
-            slidesPerView: 2.2,
+            speed: 300,
+            spaceBetween: 12,
+            slidesPerView: 2.33,
             allowTouchMove: true,
         })
     }
