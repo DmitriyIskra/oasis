@@ -87,8 +87,8 @@ module.exports = {
         }),
         new HtmlWebPackPlugin({
             // title: '....' // здесь можно указать title конкретной страницы
-            template: './src/pug/card.pug',
-            filename: './card.html',   // куда компилировать
+            template: './src/pug/product-card.pug',
+            filename: './product-card.html',   // куда компилировать
             // minify: {
             //   html: false // отключаем минификацию html, еще есть версия minify: false
             // },

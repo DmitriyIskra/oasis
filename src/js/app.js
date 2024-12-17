@@ -32,6 +32,8 @@ import interestingSlider from "./interesting-slider/interestingSlider";
 // Табы в карточке товара Характеристики описание отзывы
 import ControllTabsPC from "./tabs-mobile-product-card/ControllTabsPC";
 import RedrawTabsPC from "./tabs-mobile-product-card/RedrawTabsPC";
+// Активация кнопки купить для nav-bar-mobile, если страница карточка товара
+import navBarMobile from "./nav-bar-mobile/nav-bar-mobile";
 
 // ---------------------------------------------------------------------
 
@@ -177,3 +179,7 @@ if(tabsProdCard) {
     const controll = new ControllTabsPC(redraw, tabsProdCard);
     controll.init();
 }
+
+// Активация кнопки купить для nav-bar-mobile, если страница карточка товара
+const barButtonsBuy = document.querySelector('.bar__buttons_active');
+navBarMobile(barButtonsBuy);

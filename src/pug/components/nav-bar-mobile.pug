@@ -1,4 +1,17 @@
 .bar
+    //- .bar__buttons_active
+    .bar__buttons.bar__buttons_active
+        //- .bar__button_active
+        .bar__wr-button.bar__wr-button-buy.bar__button_active
+            button.bar__button-buy(type="button") Купить
+        //- .bar__button_active 
+        .bar__wr-button.bar__wr-button_in
+            button.bar__button-to(type="button") В корзину
+            .bar__wr-add-amount 
+                .bar__decrement -
+                input.bar__amount(type="text" value="0")
+                .bar__increment +
+
     .bar__list 
         .bar__item 
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 30" fill="none">

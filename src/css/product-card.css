@@ -123,6 +123,8 @@
 
     height: 1.77vw;
     width: 0.89vw;
+
+    transition: transform 0.15s linear;
     
     cursor: pointer;
 }
@@ -133,10 +135,18 @@
     transform: translate(-100%, -50%);
 }
 
+.product__goods-wr-arrow-prev:hover {
+    transform: translate(-100%, -50%) scale(1.2);
+}
+
 .product__goods-wr-arrow-next {
     right: 0;
 
     transform: translate(100%, -50%);
+}
+
+.product__goods-wr-arrow-next:hover {
+    transform: translate(100%, -50%) scale(1.2);
 }
 
 .product__goods-arrow {
