@@ -21,3 +21,4 @@ import './css/component-nav-bar-mobile.css';
 import './css/component-nav-mobile.css';
 import './css/mixin-bread-crumbs.css';
 import './css/footer.css';
+import './css/effects.css';

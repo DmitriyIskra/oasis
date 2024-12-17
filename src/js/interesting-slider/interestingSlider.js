@@ -5,6 +5,8 @@ export default function interestingSlider(modules, classes) {
     let swiper = null;
     let timeOutId = null;
 
+    const speed = 400;
+
     function initSlider() {
         if(innerWidth < 962) {
             initMobileSlider();
@@ -19,7 +21,7 @@ export default function interestingSlider(modules, classes) {
             modules: [Navigation],
     
             loop: true,
-            speed: 300,
+            speed,
             spaceBetween: 12,
             slidesPerView: 2.33,
             allowTouchMove: true,
@@ -31,8 +33,8 @@ export default function interestingSlider(modules, classes) {
             modules: [Navigation],
     
             loop: true,
-            speed: 900,
-            slidesPerView: 'auto',
+            speed,
+            slidesPerView: 5,
             allowTouchMove: false,
             on: {
                 init: function() {

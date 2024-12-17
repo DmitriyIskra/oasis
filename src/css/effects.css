@@ -1,0 +1,46 @@
+
+.favorites__heart_active {
+    background: no-repeat url('../svg/favorites-heart-violet.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+
+
+.scale1_1{
+    transition: transform 0.15s linear;
+}
+.scale1_1:hover {
+    transform: scale(1.1);
+}
+
+
+
+.stretch-to-right {
+    transition: transform 0.2s linear;
+}
+.stretch-to-right:hover {
+    transform: scaleX(1.26) translateX(10.4%);
+}
+
+
+.animation-beat-heart:hover {
+    animation: beating 0.5s linear;
+}
+@keyframes beating {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.2);
+    }
+    50% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

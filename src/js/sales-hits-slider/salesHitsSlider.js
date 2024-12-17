@@ -31,7 +31,7 @@ export default function salesHitsSlider(modules, classes, fewSliders) {
             swiper: thumbs,
         },
         autoplay: {
-            delay: 2500
+            delay: 5000
         }
     })
 
