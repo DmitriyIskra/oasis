@@ -133,6 +133,10 @@ if(sliderCard) {
         next: '.product__goods-next',
         prev_m: '.product__goods-wr-arrow_mobile-prev',
         next_m: '.product__goods-wr-arrow_mobile-next',
+        zoom: '.product__zoom-cover',
+        zoomActive: 'product__zoom-cover_active',
+        zoomImgActive: 'product__zoom-image_active',
+        closeZoom: '.zoom__close',
     }
 
 

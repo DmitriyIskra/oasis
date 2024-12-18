@@ -16,6 +16,7 @@ export default class ControllCardSlider {
 
     registerEvents() {
         this.d.slider.addEventListener('click', this.click);
+        this.d.zoom.addEventListener('click', this.click);
         window.addEventListener('resize', this.resize);
     }
 
@@ -74,6 +75,22 @@ export default class ControllCardSlider {
                 this.d.unBlockArrow(e.target);
                 clearTimeout(this.timeOutID);
             }, this.d.speed + 50)
+        }
+
+        // ZOOM
+        // open
+        if(e.target.closest(this.d.classes.mainSlide)) {
+            const img = e.target.closest('img');
+            const path = img.src;
+            const data = img.getBoundingClientRect()
+
+            this.d.openZoom(path, data);
+        }
+
+        // close
+        if(e.target.closest(this.d.classes.closeZoom) ||
+        e.target.closest(this.d.classes.zoom)) {
+            this.d.closeZoom();
         }
     }
 

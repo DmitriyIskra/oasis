@@ -5,6 +5,8 @@
     align-items: center;
 }
 
+/* START Карточка товара со слайдером */
+
 .product {
     display: flex;
     width: 71%;
@@ -54,6 +56,10 @@
     display: block;
 }
 
+.product__slider {
+    overflow: visible;
+}
+
 @media(min-width: 962px) {
     .product__slide {
         opacity: 0 !important;
@@ -63,11 +69,24 @@
     }
 }
 
+.product__slide {
+    transition: transform 0.15s linear;
+    
+    cursor: pointer;
+}
+
 .product__slide > img {
     height: 100%;
     width: 100%;
     object-fit: contain;
     object-position: center;
+
+    transition: transform 0.15s linear;
+}
+
+
+.product__slide > img:hover {
+    transform: scale(1.1);
 }
 
 .product__favorites {
@@ -480,6 +499,79 @@
 
     pointer-events: none;
 }
+
+.product__zoom-cover {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-color: rgba(0, 0, 0, 0.3);
+
+    transition: clip-path 0.5s linear;
+    
+    clip-path: circle(0 at -100% -100%);
+    /* clip-path: circle(0); */
+
+    z-index: 100000;
+}
+
+.product__zoom-cover_active {
+    clip-path: circle(100% at 50% 50%);
+    /* clip-path: circle(100%); */
+}
+
+.product__zoom-wr-image {
+    
+    position: absolute;
+    
+    transition: 
+    opacity var(--timing) linear,
+    top var(--timing) linear,
+    left var(--timing) linear,
+    transform var(--timing) linear,
+    scale var(--timing) linear;
+    
+    opacity: 0;
+    --timing: 0.2s;
+}
+
+.product__zoom-image_active {
+    top: 50% !important;
+    left: 50% !important;
+
+    transform: translate(-50%, -50%) scale(1.2);
+
+    opacity: 1;
+}
+
+.product__zoom-image {
+    height: 100%;
+    width: 100%;
+
+    object-fit: contain;
+    object-position: center;
+}
+
+.zoom__close {
+    position: absolute;
+    top: 1.56vw;
+    right: 1.56vw;
+
+    height: 1.56vw;
+    width: 1.56vw;
+
+    background: no-repeat url('../svg/icon-close-white.svg');
+    background-size: contain;
+    background-position: center;
+
+    cursor: pointer;
+}
+
+/* END Карточка товара со слайдером */
+
+
 
 .product-desc {
     width: 71%;

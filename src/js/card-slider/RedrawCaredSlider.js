@@ -16,6 +16,14 @@ export default class RedrawCaredSlider {
         this.next = this.slider.querySelector(this.classes.next);
         this.prev = this.slider.querySelector(this.classes.prev);
         this.arrows = [this.next, this.prev];
+        this.arrowsM = [
+            this.slider.querySelector(this.classes.next_m),
+            this.prev = this.slider.querySelector(this.classes.prev_m),
+        ]
+
+        this.zoom = document.querySelector(this.classes.zoom);
+        this.zoomWrImage = this.zoom.children[0];
+        this.zoomImage = this.zoomWrImage.children[0];
 
         this.instanceThumbs = null;
         this.instanceSlider = null;
@@ -108,5 +116,28 @@ export default class RedrawCaredSlider {
 
     hideArrows() {
         this.arrows.forEach(arrow => arrow.style.display = 'none');
+        this.arrowsM.forEach(arrow => arrow.style.display = 'none');
+    }
+
+    openZoom(path, data) {
+        this.zoom.classList.add(this.classes.zoomActive);
+        this.zoomWrImage.style.height = `${data.height}px`;
+        this.zoomWrImage.style.width = `${data.width}px`;
+        this.zoomWrImage.style.top = `${data.y}px`;
+        this.zoomWrImage.style.left = `${data.x}px`;
+        this.zoomImage.src = path;
+
+        this.zoom.addEventListener('transitionend', () => {
+            this.zoomWrImage.classList.add(this.classes.zoomImgActive);
+        }, {once: true})
+    }
+
+    closeZoom() {
+        this.zoom.classList.remove(this.classes.zoomActive);
+        this.zoom.addEventListener('transitionend', () => {
+            this.zoomWrImage.style = '';
+            this.zoomWrImage.classList.remove(this.classes.zoomImgActive);
+            this.zoomImage.src = '#0';
+        }, {once: true})
     }
 }
