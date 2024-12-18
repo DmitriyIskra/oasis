@@ -15,6 +15,7 @@ export default class RedrawCaredSlider {
         // Стрелки
         this.next = this.slider.querySelector(this.classes.next);
         this.prev = this.slider.querySelector(this.classes.prev);
+        this.arrows = [this.next, this.prev];
 
         this.instanceThumbs = null;
         this.instanceSlider = null;
@@ -61,6 +62,7 @@ export default class RedrawCaredSlider {
             }
         })
 
+        if(this.mainSlides.length <= 3) this.hideArrows();
         if(this.mainSlides.length === 1) this.hideThumbs();
     }
 
@@ -86,6 +88,13 @@ export default class RedrawCaredSlider {
                 }
             }
         })
+
+        if(this.mainSlides.length < 3) {
+            [...this.thumbSlidesWrapper.children].forEach(slide => {
+                console.log(slide)
+                slide.style.width = `${7.55}vw`;
+            })
+        }
     }
 
     // Блокировка и разблокировка элементов управления
@@ -95,5 +104,9 @@ export default class RedrawCaredSlider {
     hideThumbs() {
         if(this.instanceThumbs) this.instanceThumbs.destroy();
         this.thumbSlider.style.display = "none";
+    }
+
+    hideArrows() {
+        this.arrows.forEach(arrow => arrow.style.display = 'none');
     }
 }

@@ -104,6 +104,10 @@
     margin: 0 auto;
 }
 
+.product__thumb-slide {
+    cursor: pointer;
+}
+
 .product__thumb-slide > img {
     height: 100%;
     width: 100%;
