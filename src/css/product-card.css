@@ -1169,6 +1169,10 @@
 
         filter: drop-shadow(-2vw 2vw 4vw rgba(0, 0, 0, 0.2));
     }
+
+    .product__slide > img:hover {
+        transform: initial;
+    }
 }
 
 @media(max-width: 961px) {
@@ -1397,6 +1401,16 @@
 @media(max-width: 961px) {
     .characteristics__buttons {
         display: none;
+    }
+}
+
+@media(max-width: 961px) {
+    .zoom__close {
+        top: 3.56vw;
+        right: 3.56vw;
+    
+        height: 6.56vw;
+        width: 6.56vw;
     }
 }
 
