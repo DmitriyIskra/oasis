@@ -23,6 +23,86 @@
     display: block;
 }
 
+.bar__wr-button {
+    display: none;
+    margin-bottom: 2.93vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.bar__buttons[data-type=""] > .bar__wr-button-buy {
+    display: flex;
+}
+.bar__buttons[data-type="basket-active"] > .bar__wr-button_in {
+    display: flex;
+}
+
+.bar__button {
+    height: 13.33vw;
+
+    font-family: 'Play';
+    font-size: 4.27vw;
+    font-weight: 400;
+    
+    color: #FFF;
+    border: 0;
+    border-radius: 2.13vw;
+}
+
+.bar__button-buy {
+    width: 77%;
+    
+    background: #4D96AB;
+    box-shadow: -1.07vw 1.07vw 2.40vw 0px #9AA4A7;
+}
+
+.bar__wr-button_in {
+    gap: 6.67vw;
+}
+
+.bar__button-to {
+    width: 47.57%;
+
+    background: #671993;
+    box-shadow: 
+    0px 0px 4.27vw 0.80vw rgba(0, 0, 0, 0.25), 
+    0px 0px 8vw 2.13vw rgba(0, 0, 0, 0.25);
+}
+
+.bar__wr-add-amount {
+    display: flex;
+    gap: 1.33vw;
+}
+
+.bar__add-button {
+    display: grid;
+    width: 10.13vw;
+    height: 8vw;
+    place-items: center;
+
+    font-family: "SofiaSans";
+    font-size: 5.33vw;
+    font-weight: 400;
+
+    color: #fff;
+    border: 1px solid #FFF;
+    background: #4D96AB;
+}
+
+.bar__amount {
+    width: 13.60vw;
+    
+    font-family: 'Play';
+    font-size: 5.33vw;
+    font-weight: 400;
+    text-align: center;
+
+    color: #726B68;
+    border: 1px solid #FFF;
+    background: #FFF;
+}
+
+
 
 
 .bar__list {
@@ -63,17 +143,31 @@
     border-radius: 0 26.67vw 26.67vw 0;
 }
 
+.bar__switcher-checkbox {
+    display: none;
+}
+
 .bar__switcher-catalog {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+
+    background: no-repeat url('../svg/bar-mobile-switcher-catalog-green.svg');
+    background-position: center;
+    background-size: contain;
 }
 
-.bar__switcher-checkbox {
-    display: none;
+#bar__switcher-checkbox:checked ~ .bar__switcher-catalog {
+    background-color: #4D96AB;
+
+    background-image: url('../svg/bar-mobile-switcher-catalog-white.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
+
 
 
 @media(max-width: 961px) {

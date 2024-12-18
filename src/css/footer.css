@@ -60,10 +60,12 @@
 
 .footer__phone {
     display: flex;
+    width: fit-content;
     margin-top: 0.52vw;
     gap: 0.26vw;
-
     align-items: center;
+
+    cursor: pointer;
 }
 
 .footer__icon {

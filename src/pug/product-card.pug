@@ -4,8 +4,8 @@ extends layout/layout
 include mixines/bread-crumbs/bread-crumbs
 
 block content
-    .bread-crumbs__wrapper
-        +bread-crumbs(bread_crumbs)
+    
+    +bread-crumbs(bread_crumbs)
 
     .card-wrapper
         .product 
@@ -20,8 +20,8 @@ block content
                                 img(src=require('../img/content/goods-promo-slider-img-content.webp') alt="")
                             .swiper-slide.product__slide
                                 img(src=require('../img/content/sales-hits-image2-content.webp') alt="")
-                            .swiper-slide.product__slide
-                                img(src=require('../img/content/sales-hits-strawberry-content.webp') alt="")
+                            //- .swiper-slide.product__slide
+                            //-     img(src=require('../img/content/sales-hits-strawberry-content.webp') alt="")
                     //- .favorites__heart_active - если есть в избранном
                     .product__favorites.animation-beat-heart
 
@@ -38,8 +38,8 @@ block content
                                 img(src=require('../img/content/goods-promo-slider-img-content.webp') alt="")
                             .swiper-slide.product__thumb-slide
                                 img(src=require('../img/content/sales-hits-image2-content.webp') alt="")
-                            .swiper-slide.product__thumb-slide
-                                img(src=require('../img/content/sales-hits-strawberry-content.webp') alt="")
+                            //- .swiper-slide.product__thumb-slide
+                            //-     img(src=require('../img/content/sales-hits-strawberry-content.webp') alt="")
                     
                     .product__goods-wr-arrow.product__goods-wr-arrow-prev
                         .product__goods-arrow.product__goods-prev

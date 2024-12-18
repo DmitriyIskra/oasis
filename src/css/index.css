@@ -12,6 +12,10 @@
     width: 100%;
 }
 
+.main__slider-wrapper {
+    transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+/* cubic-bezier(0.455, 0.03, 0.515, 0.955) */
 .main__slider-img {
     height: 100%;
     width: 100%;
@@ -569,7 +573,7 @@
     font-size: 1.04vw;
     font-style: normal;
     font-weight: 400; 
-    
+     
     color: #8E8E8E;
 
     transition: margin-top 0.2s linear;

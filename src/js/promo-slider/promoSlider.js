@@ -1,10 +1,10 @@
 export default function promoSlider(modules, classes) {
-    const {Swiper, Navigation} = modules;
+    const {Swiper, Navigation, Autoplay} = modules;
     const [slider, next, prev, pagination] = classes;
   
   
     const s = new Swiper(slider, {
-      modules: [Navigation],
+      modules: [Navigation, Autoplay],
       
       loop: true,
       speed: 1000, 
@@ -14,6 +14,9 @@ export default function promoSlider(modules, classes) {
         nextEl: next,
         prevEl: prev,
       },
+      autoplay: {
+        delay: 5000,
+      },
       breakpoints: {
         // when window width is >= 320px
         320: {
@@ -21,6 +24,7 @@ export default function promoSlider(modules, classes) {
           slidesPerView: 1.22, // 1.22
           spaceBetween: 8,
           allowTouchMove: true,
+          autoplay: false,
         },
         // when window width is >= 962px
         962: {
@@ -28,6 +32,7 @@ export default function promoSlider(modules, classes) {
           centeredSlides: false,
           spaceBetween: 21,
           slidesPerView: 4,
+          
         }
       }
     });

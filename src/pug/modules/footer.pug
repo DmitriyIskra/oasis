@@ -8,9 +8,9 @@ block footer
                 .footer__official 
                     span Официальный интернет-магазин 
                     span компании “Алефтрейд”
-                .footer__phone.icon-scale-filter 
+                .footer__phone.hover-phone-footer
                     .footer__icon.footer__phone-icon
-                    .footer__phone-number  
+                    .footer__phone-number
                         a(href="tel:" + phone_number_call_link  target="_blank" title="Номер телефона") #{phone_number_call_text}
 
             li.footer__item.footer__item-nav
@@ -35,7 +35,7 @@ block footer
                                 a(href="https://api.whatsapp.com/send/?phone=" + phone_number_social_link target="_blank" title="канал в whatsapp") 
                             li.footer__soccial-item.footer__soccial-tme.icon-scale-filter
                                 a(href="https://t.me/+" + phone_number_social_link target="_blank" title="канал в telegram") 
-                        .footer__phone-number.icon-scale-filter   
+                        .footer__phone-number.hover-phone-footer
                             a(href="tel:" + phone_number_call_link  target="_blank" title="Номер телефона") #{phone_number_social_text}
         
         .footer__copyright

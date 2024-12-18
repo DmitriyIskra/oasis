@@ -20,12 +20,14 @@ export default class ControllCardSlider {
     }
 
     click(e) {
-        // Перелистывание слайда, по клику на слайд в thumbs
+        // Перелистывание основного слайда, по клику на слайд в thumbs
         if(e.target.closest(this.d.classes.thumbSlide)) {
             // слайд по которому случился клик
             const slide = e.target.closest(this.d.classes.thumbSlide);
 
-            if(slide.classList.contains('swiper-slide-active')) return;
+            // если слайдов больше трех и клик по уже активному слайду блокируем
+            if(slide.classList.contains('swiper-slide-active') &&
+            this.d.mainSlides.length > 3) return;
 
             // Прокручмваем слайдер
             // индекс слайда по которому случился клик
@@ -33,6 +35,8 @@ export default class ControllCardSlider {
             // Прокручиваем слайд на слайдере
             this.d.instanceSlider.slideToLoop(index, this.d.speed);
             
+            // Если слайдов мало, превью не крутим
+            if(this.d.mainSlides.length <= 3) return;
             // Прокручиваем thumbs
             // предыдущий слайд от того по которому произошел клик
             const prevSlide = slide.previousElementSibling;
@@ -46,7 +50,6 @@ export default class ControllCardSlider {
                     this.d.instanceThumbs.slideNext(this.d.speed);
                 }, {once: true})
             }
-            
         }
 
         // События клика по элеметам управления

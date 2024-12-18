@@ -1,3 +1,8 @@
+.bread-crumbs__wrapper {
+    padding-top: 2.86vw;
+    margin-left: 8.1%;
+}
+
 .crumbs {
     display: flex;
 }

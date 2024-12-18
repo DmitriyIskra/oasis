@@ -22,7 +22,6 @@ import promoSlider from "./promo-slider/promoSlider";
 // Слайдер хиты продаж
 import salesHitsSlider from "./sales-hits-slider/salesHitsSlider";
 // Слайдер карточка товара
-// import cardSlider from "./card-slider/card-slider";
 import ControllCardSlider from "./card-slider/ControllCardSlider";
 import RedrawCaredSlider from "./card-slider/RedrawCaredSlider";
 // Работа "состав" в карточке товара
@@ -62,6 +61,7 @@ if(mainSlider) {
         Swiper,
         Pagination,
         Navigation,
+        Autoplay,
     }
 
     const classes = [
@@ -80,6 +80,7 @@ if(sliderPromo) {
     const modules = {
         Swiper,
         Navigation,
+        Autoplay,
     }
 
     const classes = [
@@ -152,8 +153,7 @@ if(sliderInteresting) {
     const modules = {
         Swiper,
         Navigation,
-        EffectFade,
-        Thumbs,
+        Autoplay,
     }
 
     const classes = [

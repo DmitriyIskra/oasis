@@ -1,16 +1,15 @@
 .bar
-    //- .bar__buttons_active
-    .bar__buttons.bar__buttons_active
-        //- .bar__button_active
-        .bar__wr-button.bar__wr-button-buy.bar__button_active
-            button.bar__button-buy(type="button") Купить
-        //- .bar__button_active 
+    //- data-type="basket-active" - показываем В корзину, если пусто Купить
+    .bar__buttons(data-type="").bar__buttons_active
+
+        .bar__wr-button.bar__wr-button-buy
+            button.bar__button.bar__button-buy(type="button") Купить 
         .bar__wr-button.bar__wr-button_in
-            button.bar__button-to(type="button") В корзину
+            button.bar__button.bar__button-to(type="button") В корзину
             .bar__wr-add-amount 
-                .bar__decrement -
+                .bar__add-button.bar__decrement -
                 input.bar__amount(type="text" value="0")
-                .bar__increment +
+                .bar__add-button.bar__increment +
 
     .bar__list 
         .bar__item 
@@ -19,12 +18,9 @@
             </svg>
             a.bar__link.bar__link_account(href="#0" title="" target="_blank")
         .bar__item   
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 30" fill="none">
-                <path d="M13.375 5H18.375V10H13.375V5ZM20.875 5H25.875V10H20.875V5ZM5.875 5H10.875V10H5.875V5ZM13.375 12.5H18.375V17.5H13.375V12.5ZM20.875 12.5H25.875V17.5H20.875V12.5ZM5.875 12.5H10.875V17.5H5.875V12.5Z" fill="#4D96AB"/>
-                <path d="M13.375 20H18.375V25H13.375V20ZM20.875 20H25.875V25H20.875V20ZM5.875 20H10.875V25H5.875V20Z" fill="#4D96AB"/>
-            </svg>
-            label.bar__switcher-catalog
-                input.bar__switcher-checkbox(type="checkbox")
+            input#bar__switcher-checkbox.bar__switcher-checkbox(type="checkbox")
+            
+            label.bar__switcher-catalog(for="bar__switcher-checkbox")
         .bar__item 
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 30" fill="none">
                 <path d="M15.3567 8.21226C11.5848 2.64766 5.125 4.88371 5.125 10.5611C5.125 16.2373 15.8933 24 15.8933 24C15.8933 24 26.125 15.925 26.125 10.5611C26.125 5.19602 20.2018 2.64766 16.4323 8.21226L15.8945 8.65638L15.3555 8.21226H15.3567Z" stroke="#4D96AB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

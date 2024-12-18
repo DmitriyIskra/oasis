@@ -68,7 +68,8 @@ export default class RedrawCaredSlider {
         // Кнопки управление
         this.instanceThumbs = new this.modules.Swiper(this.classes.thumbsSlider, {
             modules: [this.modules.Navigation],
-            slidesPerView: this.mainSlides.length > 3 ? 3 : this.mainSlides.length === 3 ? 2 : 1,
+            slidesPerView: this.mainSlides.length >= 3 ? 3 : 'auto',
+            // slidesPerView: this.mainSlides.length > 3 ? 3 : this.mainSlides.length === 3 ? 2 : 1,
             spaceBetween: 10,
             freeMode: true, 
             watchSlidesProgress: true,

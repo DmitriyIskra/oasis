@@ -1,5 +1,5 @@
 export default function interestingSlider(modules, classes) {
-    const {Swiper, Navigation} = modules;
+    const {Swiper, Navigation, Autoplay} = modules;
     const [slider, prev, next] = classes;
 
     let swiper = null;
@@ -30,12 +30,15 @@ export default function interestingSlider(modules, classes) {
 
     function initDesctopSlider() {
         swiper = new Swiper(slider, {
-            modules: [Navigation],
+            modules: [Navigation, Autoplay],
     
             loop: true,
             speed,
             slidesPerView: 5,
             allowTouchMove: false,
+            autoplay: {
+                delay: 5000,
+            },
             on: {
                 init: function() {
                     if(this.slides.length > 5 && innerWidth > 961) {
