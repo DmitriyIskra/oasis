@@ -225,7 +225,61 @@ block content
                         li.reviews__pagination-item.reviews__pagination_num 10
                         li.reviews__pagination-item.reviews__pagination_next
                         li.reviews__pagination-item.reviews__pagination_end
-        
+                    
+                    .reviews__modal-cover 
+                        .reviews__modal
+                            .reviews__modal-wr-close
+                                .reviews__modal-close
+                            .reviews__modal-wr-title 
+                                h2.reviews__modal-title Чай черный NIKTEA Сибирский Сбор
+                            form.reviews__form(action="" name="form_reviews") 
+                                ul.reviews__modal-stars-list
+                                    li.reviews__modal-stars-item 
+                                        label.reviews__modal-wr-star
+                                            input(type="checkbox" name="star-1")
+                                            div.reviews__modal-star(data-num="0")
+                                    li.reviews__modal-stars-item 
+                                        label.reviews__modal-wr-star
+                                            input(type="checkbox" name="star-2")
+                                            div.reviews__modal-star(data-num="1")
+                                    li.reviews__modal-stars-item  
+                                        label.reviews__modal-wr-star
+                                            input(type="checkbox" name="star-3")
+                                            div.reviews__modal-star(data-num="2")
+                                    li.reviews__modal-stars-item 
+                                        label.reviews__modal-wr-star
+                                            input(type="checkbox" name="star-4")
+                                            div.reviews__modal-star(data-num="3")
+                                    li.reviews__modal-stars-item  
+                                        label.reviews__modal-wr-star
+                                            input(type="checkbox" name="star-5")
+                                            div.reviews__modal-star(data-num="4")
+
+                                .reviews__modal-wr-text 
+                                    textarea(name="text" placeholder="Расскажите о товаре, что понравилось, а что нет") 
+                                .reviews__modal-input-group
+                                    label.reviews__modal-label.reviews__modal-wr-name
+                                        span.reviews__modal-input-name Имя
+                                        input.reviews__modal-input(type="text" name="name")
+                                    label.reviews__modal-label.reviews__modal-wr-secondname
+                                        span.reviews__modal-input-name Фамилия
+                                        input.reviews__modal-input(type="text" name="secondname")
+                                    label.reviews__modal-label.reviews__modal-wr-email
+                                        span.reviews__modal-input-name Почта
+                                        input.reviews__modal-input(type="text" name="email")
+                                    //- .reviews__modal-submit_active
+                                    .reviews__modal-wr-submit.reviews__modal-submit_active
+                                        button.reviews__modal-submit(type="button") Отправить
+                            //- .reviews__captcha_active
+                            form.reviews__captcha(name="form-reviews_captcha")
+                                .reviews__captcha-wr-img
+                                    img.reviews__captcha-img(src=require('../img/icons/captcha-icon.png') alt="")
+                                .reviews__captcha-wr-input
+                                    input.reviews__captcha-input(name="reviews_captcha")
+                                .reviews__captcha-wr-buttons 
+                                    button.reviews__captcha-button(type="reset") Отмена
+                                    button.reviews__captcha-button(type="button") ок
+                                
         .interesting 
             .interesting__wr-title 
                 h2 Вам может быть интересно

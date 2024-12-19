@@ -572,6 +572,7 @@
 /* END Карточка товара со слайдером */
 
 
+/* START Отзывы и описание */
 
 .product-desc {
     width: 71%;
@@ -885,6 +886,287 @@
     background-size: auto 0.42vw;
 }
 
+
+.reviews__modal-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000000;
+    
+    display: flex;
+    justify-content: center;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(2px);
+}
+
+.reviews__modal {
+    position: sticky;
+    top: 0.52vw;
+
+    width: 31.43%;
+    height: fit-content;
+    margin-top: 0.3vw;
+
+    padding-top: 1.30vw;
+    padding-right: 1.30vw;
+    padding-bottom: 3.13vw;
+    padding-left: 1.30vw;
+
+    border-radius: 0.52vw;
+    background: #FFF;
+    box-shadow: 
+        0px 0px 0.83vw 0.16vw rgba(0, 0, 0, 0.25), 
+        0px 0px 1.56vw 0.42vw rgba(0, 0, 0, 0.25);
+}
+
+.reviews__modal-wr-close {
+    display: flex;
+    justify-content: end;
+}
+
+.reviews__modal-close {
+    height: 1.56vw;
+    width: 1.56vw;
+
+    background: no-repeat url('../svg/icon-close-green.svg');
+    background-size: contain;
+    background-position: center;
+
+    cursor: pointer;
+}
+
+.reviews__modal-wr-title {
+    padding-top: 1.09vw;
+}
+
+.reviews__modal-title {
+    font-family: 'Play';
+    font-size: 1.25vw;
+    font-weight: 700;
+    text-align: center;
+    
+    color: #2F5F6D;
+}
+
+.reviews__form {
+    padding-top: 2.14vw;
+    padding-right: 0.36vw;
+    padding-left: 0.36vw;
+}
+
+.reviews__modal-stars-list {
+    display: flex;
+    justify-content: center;
+    gap: 1.56vw;
+}
+
+.reviews__modal-stars-item {
+    position: relative;
+}
+
+.reviews__modal-wr-star input {
+    position: absolute;
+    top: -1;
+    left: -1;
+
+    height: 0;
+    width: 0;
+
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.reviews__modal-star {
+    height: 1.98vw;
+    width: 1.98vw;
+
+    background: no-repeat url('../svg/star-grey.svg');
+    background-size: contain;
+    background-position: center;
+
+    cursor: pointer;
+}
+
+.reviews__modal-wr-text {
+    padding-top: 2.50vw;
+}
+
+.reviews__modal-wr-text textarea {
+    width: 100%;
+    height: 8.28vw;
+    padding: 0.78vw;
+    resize: none;
+
+    font-family: 'Play';
+    font-size: 0.73vw;
+    font-weight: 400;
+
+    color: #6d6c6c;
+    border-radius: 0.42vw;
+    border: 1px solid #F6F6F6;
+    outline: none;
+    background: #F6F6F6;
+}
+.reviews__modal-wr-text > textarea:focus {
+    border: 1px solid #9b9a9a;
+}
+
+.reviews__modal-wr-text > textarea::placeholder {
+    font-family: 'Play';
+    font-size: 0.73vw;
+    font-weight: 400;
+
+    color: #858585; 
+}
+.reviews__modal-wr-text > textarea:focus::placeholder {
+    visibility: hidden;
+}
+
+.reviews__modal-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.83vw;
+    padding-top: 1.25vw;
+}
+
+.reviews__modal-label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.31vw;
+}
+
+.reviews__modal-input-name {
+    font-family: 'Play';
+    font-size: 0.73vw;
+    font-weight: 400;
+
+    color: #858585;
+}
+
+.reviews__modal-input {
+    width: 100%;
+    height: 2.03vw;
+    padding-left: 0.78vw;
+    padding-right: 0.78vw;
+
+    font-family: 'Play';
+    font-size: 0.73vw;
+    font-weight: 400;
+
+    color: #6d6c6c;
+    border-radius: 0.21vw;
+    border: 1px solid #CFCFCF;
+    background: #FFF;
+}
+.reviews__modal-input:focus {
+    border: 1px solid #9b9a9a;
+    outline: none;
+}
+
+.reviews__modal-wr-submit {
+    display: none;
+    padding-top: 2.03vw;
+}
+
+.reviews__modal-submit_active {
+    display: block;
+}
+
+.reviews__modal-submit {
+    width: 100%;
+    height: 2.60vw;
+
+    font-family: 'Play';
+    font-size: 0.83vw;
+    font-weight: 400;
+
+    color: #FFF;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: #4D96AB;
+    box-shadow: -0.21vw 0.21vw 0.47vw 0px #9AA4A7;
+
+    cursor: pointer;
+}
+
+.reviews__captcha {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1.51vw;
+}
+
+.reviews__captcha_active {
+    display: flex;
+}
+
+.reviews__captcha-wr-img {
+    width: 5.99vw;
+    height: 2.60vw;
+}
+
+.reviews__captcha-img {
+    height: 100%;
+    width: 100;
+    
+    object-fit: contain;
+    object-position: center;
+}
+
+.reviews__captcha-wr-input {
+    padding-top: 0.99vw;
+}
+
+.reviews__captcha-input {
+    width: 5.99vw;
+    padding-top: 0;
+    padding-right: 0;
+    padding-left: 0;
+    padding-bottom: 0;
+
+    font-family: 'Roboto';
+    font-size: 1vw;
+    font-weight: 500;
+    text-align: center;
+
+    border: none;
+    outline: none;
+    border-bottom: 0.10vw solid #5A87BC;
+    caret-color: #5A87BC;
+    color: #5A87BC;
+}
+
+.reviews__captcha-wr-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5vw;
+    padding-top: 1.82vw;
+}
+
+.reviews__captcha-button {
+    font-family: 'Roboto';
+    font-size: 0.73vw;
+    font-weight: 500;
+
+    color: #5A87BC;
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+    cursor: pointer;
+}
+
+.reviews__captcha-button:last-child {
+    text-transform: uppercase;
+}
+
+
+
+/* END Отзывы и описание */
 
 
 
