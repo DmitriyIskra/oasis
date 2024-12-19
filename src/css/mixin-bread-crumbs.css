@@ -39,6 +39,13 @@
 }
 
 @media(max-width: 961px) {
+    .bread-crumbs__wrapper {
+        margin-left: 5.4%;
+        padding-top: 6.67vw;
+    }
+}
+
+@media(max-width: 961px) {
     .crumbs > span {
         font-size: 2.67vw;
     }
