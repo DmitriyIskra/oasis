@@ -14,6 +14,7 @@ import {
     EffectFade, 
     Thumbs,
     Grid,
+    Virtual,
 } from 'swiper/modules';
 // Слайдер на главной странице с банннерами
 import mainSlider from "./main-slider/main-slider";
@@ -122,6 +123,7 @@ if(sliderCard) {
         Navigation,
         EffectFade,
         Thumbs,
+        Virtual,
     }
 
     const classes = {
@@ -134,12 +136,16 @@ if(sliderCard) {
         prev_m: '.product__goods-wr-arrow_mobile-prev',
         next_m: '.product__goods-wr-arrow_mobile-next',
         zoom: '.product__zoom-cover',
+        zoomSlider: '.product__zoom-swiper',
         zoomActive: 'product__zoom-cover_active',
         closeZoom: '.zoom__close',
+        zoomPrev: '.product__zoom-arrow_prev',
+        zoomNext: '.product__zoom-arrow_next',
     }
 
+    const zoom = document.querySelector('.product__zoom-cover');
 
-    const redraw = new RedrawCaredSlider(sliderCard, modules, classes);
+    const redraw = new RedrawCaredSlider(sliderCard, zoom, modules, classes);
     const controll = new ControllCardSlider(redraw);
     controll.init();
 }

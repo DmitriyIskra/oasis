@@ -82,10 +82,9 @@ export default class ControllCardSlider {
         if(e.target.closest(this.d.classes.mainSlide)) {
             this.d.openZoom();
         }
-
         // close
         if(e.target.closest(this.d.classes.closeZoom) ||
-        e.target.closest(this.d.classes.zoom)) {
+        e.target.matches(this.d.classes.zoom)) {
             this.d.closeZoom();
         }
     }

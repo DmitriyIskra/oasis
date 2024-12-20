@@ -12,6 +12,7 @@ import 'swiper/css/autoplay';
 import 'swiper/css/effect-fade';
 import 'swiper/css/grid';
 import 'swiper/css/thumbs';
+import 'swiper/css/virtual';
 import './css/header.css';
 import './css/index.css';
 import './css/product-card.css';

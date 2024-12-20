@@ -121,9 +121,19 @@ block content
                                     button.characteristics__button.characteristics__maybe-buy(type="button") Купить
         
             .product__zoom-cover
-                .swiper.product__zoom-swiper
-                    .swiper-wrapper.product__zoom-wr-swiper
-                    img.product__zoom-image(src="#0", alt="")
+                .product__zoom-wr-slider
+                    .swiper.product__zoom-swiper
+                        .swiper-wrapper.product__zoom-wr-swiper
+                            .swiper-slide.product__zoom-slide
+                                img.product__zoom-image(src=require('../img/content/sales-hits-image-content.webp'), alt="")
+                            .swiper-slide.product__zoom-slide
+                                img.product__zoom-image(src=require('../img/content/goods-promo-slider-img-content.webp'), alt="")
+                            .swiper-slide.product__zoom-slide
+                                img.product__zoom-image(src=require('../img/content/sales-hits-image2-content.webp'), alt="")
+                            .swiper-slide.product__zoom-slide
+                                img.product__zoom-image(src=require('../img/content/sales-hits-strawberry-content.webp'), alt="")
+                    .product__zoom-arrow.product__zoom-arrow_prev
+                    .product__zoom-arrow.product__zoom-arrow_next
                 .zoom__close
         .product-desc       
             input#product-desc__controll(type="checkbox")      

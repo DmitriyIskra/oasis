@@ -1,6 +1,7 @@
 export default class RedrawCaredSlider {
-    constructor(slider, modules, classes) {
+    constructor(slider, zoom, modules, classes) {
         this.slider = slider;
+        this.zoom = zoom;
         this.modules = modules;
         this.classes = classes;
 
@@ -10,7 +11,8 @@ export default class RedrawCaredSlider {
         this.thumbSlidesWrapper = this.slider.querySelector('.product__thumbs-wrapper');
 
         // Слайды слайдера
-        this.mainSlides = this.slider.querySelectorAll(this.classes.mainSlide); 
+        this.mainSlides = [...this.slider.querySelectorAll(this.classes.mainSlide)]; 
+        this.mainSlidesImges = [...this.slider.querySelectorAll(`${this.classes.mainSlide} > img`)]; 
 
         // Стрелки
         this.next = this.slider.querySelector(this.classes.next);
@@ -21,12 +23,11 @@ export default class RedrawCaredSlider {
             this.prev = this.slider.querySelector(this.classes.prev_m),
         ]
 
-        this.zoom = document.querySelector(this.classes.zoom);
-        this.zoomWrImage = this.zoom.children[0];
-        this.zoomImage = this.zoomWrImage.children[0];
+        this.zoomSlidesWrapper = this.zoom.querySelector('.product__zoom-wr-swiper');
 
         this.instanceThumbs = null;
         this.instanceSlider = null;
+        this.instanceZoom = null;
 
         // Скорость перелистывания
         this.speed = 300;
@@ -39,6 +40,7 @@ export default class RedrawCaredSlider {
         }
         
         this.initSlider();
+        this.initZoom();
     }
 
     initSlider() { 
@@ -103,6 +105,19 @@ export default class RedrawCaredSlider {
                 slide.style.width = `${7.55}vw`;
             })
         }
+    }
+
+    initZoom() {
+        this.instanceZoom = new this.modules.Swiper(this.classes.zoomSlider, {
+            modules: [this.modules.Navigation, this.modules.Virtual],
+            loop: true,
+            slidesPerView: 1,
+            speed: this.speed,
+            navigation: {
+                prevEl: this.classes.zoomPrev,
+                nextEl: this.classes.zoomNext,
+            }
+        })
     }
 
     // Блокировка и разблокировка элементов управления
