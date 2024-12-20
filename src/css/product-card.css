@@ -905,7 +905,7 @@
     right: 0;
     z-index: 1000000;
     
-    display: none;
+    display: flex;
     justify-content: center;
     height: 100%;
 
@@ -1068,6 +1068,24 @@
     color: #858585;
 }
 
+.reviews__modal-label[invalid] > .reviews__modal-input-name {
+    display: none;
+}
+
+.reviews__modal-input-error {
+    display: none;
+
+    font-family: 'Play';
+    font-size: 0.73vw;
+    font-weight: 400;
+
+    color: #F00;
+}
+
+.reviews__modal-label[invalid] > .reviews__modal-input-error {
+    display: block;
+}
+
 .reviews__modal-input {
     width: 100%;
     height: 2.03vw;
@@ -1086,6 +1104,10 @@
 .reviews__modal-input:focus {
     border: 1px solid #9b9a9a;
     outline: none;
+}
+
+.reviews__modal-label[invalid] > .reviews__modal-input {
+    border: 1px solid #F00;
 }
 
 .reviews__modal-wr-submit {

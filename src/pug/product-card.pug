@@ -136,7 +136,7 @@ block content
                     .product__zoom-arrow.product__zoom-arrow_next
                 .zoom__close
         .product-desc       
-            input#product-desc__controll(type="checkbox")      
+            input#product-desc__controll(type="checkbox" checked)      
             .product-desc__controll
                 label.product-desc__button.product-desc__description(for="product-desc__controll") Описание
                 label.product-desc__button.product-desc__reviews(for="product-desc__controll") Отзывы
@@ -244,27 +244,27 @@ block content
                                 label.reviews__modal-close(for="switcher-reviews-modal")
                             .reviews__modal-wr-title 
                                 h2.reviews__modal-title Чай черный NIKTEA Сибирский Сбор
-                            form.reviews__form(action="" name="form_reviews") 
+                            form.reviews__form(action="" name="form_reviews" novalidate) 
                                 ul.reviews__modal-stars-list
                                     li.reviews__modal-stars-item 
                                         label.reviews__modal-wr-star
-                                            input(type="checkbox" name="star-1")
+                                            input.reviews__input-star(type="checkbox" name="star-1")
                                             div.reviews__modal-star(data-num="0")
                                     li.reviews__modal-stars-item 
                                         label.reviews__modal-wr-star
-                                            input(type="checkbox" name="star-2")
+                                            input.reviews__input-star(type="checkbox" name="star-2")
                                             div.reviews__modal-star(data-num="1")
                                     li.reviews__modal-stars-item  
                                         label.reviews__modal-wr-star
-                                            input(type="checkbox" name="star-3")
+                                            input.reviews__input-star(type="checkbox" name="star-3")
                                             div.reviews__modal-star(data-num="2")
                                     li.reviews__modal-stars-item 
                                         label.reviews__modal-wr-star
-                                            input(type="checkbox" name="star-4")
+                                            input.reviews__input-star(type="checkbox" name="star-4")
                                             div.reviews__modal-star(data-num="3")
                                     li.reviews__modal-stars-item  
                                         label.reviews__modal-wr-star
-                                            input(type="checkbox" name="star-5")
+                                            input.reviews__input-star(type="checkbox" name="star-5")
                                             div.reviews__modal-star(data-num="4")
 
                                 .reviews__modal-wr-text 
@@ -272,16 +272,18 @@ block content
                                 .reviews__modal-input-group
                                     label.reviews__modal-label.reviews__modal-wr-name
                                         span.reviews__modal-input-name Имя
-                                        input.reviews__modal-input(type="text" name="name")
+                                        span.reviews__modal-input-error
+                                        input.reviews__modal-input(type="text" name="name" required)
                                     label.reviews__modal-label.reviews__modal-wr-secondname
                                         span.reviews__modal-input-name Фамилия
                                         input.reviews__modal-input(type="text" name="secondname")
                                     label.reviews__modal-label.reviews__modal-wr-email
                                         span.reviews__modal-input-name Почта
-                                        input.reviews__modal-input(type="text" name="email")
+                                        span.reviews__modal-input-error
+                                        input.reviews__modal-input(type="email" name="email" required)
                                     //- .reviews__modal-submit_active
                                     .reviews__modal-wr-submit.reviews__modal-submit_active
-                                        button.reviews__modal-submit(type="button") Отправить
+                                        button.reviews__modal-submit(type="submit") Отправить
                             //- .reviews__captcha_active
                             form.reviews__captcha(name="form-reviews_captcha")
                                 .reviews__captcha-wr-img

@@ -1,8 +1,13 @@
 export default class RedrawReviewsModal {
     constructor(el) {
         this.el = el;
-this.swit = document.querySelector('#switcher-reviews-modal');
+
         this.stars = [...this.el.querySelectorAll('.reviews__modal-star')];
+
+        this.form = this.el.querySelector('.reviews__form');
+        this.inputStars = this.el.querySelectorAll('.reviews__input-star');
+        this.inputName = this.el.querySelector('.reviews__modal-input[name="name"]');
+        this.inputEmail = this.el.querySelector('.reviews__modal-input[name="email"]');
     }
 
     choiceStars(star) {
