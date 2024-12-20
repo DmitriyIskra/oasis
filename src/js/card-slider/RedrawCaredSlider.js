@@ -10,7 +10,7 @@ export default class RedrawCaredSlider {
         this.thumbSlidesWrapper = this.slider.querySelector('.product__thumbs-wrapper');
 
         // Слайды слайдера
-        this.mainSlides = this.slider.querySelectorAll(this.classes.mainSlide);
+        this.mainSlides = this.slider.querySelectorAll(this.classes.mainSlide); 
 
         // Стрелки
         this.next = this.slider.querySelector(this.classes.next);
@@ -119,25 +119,11 @@ export default class RedrawCaredSlider {
         this.arrowsM.forEach(arrow => arrow.style.display = 'none');
     }
 
-    openZoom(path, data) {
+    openZoom() {
         this.zoom.classList.add(this.classes.zoomActive);
-        this.zoomWrImage.style.height = `${data.height}px`;
-        this.zoomWrImage.style.width = `${data.width}px`;
-        this.zoomWrImage.style.top = `${data.y}px`;
-        this.zoomWrImage.style.left = `${data.x}px`;
-        this.zoomImage.src = path;
-
-        this.zoom.addEventListener('transitionend', () => {
-            this.zoomWrImage.classList.add(this.classes.zoomImgActive);
-        }, {once: true})
     }
 
     closeZoom() {
         this.zoom.classList.remove(this.classes.zoomActive);
-        this.zoom.addEventListener('transitionend', () => {
-            this.zoomWrImage.style = '';
-            this.zoomWrImage.classList.remove(this.classes.zoomImgActive);
-            this.zoomImage.src = '#0';
-        }, {once: true})
     }
 }

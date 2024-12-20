@@ -11,7 +11,7 @@ export default class ControllCardSlider {
 
     init() {
         this.registerEvents();
-        this.d.initSliders()
+        this.d.initSliders();
     }
 
     registerEvents() {
@@ -80,11 +80,7 @@ export default class ControllCardSlider {
         // ZOOM
         // open
         if(e.target.closest(this.d.classes.mainSlide)) {
-            const img = e.target.closest('img');
-            const path = img.src;
-            const data = img.getBoundingClientRect()
-
-            this.d.openZoom(path, data);
+            this.d.openZoom();
         }
 
         // close
