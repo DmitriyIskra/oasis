@@ -37,10 +37,10 @@ export default class RedrawCaredSlider {
     initSliders() {
         if(this.lastSize > 961) {
             this.initThumbs();
+            this.initZoom();
         }
         
         this.initSlider();
-        this.initZoom();
     }
 
     initSlider() { 

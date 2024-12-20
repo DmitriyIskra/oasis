@@ -12,7 +12,7 @@ block content
             .product__wr-images
                 .product__wr-slider
                     .product__new.product__new_active
-                    .swiper.product__slider
+                    .swiper.product__slider.scale1_1
                         .swiper-wrapper.product__slider-wrapper
                             .swiper-slide.product__slide
                                 img(src=require('../img/content/sales-hits-image-content.webp') alt="")
@@ -291,7 +291,23 @@ block content
                                 .reviews__captcha-wr-buttons 
                                     button.reviews__captcha-button(type="reset") Отмена
                                     button.reviews__captcha-button(type="button") ок
-                                
+
+                    //- .reviews__response_active 
+                    .reviews__response-cover   
+                        .reviews__response.reviews__modal-success 
+                            .reviews__modal-wr-close
+                                .reviews__modal-close
+                            .reviews__response-icon.reviews__response-icon_succ
+                            .reviews__modal-text 
+                                p Ваш отзыв успешно отправлен
+
+                    .reviews__response-cover     
+                        .reviews__response.reviews__modal-error 
+                            .reviews__modal-wr-close
+                                .reviews__modal-close
+                            .reviews__response-icon.reviews__response-icon_err
+                            .reviews__modal-text 
+                                p Произошла ошибка,#[br] попробуйте еще раз.
         .interesting 
             .interesting__wr-title 
                 h2 Вам может быть интересно

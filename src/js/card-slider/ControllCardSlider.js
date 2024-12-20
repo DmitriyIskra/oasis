@@ -79,7 +79,8 @@ export default class ControllCardSlider {
 
         // ZOOM
         // open
-        if(e.target.closest(this.d.classes.mainSlide)) {
+        if(e.target.closest(this.d.classes.mainSlide) &&
+        innerWidth > 961) {
             this.d.openZoom();
         }
         // close
@@ -101,13 +102,17 @@ export default class ControllCardSlider {
                 if(this.d.lastSize > 961) {
                     this.d.initSlider();
                     this.d.initThumbs();
+                    this.d.initZoom();
 
+                    this.d.lastSize = innerWidth;
                     return;
                 }
 
                 // // было desctop, стало mobile
                 this.d.instanceThumbs.destroy();
                 this.d.initSlider();
+
+                this.d.lastSize = innerWidth;
             } catch (error) {
                 location.reload();
             }

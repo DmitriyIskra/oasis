@@ -34,6 +34,11 @@ import ControllTabsPC from "./tabs-mobile-product-card/ControllTabsPC";
 import RedrawTabsPC from "./tabs-mobile-product-card/RedrawTabsPC";
 // Активация кнопки купить для nav-bar-mobile, если страница карточка товара
 import navBarMobile from "./nav-bar-mobile/nav-bar-mobile";
+// Модалка для написания отзыва
+import ControllReviewsModal from "./reviews-modal/ControllReviewsModal";
+import RedrawReviewsModal from "./reviews-modal/RedrawReviewsModal";
+// По клику на крестик закрывается окно с результатом отправки отзыва
+import closeReviewsResponseModal from "./close-reviews-response-modal/closeReviewsResponseModal";
 
 // ---------------------------------------------------------------------
 
@@ -173,6 +178,18 @@ if(sliderInteresting) {
 
     interestingSlider(modules, classes)
 }
+
+// Модалка для написания отзыва
+const modalReviews = document.querySelector('.reviews__modal');
+if(modalReviews) {
+    const redraw = new RedrawReviewsModal(modalReviews);
+    const controll = new ControllReviewsModal(redraw);
+    controll.init();
+}
+
+// Hезультатом отправки отзыва по клику на крестик закрывается
+const reviewsRespModals = document.querySelectorAll('.reviews__response-cover');
+if(reviewsRespModals) closeReviewsResponseModal(reviewsRespModals);
 
 // MOBILE
 // Скрытие лого при открытии строки поиска
