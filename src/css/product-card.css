@@ -905,7 +905,7 @@
     right: 0;
     z-index: 1000000;
     
-    display: flex;
+    display: none;
     justify-content: center;
     height: 100%;
 

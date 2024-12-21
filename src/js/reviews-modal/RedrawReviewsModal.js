@@ -23,4 +23,23 @@ export default class RedrawReviewsModal {
             star.className = 'reviews__modal-star';
         })
     }
+
+    setInvalid(input, textError) {
+        const parent = input.parentElement;
+        const error = input.previousElementSibling;
+        input.setCustomValidity(textError);
+
+        parent.setAttribute('invalid', '');
+        error.textContent = textError;
+    }
+
+    removeInvalid(input) {
+        const parent = input.parentElement;
+        const error = input.previousElementSibling;
+
+        input.setCustomValidity('');
+
+        parent.removeAttribute('invalid');
+        error.textContent = '';
+    }
 }

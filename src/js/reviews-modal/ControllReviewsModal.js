@@ -8,7 +8,6 @@ export default class ControllReviewsModal {
 
     init() {
         this.registerEvents();
-        console.log(this.redraw.inputName.validity)
     }
 
     registerEvents() {
@@ -26,34 +25,33 @@ export default class ControllReviewsModal {
 
             //- /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+\.[A-Z]{2,4}$/i
             if(this.redraw.inputName.validity.valueMissing) {
-                const parent = this.redraw.inputName.parentElement;
-                const error = this.redraw.inputName.previousElementSibling;
-                this.redraw.inputName.setCustomValidity('Поле "Имя" обязательно для заполнения');
-                
-                parent.setAttribute('invalid', '');
-                error.textContent = 'Поле "Имя" обязательно для заполнения';
+                this.redraw.setInvalid(
+                    this.redraw.inputName,
+                    'Поле "Имя" обязательно для заполнения'
+                );
             }
 
             if(this.redraw.inputEmail.validity.valueMissing) {
-                const parent = this.redraw.inputEmail.parentElement;
-                const error = this.redraw.inputEmail.previousElementSibling;
-                this.redraw.inputEmail.setCustomValidity('Поле "Почта" обязательно для заполнения');
+                this.redraw.setInvalid(
+                    this.redraw.inputEmail,
+                    'Поле "Почта" обязательно для заполнения'
+                );
 
-                parent.setAttribute('invalid', '');
-                error.textContent = 'Поле "Почта" обязательно для заполнения';
+                return;
+            }
+
+            if(!/^[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+.+\.[A-Za-z]{2,4}$/i.test(this.redraw.inputEmail.value)) {
+                this.redraw.setInvalid(
+                    this.redraw.inputEmail,
+                    'Некорректное значение'
+                );
             }
         }
     }
 
     focus(e) {
         if(e.target.validity.customError) {
-            const parent = e.target.parentElement;
-            const error = e.target.previousElementSibling;
-
-            e.target.setCustomValidity('');
-
-            parent.removeAttribute('invalid');
-            error.textContent = '';
+            this.redraw.removeInvalid(e.target);
         }
     }
 }
