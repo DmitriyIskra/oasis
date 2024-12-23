@@ -207,5 +207,5 @@ if(tabsProdCard) {
 }
 
 // Активация кнопки купить для nav-bar-mobile, если страница карточка товара
-const barButtonsBuy = document.querySelector('.bar__buttons_active');
-navBarMobile(barButtonsBuy);
+const barButtonsBuy = document.querySelector('.bar__buttons');
+if(barButtonsBuy) navBarMobile(barButtonsBuy);

@@ -10,6 +10,9 @@ module.exports = {
         port: 8800,
     },
     devtool: 'source-map',
+    optimization: {
+      minimize: false
+    },
     output: {
         path: __dirname + '/dist',
         filename: 'js/main.js',
@@ -53,12 +56,6 @@ module.exports = {
                   },
                 ],
             }, {
-              test: /\.(woff|woff2|eot|ttf|otf)$/i,
-              type: 'asset/resource',
-              generator: {
-                filename: 'fonts/[name][ext]',  // указываем путь сборки
-              }
-            }, {
                 test: /\.pug$/,
                 // loader: 'pug-loader',
                 exclude: /(node_modules|bower_components)/,
@@ -68,11 +65,18 @@ module.exports = {
                     options: {
                       exports: false,
                       pretty : false,  // не минифицировать
+                      minimize: false,
                     }
                   }
                   
                 ]
-            },
+            }, {
+              test: /\.(woff|woff2|eot|ttf|otf)$/i,
+              type: 'asset/resource',
+              generator: {
+                filename: 'fonts/[name][ext]',  // указываем путь сборки
+              }
+            }, 
         ]
     },
     plugins: [
