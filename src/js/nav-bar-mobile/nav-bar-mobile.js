@@ -6,7 +6,6 @@ export default function navBarMobile(el) {
     function activate() {
         const path = location.pathname;
         if(path.includes('product-card') && innerWidth < 962) {
-            console.log('path', el)
             el.classList.add('bar__buttons_active');
         }
     }

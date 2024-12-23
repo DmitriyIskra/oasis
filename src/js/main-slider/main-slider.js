@@ -26,6 +26,7 @@ export default function mainSlider(modules, classes) {
     breakpoints: {
       // when window width is <= 961px && window width >= 320px 
       320: {
+        speed: 500,
         allowTouchMove: true,
       },
       // when window width is >= 962px

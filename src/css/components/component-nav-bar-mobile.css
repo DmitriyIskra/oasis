@@ -154,7 +154,7 @@
     bottom: 0;
     left: 0;
 
-    background: no-repeat url('../svg/bar-mobile-switcher-catalog-green.svg');
+    background: no-repeat url('../../svg/bar-mobile-switcher-catalog-green.svg');
     background-position: center;
     background-size: contain;
 }
@@ -162,7 +162,7 @@
 #bar__switcher-checkbox:checked ~ .bar__switcher-catalog {
     background-color: #4D96AB;
 
-    background-image: url('../svg/bar-mobile-switcher-catalog-white.svg');
+    background-image: url('../../svg/bar-mobile-switcher-catalog-white.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;

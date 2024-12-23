@@ -1,0 +1,10 @@
+mixin catalog_card(data, path)
+    .catalog-card   
+        .catalog-card__arrow 
+        .catalog-card__image
+            img(src=data.path alt=data.title)
+        .catalog-card__wr-title
+            h2.catalog-card__title #{data.title}
+        .catalog-card__line 
+        .catalog-card__text 
+            p #{data.text}

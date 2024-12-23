@@ -1,0 +1,16 @@
+extends layout/layout
+
+include mixines/bread-crumbs/bread-crumbs
+include mixines/catalog-card
+
+
+block content
+    include variable/catalog
+    
+    +bread-crumbs(bread_crumbs)
+
+    .catalog.catalog__wrapper
+        ul.catalog__cards-list
+            each item in catalog_cards_data
+                li.catalog__cards-item
+                    +catalog_card(item)

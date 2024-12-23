@@ -81,7 +81,7 @@
     height: 1.04vw;
     width: 1.04vw;
 
-    background: no-repeat url(../svg/catalog-icon.svg);
+    background: no-repeat url(../../svg/catalog-icon.svg);
     background-position: center;
     background-size: contain;
 }
@@ -156,7 +156,7 @@
     height: 100%;
     width: 100%;
 
-    background: no-repeat url('../svg/search-white.svg');
+    background: no-repeat url('../../svg/search-white.svg');
     background-position: center;
     background-size: contain;
 
@@ -164,7 +164,7 @@
 }
 
 .header_wr-search input:checked ~ label {
-    background: no-repeat url('../svg/close-white.svg');
+    background: no-repeat url('../../svg/close-white.svg');
     background-position: center;
     background-size: contain;
 }
@@ -231,7 +231,7 @@
     width: 1.04vw; 
     height: 1.04vw;
 
-    background: no-repeat url('../svg/phone-header-white.svg');
+    background: no-repeat url('../../svg/phone-header-white.svg');
     background-position: center;
     background-size: contain;
 }
@@ -250,7 +250,7 @@
     width: 1.04vw; 
     height: 1.04vw;
 
-    background: no-repeat url('../svg/favourites-white.svg');
+    background: no-repeat url('../../svg/favourites-white.svg');
     background-position: center;
     background-size: contain;
 
@@ -263,7 +263,7 @@
     width: 1.04vw; 
     height: 1.04vw;
 
-    background: no-repeat url('../svg/user-white.svg');
+    background: no-repeat url('../../svg/user-white.svg');
     background-position: center;
     background-size: contain;
 

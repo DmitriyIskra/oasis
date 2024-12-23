@@ -1,0 +1,11 @@
+.catalog__cards-list {
+    display: flex;
+    width: 68%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.catalog__cards-item {
+    width: 33.333%;
+}

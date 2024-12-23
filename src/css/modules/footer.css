@@ -74,7 +74,7 @@
 }
 
 .footer__phone-icon {
-    background: no-repeat url('../svg/phone-white.svg');
+    background: no-repeat url('../../svg/phone-white.svg');
     background-position: center;
     background-size: 100%;
 }
@@ -165,13 +165,13 @@
 }
 
 .footer__soccial-whatsapp {
-    background: no-repeat url('../svg/whatsapp-white.svg');
+    background: no-repeat url('../../svg/whatsapp-white.svg');
     background-position: center;
     background-size: contain;
 }
 
 .footer__soccial-tme {
-    background: no-repeat url('../svg/telegram-white.svg');
+    background: no-repeat url('../../svg/telegram-white.svg');
     background-position: center;
     background-size: contain;
 }
@@ -186,7 +186,7 @@
 }
 
 .footer__copyright span {
-    font-family: 'Inter';
+    font-family: 'Play';
     font-size: 0.73vw;
     font-weight: 400;
 }

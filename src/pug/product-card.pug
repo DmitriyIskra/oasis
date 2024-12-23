@@ -136,7 +136,7 @@ block content
                     .product__zoom-arrow.product__zoom-arrow_next
                 .zoom__close
         .product-desc       
-            input#product-desc__controll(type="checkbox" checked)      
+            input#product-desc__controll(type="checkbox")      
             .product-desc__controll
                 label.product-desc__button.product-desc__description(for="product-desc__controll") Описание
                 label.product-desc__button.product-desc__reviews(for="product-desc__controll") Отзывы
@@ -268,7 +268,7 @@ block content
                                             div.reviews__modal-star(data-num="4")
 
                                 .reviews__modal-wr-text 
-                                    textarea(name="text" placeholder="Расскажите о товаре, что понравилось, а что нет") 
+                                    textarea(name="text" placeholder="Расскажите о товаре, что понравилось, а что нет" maxlength="60") 
                                 .reviews__modal-input-group
                                     label.reviews__modal-label.reviews__modal-wr-name
                                         span.reviews__modal-input-name Имя

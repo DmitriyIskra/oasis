@@ -140,7 +140,7 @@
     width: 2.97vw;
     height: 0.83vw;
 
-    background: no-repeat url('../svg/arrow-promo-slider-next.svg');
+    background: no-repeat url('../../svg/arrow-promo-slider-next.svg');
     background-size: contain;
     background-position: left center;
 }
@@ -247,7 +247,7 @@
     width: 2.40vw; 
     height: 1.15vw;
     
-    background: no-repeat url('../svg/arrow-promo-slider-link.svg');
+    background: no-repeat url('../../svg/arrow-promo-slider-link.svg');
     background-size: contain;
     background-position: center;
 }
@@ -272,7 +272,7 @@
     height: 1.56vw;
     width: 1.56vw;
 
-    background: no-repeat url('../svg/favorites-heart-black.svg');
+    background: no-repeat url('../../svg/favorites-heart-black.svg');
     background-size: contain;
     background-position: center;
 
@@ -284,7 +284,7 @@
     width: 1.56vw;
     margin-top: 1.25vw;
 
-    background: no-repeat url('../svg/basket-black.svg');
+    background: no-repeat url('../../svg/basket-black.svg');
     background-size: contain;
     background-position: center;
 
@@ -309,13 +309,13 @@
 }
 
 .goods-promo__arrow-prev {
-    background: no-repeat url('../svg/arrow-promo-slider-prev.svg');
+    background: no-repeat url('../../svg/arrow-promo-slider-prev.svg');
     background-size: 100% auto;
     background-position: center;
 }
 
 .goods-promo__arrow-next {
-    background: no-repeat url('../svg/arrow-promo-slider-next.svg');
+    background: no-repeat url('../../svg/arrow-promo-slider-next.svg');
     background-size: 100% auto;
     background-position: center;
 }
@@ -334,7 +334,7 @@
     padding-left: 6.88vw;
 
     background-color: #F5F5F5;
-    background-image: url('../svg/comfortable-background-oasis.svg');
+    background-image: url('../../svg/comfortable-background-oasis.svg');
     background-repeat: no-repeat;
     background-size: auto 96.5%;
     background-position: center;
@@ -373,25 +373,25 @@
 }
 
 .comfortable__icon-discount {
-    background: no-repeat url('../svg/comfortable-discount.svg');
+    background: no-repeat url('../../svg/comfortable-discount.svg');
     background-size: contain;
     background-position: center;
 }
 
 .comfortable__icon-bonuses {
-    background: no-repeat url('../svg/comfortable-bonuses.svg');
+    background: no-repeat url('../../svg/comfortable-bonuses.svg');
     background-size: contain;
     background-position: center;
 }
 
 .comfortable__icon-cashback {
-    background: no-repeat url('../svg/comfortable-cashback.svg');
+    background: no-repeat url('../../svg/comfortable-cashback.svg');
     background-size: contain;
     background-position: center;
 }
 
 .comfortable__icon-birthday {
-    background: no-repeat url('../svg/comfortable-discount-for-birthday.svg');
+    background: no-repeat url('../../svg/comfortable-discount-for-birthday.svg');
     background-size: contain;
     background-position: center;
 }
@@ -631,7 +631,7 @@
     height: 1.25vw;
     width: 1.25vw;
 
-    background: no-repeat url('../svg/favorites-heart-black.svg');
+    background: no-repeat url('../../svg/favorites-heart-black.svg');
     background-position: center;
     background-size: contain;
 
@@ -642,7 +642,7 @@
     width: 1.41vw;
     height: 1.15vw;
     
-    background: no-repeat url('../svg/basket-black.svg');
+    background: no-repeat url('../../svg/basket-black.svg');
     background-position: center;
     background-size: contain;
 
@@ -665,6 +665,12 @@
 @media(max-width: 961px) {
     .main__wr-slider {
         height: 80.53vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .main__slider-wrapper {
+        transition-timing-function: linear;
     }
 }
 
@@ -823,7 +829,7 @@
     .goods-promo__wr-slide-link > a {
         width: 9.60vw;
         height: 4vw;
-        background: no-repeat url('../svg/arrow-promo-slider-next.svg');
+        background: no-repeat url('../../svg/arrow-promo-slider-next.svg');
         background-size: contain;
         background-position: center;
     }
@@ -873,7 +879,7 @@
         flex-direction: column;
         align-items: center;
 
-        background-image: url('../svg/comfortable-background-oasis-mobile.svg');
+        background-image: url('../../svg/comfortable-background-oasis-mobile.svg');
         background-size: auto 97%;
         background-position: center;
         border-radius: 2.67vw;

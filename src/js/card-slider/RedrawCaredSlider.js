@@ -134,7 +134,10 @@ export default class RedrawCaredSlider {
         this.arrowsM.forEach(arrow => arrow.style.display = 'none');
     }
 
-    openZoom() {
+    openZoom(slide) {
+        const index = +slide.getAttribute('data-swiper-slide-index');
+        this.instanceZoom.slideToLoop(index, 0);
+
         this.zoom.classList.add(this.classes.zoomActive);
     }
 

@@ -47,7 +47,7 @@
     width: 6.98vw;
     height: 6.09vw;
 
-    background: no-repeat url('../svg/product-new.svg');
+    background: no-repeat url('../../svg/product-new.svg');
     background-size: contain;
     background-position: center;
 }
@@ -90,7 +90,7 @@
     width: 1.56vw;
     height: 1.56vw;
 
-    background: no-repeat url('../svg/favorites-heart-black.svg');
+    background: no-repeat url('../../svg/favorites-heart-black.svg');
     background-size: contain;
     background-position: center;
 
@@ -169,14 +169,14 @@
 
 
 .product__goods-prev {
-    background: no-repeat url('../svg/card-product-arrow-prev.svg');
+    background: no-repeat url('../../svg/card-product-arrow-prev.svg');
     background-size: contain;
     background-position: center;
 }
 
 
 .product__goods-next {
-    background: no-repeat url('../svg/card-product-arrow-next.svg');
+    background: no-repeat url('../../svg/card-product-arrow-next.svg');
     background-size: contain;
     background-position: center;
 }
@@ -280,7 +280,7 @@
     align-self: flex-end;
     flex-shrink: 0;
 
-    background: no-repeat url('../svg/arrow-composition-down.svg');
+    background: no-repeat url('../../svg/arrow-composition-down.svg');
     background-position: center;
     background-size: contain;
 
@@ -547,7 +547,7 @@
 .product__zoom-arrow_prev {
     left: -50%;
 
-    background: no-repeat url('../svg/zoom-arrow-prev.svg');
+    background: no-repeat url('../../svg/zoom-arrow-prev.svg');
     background-size: contain;
     background-position: center;
 
@@ -558,7 +558,7 @@
 .product__zoom-arrow_next {
     right: -50%;
 
-    background: no-repeat url('../svg/zoom-arrow-next.svg');
+    background: no-repeat url('../../svg/zoom-arrow-next.svg');
     background-size: contain;
     background-position: center;
 
@@ -574,7 +574,7 @@
     height: 1.56vw;
     width: 1.56vw;
 
-    background: no-repeat url('../svg/close-zoom.svg');
+    background: no-repeat url('../../svg/close-zoom.svg');
     background-size: contain;
     background-position: center;
 
@@ -713,7 +713,7 @@
     width: 1.56vw;
     height: 1.56vw;
 
-    background: no-repeat url('../svg/write-review.svg');
+    background: no-repeat url('../../svg/write-review.svg');
     background-position: center;
     background-size: contain;
 }
@@ -747,7 +747,7 @@
     height: 3.33vw;
     flex-shrink: 0;
 
-    background: no-repeat url('../svg/review-standart-avatar.svg');
+    background: no-repeat url('../../svg/review-standart-avatar.svg');
     background-position: center;
     background-size: contain;
     border-radius: 50%;
@@ -791,7 +791,7 @@
     height: 1.67vw;
     width: 1.67vw;
 
-    background: no-repeat url('../svg/star-grey.svg');
+    background: no-repeat url('../../svg/star-grey.svg');
     background-position: center;
     background-size: contain;
 }
@@ -867,28 +867,28 @@
 }
 
 .reviews__pagination_start {
-    background-image: url('../svg/reviews-pagination-arrow-start.svg');
+    background-image: url('../../svg/reviews-pagination-arrow-start.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: auto 0.42vw;
 }
 
 .reviews__pagination_prev {
-    background-image: url('../svg/reviews-pagination-arrow-prev.svg');
+    background-image: url('../../svg/reviews-pagination-arrow-prev.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: auto 0.42vw;
 }
 
 .reviews__pagination_next {
-    background-image: url('../svg/reviews-pagination-arrow-next.svg');
+    background-image: url('../../svg/reviews-pagination-arrow-next.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: auto 0.42vw;
 }
 
 .reviews__pagination_end {
-    background-image: url('../svg/reviews-pagination-arrow-end.svg');
+    background-image: url('../../svg/reviews-pagination-arrow-end.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: auto 0.42vw;
@@ -947,7 +947,7 @@
     height: 1.56vw;
     width: 1.56vw;
 
-    background: no-repeat url('../svg/icon-close-green.svg');
+    background: no-repeat url('../../svg/icon-close-green.svg');
     background-size: contain;
     background-position: center;
 
@@ -999,7 +999,7 @@
     height: 1.98vw;
     width: 1.98vw;
 
-    background: no-repeat url('../svg/star-grey.svg');
+    background: no-repeat url('../../svg/star-grey.svg');
     background-size: contain;
     background-position: center;
 
@@ -1007,7 +1007,7 @@
 }
 
 .reviews__stars_active {
-    background: no-repeat url('../svg/star-violet.svg');
+    background: no-repeat url('../../svg/star-violet.svg');
     background-position: center;
     background-size: contain;
 }
@@ -1250,13 +1250,13 @@
 }
 
 .reviews__response-icon_succ {
-    background: no-repeat url('../svg/reviews-success.svg');
+    background: no-repeat url('../../svg/reviews-success.svg');
     background-size: contain;
     background-position: center;
 }
 
 .reviews__response-icon_err {
-    background: no-repeat url('../svg/reviews-error.svg');
+    background: no-repeat url('../../svg/reviews-error.svg');
     background-size: contain;
     background-position: center;
 }
@@ -1471,13 +1471,13 @@
 }
 
 .interesting-sl__prev {
-    background: no-repeat url('../svg/arrow-promo-slider-prev.svg');
+    background: no-repeat url('../../svg/arrow-promo-slider-prev.svg');
     background-size: 100% auto;
     background-position: center;
 }
 
 .interesting-sl__next {
-    background: no-repeat url('../svg/arrow-promo-slider-next.svg');
+    background: no-repeat url('../../svg/arrow-promo-slider-next.svg');
     background-size: 100% auto;
     background-position: center;
 }
@@ -1588,14 +1588,14 @@
     .product__goods-wr-arrow_mobile-prev {
         left: 4.7%;
 
-        background: no-repeat url('../svg/card-product-arrow-prev.svg');
+        background: no-repeat url('../../svg/card-product-arrow-prev.svg');
         background-position: center;
         background-size: auto 100%;
     }
     .product__goods-wr-arrow_mobile-next {
         right: 4.7%;
 
-        background: no-repeat url('../svg/card-product-arrow-next.svg');
+        background: no-repeat url('../../svg/card-product-arrow-next.svg');
         background-position: center;
         background-size: auto 100%;
     }

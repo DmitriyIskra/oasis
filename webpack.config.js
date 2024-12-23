@@ -98,15 +98,33 @@ module.exports = {
             },
             scriptLoading: 'blocking', // defer | module. можно также указать inject: 'body' скрипт будет в конце body но с defer
         }),
+        new HtmlWebPackPlugin({
+            // title: '....' // здесь можно указать title конкретной страницы
+            template: './src/pug/catalog.pug',
+            filename: './catalog.html',   // куда компилировать
+            minify: {
+              html: false // отключаем минификацию html, еще есть версия minify: false
+            },
+            scriptLoading: 'blocking', // defer | module. можно также указать inject: 'body' скрипт будет в конце body но с defer
+        }),
         new miniCss({
             filename: 'css/style.css',
         }),
-        // new CopyWebpackPlugin({
-        //   patterns: [  
-        //     { from: 'src/img/content/espresso-colombia-andino-content.webp', to: 'img/content' },
+        new CopyWebpackPlugin({
+          patterns: [  
+            { from: 'src/svg/catalog-coffee.svg', to: 'svg/' },
+            { from: 'src/svg/catalog-tea.svg', to: 'svg/' },
+            { from: 'src/svg/catalog-syrups.svg', to: 'svg/' },
+            { from: 'src/svg/catalog-milk.svg', to: 'svg/' },
+            { from: 'src/svg/catalog-water.svg', to: 'svg/' },
+            { from: 'src/svg/catalog-coffee-machines.svg', to: 'svg/' },
+            { from: 'src/svg/catalog-accessories.svg', to: 'svg/' },
+            { from: 'src/svg/catalog-dishes.svg', to: 'svg/' },
+            { from: 'src/svg/catalog-gifts-sets.svg', to: 'svg/' },
+            { from: 'src/svg/catalog-different.svg', to: 'svg/' },
             
-        //   ],
-        // }),
+          ],
+        }),
         // new ImageminWebpWebpackPlugin({
         //   config: [{
         //     test: /.(jpe?g|png)/,

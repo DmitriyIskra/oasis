@@ -33,7 +33,7 @@ export default class ControllCardSlider {
             // Прокручмваем слайдер
             // индекс слайда по которому случился клик
             const index = +slide.getAttribute('data-swiper-slide-index');
-            // Прокручиваем слайд на слайдере
+            // Прокручиваем слайд на слайдере (большая картинка)
             this.d.instanceSlider.slideToLoop(index, this.d.speed);
             
             // Если слайдов мало, превью не крутим
@@ -46,6 +46,7 @@ export default class ControllCardSlider {
 
             // Прокручиваем слайд на thumbs
             this.d.instanceThumbs.slideNext(this.d.speed);
+            // если клик произошел по второму thumbs
             if(prevSlideIsNext) {
                 this.d.thumbSlidesWrapper.addEventListener('transitionend', () => {
                     this.d.instanceThumbs.slideNext(this.d.speed);
@@ -81,7 +82,7 @@ export default class ControllCardSlider {
         // open
         if(e.target.closest(this.d.classes.mainSlide) &&
         innerWidth > 961) {
-            this.d.openZoom();
+            this.d.openZoom(e.target.parentElement);
         }
         // close
         if(e.target.closest(this.d.classes.closeZoom) ||
