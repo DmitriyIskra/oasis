@@ -1,11 +1,18 @@
+.catalog__wrapper {
+    padding-bottom: 10.42vw;
+    padding-top: 8.02vw;
+}
+
 .catalog__cards-list {
     display: flex;
-    width: 68%;
+    width: 69.2%;
     margin: 0 auto;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 1.41vw;
+    row-gap: 1.41vw;
 }
 
 .catalog__cards-item {
-    width: 33.333%;
+    width: 31.91%;
 }
