@@ -1,6 +1,6 @@
 .catalog__wrapper {
-    padding-bottom: 10.42vw;
     padding-top: 8.02vw;
+    padding-bottom: 10.42vw;
 }
 
 .catalog__cards-list {
@@ -9,10 +9,32 @@
     margin: 0 auto;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1.41vw;
+    column-gap: 1.41vw;
     row-gap: 1.41vw;
 }
 
 .catalog__cards-item {
     width: 31.91%;
 }
+
+@media(max-width: 961px) {
+    .catalog__wrapper {
+        padding-top: 8vw;
+        padding-bottom: 42.67vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .catalog__cards-list {
+        width: 100%;
+        column-gap: 0;
+        row-gap: 0;
+    }
+}
+
+@media(max-width: 961px) {
+    .catalog__cards-item {
+        width: 50%;
+    }
+}
+
