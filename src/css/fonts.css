@@ -1,25 +1,19 @@
 @font-face {
     font-family: 'Play';
     font-weight: 400;
-    src: url('../fonts/play/Play-Regular.ttf');
+    src: url('../fonts/play/Play-Regular.woff2') format('woff2'),
+    url('../fonts/play/Play-Regular.ttf') format('truetype');
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Play';
     font-weight: 700;
-    src: url('../fonts/play/Play-Bold.ttf');
+    src: url('../fonts/play/Play-Bold.woff2') format('woff2'),
+    url('../fonts/play/Play-Bold.ttf') format('truetype');
     font-display: swap;
 }
 
-
-/* -------------------------------------------- */
-
-@font-face {
-    font-family: 'Inter';
-    src: url('../fonts/inter/Inter-VariableFont_opsz\,wght.ttf');
-    font-display: swap;
-}
 
 /* -------------------------------------------- */
 
@@ -51,28 +45,32 @@
 
 @font-face { 
     font-family: 'Roboto';
-    src: url('../fonts/roboto/Roboto-Light.ttf') format('truetype');
+    src: url('../fonts/roboto/Roboto-Light.woff2') format('woff2'),
+    url('../fonts/roboto/Roboto-Light.ttf') format('truetype');
     font-weight: 300;
     font-display: swap;
 }
 
 @font-face { 
     font-family: 'Roboto';
-    src: url('../fonts/roboto/Roboto-Regular.ttf') format('truetype');
+    src: url('../fonts/roboto/Roboto-Regular.woff2') format('woff2'),
+    url('../fonts/roboto/Roboto-Regular.ttf') format('truetype');
     font-weight: 400;
     font-display: swap;
 } 
 
 @font-face { 
     font-family: 'Roboto';
-    src: url('../fonts/roboto/Roboto-Medium.ttf') format('truetype');
+    src: url('../fonts/roboto/Roboto-Medium.woff2') format('woff2'),
+    url('../fonts/roboto/Roboto-Medium.ttf') format('truetype');
     font-weight: 500;
     font-display: swap;
 } 
 
 @font-face { 
     font-family: 'Roboto';
-    src: url('../fonts/roboto/Roboto-Bold.ttf') format('truetype');
+    src: url('../fonts/roboto/Roboto-Bold.woff2') format('woff2'),
+    url('../fonts/roboto/Roboto-Bold.ttf') format('truetype');
     font-weight: 700;
     font-display: swap;
 } 
@@ -81,7 +79,8 @@
 
 @font-face { 
     font-family: 'Open Sans';
-    src: url('../fonts/open-sans/OpenSans-SemiBold.ttf') format('truetype');
+    src: url('../fonts/open-sans/OpenSans-SemiBold.woff2') format('woff2'),
+    url('../fonts/open-sans/OpenSans-SemiBold.ttf') format('truetype');
     font-weight: 600;
     font-display: swap;
 }
