@@ -180,7 +180,7 @@ if(sliderInteresting) {
 }
 
 // Модалка для написания отзыва
-const modalReviews = document.querySelector('.reviews__modal');
+const modalReviews = document.querySelector('.reviews__modal-cover');
 if(modalReviews) {
     const redraw = new RedrawReviewsModal(modalReviews);
     const controll = new ControllReviewsModal(redraw);

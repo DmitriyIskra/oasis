@@ -4,6 +4,7 @@ export default class ControllReviewsModal {
         
         this.click = this.click.bind(this);
         this.focus = this.focus.bind(this);
+        this.change = this.change.bind(this);
     }
 
     init() {
@@ -14,12 +15,14 @@ export default class ControllReviewsModal {
         this.redraw.el.addEventListener('click', this.click);
         this.redraw.inputName.addEventListener('focus', this.focus);
         this.redraw.inputEmail.addEventListener('focus', this.focus);
+        this.redraw.inputControll.addEventListener('change', this.change);
     }
 
     click(e) {
         if(e.target.matches('.reviews__modal-star')) {
             this.redraw.choiceStars(e.target.closest('.reviews__modal-star'));
         }
+
         if(e.target.matches('.reviews__modal-submit')) {
             e.preventDefault();
 
@@ -47,11 +50,22 @@ export default class ControllReviewsModal {
                 );
             }
         }
+
+        if(e.target.matches('.reviews__modal-cover')) {
+            this.redraw.closeModal();
+            let event = new Event("change");
+            this.redraw.inputControll.dispatchEvent(event);
+        }
     }
 
     focus(e) {
         if(e.target.validity.customError) {
             this.redraw.removeInvalid(e.target);
         }
+    }
+
+    change(e) {
+        if(e.target.checked && innerWidth > 961) this.redraw.disableScroll();
+        if(!e.target.checked && innerWidth > 961) this.redraw.enableScroll();
     }
 }

@@ -899,7 +899,7 @@
 }
 
 .reviews__modal-cover {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -924,7 +924,6 @@
     width: 31.43%;
     height: fit-content;
     margin-top: 0.3vw;
-
     padding-top: 1.30vw;
     padding-right: 1.30vw;
     padding-bottom: 3.13vw;
@@ -2039,6 +2038,7 @@
 
 @media(max-width: 961px) {
     .reviews__modal-cover {
+        position: absolute;
         place-items: center;
     }
 }

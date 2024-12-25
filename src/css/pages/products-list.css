@@ -1,0 +1,115 @@
+.prod-list{
+    padding-top: 2.60vw;
+}
+
+.prod-list__title {
+    font-family: 'Play';
+    font-size: 1.67vw;
+    font-weight: 700;
+    text-align: center;
+    
+    color: #2F5F6D;
+}
+
+.prod-list__wrapper {
+    display: flex;
+    padding-top: 0.26vw;
+    padding-right: 8.02vw;
+}
+
+.prod-list__sidebar {
+    width: 24%;
+    padding-left: 8.75vw;
+}
+
+.filter__title {
+    padding-top: 0.68vw;
+    padding-bottom: 0.73vw;
+
+    font-family: 'Play';
+    font-size: 0.78vw;
+    font-weight: 700;
+
+    color: #242424;
+
+    cursor: pointer;
+}
+
+.filter__title::before {
+    content: "";
+
+    display: inline-block;
+    height: 0.42vw;
+    width: 0.63vw;
+    margin-right: 0.63vw;
+    vertical-align: middle;
+
+    background: no-repeat url('../../svg/filter-arrow-open-close.svg');
+    background-size: contain;
+    background-position: center;
+
+    transition: transform 0.15s linear;
+}
+
+.filter__title__active::before {
+    transform: rotate(180deg);
+}
+
+.filter__list {
+    height: 0;
+    padding-left: 0.16vw;
+
+    transition: height 0.15s linear;
+
+    overflow: hidden;
+}
+
+.filter__item {
+    height: fit-content;
+}
+
+.filter__label {
+    display: flex;
+    gap: 0.42vw;
+    padding-top: 0.73vw;
+    padding-bottom: 0.73vw;
+
+    cursor: pointer;
+}
+
+.filter__type-switcher {
+    display: none;
+}
+
+.filter__circle {
+    display: grid;
+    width: 0.83vw;
+    height: 0.83vw;
+    place-items: center;
+
+    border-radius: 50%;
+    border: 1px solid #0F6CBD;
+}
+
+.filter__circle::after {
+    content: "";
+
+    display: none;
+    height: 0.42vw;
+    width: 0.42vw;
+
+    border-radius: 50%;
+    background-color: #0F6CBD;
+}
+
+.filter__type-switcher:checked + .filter__circle::after {
+    display: inline-block;
+}
+
+
+
+
+
+.prod-list__content {
+    flex-grow: 1;
+}
