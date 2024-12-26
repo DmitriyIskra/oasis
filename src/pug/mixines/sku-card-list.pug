@@ -1,0 +1,12 @@
+mixin sku_cards_list(amount)
+    - let n = 0;
+    ul.sku__list
+        while n < amount 
+            li.sku__item
+                .sku__promo-icons 
+                    .sku__discount-icon.sku__promo-i_active
+                    .sku__hit-icon.sku__promo-i_active
+                .sku__image 
+                    img(src="#0" alt="")
+                .sku__fav-basc
+            - n += 1

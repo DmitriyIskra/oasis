@@ -1,6 +1,7 @@
 extends layout/layout
 
 include mixines/bread-crumbs/bread-crumbs
+include mixines/sku-card-list
 
 block content
     include variable/catalog
@@ -77,5 +78,6 @@ block content
                                     span.filter__type-name Ассорти
 
                     .filters__wr-button        
-                        button.filters__button(type="button")        
+                        button.filters__button(type="button") Сбросить фильтр      
             .prod-list__content
+                +sku_cards_list(10)

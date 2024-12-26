@@ -13,13 +13,14 @@
 
 .prod-list__wrapper {
     display: flex;
-    padding-top: 0.26vw;
+    padding-top: 2.24vw;
     padding-right: 8.02vw;
+    padding-bottom: 6.41vw;
 }
 
 .prod-list__sidebar {
-    width: 24%;
-    padding-left: 8.75vw;
+    width: 26.2%;
+    padding-left: 8.58vw;
 }
 
 .filter__title {
@@ -106,7 +107,32 @@
     display: inline-block;
 }
 
+.filters__wr-button {
+    margin-top: 3.80vw;
+}
 
+.filters__button {
+    width: 10.21vw;
+    height: 2.60vw;
+
+    
+    font-family: 'Play';
+    font-size: 0.83vw;
+    font-weight: 400;
+    
+    color: #FFF;
+    border: none;
+    outline: none;
+    border-radius: 0.42vw;
+    background: #4D96AB;
+    box-shadow: -0.21vw 0.21vw 0.47vw 0px #9AA4A7;
+
+    cursor: pointer;
+}
+
+.filters__button:active {
+    box-shadow: none;
+}
 
 
 
