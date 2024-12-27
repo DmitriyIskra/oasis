@@ -9,10 +9,13 @@
 .sku__item {
     position: relative;
 
+    display: flex;
     height: 21.35vw;
     width: 24.11%;
     padding-top: 2.40vw;
     padding-bottom: 0.68vw;
+    flex-direction: column;
+    align-items: center;
 
     border: 1px solid #DEDBD3;
     background: #EEE;
@@ -32,3 +35,173 @@
         0px 0px 1.56vw 0.42vw rgba(0, 0, 0, 0.25);
 }
 
+.sku__promo-icons {
+    position: absolute;
+    top: 7.6%;
+    left: 10%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.31vw;
+    
+    color: #FFF;
+}
+
+.sku__promo-icon {
+    display: grid;
+    width: 2.03vw;
+    height: 1.15vw;
+    place-items: center;
+        
+    font-family: "SofiaSans";
+    font-size: 0.83vw;
+    font-weight: 700;
+
+    border-radius: 0.21vw;
+}
+
+.sku__discount-icon {
+    background: #FF3C00;
+}
+
+.sku__hit-icon {
+    background: #671993;
+}
+
+.sku__image {
+    width: 6.88vw;
+    height: 9.90vw;
+}
+
+.sku__image > img {
+    height: 100%;
+    width: 100%;
+
+    filter: drop-shadow(-0.21vw 0.21vw 1.26vw #9AA4A7);
+    
+    object-fit: contain;
+    object-position: center;
+}
+
+.sku__fav-bask {
+    position: absolute;
+    top: 6.2%;
+    right: 7.4%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.38vw;
+}
+
+.sku__favorites {
+    width: 1.46vw;
+    height: 1.35vw;
+
+    background: no-repeat url('../../svg/favorites-heart-black.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.sku__favorites_active {
+    background: no-repeat url('../../svg/favorites-heart-violet.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.sku__basket {
+    width: 1.56vw;
+    height: 1.56vw;
+
+    background: no-repeat url('../../svg/basket-black.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.sku__wr-title {
+    margin-top: 1.20vw;
+}
+
+.sku__title {
+    font-family: 'Play';
+    font-size: 0.94vw;
+    font-weight: 400;
+    text-align: center;
+    
+    color: #000;
+}
+
+.sku__wr-type-of-tea {
+    margin-top: 0.15vw;
+}
+
+.sku__type-of-tea {
+    font-family: "SofiaSans";
+    font-size: 0.73vw;
+    font-weight: 400;
+    
+    color: #8E8E8E;
+}
+
+.sku__wr-price {
+    position: relative;
+
+    margin-top: 1.14vw;
+
+    font-family: "SofiaSans";
+}
+
+.sku__current-price {
+    font-size: 1.25vw;
+    font-weight: 700;
+
+    color: #671993;
+}
+
+.sku__old-price {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    font-size: 0.83vw;
+    font-weight: 400;
+
+    color: #505050;
+
+    transform: translate(113%, -61%);
+}
+
+.sku__old-price::before {
+    content: "";
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    display: inline-block;
+    width: 113%;
+    height: 1px;
+
+    background-color: #505050;
+
+    transform: translate(-50%, -50%) rotate(-17deg);
+}
+
+.sku__wr-button {
+    margin-top: 0.26vw;
+}
+
+.sku__button {
+    display: grid;
+    width: 8.75vw;
+    height: 2.08vw;
+    place-items: center;
+    
+    font-family: 'Play';
+    font-size: 0.83vw;
+    font-weight: 400;
+    
+    color: #FFF;
+    border-radius: 0.42vw;
+    background: #4D96AB;
+    box-shadow: -0.21vw 0.21vw 0.47vw 0px #9AA4A7;
+}

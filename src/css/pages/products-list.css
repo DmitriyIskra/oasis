@@ -14,13 +14,13 @@
 .prod-list__wrapper {
     display: flex;
     padding-top: 2.24vw;
-    padding-right: 8.02vw;
+    padding-right: 7.02vw;
     padding-bottom: 6.41vw;
 }
 
 .prod-list__sidebar {
     width: 26.2%;
-    padding-left: 8.58vw;
+    padding-left: 8.54vw;
 }
 
 .filter__title {
@@ -109,6 +109,7 @@
 
 .filters__wr-button {
     margin-top: 3.80vw;
+    margin-left: 0.2vw;
 }
 
 .filters__button {
@@ -137,5 +138,6 @@
 
 
 .prod-list__content {
+    padding-left: 4.6%;
     flex-grow: 1;
 }

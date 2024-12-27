@@ -4,9 +4,21 @@ mixin sku_cards_list(amount)
         while n < amount 
             li.sku__item
                 .sku__promo-icons 
-                    .sku__discount-icon.sku__promo-i_active
-                    .sku__hit-icon.sku__promo-i_active
+                    .sku__promo-icon.sku__discount-icon.sku__promo-i_active -15%
+                    .sku__promo-icon.sku__hit-icon.sku__promo-i_active хит
                 .sku__image 
-                    img(src="#0" alt="")
-                .sku__fav-basc
+                    img(src=require('../img/content/sales-hits-image2-content.webp') alt="")
+                .sku__fav-bask
+                    .sku__favorites(class=n === 0 ? 'sku__favorites_active' : '')
+                    .sku__basket
+                .sku__wr-title 
+                    h2.sku__title Аlthaus Malty assam
+                .sku__wr-type-of-tea
+                    .sku__type-of-tea Черный чай
+                .sku__wr-price 
+                    .sku__current-price 550 р.
+                    .sku__old-price 650 р.
+                .sku__wr-button 
+                    .sku__button Подробнее
+
             - n += 1
