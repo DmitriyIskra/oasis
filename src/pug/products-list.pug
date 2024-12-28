@@ -12,7 +12,9 @@ block content
         
         .prod-list__wrapper
             .prod-list__sidebar
-                .filters
+                .sku__wr-close-filter_mob 
+                    .sku__close-filter_mob
+                form.filters
                     .filter
                         .filter__title Формат
                         ul.filter__list
@@ -77,8 +79,10 @@ block content
                                     span.filter__type-name Ассорти
 
                     .filters__wr-button        
-                        button.filters__button(type="button") Сбросить фильтр      
+                        button.filters__button(type="reset") Сбросить фильтр      
             .prod-list__content
                 .prod-list__wr-title 
                     h1.prod-list__title Чай Althaus
+                .sku__wr-open-filter_mob 
+                    .sku__open-filter_mob
                 +sku_cards_list(10)

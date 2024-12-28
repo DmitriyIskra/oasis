@@ -39,6 +39,9 @@ import ControllReviewsModal from "./reviews-modal/ControllReviewsModal";
 import RedrawReviewsModal from "./reviews-modal/RedrawReviewsModal";
 // По клику на крестик закрывается окно с результатом отправки отзыва
 import closeReviewsResponseModal from "./close-reviews-response-modal/closeReviewsResponseModal";
+// Фильтры для списка товаров
+import ControllFilterPL from "./filter-prod-list/ControllFilterPL";
+import RedrawFilterPL from "./filter-prod-list/RedrawFilterPL";
 
 // ---------------------------------------------------------------------
 
@@ -190,6 +193,18 @@ if(modalReviews) {
 // Hезультатом отправки отзыва по клику на крестик закрывается
 const reviewsRespModals = document.querySelectorAll('.reviews__response-cover');
 if(reviewsRespModals) closeReviewsResponseModal(reviewsRespModals);
+
+// Фильтры для списка товаров
+const filterPL = document.querySelector('.filters')
+if(filterPL) {
+    const redraw = new RedrawFilterPL(filterPL);
+    const controll = new ControllFilterPL(redraw);
+    controll.init();
+}
+
+
+
+
 
 // MOBILE
 // Скрытие лого при открытии строки поиска
