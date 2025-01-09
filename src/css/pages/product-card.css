@@ -619,18 +619,7 @@
     cursor: pointer;
 }
 
-.product-desc__description {
-    background: #671993;
-
-    pointer-events: none;
-}
-
-#product-desc__controll:checked + .product-desc__controll > .product-desc__description {
-    background: #4D96AB;
-
-    pointer-events: initial;
-}
-#product-desc__controll:checked + .product-desc__controll > .product-desc__reviews {
+.product-desc__button.product-desc__button_active {
     background: #671993;
 
     pointer-events: none;
@@ -650,14 +639,13 @@
 }
 
 .product-desc__content-about {
-    display: block;
     padding: 2.08vw 2.40vw 3.80vw 1.41vw;
 }
 
-#product-desc__controll:checked ~ .product-desc__wr-content > .product-desc__content-about {
-    display: none;
+.product-desc__content-about.product-desc__content_active {
+    display: block;
 }
-#product-desc__controll:checked ~ .product-desc__wr-content > .product-desc__content-review {
+.product-desc__content-review.product-desc__content_active {
     display: flex;
 }
 

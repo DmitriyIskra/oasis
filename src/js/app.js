@@ -196,9 +196,25 @@ if(reviewsRespModals) closeReviewsResponseModal(reviewsRespModals);
 
 // Фильтры для списка товаров
 const filterPL = document.querySelector('.filters')
+// Кнопка для открытия фильтра в мобильной версии
+const openFiltersMobile = document.querySelector('.sku__open-filter_mob');
 if(filterPL) {
-    const redraw = new RedrawFilterPL(filterPL);
+    const redraw = new RedrawFilterPL(filterPL, openFiltersMobile);
     const controll = new ControllFilterPL(redraw);
+    controll.init();
+}
+
+// Табы в карточке товара Характеристики описание отзывы
+/**
+ * @description Для мобильной версии передаем кнопки по которым открывается содержание
+ * @description так как характеристики в DOM находятся не рядом c остальными
+ * @description Для десктопа передается только элемент с кнопками и описанием
+ * */ 
+
+const prodCardTabs = document.querySelector('.product-desc');
+if(prodCardTabs) {
+    const redraw = new RedrawTabsPC();
+    const controll = new ControllTabsPC(redraw);
     controll.init();
 }
 
@@ -212,14 +228,6 @@ controllSearch();
 
 // Закрытие каталога меню, при открытии мобильной навигации
 navMobileButton(checkboxNavMobile);
-
-// Табы в карточке товара Характеристики описание отзывы
-const tabsProdCard = [...document.querySelectorAll('.product__tab-button_m')];
-if(tabsProdCard) {
-    const redraw = new RedrawTabsPC();
-    const controll = new ControllTabsPC(redraw, tabsProdCard);
-    controll.init();
-}
 
 // Активация кнопки купить для nav-bar-mobile, если страница карточка товара
 const barButtonsBuy = document.querySelector('.bar__buttons');

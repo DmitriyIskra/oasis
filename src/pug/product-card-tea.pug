@@ -56,10 +56,11 @@ block content
                 .characteristics__price.characteristics__price_m
                     .characteristics__wr-price-current #[span 450] р
                     .characteristics__wr-price-old #[span 650]
+                //- кнопка для мобильной версии
                 //- .product__tab-active - подкрашивает активную кнопку
                 .product__tab-button_m.product__char-tab-button_m
                     | Характеристики
-                ul.product__characteristics.characteristics__list
+                ul.product__characteristics.characteristics__list.product-desc__content_mob
                     li.characteristics__item
                         .characteristics__title Формат
                         .characteristics__data Пакетированный чай в пирамидках
@@ -135,27 +136,28 @@ block content
                     .product__zoom-arrow.product__zoom-arrow_prev
                     .product__zoom-arrow.product__zoom-arrow_next
                 .zoom__close
-        .product-desc       
-            input#product-desc__controll(type="checkbox")      
+        .product-desc          
             .product-desc__controll
-                label.product-desc__button.product-desc__description(for="product-desc__controll") Описание
-                label.product-desc__button.product-desc__reviews(for="product-desc__controll") Отзывы
+                .product-desc__button.product-desc__description.product-desc__button_active(data-index="0") Описание
+                .product-desc__button.product-desc__reviews(data-index="1") Отзывы
             
             .product-desc__wr-content 
+                //- кнопка для мобильной версии
                 //- .product__tab-active - подкрашивает активную кнопку
                 .product__tab-button_m.product__about-tab-button_m
                     | Описание
-                .product-desc__content.product-desc__content-about
+                .product-desc__content.product-desc__content-about.product-desc__content_mob.product-desc__content_active(data-index="0")
                     .product-desc__wr-title
                         h2 Сибирский сбор / Siberian Berries
                     .product-desc__text 
                         p Чайные пирамидки с ярлыком для разовой з аварки в индивидуальных конвертах. <br> Чай черный байховый «NIKTEA»® среднелистовой с добавками растительного сырья с ароматом лесных ягод «Сибирский Сбор»15 пирамидок по 2.7 г
                         p Искусно купажированный чай с плантаций Индии и Цейлона. <br> Очень ароматный сбор на основе крепкого черного чая с душистыми таежными ягодами. Вкус многогранный, с живой кислинкой и лесной ноткой.
                 
+                //- кнопка для мобильной версии
                 //- .product__tab-active - подкрашивает активную кнопку
                 .product__tab-button_m.product__review-tab-button_m
                     | Отзывы
-                .product-desc__content.product-desc__content-review
+                .product-desc__content.product-desc__content-review.product-desc__content_mob(data-index="1")
                     label.product-desc__add-review(for="switcher-reviews-modal") Написать отзыв
                     ul.reviews__list
                         li.reviews__item 

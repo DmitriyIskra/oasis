@@ -1,11 +1,22 @@
 export default class RedrawFilterPL {
-    constructor(el) {
+    constructor(el, openButton) {
         this.el = el;
-
+        this.openButton = openButton;
+        console.log(openButton)
         this.points = [...this.el.querySelectorAll('input[type="checkbox"]')];
     }
 
-    open(target, list) {
+    // FOR MOBILE показываем фильтры
+    show() {
+        this.el.classList.add('filters__active');
+    }
+    // FOR MOBILE скрываем фильтры
+    hide() {
+        this.el.classList.remove('filters__active');
+    }
+
+    // Разворачиваем список в категории фильтра
+    openFilterList(target, list) {
         target.setAttribute('active', '');
 
         const childs = [...list.children];
@@ -16,7 +27,8 @@ export default class RedrawFilterPL {
         list.style.height = `${height}px`;
     }
 
-    close(target, list) {
+    // Сворачиваем список в категории фильтра
+    closeFilterList(target, list) {
         target.removeAttribute('active');
 
         const childs = [...list.children];

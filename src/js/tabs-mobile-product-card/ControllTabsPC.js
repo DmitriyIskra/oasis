@@ -1,31 +1,51 @@
 export default class ControllTabsPC {
-    constructor(d, tabs) {
-        this.d = d;
-        this.tabs = tabs;
+    constructor(redraw) {
+        this.redraw = redraw;
 
         this.click = this.click.bind(this);
+        this.resize = this.resize.bind(this);
+
+        this.timeOutId = null;
     }
 
-    init() {
+    init() { 
         this.registerEvents();
     }
 
     registerEvents() {
-        this.tabs.forEach(tab => {
-            tab.addEventListener('click', this.click);
-        })
+        this.redraw.buttonsMobile.forEach(item => item.addEventListener('click', this.click));
+        this.redraw.buttonsDesctop.forEach(item => item.addEventListener('click', this.click));
+        window.addEventListener('resize', this.resize);
     }
 
     click(e) {
-        const target = e.target.closest('.product__tab-button_m');
-        const isActive = target.classList.contains('product__tab-active');
-        const el = target.nextElementSibling;
+        // Разворачивание контента в мобильной версии
+        if(e.target.closest('.product__tab-button_m')) {
+            const target = e.target.closest('.product__tab-button_m');
+            const isActive = target.classList.contains('product__tab-active');
+            const el = target.nextElementSibling;
 
-        if(isActive) {
-            this.d.close(el, target);
-            return;
+            if(isActive) {
+                this.redraw.close(el, target);
+                return;
+            }
+            
+            this.redraw.open(el, target);
         }
-        
-        this.d.open(el, target);
+
+        // Переключение контента в десктопной версии
+        if(e.target.closest('.product-desc__button')) {
+            const target = e.target.closest('.product-desc__button');
+            
+            this.redraw.switching(target);
+        }
+    }
+
+    resize() {
+        if(this.timeOutId) clearTimeout(this.timeOutId);
+
+        this.timeOutId = setTimeout(() => {
+            this.redraw.reset();
+        }, 100)
     }
 }

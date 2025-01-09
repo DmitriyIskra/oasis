@@ -14,7 +14,7 @@
     padding-left: 8.54vw;
 }
 
-.sku__wr-close-filter_mob  {
+.filters__wr-close-filter_mob  {
     display: none;
 }
 
@@ -180,18 +180,56 @@
 
 @media(max-width: 961px) {
     .prod-list__sidebar {
+        padding-top: 0;
+        padding-left: 0;
+    }    
+}
+
+@media(max-width: 961px) {
+    .filters {
         position: absolute;
         top: 0;
         left: 0;
         z-index: 2;
 
+        display: none;
         width: 100%;
         height: 100%;
-        padding-top: 0;
-        padding-left: 0;
+    }   
+
+    .filters__active {
+        display: block;
+    }
+}
+
+@media(max-width: 961px) {
+    .filters__wr-close-filter_mob  {
+        display: flex;
+        justify-content: end;
+        padding-right: 6.40vw;
+
+        background-color: #fff;
     }
 
-    .prod-list__sidebar::before {
+    .filters__close-filter_mob {
+        width: 6.13vw;
+        height: 6.13vw;
+
+        background: no-repeat url('../../svg/close-black.svg');
+        background-size: contain;
+        background-position: center;
+    }
+}
+
+@media(max-width: 961px) {
+    .filters__form {
+        padding-top: 3.5vw;
+        padding-left: 3.5%;
+
+        background-color: #fff;
+    }
+
+    .filters__form::before {
         content: "";        
 
         position: absolute;
@@ -209,36 +247,10 @@
 }
 
 @media(max-width: 961px) {
-    .sku__wr-close-filter_mob  {
-        display: flex;
-        justify-content: end;
-        padding-right: 6.40vw;
-
-        background-color: #fff;
-    }
-
-    .sku__close-filter_mob {
-        width: 6.13vw;
-        height: 6.13vw;
-
-        background: no-repeat url('../../svg/close-black.svg');
-        background-size: contain;
-        background-position: center;
-    }
-}
-
-@media(max-width: 961px) {
-    .filters {
-        padding-left: 3.5%;
-
-        background-color: #fff;
-    }
-}
-
-@media(max-width: 961px) {
     .filter__title {
-        padding-top: 3.5vw;
-        padding-bottom: 3.5vw;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-bottom: 3.5vw;
 
         font-size: 4vw;
     }
