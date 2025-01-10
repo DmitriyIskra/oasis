@@ -1,6 +1,11 @@
 export default function productCardOpenComposition(el, arrow) {
     const child = el.children[0];
 
+    // считаем строки
+    const amountRows = child.children[0].getClientRects().length;
+
+    if(amountRows && amountRows >= 6) el.style.height = `${7.51}vw`
+
     el.style.display = 'block'
     const oldHeight = el.clientHeight;
     const newHeight = child.clientHeight;
