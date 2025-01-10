@@ -3,13 +3,21 @@ export default function productCardOpenComposition(el, arrow) {
 
     // считаем строки
     const amountRows = child.children[0].getClientRects().length;
+    // считаем количество span
+    const amountSpan = child.children.length;
 
-    if(amountRows && amountRows >= 6) el.style.height = `${7.51}vw`
+    // если строка одна но текста много, часть скрываем
+    if(amountRows && amountRows >= 6) el.style.height = `${7.51}vw`;
+    // если это набор посуды и перечисляем
+    if(amountSpan > 1) {
+        child.style.display = 'flex';
+        child.style.flexDirection = 'column';
+    }
 
-    el.style.display = 'block'
+    el.style.display = 'block';
     const oldHeight = el.clientHeight;
     const newHeight = child.clientHeight;
-    el.style.display = '-webkit-box'
+    el.style.display = '-webkit-box';
 
     let state = null;
 
@@ -20,7 +28,7 @@ export default function productCardOpenComposition(el, arrow) {
     arrow.addEventListener('click', () => {
         if(!state) {
             el.style.height = `${newHeight}px`;
-            el.style.display = 'block'
+            el.style.display = 'block';
             return;
         }
 
@@ -28,7 +36,7 @@ export default function productCardOpenComposition(el, arrow) {
     })
 
     el.addEventListener('transitionend', () => {
-        state = state ? null : true; 
+        state = state ? null : true;
 
         if(state) arrow.dataset.state = 'active';
         if(!state) {

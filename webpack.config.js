@@ -118,6 +118,73 @@ module.exports = {
         }),
         new HtmlWebPackPlugin({
             // title: '....' // здесь можно указать title конкретной страницы
+            template: './src/pug/product-card-milk.pug',
+            filename: './product-card-milk.html',   // куда компилировать
+            minify: {
+              html: false // отключаем минификацию html, еще есть версия minify: false
+            },
+            scriptLoading: 'blocking', // defer | module. можно также указать inject: 'body' скрипт будет в конце body но с defer
+        }),
+        new HtmlWebPackPlugin({
+            // title: '....' // здесь можно указать title конкретной страницы
+            template: './src/pug/product-card-alternative-milk.pug',
+            filename: './product-card-alternative-milk.html',   // куда компилировать
+            minify: {
+              html: false // отключаем минификацию html, еще есть версия minify: false
+            },
+            scriptLoading: 'blocking', // defer | module. можно также указать inject: 'body' скрипт будет в конце body но с defer
+        }),
+        new HtmlWebPackPlugin({
+            // title: '....' // здесь можно указать title конкретной страницы
+            template: './src/pug/product-card-water.pug',
+            filename: './product-card-water.html',   // куда компилировать
+            minify: {
+              html: false // отключаем минификацию html, еще есть версия minify: false
+            },
+            scriptLoading: 'blocking', // defer | module. можно также указать inject: 'body' скрипт будет в конце body но с defer
+        }),
+        new HtmlWebPackPlugin({
+            // title: '....' // здесь можно указать title конкретной страницы
+            template: './src/pug/product-card-carbonated-drink.pug',
+            filename: './product-card-carbonated-drink.html',   // куда компилировать
+            minify: {
+              html: false // отключаем минификацию html, еще есть версия minify: false
+            },
+            scriptLoading: 'blocking', // defer | module. можно также указать inject: 'body' скрипт будет в конце body но с defer
+        }),
+        
+        
+        new HtmlWebPackPlugin({
+            // title: '....' // здесь можно указать title конкретной страницы
+            template: './src/pug/product-card-dishes.pug',
+            filename: './product-card-dishes.html',   // куда компилировать
+            minify: {
+              html: false // отключаем минификацию html, еще есть версия minify: false
+            },
+            scriptLoading: 'blocking', // defer | module. можно также указать inject: 'body' скрипт будет в конце body но с defer
+        }),
+        new HtmlWebPackPlugin({
+            // title: '....' // здесь можно указать title конкретной страницы
+            template: './src/pug/product-card-fridge.pug',
+            filename: './product-card-fridge.html',   // куда компилировать
+            minify: {
+              html: false // отключаем минификацию html, еще есть версия minify: false
+            },
+            scriptLoading: 'blocking', // defer | module. можно также указать inject: 'body' скрипт будет в конце body но с defer
+        }),
+        new HtmlWebPackPlugin({
+            // title: '....' // здесь можно указать title конкретной страницы
+            template: './src/pug/product-card-dishes-sets.pug',
+            filename: './product-card-dishes-sets.html',   // куда компилировать
+            minify: {
+              html: false // отключаем минификацию html, еще есть версия minify: false
+            },
+            scriptLoading: 'blocking', // defer | module. можно также указать inject: 'body' скрипт будет в конце body но с defer
+        }),
+
+
+        new HtmlWebPackPlugin({
+            // title: '....' // здесь можно указать title конкретной страницы
             template: './src/pug/catalog.pug',
             filename: './catalog.html',   // куда компилировать
             minify: {

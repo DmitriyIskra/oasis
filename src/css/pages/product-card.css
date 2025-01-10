@@ -188,6 +188,7 @@
     flex-grow: 1;
     padding-top: 2.29vw;
     padding-left: 2.53%;
+    padding-right: 4.89%;
 }
 
 .product__wr-title {
@@ -228,7 +229,6 @@
 
 .product__characteristics {
     margin-top: 2.71vw;
-    padding-right: 9.89%;
 }
 
 .characteristics__item {
@@ -243,6 +243,14 @@
     margin-top: 1.04vw;
 }
 
+.characteristics__item_hide {
+    display: none;
+}
+
+.characteristics__item_active {
+    display: flex;
+}
+
 .characteristics__title {
     min-width: 39%;
 
@@ -253,6 +261,10 @@
 .characteristics__data {
     font-size: 1.04vw;
     font-weight: 400;
+}
+
+.characteristics__data_uppercase {
+    text-transform: uppercase;
 }
 
 .characteristics__wr-composition {
@@ -314,7 +326,6 @@
     text-align: right;
 }
 
-
 .product__price-buttons {
     display: flex;
     flex-grow: 1;
@@ -322,12 +333,12 @@
     justify-content: flex-end;
 }
 
-.characteristics__item-price {
+.product__wr-price {
     margin-top: 0;
     margin-right: 1%;
 }
 
-.characteristics__price {
+.product__price {
     display: flex;
     width: 100%;
     justify-content: end;
@@ -335,7 +346,7 @@
     gap: 0.94vw;
 }
 
-.characteristics__wr-price-current {
+.product__wr-price-current {
     font-family: 'Play';
     font-size: 1.46vw;
     font-weight: 400;
@@ -343,7 +354,7 @@
     color: #671993;
 }
 
-.characteristics__wr-price-old {
+.product__wr-price-old {
     position: relative;
 
     font-family: 'Play';
@@ -353,7 +364,7 @@
     color: #615F5D;
 }
 
-.characteristics__wr-price-old::after {
+.product__wr-price-old::after {
     content: "";
 
     position: absolute;
@@ -372,38 +383,38 @@
     display: none;
 }
 
-.characteristics__item.characteristics__buttons {
+.product__buttons {
     margin-top: 1.4vw;
 }
 
-.characteristics__activity-list {
+.product__activity-list {
     width: 100%;
 }
 
-.characteristics__activity-item {
+.product__activity-item {
     display: none;
 }
 
-.characteristics__activity_active {
+.product__activity_active {
     display: grid;
 }
 
-.characteristics__activity-buy {
+.product__activity-buy {
     grid-template-columns: 1fr 1fr;
 }
 
-.characteristics__wr-add {
+.product__wr-add {
     display: none;
     gap: 0.36vw;
     justify-self: start;
     grid-column: 1;
 }
 
-.characteristics__wr-add_active {
+.product__wr-add_active {
     display: flex;
 }
 
-.characteristics__add-piece {
+.product__add-piece {
     display: grid;
     place-items: center;
     width: 2.60vw;
@@ -416,13 +427,15 @@
     color: #fff;
     border: 1px solid #FFF;
     background-color: #4D96AB;
+
+    cursor: pointer;
 }
 
-.characteristics__decrement::before {
+.product__decrement::before {
     content: "-";
 }
 
-.characteristics__added-pieces {
+.product__added-pieces {
     width: 3.49vw;
 
     font-family: 'Play';
@@ -435,11 +448,11 @@
     outline: none;
 }
 
-.characteristics__increment::before {
+.product__increment::before {
     content: "+";
 }
 
-.characteristics__button {
+.product__button {
     display: flex;
     height: 2.08vw;
     flex-direction: column;
@@ -462,43 +475,43 @@
     cursor: pointer;
 }
 
-.characteristics__buy,
-.characteristics__in-basket {
+.product__buy,
+.product__in-basket {
     display: none;
     width: 86.2%;
     justify-self: end;
     grid-column: 2;
 }
 
-.characteristics__in-basket {
+.product__in-basket {
     background-color: #671993;
 }
 
-.characteristics__in-basket > span:last-child {
+.product__in-basket > span:last-child {
     font-size: 0.73vw;
 }
 
-.characteristics__buy_active {
+.product__buy_active {
     display: flex;
 }
 
-.characteristics__inform,
-.characteristics__communication {
+.product__inform,
+.product__communication {
     width: 37.7%;
     justify-self: end;
 }
 
-.characteristics__wr-maybe {
+.product__wr-maybe {
     display: flex;
     justify-content: space-between;
     padding-left: 5.33%;
 }
 
-.characteristics__maybe {
+.product__maybe {
     width: 44.02%;
 }
 
-.characteristics__maybe-buy {
+.product__maybe-buy {
     width: 47.7%;
 
     pointer-events: none;
@@ -1623,6 +1636,7 @@
         height: 100%;
         padding-top: 0;
         padding-left: 0;
+        padding-right: 0;
     }
 }
 
@@ -1655,11 +1669,11 @@
         gap: 4vw;
     }
 
-    .characteristics__wr-price-current {
+    .product__wr-price-current {
         font-size: 7.47vw;
     }
 
-    .characteristics__wr-price-old {
+    .product__wr-price-old {
         font-size: 5.33vw;
     }
 }
@@ -1779,13 +1793,7 @@
 }
 
 @media(max-width: 961px) {
-    .characteristics__item-price {
-        display: none;
-    }
-}
-
-@media(max-width: 961px) {
-    .characteristics__buttons {
+    .product__price-buttons {
         display: none;
     }
 }

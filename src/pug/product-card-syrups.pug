@@ -53,9 +53,9 @@ block content
                     h2.product__title_m
                         span Чай черный NIKTEA Сибирский Сбор
                         span Siberian Berries
-                .characteristics__price.characteristics__price_m
-                    .characteristics__wr-price-current #[span 450] р
-                    .characteristics__wr-price-old #[span 650]
+                .product__price.characteristics__price_m
+                    .product__wr-price-current #[span 450] р
+                    .product__wr-price-old #[span 650]
                 //- кнопка для мобильной версии
                 //- .product__tab-active - подкрашивает активную кнопку
                 .product__tab-button_m.product__char-tab-button_m
@@ -99,28 +99,30 @@ block content
                     li.characteristics__item
                         .characteristics__title Код производителя
                         .characteristics__data ЧП265895
-                    li.characteristics__item.characteristics__item-price
-                        .characteristics__price
-                            .characteristics__wr-price-current #[span 450] р
-                            .characteristics__wr-price-old #[span 650]
-                    li.characteristics__item.characteristics__buttons
-                        ul.characteristics__activity-list
-                            li.characteristics__activity-item.characteristics__activity-buy.characteristics__activity_active
-                                //- .characteristics__wr-add_active
-                                .characteristics__wr-add
-                                    button.characteristics__add-piece.characteristics__decrement
-                                    input.characteristics__added-pieces(type="text")
-                                    button.characteristics__add-piece.characteristics__increment
-                                button.characteristics__button.characteristics__buy.characteristics__buy_active(type="button") Купить
-                                button.characteristics__button.characteristics__in-basket(type="button") #[span В корзине] #[span перейти]
-                            li.characteristics__activity-item
-                                button.characteristics__button.characteristics__inform(type="button") Сообщить о поступлении
-                            li.characteristics__activity-item
-                                button.characteristics__button.characteristics__communication(type="button") Связаться с менеджером
-                            li.characteristics__activity-item
-                                .characteristics__wr-maybe
-                                    button.characteristics__button.characteristics__maybe(type="button") Возможно вас заинтересует
-                                    button.characteristics__button.characteristics__maybe-buy(type="button") Купить
+                    
+                .product__price-buttons
+                    .product__wr-price
+                        .product__price
+                            .product__wr-price-current #[span 450] р
+                            .product__wr-price-old #[span 650]
+                    .product__buttons
+                        ul.product__activity-list
+                            li.product__activity-item.product__activity-buy.product__activity_active
+                                //- .product__wr-add_active
+                                .product__wr-add
+                                    button.product__add-piece.product__decrement
+                                    input.product__added-pieces(type="text")
+                                    button.product__add-piece.product__increment
+                                button.product__button.product__buy.product__buy_active(type="button") Купить
+                                button.product__button.product__in-basket(type="button") #[span В корзине] #[span перейти]
+                            li.product__activity-item
+                                button.product__button.product__inform(type="button") Сообщить о поступлении
+                            li.product__activity-item
+                                button.product__button.product__communication(type="button") Связаться с менеджером
+                            li.product__activity-item
+                                .product__wr-maybe
+                                    button.product__button.product__maybe(type="button") Возможно вас заинтересует
+                                    button.product__button.product__maybe-buy(type="button") Купить
         
             .product__zoom-cover
                 .product__zoom-wr-slider
