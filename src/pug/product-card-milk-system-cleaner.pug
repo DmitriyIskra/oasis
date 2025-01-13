@@ -1,0 +1,389 @@
+
+extends layout/layout
+
+include mixines/bread-crumbs/bread-crumbs
+
+block content
+    
+    +bread-crumbs(bread_crumbs)
+
+    .card-wrapper
+        .product 
+            .product__wr-images
+                .product__wr-slider
+                    .product__new.product__new_active
+                    .swiper.product__slider.scale1_1
+                        .swiper-wrapper.product__slider-wrapper
+                            .swiper-slide.product__slide
+                                img(src=require('../img/content/sales-hits-image-content.webp') alt="" loading="lazy")
+                            .swiper-slide.product__slide
+                                img(src=require('../img/content/goods-promo-slider-img-content.webp') alt="" loading="lazy")
+                            .swiper-slide.product__slide
+                                img(src=require('../img/content/sales-hits-image2-content.webp') alt="" loading="lazy")
+                            .swiper-slide.product__slide
+                                img(src=require('../img/content/sales-hits-strawberry-content.webp') alt="" loading="lazy")
+                    //- .favorites__heart_active - если есть в избранном
+                    .product__favorites.animation-beat-heart
+
+                    .product__goods-wr-arrow_mobile.product__goods-wr-arrow_mobile-prev
+                        .product__goods-arrow_mobile.product__goods-prev_mobile
+                    .product__goods-wr-arrow_mobile.product__goods-wr-arrow_mobile-next
+                        .product__goods-arrow_mobile.product__goods-next_mobile
+                .product__wr-thumbs
+                    .swiper.product__thumbs
+                        .swiper-wrapper.product__thumbs-wrapper
+                            .swiper-slide.product__thumb-slide
+                                img(src=require('../img/content/sales-hits-image-content.webp') alt="" loading="lazy")
+                            .swiper-slide.product__thumb-slide
+                                img(src=require('../img/content/goods-promo-slider-img-content.webp') alt="" loading="lazy")
+                            .swiper-slide.product__thumb-slide
+                                img(src=require('../img/content/sales-hits-image2-content.webp') alt="" loading="lazy")
+                            .swiper-slide.product__thumb-slide
+                                img(src=require('../img/content/sales-hits-strawberry-content.webp') alt="" loading="lazy")
+                    
+                    .product__goods-wr-arrow.product__goods-wr-arrow-prev
+                        .product__goods-arrow.product__goods-prev
+                    .product__goods-wr-arrow.product__goods-wr-arrow-next
+                        .product__goods-arrow.product__goods-next
+            .product__wr-info 
+                .product__wr-title 
+                    h1.product__title.characteristics__data_uppercase wmf milk system cleaner tabs
+                    h2.product__sub-title
+                //- Мобильная версия
+                .product__wr-title_m
+                    h2.product__title_m
+                        span.characteristics__data_uppercase wmf milk system cleaner tabs
+                        span
+                .product__price.characteristics__price_m
+                    .product__wr-price-current #[span 450] р
+                    .product__wr-price-old #[span 650]
+                //- кнопка для мобильной версии
+                //- .product__tab-active - подкрашивает активную кнопку
+                .product__tab-button_m.product__char-tab-button_m
+                    | Характеристики
+                ul.product__characteristics.characteristics__list.product-desc__content_mob
+                    li.characteristics__item
+                        .characteristics__title Формат
+                        .characteristics__data Таблетки
+                    li.characteristics__item
+                        .characteristics__title Бренд
+                        .characteristics__data WMF
+                    li.characteristics__item
+                        .characteristics__title Вес
+                        .characteristics__data 10 г / 100 шт
+                    li.characteristics__item
+                        .characteristics__title Производство
+                        .characteristics__data Германия
+                    li.characteristics__item
+                        .characteristics__title.characteristics__available-title Наличие
+                        .characteristics__data.characteristics__wr-available
+                            .characteristics__available-state
+                                span.characteristics__available-item.characteristics__available_active(data-type="available") Есть в наличии
+                                span.characteristics__available-item(data-type="awaiting") Ожидается поступление 
+                                span.characteristics__available-item(data-type="withdrawn") Снято с продажи
+                                span.characteristics__available-item(data-type="order") Под заказ
+                            .characteristics__wr-amount 
+                                .characteristics__amount 
+                                    span.characteristics__amount-num 15
+                                    span.characteristics__pieces шт
+                                .characteristics__amount-text На складе
+                    li.characteristics__item
+                        .characteristics__title Код производителя
+                        .characteristics__data ЧП265895
+                    
+                .product__price-buttons
+                    .product__wr-price
+                        .product__price
+                            .product__wr-price-current #[span 450] р
+                            .product__wr-price-old #[span 650]
+                    .product__buttons
+                        ul.product__activity-list
+                            li.product__activity-item.product__activity-buy.product__activity_active
+                                //- .product__wr-add_active
+                                .product__wr-add
+                                    button.product__add-piece.product__decrement
+                                    input.product__added-pieces(type="text")
+                                    button.product__add-piece.product__increment
+                                button.product__button.product__buy.product__buy_active(type="button") Купить
+                                button.product__button.product__in-basket(type="button") #[span В корзине] #[span перейти]
+                            li.product__activity-item
+                                button.product__button.product__inform(type="button") Сообщить о поступлении
+                            li.product__activity-item
+                                button.product__button.product__communication(type="button") Связаться с менеджером
+                            li.product__activity-item
+                                .product__wr-maybe
+                                    button.product__button.product__maybe(type="button") Возможно вас заинтересует
+                                    button.product__button.product__maybe-buy(type="button") Купить
+
+            .product__zoom-cover
+                .product__zoom-wr-slider
+                    .swiper.product__zoom-swiper
+                        .swiper-wrapper.product__zoom-wr-swiper
+                            .swiper-slide.product__zoom-slide
+                                img.product__zoom-image(src=require('../img/content/sales-hits-image-content.webp'), alt="" loading="lazy")
+                            .swiper-slide.product__zoom-slide
+                                img.product__zoom-image(src=require('../img/content/goods-promo-slider-img-content.webp'), alt="" loading="lazy")
+                            .swiper-slide.product__zoom-slide
+                                img.product__zoom-image(src=require('../img/content/sales-hits-image2-content.webp'), alt="" loading="lazy")
+                            .swiper-slide.product__zoom-slide
+                                img.product__zoom-image(src=require('../img/content/sales-hits-strawberry-content.webp'), alt="" loading="lazy")
+                    .product__zoom-arrow.product__zoom-arrow_prev
+                    .product__zoom-arrow.product__zoom-arrow_next
+                .zoom__close
+        .product-desc          
+            .product-desc__controll
+                .product-desc__button.product-desc__description.product-desc__button_active(data-index="0") Описание
+                .product-desc__button.product-desc__reviews(data-index="1") Отзывы
+            
+            .product-desc__wr-content 
+                //- кнопка для мобильной версии
+                //- .product__tab-active - подкрашивает активную кнопку
+                .product__tab-button_m.product__about-tab-button_m
+                    | Описание
+                .product-desc__content.product-desc__content-about.product-desc__content_mob.product-desc__content_active(data-index="0")
+                    .product-desc__wr-title
+                        h2 Сибирский сбор / Siberian Berries
+                    .product-desc__text 
+                        p Чайные пирамидки с ярлыком для разовой з аварки в индивидуальных конвертах. <br> Чай черный байховый «NIKTEA»® среднелистовой с добавками растительного сырья с ароматом лесных ягод «Сибирский Сбор»15 пирамидок по 2.7 г
+                        p Искусно купажированный чай с плантаций Индии и Цейлона. <br> Очень ароматный сбор на основе крепкого черного чая с душистыми таежными ягодами. Вкус многогранный, с живой кислинкой и лесной ноткой.
+                
+                //- кнопка для мобильной версии
+                //- .product__tab-active - подкрашивает активную кнопку
+                .product__tab-button_m.product__review-tab-button_m
+                    | Отзывы
+                .product-desc__content.product-desc__content-review.product-desc__content_mob(data-index="1")
+                    label.product-desc__add-review(for="switcher-reviews-modal") Написать отзыв
+                    ul.reviews__list
+                        li.reviews__item 
+                            ul.reviews__head-list 
+                                li.reviews__head-item.reviews__avatar
+                                li.reviews__head-item.reviews__info
+                                    .reviews__name Василий Петров
+                                    .reviews__date 25.26.2024
+                                li.reviews__head-item.reviews__stars
+                                    ul.reviews__stars-list 
+                                        li.reviews__stars-item.reviews__stars_active
+                                        li.reviews__stars-item.reviews__stars_active
+                                        li.reviews__stars-item.reviews__stars_active
+                                        li.reviews__stars-item.reviews__stars_active
+                                        li.reviews__stars-item
+                            .reviews__content
+                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, dolorum explicabo, repellat culpa ipsam laudantium nobis, modi repudiandae ea incidunt nisi. Natus aspernatur nesciunt ex adipisci enim quia reprehenderit? Perspiciatis?
+                            .reviews__read-more
+                                a(href="#0") Читать дальше 
+                        li.reviews__item 
+                            ul.reviews__head-list 
+                                li.reviews__head-item.reviews__avatar
+                                li.reviews__head-item.reviews__info
+                                    .reviews__name Василий Петров
+                                    .reviews__date 25.26.2024
+                                li.reviews__head-item.reviews__stars
+                                    ul.reviews__stars-list 
+                                        li.reviews__stars-item.reviews__stars_active
+                                        li.reviews__stars-item.reviews__stars_active
+                                        li.reviews__stars-item.reviews__stars_active
+                                        li.reviews__stars-item.reviews__stars_active
+                                        li.reviews__stars-item
+                            .reviews__content
+                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, dolorum explicabo, repellat culpa ipsam laudantium nobis, modi repudiandae ea incidunt nisi. Natus aspernatur nesciunt ex adipisci enim quia reprehenderit? Perspiciatis?
+                            .reviews__read-more
+                                a(href="#0") Читать дальше 
+                        li.reviews__item 
+                            ul.reviews__head-list 
+                                li.reviews__head-item.reviews__avatar
+                                li.reviews__head-item.reviews__info
+                                    .reviews__name Василий Петров
+                                    .reviews__date 25.26.2024
+                                li.reviews__head-item.reviews__stars
+                                    ul.reviews__stars-list 
+                                        li.reviews__stars-item.reviews__stars_active
+                                        li.reviews__stars-item.reviews__stars_active
+                                        li.reviews__stars-item.reviews__stars_active
+                                        li.reviews__stars-item.reviews__stars_active
+                                        li.reviews__stars-item
+                            .reviews__content
+                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, dolorum explicabo, repellat culpa ipsam laudantium nobis, modi repudiandae ea incidunt nisi. Natus aspernatur nesciunt ex adipisci enim quia reprehenderit? Perspiciatis?
+                            .reviews__read-more
+                                a(href="#0") Читать дальше 
+                        li.reviews__item 
+                            ul.reviews__head-list 
+                                li.reviews__head-item.reviews__avatar
+                                li.reviews__head-item.reviews__info
+                                    .reviews__name Василий Петров
+                                    .reviews__date 25.26.2024
+                                li.reviews__head-item.reviews__stars
+                                    ul.reviews__stars-list 
+                                        li.reviews__stars-item.reviews__stars_active
+                                        li.reviews__stars-item.reviews__stars_active
+                                        li.reviews__stars-item.reviews__stars_active
+                                        li.reviews__stars-item.reviews__stars_active
+                                        li.reviews__stars-item.reviews__stars_active
+                            .reviews__content
+                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, dolorum explicabo, repellat culpa ipsam laudantium nobis, modi repudiandae ea incidunt nisi. Natus aspernatur nesciunt ex adipisci enim quia reprehenderit? Perspiciatis?
+                            .reviews__read-more
+                                a(href="#0") Читать дальше 
+                    ul.reviews__pagination-list
+                        li.reviews__pagination-item.reviews__pagination_start
+                        li.reviews__pagination-item.reviews__pagination_prev
+                        li.reviews__pagination-item.reviews__pagination_num.reviews__pagination_active 1
+                        li.reviews__pagination-item.reviews__pagination_num 2
+                        li.reviews__pagination-item.reviews__pagination_num 3
+                        li.reviews__pagination-item.reviews__pagination_dot ...
+                        li.reviews__pagination-item.reviews__pagination_num 10
+                        li.reviews__pagination-item.reviews__pagination_next
+                        li.reviews__pagination-item.reviews__pagination_end
+                    
+                    input#switcher-reviews-modal(type="checkbox")
+                    .reviews__modal-cover
+                        .reviews__modal
+                            .reviews__modal-wr-close
+                                label.reviews__modal-close(for="switcher-reviews-modal")
+                            .reviews__modal-wr-title 
+                                h2.reviews__modal-title Чай черный NIKTEA Сибирский Сбор
+                            form.reviews__form(action="" name="form_reviews" novalidate) 
+                                ul.reviews__modal-stars-list
+                                    li.reviews__modal-stars-item 
+                                        label.reviews__modal-wr-star
+                                            input.reviews__input-star(type="checkbox" name="star-1")
+                                            div.reviews__modal-star(data-num="0")
+                                    li.reviews__modal-stars-item 
+                                        label.reviews__modal-wr-star
+                                            input.reviews__input-star(type="checkbox" name="star-2")
+                                            div.reviews__modal-star(data-num="1")
+                                    li.reviews__modal-stars-item  
+                                        label.reviews__modal-wr-star
+                                            input.reviews__input-star(type="checkbox" name="star-3")
+                                            div.reviews__modal-star(data-num="2")
+                                    li.reviews__modal-stars-item 
+                                        label.reviews__modal-wr-star
+                                            input.reviews__input-star(type="checkbox" name="star-4")
+                                            div.reviews__modal-star(data-num="3")
+                                    li.reviews__modal-stars-item  
+                                        label.reviews__modal-wr-star
+                                            input.reviews__input-star(type="checkbox" name="star-5")
+                                            div.reviews__modal-star(data-num="4")
+
+                                .reviews__modal-wr-text 
+                                    textarea(name="text" placeholder="Расскажите о товаре, что понравилось, а что нет" maxlength="60") 
+                                .reviews__modal-input-group
+                                    label.reviews__modal-label.reviews__modal-wr-name
+                                        span.reviews__modal-input-name Имя
+                                        span.reviews__modal-input-error
+                                        input.reviews__modal-input(type="text" name="name" required)
+                                    label.reviews__modal-label.reviews__modal-wr-secondname
+                                        span.reviews__modal-input-name Фамилия
+                                        input.reviews__modal-input(type="text" name="secondname")
+                                    label.reviews__modal-label.reviews__modal-wr-email
+                                        span.reviews__modal-input-name Почта
+                                        span.reviews__modal-input-error
+                                        input.reviews__modal-input(type="email" name="email" required)
+                                    //- .reviews__modal-submit_active
+                                    .reviews__modal-wr-submit.reviews__modal-submit_active
+                                        button.reviews__modal-submit(type="submit") Отправить
+                            //- .reviews__captcha_active
+                            form.reviews__captcha(name="form-reviews_captcha")
+                                .reviews__captcha-wr-img
+                                    img.reviews__captcha-img(src=require('../img/icons/captcha-icon.png') alt="" loading="lazy")
+                                .reviews__captcha-wr-input
+                                    input.reviews__captcha-input(name="reviews_captcha")
+                                .reviews__captcha-wr-buttons 
+                                    button.reviews__captcha-button(type="reset") Отмена
+                                    button.reviews__captcha-button(type="button") ок
+
+                    //- .reviews__response_active 
+                    .reviews__response-cover   
+                        .reviews__response.reviews__modal-success 
+                            .reviews__modal-wr-close
+                                .reviews__modal-close
+                            .reviews__response-icon.reviews__response-icon_succ
+                            .reviews__modal-text 
+                                p Ваш отзыв успешно отправлен
+
+                    .reviews__response-cover     
+                        .reviews__response.reviews__modal-error 
+                            .reviews__modal-wr-close
+                                .reviews__modal-close
+                            .reviews__response-icon.reviews__response-icon_err
+                            .reviews__modal-text 
+                                p Произошла ошибка,#[br] попробуйте еще раз.
+        .interesting 
+            .interesting__wr-title 
+                h2 Вам может быть интересно
+            .swiper.interesting-sl
+                .swiper-wrapper.interesting-sl__wrapper 
+                    .swiper-slide.interesting-sl__slide
+                        .interesting-sl__wr-img
+                           img(src=require('../img/content/sales-hits-strawberry-content.webp') alt="" loading="lazy")
+                        .interesting-sl__wr-title 
+                            h2 Colombia andino
+                        .interesting-sl__wr-price
+                            p 450 р
+                        .interesting-sl__wr-button
+                            a(href="#0") Подробнее
+                    .swiper-slide.interesting-sl__slide
+                        .interesting-sl__wr-img
+                           img(src=require('../img/content/sales-hits-strawberry-content.webp') alt="" loading="lazy")
+                        .interesting-sl__wr-title 
+                            h2 Colombia andino
+                        .interesting-sl__wr-price
+                            p 450 р
+                        .interesting-sl__wr-button
+                            a(href="#0") Подробнее
+                    .swiper-slide.interesting-sl__slide
+                        .interesting-sl__wr-img
+                           img(src=require('../img/content/sales-hits-strawberry-content.webp') alt="" loading="lazy")
+                        .interesting-sl__wr-title 
+                            h2 Colombia andino
+                        .interesting-sl__wr-price
+                            p 450 р
+                        .interesting-sl__wr-button
+                            a(href="#0") Подробнее
+                    .swiper-slide.interesting-sl__slide
+                        .interesting-sl__wr-img
+                           img(src=require('../img/content/sales-hits-strawberry-content.webp') alt="" loading="lazy")
+                        .interesting-sl__wr-title 
+                            h2 Colombia andino
+                        .interesting-sl__wr-price
+                            p 450 р
+                        .interesting-sl__wr-button
+                            a(href="#0") Подробнее
+                    .swiper-slide.interesting-sl__slide
+                        .interesting-sl__wr-img
+                           img(src=require('../img/content/sales-hits-strawberry-content.webp') alt="" loading="lazy")
+                        .interesting-sl__wr-title 
+                            h2 Colombia andino
+                        .interesting-sl__wr-price
+                            p 450 р
+                        .interesting-sl__wr-button
+                            a(href="#0") Подробнее
+                    .swiper-slide.interesting-sl__slide
+                        .interesting-sl__wr-img
+                           img(src=require('../img/content/sales-hits-strawberry-content.webp') alt="" loading="lazy")
+                        .interesting-sl__wr-title 
+                            h2 Colombia andino
+                        .interesting-sl__wr-price
+                            p 450 р
+                        .interesting-sl__wr-button
+                            a(href="#0") Подробнее
+                    .swiper-slide.interesting-sl__slide
+                        .interesting-sl__wr-img
+                           img(src=require('../img/content/sales-hits-strawberry-content.webp') alt="" loading="lazy")
+                        .interesting-sl__wr-title 
+                            h2 Colombia andino
+                        .interesting-sl__wr-price
+                            p 450 р
+                        .interesting-sl__wr-button
+                            a(href="#0") Подробнее
+                    .swiper-slide.interesting-sl__slide
+                        .interesting-sl__wr-img
+                           img(src=require('../img/content/sales-hits-strawberry-content.webp') alt="" loading="lazy")
+                        .interesting-sl__wr-title 
+                            h2 Colombia andino
+                        .interesting-sl__wr-price
+                            p 450 р
+                        .interesting-sl__wr-button
+                            a(href="#0") Подробнее
+
+                .interesting-sl__arrows
+                    .interesting-sl__arrow.interesting-sl__prev.scaleX1_1
+                    .interesting-sl__arrow.interesting-sl__next.scaleX1_1

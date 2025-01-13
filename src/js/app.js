@@ -42,6 +42,10 @@ import closeReviewsResponseModal from "./close-reviews-response-modal/closeRevie
 // Фильтры для списка товаров
 import ControllFilterPL from "./filter-prod-list/ControllFilterPL";
 import RedrawFilterPL from "./filter-prod-list/RedrawFilterPL";
+// Выбор типа (цвет или размер) в карточке товара
+import RedrawChoiceType from "./product-card-choice-type/RedrawChoiceType";
+import ControllChoiceType from "./product-card-choice-type/ControllChoiceType";
+
 
 // ---------------------------------------------------------------------
 
@@ -218,7 +222,20 @@ if(prodCardTabs) {
     controll.init();
 }
 
-
+// Выбор типа (цвет) в карточке товара
+const typeProductColors = document.querySelector('.characteristics__types-colors');
+if(typeProductColors) {
+const redraw = new RedrawChoiceType(typeProductColors);
+const controll = new ControllChoiceType(redraw);
+controll.init();
+}
+// Выбор типа (размер) в карточке товара
+const typeProductSizes = document.querySelector('.characteristics__types-sizes');
+if(typeProductSizes) {
+const redraw = new RedrawChoiceType(typeProductSizes);
+const controll = new ControllChoiceType(redraw);
+controll.init();
+}
 
 
 

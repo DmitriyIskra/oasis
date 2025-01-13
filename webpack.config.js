@@ -181,6 +181,42 @@ module.exports = {
             },
             scriptLoading: 'blocking', // defer | module. можно также указать inject: 'body' скрипт будет в конце body но с defer
         }),
+        new HtmlWebPackPlugin({
+            // title: '....' // здесь можно указать title конкретной страницы
+            template: './src/pug/product-card-hot-chocolate.pug',
+            filename: './product-card-hot-chocolate.html',   // куда компилировать
+            minify: {
+              html: false // отключаем минификацию html, еще есть версия minify: false
+            },
+            scriptLoading: 'blocking', // defer | module. можно также указать inject: 'body' скрипт будет в конце body но с defer
+        }),
+        new HtmlWebPackPlugin({
+            // title: '....' // здесь можно указать title конкретной страницы
+            template: './src/pug/product-card-milk-system-cleaner.pug',
+            filename: './product-card-milk-system-cleaner.html',   // куда компилировать
+            minify: {
+              html: false // отключаем минификацию html, еще есть версия minify: false
+            },
+            scriptLoading: 'blocking', // defer | module. можно также указать inject: 'body' скрипт будет в конце body но с defer
+        }),
+        new HtmlWebPackPlugin({
+            // title: '....' // здесь можно указать title конкретной страницы
+            template: './src/pug/product-card-t-short.pug',
+            filename: './product-card-t-short.html',   // куда компилировать
+            minify: {
+              html: false // отключаем минификацию html, еще есть версия minify: false
+            },
+            scriptLoading: 'blocking', // defer | module. можно также указать inject: 'body' скрипт будет в конце body но с defer
+        }),
+        new HtmlWebPackPlugin({
+            // title: '....' // здесь можно указать title конкретной страницы
+            template: './src/pug/product-card-broths.pug',
+            filename: './product-card-broths.html',   // куда компилировать
+            minify: {
+              html: false // отключаем минификацию html, еще есть версия minify: false
+            },
+            scriptLoading: 'blocking', // defer | module. можно также указать inject: 'body' скрипт будет в конце body но с defer
+        }),
 
 
         new HtmlWebPackPlugin({
