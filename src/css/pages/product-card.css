@@ -812,7 +812,7 @@
 }
 
 .package__table-item {
-    width: 45%;
+    width: 47.44%;
 }
 
 .package__table-wr-title {
@@ -842,6 +842,10 @@
     padding-left: 1.20vw;
 }
 
+.package__properties-item_milk-system {
+    align-items: center;
+}
+
 .package__properties-text {
     font-family: 'Play';
     font-size: 0.96vw;
@@ -858,6 +862,16 @@
 
 .package__value {
     justify-self: end;
+    text-align: right;
+}
+
+.package__value_fn {
+    padding-top: 0.16vw;
+}
+
+.package__value_fn,
+.package__value_milk-system {
+    font-size: 0.75vw;
 }
 
 .package__note-icon {
