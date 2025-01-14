@@ -253,6 +253,7 @@
 
 .characteristics__title {
     min-width: 39%;
+    max-width: 39%;
 
     font-size: 1.15vw;
     font-weight: 700;
@@ -321,6 +322,14 @@
 }
 
 .characteristics__types-item_active > .characteristics__types-body_black {
+    border: 1px solid #fff;    
+}
+
+.characteristics__types-body_bw {
+    background: no-repeat linear-gradient(to right, #fff 0%, #fff 50%, #000 50%, #000 100%);
+}
+
+.characteristics__types-item_active > .characteristics__types-body_bw {
     border: 1px solid #fff;    
 }
 
@@ -730,10 +739,37 @@
     display: flex;
 }
 
+.package__tabs-list {
+    display: flex;
+    justify-content: center;
+    column-gap: 1.56vw;
+    row-gap: 1vw;
+    flex-wrap: wrap;
+}
+
+.package__tabs-item {
+    font-family: 'Play';
+    font-size: 1.04vw;
+    font-weight: 700;
+    text-decoration: underline;
+
+    color: #615F5D;
+
+    cursor: pointer;
+}
+
+.package__tabs-item_active {
+    color: #000;
+}
+
+.product-desc__wr-title {
+    margin-top: 2.66vw;
+} 
 .product-desc__wr-title h2 { 
     font-family: 'Play';
     font-size: 1.04vw;
     font-weight: 700;
+    text-align: center;
 
     color: #615F5D;
 }
@@ -747,9 +783,120 @@
     font-family: 'Play';
     font-size: 1.04vw;
     font-weight: 400;
+    text-align: center;
 
     color: #505050;
 }
+
+
+.package__content-list {
+    margin-top: 4.11vw;
+}
+
+.package__content-item {
+    display: none;
+}
+
+.package__content-item_active {
+    display: block;
+}
+
+.package__table-list {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 4.11vw;
+    justify-content: space-between;
+    padding-left: 1.77vw;
+    padding-right: 1.77vw;
+    padding-bottom: 2.08vw;
+}
+
+.package__table-item {
+    width: 45%;
+}
+
+.package__table-wr-title {
+    padding-bottom: 0.68vw;
+
+    border-image: linear-gradient(to right, #6AE9FB 0%, #2F5F6D 100%) 1 / 0 0 0.10vw;
+}
+
+.package__table-title {
+    font-family: 'Play';
+    font-size: 1.04vw;
+    font-weight: 700;
+    text-align: center;
+    
+    color: #000;
+}
+
+.package__properties-item {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 1.30vw;
+    padding-top: 0.68vw;
+    padding-right: 1.20vw;
+    padding-bottom: 0.68vw;
+    padding-left: 1.20vw;
+}
+
+.package__properties-text {
+    font-family: 'Play';
+    font-size: 0.96vw;
+    font-weight: 400;
+
+    color: #000;
+}
+
+.package__property {
+    justify-self: start;
+
+    white-space: nowrap;
+}
+
+.package__value {
+    justify-self: end;
+}
+
+.package__note-icon {
+    position: absolute;
+    top: 0;
+    right: -5%;
+
+    width: 1.09vw;
+    height: 1.09vw;
+
+    background: no-repeat url('../../svg/notes-pop-up.svg');
+    background-size: contain;
+    background-position: center;
+
+    cursor: pointer;
+}
+
+.package__note-icon > input {
+    display: none;
+}
+
+.package__note-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    transition: opacity 0.2s linear;
+
+    transform: translate(100%, 0);
+
+    visibility: hidden;
+    opacity: 0;
+}
+
+.package__note-icon > input:checked + .package__note-content {
+    visibility: visible;
+    opacity: 1;
+}
+
 
 .product-desc__content-review {
     padding-top: 1.51vw;
