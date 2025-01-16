@@ -1,4 +1,4 @@
-export default class RedrawTabsPC {
+export default class RedrawDescriptionProdCard {
     constructor() {
          // кнопки для переключения в mobile
         this.buttonsMobile = [...document.querySelectorAll('.product__tab-button_m')];
@@ -14,6 +14,11 @@ export default class RedrawTabsPC {
             .find(item => item.classList.contains('product-desc__button_active'));
         // активный контент для desctop
         this.activeContent = this.contentsForDesctop.querySelector('.product-desc__content_active');
+
+        // КОМПЛЕКТАЦИИ
+        // Блок кнопок переключения комплектаций
+        this.tabsPackages = this.contentsForDesctop.querySelector('.package__tabs-list');
+        this.contentPackeges = this.contentsForDesctop.querySelector('.package__content-list');
     }
 
     reset() {            
@@ -54,6 +59,20 @@ export default class RedrawTabsPC {
         this.activeContent.classList.add('product-desc__content_active');
     }
 
+    switchingPackages(target) {
+        // индекс выбранной комплектации
+        const i = target.dataset.tab_item;
+        // текущие активные наименование комплектации и контент
+        const currentTab = this.tabsPackages.querySelector('.package__tabs-item_active');
+        const currentContent = this.contentPackeges.querySelector('.package__content-item_active');
+
+        currentTab.classList.remove('package__tabs-item_active');
+        currentContent.classList.remove('package__content-item_active');
+
+        target.classList.add('package__tabs-item_active');
+        const selectedContent = this.contentPackeges.querySelector(`[data-content_item="${i}"]`);
+        selectedContent.classList.add('package__content-item_active');
+    }
 
     // MOBILE VER.
     open(el, target) { 
@@ -75,8 +94,21 @@ export default class RedrawTabsPC {
         target.classList.add('product__tab-active');
     }
 
+    /**
+     * @description el - это блок с контентом который нужно закрыть
+     * @description target - кнопка по которой произошел тап
+     * */ 
     close(el, target) {
         el.style.height = 0;
         target.classList.remove('product__tab-active');
+
+        // переключаем комплектацию в первую стартовую позицию
+        if(this.tabsPackages) {
+            setTimeout(() => {
+                if(target.classList.contains('product__about-tab-button_m')) {
+                    this.switchingPackages(this.tabsPackages.children[0]);
+                }
+            }, 300)
+        }
     }
 }

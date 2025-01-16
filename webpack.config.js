@@ -152,8 +152,6 @@ module.exports = {
             },
             scriptLoading: 'blocking', // defer | module. можно также указать inject: 'body' скрипт будет в конце body но с defer
         }),
-        
-        
         new HtmlWebPackPlugin({
             // title: '....' // здесь можно указать title конкретной страницы
             template: './src/pug/product-card-dishes.pug',
@@ -261,6 +259,8 @@ module.exports = {
             { from: 'src/svg/catalog-dishes.svg', to: 'svg/' },
             { from: 'src/svg/catalog-gifts-sets.svg', to: 'svg/' },
             { from: 'src/svg/catalog-different.svg', to: 'svg/' },
+
+            { from: 'src/files/price.pdf', to: 'files/' },
             
           ],
         }),

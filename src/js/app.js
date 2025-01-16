@@ -30,8 +30,8 @@ import productCardOpenComposition from "./product-card-open-composition/product-
 // Слайдер "может быть интересно"
 import interestingSlider from "./interesting-slider/interestingSlider";
 // Табы в карточке товара Характеристики описание отзывы
-import ControllTabsPC from "./tabs-mobile-product-card/ControllTabsPC";
-import RedrawTabsPC from "./tabs-mobile-product-card/RedrawTabsPC";
+import ControllDescriptionProdCard from "./tabs-product-card/ControllDescriptionProdCard";
+import RedrawDescriptionProdCard from "./tabs-product-card/RedrawDescriptionProdCard";
 // Активация кнопки купить для nav-bar-mobile, если страница карточка товара
 import navBarMobile from "./nav-bar-mobile/nav-bar-mobile";
 // Модалка для написания отзыва
@@ -217,8 +217,8 @@ if(filterPL) {
 
 const prodCardTabs = document.querySelector('.product-desc');
 if(prodCardTabs) {
-    const redraw = new RedrawTabsPC();
-    const controll = new ControllTabsPC(redraw);
+    const redraw = new RedrawDescriptionProdCard();
+    const controll = new ControllDescriptionProdCard(redraw);
     controll.init();
 }
 

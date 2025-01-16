@@ -28,8 +28,6 @@
     padding-top: 1.25vw;
     flex-direction: column;
     align-items: center;
-    /* flex-grow: 1; */
-    /* justify-content: center; */
 }
 
 .product__wr-slider {
@@ -641,7 +639,6 @@
     background-size: contain;
     background-position: center;
 
-    /* transform: translate(-100%, -50%); */
     transform: translateY(-50%);
 }
 
@@ -652,7 +649,6 @@
     background-size: contain;
     background-position: center;
 
-    /* transform: translate(100%, -50%); */
     transform: translateY(-50%);
 }
 
@@ -739,8 +735,18 @@
     display: flex;
 }
 
+.package__title {
+    font-family: 'Play';
+    font-size: 1.04vw;
+    font-weight: 700;
+    text-align: center;
+
+    color: #000;
+}
+
 .package__tabs-list {
     display: flex;
+    margin-top: 1.15vw;
     justify-content: center;
     column-gap: 1.56vw;
     row-gap: 1vw;
@@ -927,6 +933,39 @@
     opacity: 1;
 }
 
+.prices__list {
+    display: flex;
+    padding-top: 1.8vw;
+    flex-wrap: wrap;
+    column-gap: 1.82vw;
+    row-gap: 1.82vw;
+}
+
+.prices__item-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.prices__link-icon {
+    width: 2.60vw;
+    height: 3.49vw;
+
+    background: no-repeat url('../../svg/product-card-description-pdf.svg');
+    background-size: contain;
+    background-position: center;
+    filter: drop-shadow(3px 3px 5.5px rgba(0, 0, 0, 0.25));
+}
+
+.prices__link-title {
+    margin-top: 0.26vw;
+
+    font-family: 'Play';
+    font-size: 0.73vw;
+    font-weight: 400;
+
+    color: #615F5D;
+}
 
 .product-desc__content-review {
     padding-top: 1.51vw;
@@ -1560,7 +1599,6 @@
 .interesting-sl__slide {
     display: flex;
     height: 79.1%;
-    /* width: 16.483vw; */
     flex-direction: column;
     justify-content: flex-end;
     padding-bottom: 1.04vw;
@@ -1868,6 +1906,7 @@
 @media(max-width: 961px) {
     .product__wr-info {
         height: 100%;
+        width: 100%;
         padding-top: 0;
         padding-left: 0;
         padding-right: 0;
@@ -1925,6 +1964,7 @@
 
         border-bottom: 1px solid #4D96AB;
         color: #2F5F6D;
+        background-color: #eee;
     }
 
     .product__char-tab-button_m {
@@ -1946,16 +1986,15 @@
         margin-top: 0;
         padding-top: 0;
         padding-bottom: 0;
-        
         padding-right: 4.5%;
         padding-left: 4.5%;
-        
         flex-direction: column;
-        /* gap: 6.93vw; */
+
         transition: 
             height 0.3s linear, 
             padding-top 0.3s linear,
             padding-bottom 0.3s linear;
+
         overflow: hidden;
     }
 }
@@ -2015,6 +2054,25 @@
 }
 
 @media(max-width: 961px) {
+    .characteristics__types-list {
+        column-gap: 5.60vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .characteristics__types-item {
+        width: 6.67vw;
+        height: 6.67vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .characteristics__types-body {
+        font-size: 3.20vw;
+    }
+}
+
+@media(max-width: 961px) {
     .characteristics__wr-available {
         align-items: end;
     }
@@ -2062,12 +2120,6 @@
 }
 
 @media(max-width: 961px) {
-    .product__about-tab-button_m {
-        background-color: #EEE;
-    }
-}
-
-@media(max-width: 961px) {
     .product-desc__content {
         display: block;
         height: 0;
@@ -2094,8 +2146,42 @@
 }
 
 @media(max-width: 961px) {
+    .package__wr-title {
+        padding-top: 5.7vw;
+    }   
+}
+
+@media(max-width: 961px) {
+    .package__title {
+        font-size: 4.27vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .package__tabs-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: fit-content;
+        margin: 0 auto;
+        padding-top: 5.60vw;
+        column-gap: 4.80vw;
+        row-gap: 5.60vw;
+        flex-wrap: wrap;
+    } 
+}
+
+@media(max-width: 961px) {
+    .package__tabs-item {
+        justify-self: center;
+
+        font-size: 3.73vw;
+    }  
+}
+
+@media(max-width: 961px) {
     .product-desc__wr-title {
         padding-top: 6.40vw;
+        margin-top: 0;
     }
 
     .product-desc__wr-title h2 {
@@ -2116,8 +2202,112 @@
 }
 
 @media(max-width: 961px) {
-    .product__review-tab-button_m {
-        background-color: #EEE;
+    .package__content-list {
+        margin-top: 0;
+    }
+}
+
+@media(max-width: 961px) {
+    .package__table-list {
+        row-gap: 0;
+        justify-content: initial;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 17.5vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .package__table-item {
+        width: 100%;
+        padding-top: 10.13vw;
+    }
+
+    .package__table-item:first-child {
+        padding-top: 0;
+    }
+}
+
+@media(max-width: 961px) {
+    .package__table-wr-title {
+        padding-bottom: 4.53vw;
+    
+        border-image: linear-gradient(to right, #6AE9FB 0%, #2F5F6D 100%) 1 / 0 0 0.53vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .package__table-title {
+        font-size: 4.27vw;
+        text-align: left;
+    }
+}
+
+@media(max-width: 961px) {
+    .package__properties-item {
+        padding-top: 3.20vw;
+        padding-right: 6.13vw;
+        padding-bottom: 3.20vw;
+        padding-left: 6.13vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .package__properties-item_milk-system {
+        align-items: initial;
+    }
+}
+
+@media(max-width: 961px) {
+    .package__properties-text {
+        font-size: 2.67vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .package__value_fn {
+        padding-top: 0;
+    }
+}
+
+@media(max-width: 961px) {
+    .package__value_fn,
+    .package__value_milk-system {
+        font-size: 2.67vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .package__note-icon {
+        display: none;
+    }
+}
+
+@media(max-width: 961px) {
+    .package__note-content {
+        display: none;
+    }
+}
+
+@media(max-width: 961px) {
+    .prices__list {
+        padding-top: 19vw;
+        padding-bottom: 19vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .prices__link-icon {
+        width: 13.33vw;
+        height: 17.87vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .prices__link-title {
+        margin-top: 1.33vw;
+
+        font-size: 3.73vw;
     }
 }
 
@@ -2635,15 +2825,4 @@
     }
 }
 
-@media(max-width: 961px) {
-   
-}
-
-@media(max-width: 961px) {
-   
-}
-
-@media(max-width: 961px) {
-   
-}
 

@@ -152,7 +152,8 @@ block content
         .product-desc          
             .product-desc__controll
                 .product-desc__button.product-desc__description.product-desc__button_active(data-index="0") Описание
-                .product-desc__button.product-desc__reviews(data-index="1") Отзывы
+                .product-desc__button.product-desc__price(data-index="1") Прайсы
+                .product-desc__button.product-desc__reviews(data-index="2") Отзывы
             
             .product-desc__wr-content 
                 //- кнопка для мобильной версии
@@ -164,21 +165,21 @@ block content
                         h2.package__title Комплектация
                     
                     ul.package__tabs-list
-                        li.package__tabs-item.package__tabs-item_active(data-tab-item="0") 03.1950.1001
-                        li.package__tabs-item(data-tab-item="1") 03.1950.1601
-                        li.package__tabs-item(data-tab-item="2") 03.1920.5000
-                        li.package__tabs-item(data-tab-item="3") 03.1950.5001
-                        li.package__tabs-item(data-tab-item="4") 03.1950.5601
-                        li.package__tabs-item(data-tab-item="5") 03.1950.5001 + HC
+                        li.package__tabs-item.package__tabs-item_active(data-tab_item="0") 03.1950.1001
+                        li.package__tabs-item(data-tab_item="1") 03.1950.1601
+                        li.package__tabs-item(data-tab_item="2") 03.1920.5000
+                        li.package__tabs-item(data-tab_item="3") 03.1950.5001
+                        li.package__tabs-item(data-tab_item="4") 03.1950.5601
+                        li.package__tabs-item(data-tab_item="5") 03.1950.5001 + HC
 
                     .product-desc__wr-title
                         h2 Сибирский сбор / Siberian Berries
                     .product-desc__text 
-                        p Чайные пирамидки с ярлыком для разовой з аварки в индивидуальных конвертах. <br> Чай черный байховый «NIKTEA»® среднелистовой с добавками растительного сырья с ароматом лесных ягод «Сибирский Сбор»15 пирамидок по 2.7 г
-                        p Искусно купажированный чай с плантаций Индии и Цейлона. <br> Очень ароматный сбор на основе крепкого черного чая с душистыми таежными ягодами. Вкус многогранный, с живой кислинкой и лесной ноткой.
+                        p WMF 9000 S+ разработана для взыскательных любителей кофе. Кофемашина отличается первоклассным качеством для заведений, где требуется разнообразное меню изысканных кофейных напитков, а обслуживание должно быть быстрым.
+                        p Рекомендована для средней дневной потребности в 350 чашек, WMF 9000 S+ готовит каждый напиток с идеальной температурой благодаря трем вариантам горячей воды. Машинка автоматически поднимает или опускает чашку на нужную высоту. Такое пристальное внимание к деталям гарантирует Вам идеальную чашку кофе.
                 
                     ul.package__content-list
-                        li.package__content-item.package__content-item_active(data-content-item="0")
+                        li.package__content-item.package__content-item_active(data-content_item="0")
 
                             ul.package__table-list
                                 li.package__table-item
@@ -328,17 +329,780 @@ block content
                                         li.package__properties-item 
                                             .package__properties-text.package__property Вес
                                             .package__properties-text.package__value 32 кг; 26,2 кг без упаковки
-                        li.package__content-item
+                        
+                        li.package__content-item(data-content_item="1")
 
-                        li.package__content-item
+                            ul.package__table-list
+                                li.package__table-item
+                                    .package__table-wr-title
+                                        h2.package__table-title Основное
+                                    ul.package__properties-list
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Гарантия
+                                            .package__properties-text.package__value 12 месяцев
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Страна
+                                            .package__properties-text.package__value Германия
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Производитель
+                                            .package__properties-text.package__value WMF
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Материалы
+                                            .package__properties-text.package__value Нержавеющая сталь, пластик
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Назначение
+                                            .package__properties-text.package__value Профессиональная
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Цвет
+                                            .package__properties-text.package__value Черный, белый, черно-белый
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Артикул
+                                            .package__properties-text.package__value 03.1950.1601
+                                li.package__table-item
+                                    .package__table-wr-title
+                                        h2.package__table-title Функции
+                                    ul.package__properties-list
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Программы промывки
+                                            .package__properties-text.package__value.package__value_fn Декальцинация | Чистка молочной системы
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Дисплей
+                                            .package__properties-text.package__value Сенсорный
+                                        li.package__properties-item.package__properties-item_milk-system
+                                            .package__properties-text.package__property Молочная система
+                                            .package__properties-text.package__value.package__value_milk-system Easy Milk | Basic Milk | Dynamic Milk 
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Встроенная кофемолка
+                                            .package__properties-text.package__value Да
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Кран горячей воды
+                                            .package__properties-text.package__value Да
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Кран пара
+                                            .package__properties-text.package__value Да
+                                            label.package__note-icon
+                                                input(type="checkbox")
+                                                .package__note-content Не во всех комплектациях
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Шоколадный миксер
+                                            .package__properties-text.package__value Да
+                                            label.package__note-icon
+                                                input(type="checkbox")
+                                                .package__note-content Не во всех комплектациях
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Подогрев чашек (Steam Jet)
+                                            .package__properties-text.package__value Да
+                                            label.package__note-icon
+                                                input(type="checkbox")
+                                                .package__note-content Не во всех комплектациях
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Plug&Clean
+                                            .package__properties-text.package__value Нет
+                                li.package__table-item
+                                    .package__table-wr-title
+                                        h2.package__table-title Напитки
+                                    ul.package__properties-list
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Высота стакана
+                                            .package__properties-text.package__value До 175мм
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Чашек кофе в день
+                                            .package__properties-text.package__value До 50
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Количество напитков
+                                            .package__properties-text.package__value До 100 комбинаций
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Предварительное заваривание
+                                            .package__properties-text.package__value Да
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Тип кофе
+                                            .package__properties-text.package__value Зерновой, молотый
+                                            label.package__note-icon
+                                                input(type="checkbox")
+                                                .package__note-content Не во всех комплектациях
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Тип шоколада
+                                            .package__properties-text.package__value Смесь для автоматических кофемашин
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Напитки с холодным молоком
+                                            .package__properties-text.package__value Да
+                                li.package__table-item
+                                    .package__table-wr-title
+                                        h2.package__table-title Объемы
+                                    ul.package__properties-list
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Объем бака для воды
+                                            .package__properties-text.package__value 4 л
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Объем бункера для зерна
+                                            .package__properties-text.package__value 700г ≈ 77 чашек кофе
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Объем контейнера для жмыха
+                                            .package__properties-text.package__value 300г ≈ 30 чашек кофе
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Объем бункера для шоколада
+                                            .package__properties-text.package__value 300г ≈ 35 порций
+                                            label.package__note-icon
+                                                input(type="checkbox")
+                                                .package__note-content Не во всех комплектациях
+                                li.package__table-item
+                                    .package__table-wr-title
+                                        h2.package__table-title Производительность
+                                    ul.package__properties-list
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Напряжение
+                                            .package__properties-text.package__value 220 V
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Мощность
+                                            .package__properties-text.package__value 2300 Вт
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Количество бойлеров
+                                            .package__properties-text.package__value 2
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Давление помпы
+                                            .package__properties-text.package__value До 15 бар
+                                li.package__table-item
+                                    .package__table-wr-title
+                                        h2.package__table-title Габариты и установка
+                                    ul.package__properties-list
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Подключение к водопроводу
+                                            .package__properties-text.package__value Да
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Дренаж для воды
+                                            .package__properties-text.package__value Да
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Подключение к химии
+                                            .package__properties-text.package__value Да
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Габариты ШхГхВ
+                                            .package__properties-text.package__value 325х561х50
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Вес
+                                            .package__properties-text.package__value 32 кг; 26,2 кг без упаковки
+                        
+                        li.package__content-item(data-content_item="2")
 
-                        li.package__content-item
+                            ul.package__table-list
+                                li.package__table-item
+                                    .package__table-wr-title
+                                        h2.package__table-title Основное
+                                    ul.package__properties-list
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Гарантия
+                                            .package__properties-text.package__value 12 месяцев
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Страна
+                                            .package__properties-text.package__value Германия
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Производитель
+                                            .package__properties-text.package__value WMF
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Материалы
+                                            .package__properties-text.package__value Нержавеющая сталь, пластик
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Назначение
+                                            .package__properties-text.package__value Профессиональная
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Цвет
+                                            .package__properties-text.package__value Черный, белый, черно-белый
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Артикул
+                                            .package__properties-text.package__value 03.1920.5000
+                                li.package__table-item
+                                    .package__table-wr-title
+                                        h2.package__table-title Функции
+                                    ul.package__properties-list
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Программы промывки
+                                            .package__properties-text.package__value.package__value_fn Декальцинация | Чистка молочной системы | Чистка варочного блока
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Дисплей
+                                            .package__properties-text.package__value Сенсорный
+                                        li.package__properties-item.package__properties-item_milk-system
+                                            .package__properties-text.package__property Молочная система
+                                            .package__properties-text.package__value.package__value_milk-system Easy Milk | Basic Milk | Dynamic Milk | Smart Milk
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Встроенная кофемолка
+                                            .package__properties-text.package__value Да
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Кран горячей воды
+                                            .package__properties-text.package__value Да
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Кран пара
+                                            .package__properties-text.package__value Да
+                                            label.package__note-icon
+                                                input(type="checkbox")
+                                                .package__note-content Не во всех комплектациях
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Шоколадный миксер
+                                            .package__properties-text.package__value Да
+                                            label.package__note-icon
+                                                input(type="checkbox")
+                                                .package__note-content Не во всех комплектациях
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Подогрев чашек (Steam Jet)
+                                            .package__properties-text.package__value Да
+                                            label.package__note-icon
+                                                input(type="checkbox")
+                                                .package__note-content Не во всех комплектациях
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Plug&Clean
+                                            .package__properties-text.package__value Нет
+                                li.package__table-item
+                                    .package__table-wr-title
+                                        h2.package__table-title Напитки
+                                    ul.package__properties-list
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Высота стакана
+                                            .package__properties-text.package__value До 175мм
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Чашек кофе в день
+                                            .package__properties-text.package__value До 50
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Количество напитков
+                                            .package__properties-text.package__value До 100 комбинаций
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Предварительное заваривание
+                                            .package__properties-text.package__value Да
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Тип кофе
+                                            .package__properties-text.package__value Зерновой, молотый
+                                            label.package__note-icon
+                                                input(type="checkbox")
+                                                .package__note-content Не во всех комплектациях
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Тип шоколада
+                                            .package__properties-text.package__value Смесь для автоматических кофемашин
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Напитки с холодным молоком
+                                            .package__properties-text.package__value Да
+                                li.package__table-item
+                                    .package__table-wr-title
+                                        h2.package__table-title Объемы
+                                    ul.package__properties-list
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Объем бака для воды
+                                            .package__properties-text.package__value 4 л
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Объем бункера для зерна
+                                            .package__properties-text.package__value 700г ≈ 77 чашек кофе
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Объем контейнера для жмыха
+                                            .package__properties-text.package__value 300г ≈ 30 чашек кофе
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Объем бункера для шоколада
+                                            .package__properties-text.package__value 300г ≈ 35 порций
+                                            label.package__note-icon
+                                                input(type="checkbox")
+                                                .package__note-content Не во всех комплектациях
+                                li.package__table-item
+                                    .package__table-wr-title
+                                        h2.package__table-title Производительность
+                                    ul.package__properties-list
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Напряжение
+                                            .package__properties-text.package__value 220 V
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Мощность
+                                            .package__properties-text.package__value 2300 Вт
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Количество бойлеров
+                                            .package__properties-text.package__value 2
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Давление помпы
+                                            .package__properties-text.package__value До 15 бар
+                                li.package__table-item
+                                    .package__table-wr-title
+                                        h2.package__table-title Габариты и установка
+                                    ul.package__properties-list
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Подключение к водопроводу
+                                            .package__properties-text.package__value Да
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Дренаж для воды
+                                            .package__properties-text.package__value Да
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Подключение к химии
+                                            .package__properties-text.package__value Да
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Габариты ШхГхВ
+                                            .package__properties-text.package__value 325х561х50
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Вес
+                                            .package__properties-text.package__value 32 кг; 26,2 кг без упаковки
+                        
+                        li.package__content-item(data-content_item="3")
 
+                            ul.package__table-list
+                                li.package__table-item
+                                    .package__table-wr-title
+                                        h2.package__table-title Основное
+                                    ul.package__properties-list
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Гарантия
+                                            .package__properties-text.package__value 12 месяцев
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Страна
+                                            .package__properties-text.package__value Германия
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Производитель
+                                            .package__properties-text.package__value WMF
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Материалы
+                                            .package__properties-text.package__value Нержавеющая сталь, пластик
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Назначение
+                                            .package__properties-text.package__value Профессиональная
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Цвет
+                                            .package__properties-text.package__value Черный, белый, черно-белый
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Артикул
+                                            .package__properties-text.package__value 03.1950.5001
+                                li.package__table-item
+                                    .package__table-wr-title
+                                        h2.package__table-title Функции
+                                    ul.package__properties-list
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Программы промывки
+                                            .package__properties-text.package__value.package__value_fn Декальцинация | Чистка молочной системы | Чистка варочного блока
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Дисплей
+                                            .package__properties-text.package__value Сенсорный
+                                        li.package__properties-item.package__properties-item_milk-system
+                                            .package__properties-text.package__property Молочная система
+                                            .package__properties-text.package__value.package__value_milk-system Easy Milk | Basic Milk | Dynamic Milk | Smart Milk
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Встроенная кофемолка
+                                            .package__properties-text.package__value Да
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Кран горячей воды
+                                            .package__properties-text.package__value Да
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Кран пара
+                                            .package__properties-text.package__value Да
+                                            label.package__note-icon
+                                                input(type="checkbox")
+                                                .package__note-content Не во всех комплектациях
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Шоколадный миксер
+                                            .package__properties-text.package__value Да
+                                            label.package__note-icon
+                                                input(type="checkbox")
+                                                .package__note-content Не во всех комплектациях
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Подогрев чашек (Steam Jet)
+                                            .package__properties-text.package__value Да
+                                            label.package__note-icon
+                                                input(type="checkbox")
+                                                .package__note-content Не во всех комплектациях
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Plug&Clean
+                                            .package__properties-text.package__value Нет
+                                li.package__table-item
+                                    .package__table-wr-title
+                                        h2.package__table-title Напитки
+                                    ul.package__properties-list
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Высота стакана
+                                            .package__properties-text.package__value До 175мм
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Чашек кофе в день
+                                            .package__properties-text.package__value До 50
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Количество напитков
+                                            .package__properties-text.package__value До 100 комбинаций
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Предварительное заваривание
+                                            .package__properties-text.package__value Да
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Тип кофе
+                                            .package__properties-text.package__value Зерновой, молотый
+                                            label.package__note-icon
+                                                input(type="checkbox")
+                                                .package__note-content Не во всех комплектациях
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Тип шоколада
+                                            .package__properties-text.package__value Смесь для автоматических кофемашин
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Напитки с холодным молоком
+                                            .package__properties-text.package__value Да
+                                li.package__table-item
+                                    .package__table-wr-title
+                                        h2.package__table-title Объемы
+                                    ul.package__properties-list
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Объем бака для воды
+                                            .package__properties-text.package__value 4 л
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Объем бункера для зерна
+                                            .package__properties-text.package__value 700г ≈ 77 чашек кофе
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Объем контейнера для жмыха
+                                            .package__properties-text.package__value 300г ≈ 30 чашек кофе
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Объем бункера для шоколада
+                                            .package__properties-text.package__value 300г ≈ 35 порций
+                                            label.package__note-icon
+                                                input(type="checkbox")
+                                                .package__note-content Не во всех комплектациях
+                                li.package__table-item
+                                    .package__table-wr-title
+                                        h2.package__table-title Производительность
+                                    ul.package__properties-list
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Напряжение
+                                            .package__properties-text.package__value 220 V
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Мощность
+                                            .package__properties-text.package__value 2300 Вт
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Количество бойлеров
+                                            .package__properties-text.package__value 2
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Давление помпы
+                                            .package__properties-text.package__value До 15 бар
+                                li.package__table-item
+                                    .package__table-wr-title
+                                        h2.package__table-title Габариты и установка
+                                    ul.package__properties-list
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Подключение к водопроводу
+                                            .package__properties-text.package__value Да
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Дренаж для воды
+                                            .package__properties-text.package__value Да
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Подключение к химии
+                                            .package__properties-text.package__value Да
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Габариты ШхГхВ
+                                            .package__properties-text.package__value 325х561х50
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Вес
+                                            .package__properties-text.package__value 32 кг; 26,2 кг без упаковки
+                        
+                        li.package__content-item(data-content_item="4")
+
+                            ul.package__table-list
+                                li.package__table-item
+                                    .package__table-wr-title
+                                        h2.package__table-title Основное
+                                    ul.package__properties-list
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Гарантия
+                                            .package__properties-text.package__value 12 месяцев
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Страна
+                                            .package__properties-text.package__value Германия
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Производитель
+                                            .package__properties-text.package__value WMF
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Материалы
+                                            .package__properties-text.package__value Нержавеющая сталь, пластик
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Назначение
+                                            .package__properties-text.package__value Профессиональная
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Цвет
+                                            .package__properties-text.package__value Черный, белый, черно-белый
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Артикул
+                                            .package__properties-text.package__value 03.1950.5601
+                                li.package__table-item
+                                    .package__table-wr-title
+                                        h2.package__table-title Функции
+                                    ul.package__properties-list
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Программы промывки
+                                            .package__properties-text.package__value.package__value_fn Декальцинация | Чистка молочной системы | Чистка варочного блока
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Дисплей
+                                            .package__properties-text.package__value Сенсорный
+                                        li.package__properties-item.package__properties-item_milk-system
+                                            .package__properties-text.package__property Молочная система
+                                            .package__properties-text.package__value.package__value_milk-system Easy Milk | Basic Milk | Dynamic Milk | Smart Milk
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Встроенная кофемолка
+                                            .package__properties-text.package__value Да
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Кран горячей воды
+                                            .package__properties-text.package__value Да
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Кран пара
+                                            .package__properties-text.package__value Да
+                                            label.package__note-icon
+                                                input(type="checkbox")
+                                                .package__note-content Не во всех комплектациях
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Шоколадный миксер
+                                            .package__properties-text.package__value Да
+                                            label.package__note-icon
+                                                input(type="checkbox")
+                                                .package__note-content Не во всех комплектациях
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Подогрев чашек (Steam Jet)
+                                            .package__properties-text.package__value Да
+                                            label.package__note-icon
+                                                input(type="checkbox")
+                                                .package__note-content Не во всех комплектациях
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Plug&Clean
+                                            .package__properties-text.package__value Нет
+                                li.package__table-item
+                                    .package__table-wr-title
+                                        h2.package__table-title Напитки
+                                    ul.package__properties-list
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Высота стакана
+                                            .package__properties-text.package__value До 175мм
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Чашек кофе в день
+                                            .package__properties-text.package__value До 50
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Количество напитков
+                                            .package__properties-text.package__value До 100 комбинаций
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Предварительное заваривание
+                                            .package__properties-text.package__value Да
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Тип кофе
+                                            .package__properties-text.package__value Зерновой, молотый
+                                            label.package__note-icon
+                                                input(type="checkbox")
+                                                .package__note-content Не во всех комплектациях
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Тип шоколада
+                                            .package__properties-text.package__value Смесь для автоматических кофемашин
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Напитки с холодным молоком
+                                            .package__properties-text.package__value Да
+                                li.package__table-item
+                                    .package__table-wr-title
+                                        h2.package__table-title Объемы
+                                    ul.package__properties-list
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Объем бака для воды
+                                            .package__properties-text.package__value 4 л
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Объем бункера для зерна
+                                            .package__properties-text.package__value 700г ≈ 77 чашек кофе
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Объем контейнера для жмыха
+                                            .package__properties-text.package__value 300г ≈ 30 чашек кофе
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Объем бункера для шоколада
+                                            .package__properties-text.package__value 300г ≈ 35 порций
+                                            label.package__note-icon
+                                                input(type="checkbox")
+                                                .package__note-content Не во всех комплектациях
+                                li.package__table-item
+                                    .package__table-wr-title
+                                        h2.package__table-title Производительность
+                                    ul.package__properties-list
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Напряжение
+                                            .package__properties-text.package__value 220 V
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Мощность
+                                            .package__properties-text.package__value 2300 Вт
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Количество бойлеров
+                                            .package__properties-text.package__value 2
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Давление помпы
+                                            .package__properties-text.package__value До 15 бар
+                                li.package__table-item
+                                    .package__table-wr-title
+                                        h2.package__table-title Габариты и установка
+                                    ul.package__properties-list
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Подключение к водопроводу
+                                            .package__properties-text.package__value Да
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Дренаж для воды
+                                            .package__properties-text.package__value Да
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Подключение к химии
+                                            .package__properties-text.package__value Да
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Габариты ШхГхВ
+                                            .package__properties-text.package__value 325х561х50
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Вес
+                                            .package__properties-text.package__value 32 кг; 26,2 кг без упаковки
+                        
+                        li.package__content-item(data-content_item="5")
+
+                            ul.package__table-list
+                                li.package__table-item
+                                    .package__table-wr-title
+                                        h2.package__table-title Основное
+                                    ul.package__properties-list
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Гарантия
+                                            .package__properties-text.package__value 12 месяцев
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Страна
+                                            .package__properties-text.package__value Германия
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Производитель
+                                            .package__properties-text.package__value WMF
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Материалы
+                                            .package__properties-text.package__value Нержавеющая сталь, пластик
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Назначение
+                                            .package__properties-text.package__value Профессиональная
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Цвет
+                                            .package__properties-text.package__value Черный, белый, черно-белый
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Артикул
+                                            .package__properties-text.package__value 03.1950.5001 + HC
+                                li.package__table-item
+                                    .package__table-wr-title
+                                        h2.package__table-title Функции
+                                    ul.package__properties-list
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Программы промывки
+                                            .package__properties-text.package__value.package__value_fn Декальцинация | Чистка молочной системы | Чистка варочного блока
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Дисплей
+                                            .package__properties-text.package__value Сенсорный
+                                        li.package__properties-item.package__properties-item_milk-system
+                                            .package__properties-text.package__property Молочная система
+                                            .package__properties-text.package__value.package__value_milk-system Easy Milk | Basic Milk | Dynamic Milk | Smart Milk
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Встроенная кофемолка
+                                            .package__properties-text.package__value Да
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Кран горячей воды
+                                            .package__properties-text.package__value Да
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Кран пара
+                                            .package__properties-text.package__value Да
+                                            label.package__note-icon
+                                                input(type="checkbox")
+                                                .package__note-content Не во всех комплектациях
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Шоколадный миксер
+                                            .package__properties-text.package__value Да
+                                            label.package__note-icon
+                                                input(type="checkbox")
+                                                .package__note-content Не во всех комплектациях
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Подогрев чашек (Steam Jet)
+                                            .package__properties-text.package__value Да
+                                            label.package__note-icon
+                                                input(type="checkbox")
+                                                .package__note-content Не во всех комплектациях
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Plug&Clean
+                                            .package__properties-text.package__value Нет
+                                li.package__table-item
+                                    .package__table-wr-title
+                                        h2.package__table-title Напитки
+                                    ul.package__properties-list
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Высота стакана
+                                            .package__properties-text.package__value До 175мм
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Чашек кофе в день
+                                            .package__properties-text.package__value До 50
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Количество напитков
+                                            .package__properties-text.package__value До 100 комбинаций
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Предварительное заваривание
+                                            .package__properties-text.package__value Да
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Тип кофе
+                                            .package__properties-text.package__value Зерновой, молотый
+                                            label.package__note-icon
+                                                input(type="checkbox")
+                                                .package__note-content Не во всех комплектациях
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Тип шоколада
+                                            .package__properties-text.package__value Смесь для автоматических кофемашин
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Напитки с холодным молоком
+                                            .package__properties-text.package__value Да
+                                li.package__table-item
+                                    .package__table-wr-title
+                                        h2.package__table-title Объемы
+                                    ul.package__properties-list
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Объем бака для воды
+                                            .package__properties-text.package__value 4 л
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Объем бункера для зерна
+                                            .package__properties-text.package__value 700г ≈ 77 чашек кофе
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Объем контейнера для жмыха
+                                            .package__properties-text.package__value 300г ≈ 30 чашек кофе
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Объем бункера для шоколада
+                                            .package__properties-text.package__value 300г ≈ 35 порций
+                                            label.package__note-icon
+                                                input(type="checkbox")
+                                                .package__note-content Не во всех комплектациях
+                                li.package__table-item
+                                    .package__table-wr-title
+                                        h2.package__table-title Производительность
+                                    ul.package__properties-list
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Напряжение
+                                            .package__properties-text.package__value 220 V
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Мощность
+                                            .package__properties-text.package__value 2300 Вт
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Количество бойлеров
+                                            .package__properties-text.package__value 2
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Давление помпы
+                                            .package__properties-text.package__value До 15 бар
+                                li.package__table-item
+                                    .package__table-wr-title
+                                        h2.package__table-title Габариты и установка
+                                    ul.package__properties-list
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Подключение к водопроводу
+                                            .package__properties-text.package__value Да
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Дренаж для воды
+                                            .package__properties-text.package__value Да
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Подключение к химии
+                                            .package__properties-text.package__value Да
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Габариты ШхГхВ
+                                            .package__properties-text.package__value 325х561х50
+                                        li.package__properties-item 
+                                            .package__properties-text.package__property Вес
+                                            .package__properties-text.package__value 32 кг; 26,2 кг без упаковки
+
+                .product__tab-button_m.product__price-tab-button_m
+                    | Прайсы
+                .product-desc__content.product-desc__content-about.product-desc__content_mob(data-index="1")
+                    ul.prices__list 
+                        li.prices__item 
+                            a.prices__item-link(href="./files/price.pdf" title="" download)
+                                .prices__link-icon 
+                                .prices__link-title Прайс 5000S+
+                        li.prices__item 
+                            a.prices__item-link(href="./files/price.pdf" title="" download)
+                                .prices__link-icon 
+                                .prices__link-title Прайс 5000S+
+                        
                 //- кнопка для мобильной версии
                 //- .product__tab-active - подкрашивает активную кнопку
                 .product__tab-button_m.product__review-tab-button_m
                     | Отзывы
-                .product-desc__content.product-desc__content-review.product-desc__content_mob(data-index="1")
+                .product-desc__content.product-desc__content-review.product-desc__content_mob(data-index="2")
                     label.product-desc__add-review(for="switcher-reviews-modal") Написать отзыв
                     ul.reviews__list
                         li.reviews__item 
@@ -493,6 +1257,8 @@ block content
                             .reviews__response-icon.reviews__response-icon_err
                             .reviews__modal-text 
                                 p Произошла ошибка,#[br] попробуйте еще раз.
+        
+
         .interesting 
             .interesting__wr-title 
                 h2 Вам может быть интересно

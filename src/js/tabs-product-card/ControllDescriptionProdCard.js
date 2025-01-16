@@ -1,4 +1,4 @@
-export default class ControllTabsPC {
+export default class ControllDescriptionProdCard {
     constructor(redraw) {
         this.redraw = redraw;
 
@@ -16,9 +16,15 @@ export default class ControllTabsPC {
         this.redraw.buttonsMobile.forEach(item => item.addEventListener('click', this.click));
         this.redraw.buttonsDesctop.forEach(item => item.addEventListener('click', this.click));
         window.addEventListener('resize', this.resize);
+
+        // ПЕРЕКЛЮЧЕНИЕ КОМПЛЕКТАЦИЙ
+        if(this.redraw.tabsPackages) {
+            this.redraw.tabsPackages.addEventListener('click', this.click);
+        }
     }
 
     click(e) {
+        // ПЕРЕКЛЮЧЕНИЕ ТАБОВ ОПИСАНИЯ В ЦЕЛОМ (Прим.: Описание, Отзывы)
         // Разворачивание контента в мобильной версии
         if(e.target.closest('.product__tab-button_m')) {
             const target = e.target.closest('.product__tab-button_m');
@@ -38,6 +44,12 @@ export default class ControllTabsPC {
             const target = e.target.closest('.product-desc__button');
             
             this.redraw.switching(target);
+        }
+
+        // ПЕРЕКЛЮЧЕНИЕ КОМПЛЕКТАЦИЙ
+        if(e.target.closest('.package__tabs-item')) {
+            const target = e.target.closest('.package__tabs-item');
+            this.redraw.switchingPackages(target);
         }
     }
 
