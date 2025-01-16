@@ -1101,23 +1101,6 @@
     overflow: hidden;
 }
 
-.reviews__read-more {
-    margin-top: 1.82vw;
-}
-
-.reviews__read-more a {
-    font-family: 'Roboto';
-    font-size: 0.73vw;
-    font-weight: 500;
-    letter-spacing: 0.0073vw;
-
-    text-decoration: underline;
-    text-decoration-skip-ink: none;
-    text-underline-offset: 0.13vw;
-    
-    color: #C2C2C2;
-}
-
 .reviews__pagination-list {
     display: flex;
     margin-top: 1.88vw;
@@ -2416,21 +2399,6 @@
 @media(max-width: 961px) {
     .reviews__content p {
         font-size: 3.47vw;
-    }
-}
-
-@media(max-width: 961px) {
-    .reviews__read-more {
-        margin-top: 4.27vw;
-        margin-left: 19%;
-    }
-}
-
-@media(max-width: 961px) {
-    .reviews__read-more a {
-        font-size: 2.67vw;
-
-        text-underline-offset: .5vw;
     }
 }
 
