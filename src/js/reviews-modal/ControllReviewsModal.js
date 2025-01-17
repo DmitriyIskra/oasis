@@ -7,7 +7,6 @@ export default class ControllReviewsModal {
         this.focus = this.focus.bind(this);
         this.change = this.change.bind(this);
         this.input = this.input.bind(this);
-        this.paste = this.paste.bind(this);
     }
 
     init() {
@@ -62,7 +61,7 @@ export default class ControllReviewsModal {
 
             (async () => {
                 const formData = new FormData(this.redraw.form);
-                
+
                 const response = await this.restApi.create(formData);
 
                 if(!response) this.redraw.controllResultModal('error');
@@ -91,8 +90,5 @@ export default class ControllReviewsModal {
 
     input(e) {
         this.redraw.countCymbols(e.target)
-    }
-
-    paste(e) {
     }
 }

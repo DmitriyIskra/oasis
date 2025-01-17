@@ -1,0 +1,11 @@
+mixin brand_card(data, path)
+    .brands-card   
+        .brands-card__arrow 
+        .brands-card__image
+            img(src=data.path alt=data.title)
+        .brands-card__wr-title
+            h2.brands-card__title #{data.title}
+        .brands-card__line 
+        .brands-card__text 
+            p #{data.text}
+        a.brands-card__link(href="#0" title="")

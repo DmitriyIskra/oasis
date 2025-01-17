@@ -19,3 +19,19 @@
 - Если открывается мобильная навигация, то каталог закрывается функция js/header/nav-mobileButton.js
 - Если открывается каталог, то мобильная навигация закрывается класс js/burger-menu/RedrawBurger.js => 
 метод openNav()
+
+https://dmitriyiskra.github.io/oasis/product-card-tea.html
+https://dmitriyiskra.github.io/oasis/product-card-coffee.html
+https://dmitriyiskra.github.io/oasis/product-card-syrups.html
+https://dmitriyiskra.github.io/oasis/product-card-milk.html
+https://dmitriyiskra.github.io/oasis/product-card-alternative-milk.html
+https://dmitriyiskra.github.io/oasis/product-card-water.html
+https://dmitriyiskra.github.io/oasis/product-card-carbonated-drink.html
+https://dmitriyiskra.github.io/oasis/product-card-dishes.html
+https://dmitriyiskra.github.io/oasis/product-card-fridge.html
+https://dmitriyiskra.github.io/oasis/product-card-dishes-sets.html
+https://dmitriyiskra.github.io/oasis/product-card-hot-chocolate.html
+https://dmitriyiskra.github.io/oasis/product-card-milk-system-cleaner.html
+https://dmitriyiskra.github.io/oasis/product-card-t-short.html
+https://dmitriyiskra.github.io/oasis/product-card-broths.html
+https://dmitriyiskra.github.io/oasis/product-card-coffee-machines.html

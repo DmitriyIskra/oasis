@@ -1,0 +1,16 @@
+extends layout/layout
+
+include mixines/bread-crumbs/bread-crumbs
+include mixines/brands-card
+
+
+block content
+    include variable/brands
+    
+    +bread-crumbs(bread_crumbs)
+
+    .brands.brands__wrapper
+        ul.brands__cards-list
+            each item in brands_cards_data
+                li.brands__cards-item
+                    +brand_card(item)

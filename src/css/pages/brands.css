@@ -1,0 +1,40 @@
+.brands__wrapper {
+    padding-top: 8.02vw;
+    padding-bottom: 10.42vw;
+}
+
+.brands__cards-list {
+    display: flex;
+    width: 69.2%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 1.41vw;
+    row-gap: 1.41vw;
+}
+
+.brands__cards-item {
+    width: 31.91%;
+}
+
+@media(max-width: 961px) {
+    .brands__wrapper {
+        padding-top: 8vw;
+        padding-bottom: 42.67vw; 
+    }
+}
+
+@media(max-width: 961px) {
+    .brands__cards-list {
+        width: 100%;
+        column-gap: 0;
+        row-gap: 0;
+    }
+}
+
+@media(max-width: 961px) {
+    .brands__cards-item {
+        width: 50%;
+    }
+}
+
