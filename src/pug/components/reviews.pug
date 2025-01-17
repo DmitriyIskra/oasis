@@ -14,7 +14,7 @@ ul.reviews__list
                     li.reviews__stars-item.reviews__stars_active
                     li.reviews__stars-item
         .reviews__content
-            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, dolorum explicabo, repellat culpa ipsam laudantium nobis, modi repudiandae ea incidunt nisi. Natus aspernatur nesciunt ex adipisci enim quia reprehenderit? Perspiciatis?
+            p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi expedita tempore labore blanditiis ab dolor inventore iusto nesciunt distinctio officiis sed non, excepturi fugit voluptate facilis, quia commodi adipisci dignissimos. Lorem ipsum dolor.
         
     li.reviews__item 
         ul.reviews__head-list 
@@ -30,7 +30,7 @@ ul.reviews__list
                     li.reviews__stars-item.reviews__stars_active
                     li.reviews__stars-item
         .reviews__content
-            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, dolorum explicabo, repellat culpa ipsam laudantium nobis, modi repudiandae ea incidunt nisi. Natus aspernatur nesciunt ex adipisci enim quia reprehenderit? Perspiciatis?
+            p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi expedita tempore labore blanditiis ab dolor inventore iusto nesciunt distinctio officiis sed non, excepturi fugit voluptate facilis, quia commodi adipisci dignissimos. Lorem ipsum dolor.
         
     li.reviews__item 
         ul.reviews__head-list 
@@ -46,7 +46,7 @@ ul.reviews__list
                     li.reviews__stars-item.reviews__stars_active
                     li.reviews__stars-item
         .reviews__content
-            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, dolorum explicabo, repellat culpa ipsam laudantium nobis, modi repudiandae ea incidunt nisi. Natus aspernatur nesciunt ex adipisci enim quia reprehenderit? Perspiciatis?
+            p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi expedita tempore labore blanditiis ab dolor inventore iusto nesciunt distinctio officiis sed non, excepturi fugit voluptate facilis, quia commodi adipisci dignissimos. Lorem ipsum dolor.
         
     li.reviews__item 
         ul.reviews__head-list 
@@ -62,7 +62,7 @@ ul.reviews__list
                     li.reviews__stars-item.reviews__stars_active
                     li.reviews__stars-item.reviews__stars_active
         .reviews__content
-            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, dolorum explicabo, repellat culpa ipsam laudantium nobis, modi repudiandae ea incidunt nisi. Natus aspernatur nesciunt ex adipisci enim quia reprehenderit? Perspiciatis?
+            p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi expedita tempore labore blanditiis ab dolor inventore iusto nesciunt distinctio officiis sed non, excepturi fugit voluptate facilis, quia commodi adipisci dignissimos. Lorem ipsum dolor.
         
 ul.reviews__pagination-list
     li.reviews__pagination-item.reviews__pagination_start
@@ -106,7 +106,12 @@ input#switcher-reviews-modal(type="checkbox")
                         div.reviews__modal-star(data-num="4")
 
             .reviews__modal-wr-text 
-                textarea(name="text" placeholder="Расскажите о товаре, что понравилось, а что нет" maxlength="250") 
+                textarea(name="text" placeholder="Расскажите о товаре, нам важно Ваше мнение" maxlength="250") 
+            .reviews__wr-counter 
+                .reviews__counter
+                    span 0
+                    span /
+                    span 250 
             .reviews__modal-input-group
                 label.reviews__modal-label.reviews__modal-wr-name
                     span.reviews__modal-input-name Имя
@@ -133,7 +138,7 @@ input#switcher-reviews-modal(type="checkbox")
                 button.reviews__captcha-button(type="button") ок
 
 //- .reviews__response_active 
-.reviews__response-cover   
+.reviews__response-cover.reviews__response-cover-success 
     .reviews__response.reviews__modal-success 
         .reviews__modal-wr-close
             .reviews__modal-close
@@ -141,7 +146,7 @@ input#switcher-reviews-modal(type="checkbox")
         .reviews__modal-text 
             p Ваш отзыв успешно отправлен
 
-.reviews__response-cover     
+.reviews__response-cover.reviews__response-cover-error
     .reviews__response.reviews__modal-error 
         .reviews__modal-wr-close
             .reviews__modal-close

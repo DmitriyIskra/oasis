@@ -37,6 +37,7 @@ import navBarMobile from "./nav-bar-mobile/nav-bar-mobile";
 // Модалка для написания отзыва
 import ControllReviewsModal from "./reviews-modal/ControllReviewsModal";
 import RedrawReviewsModal from "./reviews-modal/RedrawReviewsModal";
+import RestReviewsModal from "./reviews-modal/RestApiReviewsModal";
 // По клику на крестик закрывается окно с результатом отправки отзыва
 import closeReviewsResponseModal from "./close-reviews-response-modal/closeReviewsResponseModal";
 // Фильтры для списка товаров
@@ -190,7 +191,8 @@ if(sliderInteresting) {
 const modalReviews = document.querySelector('.reviews__modal-cover');
 if(modalReviews) {
     const redraw = new RedrawReviewsModal(modalReviews);
-    const controll = new ControllReviewsModal(redraw);
+    const restApi = new RestReviewsModal('');
+    const controll = new ControllReviewsModal(redraw, restApi);
     controll.init();
 }
 
