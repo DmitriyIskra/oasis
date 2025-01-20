@@ -1,11 +1,12 @@
-.catalog-card {
+.brands-card {
     position: relative;
 
     display: flex;
     width: 100%;
+    min-height: 25vw;
     padding-top: 1.04vw;
     padding-right: 1.56vw;
-    padding-bottom: 3.07vw;
+    padding-bottom: 2.60vw;
     padding-left: 1.56vw;
     flex-direction: column;
     align-items: center;
@@ -22,26 +23,10 @@
     cursor: pointer;
 }
 
-.catalog-card:hover {
+.brands-card:hover {
     box-shadow: 
         0px 0px 0.83vw 0.16vw rgba(0, 0, 0, 0.25), 
         0px 0px 1.56vw 0.42vw rgba(0, 0, 0, 0.25);
-}
-
-.catalog-card::before {
-    content: "";
-
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: -1;
-
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    clip-path: polygon(22% 0, 100% 0, 100% 79%);
-
-    background-color: rgba(247, 247, 247, 0.51);
 }
 
 .brands-card__arrow {
@@ -52,6 +37,14 @@
     background: no-repeat url('../../svg/arrow-with-line-green.svg');
     background-size: contain;
     background-position: center;
+}
+
+.brands-card__wr-brand {
+    display: flex;
+    margin-top: 1.2vw;
+    justify-content: center;
+    min-height: 9.74vw;
+    flex-grow: 1;
 }
 
 .brands-card__image {
@@ -69,13 +62,16 @@
 }
 
 .brands-card__wr-title {
-    margin-top: 0.99vw;
+    display: grid;
+    place-items: center;
+    height: 9.38vw;
 }
 
 .brands-card__title {
     font-family: 'Play';
-    font-size: 1.25vw;
+    font-size: 1.96vw;
     font-weight: 700;
+    text-align: center;
 
     color: #4D96AB;
 }
@@ -89,13 +85,14 @@
 }
 
 .brands-card__text {
-    width: 100%;
-    margin-top: 1.56vw;
+    width: 93%;
+    height: 2.92vw;
+    margin-top: 0.52vw;
 }
 
 .brands-card__text > p {
     font-family: 'Roboto';
-    font-size: 0.83vw;
+    font-size: 0.63vw;
     font-weight: 400;
     text-align: center;
 

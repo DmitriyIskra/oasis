@@ -237,6 +237,15 @@ module.exports = {
         }),
         new HtmlWebPackPlugin({
             // title: '....' // здесь можно указать title конкретной страницы
+            template: './src/pug/brands.pug',
+            filename: './brands.html',   // куда компилировать
+            minify: {
+              html: false // отключаем минификацию html, еще есть версия minify: false
+            },
+            scriptLoading: 'blocking', // defer | module. можно также указать inject: 'body' скрипт будет в конце body но с defer
+        }),
+        new HtmlWebPackPlugin({
+            // title: '....' // здесь можно указать title конкретной страницы
             template: './src/pug/products-list.pug',
             filename: './products-list.html',   // куда компилировать
             minify: {
@@ -259,6 +268,23 @@ module.exports = {
             { from: 'src/svg/catalog-dishes.svg', to: 'svg/' },
             { from: 'src/svg/catalog-gifts-sets.svg', to: 'svg/' },
             { from: 'src/svg/catalog-different.svg', to: 'svg/' },
+            
+            { from: 'src/svg/brand-logo-althaus.svg', to: 'svg/' },
+            { from: 'src/svg/brand-logo-bonomi.svg', to: 'svg/' },
+            { from: 'src/svg/brand-logo-chocolate.svg', to: 'svg/' },
+            { from: 'src/svg/brand-logo-clavis.svg', to: 'svg/' },
+            { from: 'src/svg/brand-logo-danesi-caffe.svg', to: 'svg/' },
+            { from: 'src/svg/brand-logo-impassion-coffee.svg', to: 'svg/' },
+            { from: 'src/svg/brand-logo-kaffit.svg', to: 'svg/' },
+            { from: 'src/svg/brand-logo-lavazza.svg', to: 'svg/' },
+            { from: 'src/svg/brand-logo-monin.svg', to: 'svg/' },
+            { from: 'src/svg/brand-logo-niktea.svg', to: 'svg/' },
+            { from: 'src/svg/brand-logo-oasis.svg', to: 'svg/' },
+            { from: 'src/svg/brand-logo-r18.svg', to: 'svg/' },
+            { from: 'src/svg/brand-logo-rancilio.svg', to: 'svg/' },
+            { from: 'src/svg/brand-logo-sweet-shot.svg', to: 'svg/' },
+            { from: 'src/svg/brand-logo-vedrenne.svg', to: 'svg/' },
+            { from: 'src/svg/brand-logo-wmf.svg', to: 'svg/' },
 
             { from: 'src/files/price.pdf', to: 'files/' },
             
