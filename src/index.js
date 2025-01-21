@@ -19,6 +19,7 @@ import './css/pages/product-card.css';
 import './css/pages/catalog.css';
 import './css/pages/brands.css';
 import './css/pages/products-list.css';
+import './css/pages/delivery.css';
 import './css/components/component-nav-catalog.css';
 import './css/components/component-burger.css';
 import './css/components/component-nav-bar-mobile.css';
