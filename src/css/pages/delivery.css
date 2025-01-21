@@ -1,0 +1,78 @@
+.delivery__wrapper {
+    display: flex;
+    padding-top: 4.11vw;
+    padding-bottom: 11.67vw;
+    justify-content: center;
+}
+
+.delivery__wrapper-content {
+    width: 70.21%;
+    padding: 2.50vw 2.24vw 8.39vw;
+
+    border-radius: 0.52vw;
+    background: #EEE;
+    box-shadow: 
+        -20.53vw 26.67vw 9.33vw rgba(0, 0, 0, 0),
+        -13.33vw 17.07vw 8.53vw rgba(0, 0, 0, 0.01),
+        -7.47vw 9.60vw 7.20vw rgba(0, 0, 0, 0.05),
+        -3.20vw 4.27vw 5.33vw rgba(0, 0, 0, 0.09),
+        -0.80vw 1.07vw 2.93vw rgba(0, 0, 0, 0.10);
+}
+
+.delivery__controll-list {
+    display: none;
+}
+
+.delivery__content-list {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 2.60vw;
+    row-gap: 2.60vw;
+}
+
+.delivery__content-item {
+    display: flex;
+    width: 48%;
+    padding: 1.56vw ;
+    flex-direction: column;
+    align-items: center;
+
+    background: #FFF;
+    box-shadow: -1vw 1vw 2vw rgba(0, 0, 0, 0.2);
+}
+
+.delivery__wr-title {
+    width: 68%;
+    padding-bottom: 0.42vw;
+
+    border-image:
+        linear-gradient(270deg, #2F5F6D 0%, #6AE9FB 100%) 1
+        / 0 0 0.16vw 0;
+}
+
+.delivery__content-title {
+    font-family: 'Play';
+    font-size: 1.46vw;
+    font-weight: 700;
+    text-align: center;
+
+    color: #27CFFF;
+}
+
+.delivery__content-text {
+    display: flex;
+    margin-top: 1.09vw;
+    flex-direction: column;
+    gap: 1.35vw;
+
+    font-family: 'Play';
+    font-size: 1.04vw;
+    font-weight: 400;
+    text-align: center;
+
+    color: #505050;
+}
+
+.delivery__content-text_bold {
+    font-weight: 700;
+}
