@@ -3,7 +3,7 @@
 
     display: flex;
     width: 100%;
-    min-height: 25vw;
+    height: 100%;
     padding-top: 1.04vw;
     padding-right: 1.56vw;
     padding-bottom: 2.60vw;
@@ -18,6 +18,7 @@
         -1.46vw 1.88vw 1.41vw 0px rgba(0, 0, 0, 0.05), 
         -0.63vw 0.83vw 1.04vw 0px rgba(0, 0, 0, 0.09), 
         -0.16vw 0.21vw 0.57vw 0px rgba(0, 0, 0, 0.10);
+    background-color: #fff;
 
     overflow: hidden;
     cursor: pointer;
@@ -43,14 +44,58 @@
     display: flex;
     margin-top: 1.2vw;
     justify-content: center;
-    min-height: 9.74vw;
     flex-grow: 1;
 }
 
 .brands-card__image {
-    width: 9.38vw;
     height: 9.38vw;
     margin-top: 0.63vw;
+}
+
+.brands-card__niktea-img {
+    width: 94%;
+}
+.brands-card__althaus-img {
+    width: 85.12%;
+}
+.brands-card__impassion-img {
+    width: 76.19%;
+}
+.brands-card__r18-img {
+    width: 94.4%;
+}
+.brands-card__lavazza-img {
+    width: 78.15%;
+}
+.brands-card__oasis-img {
+    width: 72.56%;
+}
+.brands-card__danesi-img {
+    width: 72.56%;
+}
+.brands-card__chocolate-img {
+    width: 69.77%;
+}
+.brands-card__monin-img {
+    width: 82.1%;
+}
+.brands-card__clavis-img {
+    width: 76.47%;
+}
+.brands-card__vedrenne-img {
+    width: 92.11%;
+}
+.brands-card__wmf-img {
+    width: 77.76%;
+}
+.brands-card__rancilio-img {
+    width: 88.75%;
+}
+.brands-card__kaffit-img {
+    width: 98.13%;
+}
+.brands-card__bonomi-img {
+    width: 85.68%;
 }
 
 .brands-card__image > img {
@@ -79,7 +124,6 @@
 .brands-card__line {
     width: 96%;
     height: 0.10vw;
-    margin-top: 0.52vw;
 
     background: no-repeat linear-gradient(270deg, #2F5F6D 0%, #6AE9FB 100%);
 }
@@ -108,31 +152,14 @@
 }
 
 @media(max-width: 961px) {
-    .catalog-card {
+    .brands-card {
         padding-top: 4vw;
-        padding-right: 2.93vw;
-        padding-bottom: 6.40vw;
-        padding-left: 2.93vw;
+        padding-right: 4vw;
+        padding-bottom: 7.73vw;
+        padding-left: 4vw;
 
+        border: 1px solid #DCDCDC;
         box-shadow: none;
-    }
-}
-
-@media(max-width: 961px) {
-    .catalog-card::before {
-
-
-        position: absolute;
-        top: 0;
-        right: 0;
-        z-index: -1;
-
-        display: inline-block;
-        width: 100%;
-        height: 100%;
-        clip-path: polygon(22% 0, 100% 0, 100% 79%);
-
-        background-color: rgba(247, 247, 247, 0.51);
     }
 }
 
@@ -140,20 +167,28 @@
     .brands-card__arrow {
         height: 5.33vw;
         width: 7.73vw;
+        margin-left: 3%;
+    }
+}
+
+@media(max-width: 961px) {
+    .brands-card__wr-brand {
+        margin-top: 0;
+        flex-grow: 1;
     }
 }
 
 @media(max-width: 961px) {
     .brands-card__image {
-        width: 26.67vw;
-        height: 26.67vw;
+        height: 26.93vw;
         margin-top: 0;
     }
 }
 
 @media(max-width: 961px) {
     .brands-card__wr-title {
-        margin-top: 4.53vw;
+        height: 26.93vw;
+        margin-top: 0;
     }
 }
 
@@ -165,16 +200,19 @@
 
 @media(max-width: 961px) {
     .brands-card__line {
-        width: 96%;
+        width: 67.38%;
         height: 1px;
-        margin-top: 0.4vw;
-        background: no-repeat linear-gradient(270deg, #2F5F6D 0%, #6AE9FB 100%);
     }
 }
 
 @media(max-width: 961px) {
     .brands-card__text {
-        margin-top: 2.93vw;
+        width: 100%;
+        max-height: 18.67vw;
+        height: auto;
+        margin-top: 2.13vw;
+
+        overflow: hidden;
     }
 }
 
