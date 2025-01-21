@@ -8,16 +8,16 @@ block content
     .delivery.delivery__wrapper
         .delivery__wrapper-content 
             ul.delivery__controll-list
-                li.delivery__controll-item В пределах МКАД
-                li.delivery__controll-item За МКАД
-                li.delivery__controll-item В регионы
-                li.delivery__controll-item Самовывоз
-                li.delivery__controll-item Оформление заказа
-                li.delivery__controll-item Подъем заказов
+                li.delivery__controll-item.delivery__controll-item_active(data-index="0") В пределах МКАД
+                li.delivery__controll-item(data-index="1") За МКАД
+                li.delivery__controll-item(data-index="2") В регионы
+                li.delivery__controll-item(data-index="3") Самовывоз
+                li.delivery__controll-item(data-index="4") Оформление заказа
+                li.delivery__controll-item(data-index="5") Подъем заказов
 
             ul.delivery__content-list
 
-                li.delivery__content-item
+                li.delivery__content-item.delivery__content-item_active(data-index="0")
                     .delivery__wr-title 
                         h2.delivery__content-title в пределах мкад
                     .delivery__content-text 
@@ -26,7 +26,7 @@ block content
                         p Стоимость доставки по Москве и в #[span.delivery__content-text_bold пределах МКАД – 300 руб].
                         p Срок доставки 1-2 дня, только в рабочие дни.
 
-                li.delivery__content-item
+                li.delivery__content-item(data-index="1")
                     .delivery__wr-title 
                         h2.delivery__content-title за мкад
                     .delivery__content-text 
@@ -34,7 +34,7 @@ block content
                         p От 5 км до 100 км - 30 руб./км.
                         p Срок доставки 1-2 дня, только в рабочие дни.
 
-                li.delivery__content-item
+                li.delivery__content-item(data-index="2")
                     .delivery__wr-title 
                         h2.delivery__content-title в регионы
                     .delivery__content-text 
@@ -44,7 +44,7 @@ block content
                         p Срок отправки заказа 1-2 дня, только в рабочие дни.
                         p Услуги ТК покупатель оплачивает при получении груза.
 
-                li.delivery__content-item
+                li.delivery__content-item(data-index="3")
                     .delivery__wr-title 
                         h2.delivery__content-title самовывоз
                     .delivery__content-text 
@@ -53,7 +53,7 @@ block content
                         p Возможен заезд на территорию на личном транспорте, кроме такси и каршеринга. Тел. для заказа пропуска: +7 (495) 789-67-27
                         p #[span.delivery__content-text_bold Для входа на территорию офиса необходимо иметь при себе паспорт или другой документ удостоверяющий личность!]
 
-                li.delivery__content-item
+                li.delivery__content-item(data-index="4")
                     .delivery__wr-title 
                         h2.delivery__content-title оформление заказа
                     .delivery__content-text 
@@ -62,7 +62,7 @@ block content
                         p Заказы, принятые после #[span.delivery__content-text_bold 18:00], обрабатываются на следующий рабочий день.
                         p Заказы доставляются только после согласования с покупателем по телефону.
 
-                li.delivery__content-item
+                li.delivery__content-item(data-index="5")
                     .delivery__wr-title 
                         h2.delivery__content-title подъем заказов
                     .delivery__content-text 

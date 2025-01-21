@@ -46,7 +46,8 @@ import RedrawFilterPL from "./filter-prod-list/RedrawFilterPL";
 // Выбор типа (цвет или размер) в карточке товара
 import RedrawChoiceType from "./product-card-choice-type/RedrawChoiceType";
 import ControllChoiceType from "./product-card-choice-type/ControllChoiceType";
-
+// Переключение контента на странице доставка
+import deliverySwitchingMobile from "./delivery-switching-mobile/delivery-switching-mobile";
 
 // ---------------------------------------------------------------------
 
@@ -251,3 +252,8 @@ navMobileButton(checkboxNavMobile);
 // Активация кнопки купить для nav-bar-mobile, если страница карточка товара
 const barButtonsBuy = document.querySelector('.bar__buttons');
 if(barButtonsBuy) navBarMobile(barButtonsBuy);
+
+// Переключение контента на странице доставка
+const contrDeliv = document.querySelector('.delivery__controll-list');
+const contDeliv = document.querySelector('.delivery__content-list');
+if(contrDeliv && contDeliv) deliverySwitchingMobile(contrDeliv, contDeliv);
