@@ -1,4 +1,4 @@
-label.product-desc__add-review(for="switcher-reviews-modal") Написать отзыв
+label.reviews__add-review(for="switcher-reviews-modal") Написать отзыв
 ul.reviews__list
     li.reviews__item 
         ul.reviews__head-list 
@@ -124,11 +124,8 @@ input#switcher-reviews-modal(type="checkbox")
                     span.reviews__modal-input-name Почта
                     span.reviews__modal-input-error
                     input.reviews__modal-input(type="email" name="email" required)
-                //- .reviews__modal-submit_active
-                .reviews__modal-wr-submit.reviews__modal-submit_active
-                    button.reviews__modal-submit(type="submit") Отправить
-        //- .reviews__captcha_active
-        form.reviews__captcha(name="form-reviews_captcha")
+        //- .reviews__captcha_hide
+        .reviews__captcha(name="form-reviews_captcha")
             .reviews__captcha-wr-img
                 img.reviews__captcha-img(src=require('../../img/icons/captcha-icon.png') alt="" loading="lazy")
             .reviews__captcha-wr-input
@@ -136,6 +133,10 @@ input#switcher-reviews-modal(type="checkbox")
             .reviews__captcha-wr-buttons 
                 button.reviews__captcha-button(type="reset") Отмена
                 button.reviews__captcha-button(type="button") ок
+        .reviews__modal-wr-submit
+            button.reviews__modal-submit(type="button") Отправить
+        
+        
 
 //- .reviews__response_active 
 .reviews__response-cover.reviews__response-cover-success 
