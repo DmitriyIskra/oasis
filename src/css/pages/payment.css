@@ -94,9 +94,14 @@
 .payment__logo {
     width: 100%;
     height: 2.97vw;
-    background: no-repeat url('../../img/icons/oplata-uslug-icon.png');
-    background-size: contain;
-    background-position: center;
+}
+
+.payment__logo > img {
+    height: 100%;
+    width: 100%;
+    
+    object-fit: contain;
+    object-position: center;
 }
 
 @media(max-width: 961px) {

@@ -21,6 +21,7 @@ import './css/pages/brands.css';
 import './css/pages/products-list.css';
 import './css/pages/delivery.css';
 import './css/pages/payment.css';
+import './css/pages/about-us.css';
 import './css/components/component-nav-catalog.css';
 import './css/components/component-burger.css';
 import './css/components/component-nav-bar-mobile.css';
