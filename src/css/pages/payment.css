@@ -1,0 +1,180 @@
+.payment__wrapper {
+    display: flex;
+    padding-top: 4.11vw;
+    padding-bottom: 11.67vw;
+    justify-content: center;
+}
+
+.payment__wrapper-content {
+    width: 70.21%;
+    padding: 2.50vw 2.24vw;
+
+    border-radius: 0.52vw;
+    background: #EEE;
+    box-shadow: 
+        -20.53vw 26.67vw 9.33vw rgba(0, 0, 0, 0),
+        -13.33vw 17.07vw 8.53vw rgba(0, 0, 0, 0.01),
+        -7.47vw 9.60vw 7.20vw rgba(0, 0, 0, 0.05),
+        -3.20vw 4.27vw 5.33vw rgba(0, 0, 0, 0.09),
+        -0.80vw 1.07vw 2.93vw rgba(0, 0, 0, 0.10);
+}
+
+.payment__list {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 2.60vw;
+    row-gap: 2.60vw;
+}
+
+.payment__item {
+    display: flex;
+    width: 48%;
+    min-height: 20.21vw;
+    padding: 1.56vw;
+    flex-direction: column;
+    align-items: center;
+
+    background: #FFF;
+}
+
+.payment__info {
+    padding: 0;
+
+    background: transparent;
+}
+
+.payment__wr-title {
+    width: 68%;
+    padding-bottom: 0.42vw;
+
+    border-image:
+        linear-gradient(270deg, #2F5F6D 0%, #6AE9FB 100%) 1
+        / 0 0 0.16vw 0;
+}
+
+.payment__title {
+    font-family: 'Play';
+    font-size: 1.46vw;
+    font-weight: 700;
+    text-align: center;
+
+    color: #27CFFF;
+}
+
+.payment__text {
+    display: flex;
+    margin-top: 1.09vw;
+    flex-direction: column;
+    gap: 1.35vw;
+
+    font-family: 'Play';
+    font-size: 1.04vw;
+    font-weight: 400;
+    text-align: center;
+
+    color: #505050;
+}
+
+.payment__text_info {
+    margin-top: 0;
+}
+
+.payment__text_bold {
+    font-weight: 700;
+}
+
+.payment__wr-logo {
+    display: flex;
+    width: 81.28%;
+    padding-bottom: 0.52vw;
+    align-items: end;
+    flex-grow: 1;
+}
+
+.payment__logo {
+    width: 100%;
+    height: 2.97vw;
+    background: no-repeat url('../../img/icons/oplata-uslug-icon.png');
+    background-size: contain;
+    background-position: center;
+}
+
+@media(max-width: 961px) {
+    .payment__wrapper {
+        padding-top: 8vw;
+        padding-bottom: 47.73vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .payment__wrapper-content {
+        width: 100%;
+        padding: 11.20vw 5.33vw 18.67vw;
+
+        border-radius: initial;
+        box-shadow: 6.67vw 8.27vw 10.67vw 0px rgba(0, 0, 0, 0.06), 1.60vw 2.13vw 5.87vw 0px rgba(0, 0, 0, 0.07);
+    }
+}
+
+@media(max-width: 961px) {
+    .payment__list {
+        column-gap: 0;
+        row-gap: 7.47vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .payment__item {
+        width: 100%;
+        min-height: 61.33vw;
+        padding: 3.20vw;
+    }
+
+    .payment__info {
+        padding: 0;
+    }
+}
+
+@media(max-width: 961px) {
+    .payment__wr-title {
+        width: fit-content;
+        padding-bottom: 0;
+
+        border-image: none;
+    }
+}
+
+@media(max-width: 961px) {
+    .payment__title {
+        font-size: 4.27vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .payment__text {
+        margin-top: 5.33vw;
+        gap: 4.80vw;
+
+        font-size: 3.73vw;
+    }
+
+    .payment__text_info {
+        margin-top: 0;
+    }
+}
+
+@media(max-width: 961px) {
+    .payment__wr-logo {
+        width: 92.92%;
+        margin-top: 5.07vw;
+        padding-bottom: 1.52vw;
+    }
+
+    .payment__logo {
+        height: 10.13vw;
+    }
+}
+
+@media(max-width: 961px) {
+    
+}

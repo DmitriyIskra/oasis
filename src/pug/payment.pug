@@ -1,0 +1,38 @@
+extends layout/layout
+
+include mixines/bread-crumbs/bread-crumbs
+
+block content   
+    +bread-crumbs(bread_crumbs)
+
+    .payment.payment__wrapper
+        .payment__wrapper-content 
+            ul.payment__list
+                li.payment__item
+                    .payment__wr-title
+                        .payment__title НАЛИЧНЫЕ
+                    .payment__text
+                        p Оплата наличными на руки курьеру, при получении заказа.
+                        p Оплата наличными в офисе на пункте самовывоза, при получении заказа.
+                li.payment__item
+                    .payment__wr-title
+                        .payment__title ОПЛАТА КАРТОЙ
+                    .payment__text
+                        p Оплата Банковской картой на сайте.
+                        p Мы принимаем к оплате карты: VISA, MasterCard, МИР.
+                        p Оплата проходит через платежный шлюз Сбербанка.
+                    .payment__wr-logo
+                        .payment__logo
+                li.payment__item
+                    .payment__wr-title
+                        .payment__title БЕЗНАЛИЧНЫЙ РАСЧЕТ
+                    .payment__text
+                        p Оплата производится по выставленному счету, на основании предоставленных заказчиком реквизитов.
+                        p.payment__text_bold Товар по счету резервируется на 3 рабочих дня.
+                li.payment__item.payment__info
+                    .payment__text.payment__text_info
+                        p Настоящий сайт поддерживает 256-битное шифрование.
+                        p Введенная информация не будет предоставлена третьим лицам за исключением случаев, предусмотренных законодательством РФ.
+                        p Проведение платежей по банковским картам осуществляется в строгом соответствии с требованиями платежных систем Visa Int. и MasterCard Europe Sprl.
+                        p В случае возникновения вопросов по поводу данной конфиденциальности предоставляемой Вами информации, Вы можете связаться с ПАО «СБЕРБАНК РОССИИ» по телефону: 8 (800) 555-55-50.
+                        p Для отмены, обмена и возврата заказа, пожалуйста, обратитесь в службу клиентской поддержки.
