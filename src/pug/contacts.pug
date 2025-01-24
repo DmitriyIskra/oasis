@@ -4,17 +4,17 @@ include mixines/bread-crumbs/bread-crumbs
 
 block content   
     +bread-crumbs(bread_crumbs)
-
+    //- ЧАЙ ДОДЕЛАЙ КАРТОЧКУ ТОВАРА
     .contacts.contacts__wrapper
         .contacts__wrapper-content 
             ul.contacts__controll-list
-                li.contacts__controll-item(data-index="0") Москва
+                li.contacts__controll-item.contacts__controll-item_active(data-index="0") Москва
                 li.contacts__controll-item(data-index="1") Санкт-Петербург
                 li.contacts__controll-item(data-index="2") Краснодар
                 li.contacts__controll-item(data-index="3") Самара
 
-            .contacts__content-list 
-                .contacts__content-item(data-index="0")
+            ul.contacts__content-list 
+                li.contacts__content-item.contacts__content-item_active(data-index="0")
                     .contacts__content-address
                         ul.contacts__text-list
                             li.contacts__text-item
@@ -35,16 +35,16 @@ block content
                             li.contacts__text-item
                                 .contacts__content-text.contacts__content-text_grey
                                     p Для заезда на территорию БЦ "Солид-Кама" Вам необходимо оформить пропуск по телефону: 8 (495) 789-67-27
-                        ul.contacts__phones-list
-                            .contacts__phones-item 
-                                .contacts__phones-icon 
-                                a.contacts__phones-phone(href="tel:+74957896727" title="") +7 (495) 789-67-27
-                            .contacts__phones-item 
-                                .contacts__phones-icon
-                                a.contacts__phones-phone(href="tel:+79060400020" title="") +7 (906) 040-00-20
-                            .contacts__phones-item 
-                                .contacts__phones-icon 
-                                a.contacts__phones-phone(href="tel:+79060400020" title="") +7 (906) 040-00-20
+                        ul.contacts__phones-list.contacts__phones-list_msk
+                            li.contacts__phones-item.contacts__phones-item_msk 
+                                .contacts__phones-icon.contacts__phones-icon_phone
+                                a.contacts__phones-phone(href="tel:+74957896727" title="" target="_blank") +7 (495) 789-67-27
+                            li.contacts__phones-item.contacts__phones-item_msk 
+                                .contacts__phones-icon.contacts__phones-icon_whatsapp
+                                a.contacts__phones-phone(href="https://api.whatsapp.com/send/?phone=79060400020" title="" target="_blank") +7 (906) 040-00-20
+                            li.contacts__phones-item.contacts__phones-item_msk 
+                                .contacts__phones-icon.contacts__phones-icon_telegram
+                                a.contacts__phones-phone(href="https://t.me/+79060400020" title="" target="_blank") +7 (906) 040-00-20
                         .contacts__wr-requisites
                             a.contacts__requisites-link(href="./requisites.html" title="") Реквизиты
                     .contacts__content-info
@@ -64,7 +64,7 @@ block content
                             a.contacts__route-link(href="#0" title="Фотоинструкция как добраться до нашего шоурума" target="_blank") Фотоинструкция как добраться до нашего шоурума
                     .contacts__map
                         <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A3689c070c809de9c1032d2edfa1c3e4040189ba8d31834d44536c4723401dbdd&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
-                .contacts__content-item(data-index="1")
+                li.contacts__content-item(data-index="1")
                     .contacts__content-address
                         ul.contacts__text-list
                             li.contacts__text-item
@@ -78,15 +78,15 @@ block content
                                 .contacts__content-text.contacts__content-text_grey
                                     p 10:00 - 19:00, по рабочим дням.
                         ul.contacts__phones-list
-                            .contacts__phones-item 
-                                h3.contacts__title Телефон
-                                a.contacts__phones-phone(href="tel:+78123367211" titlle="") +7 (812) 336-72-11
-                            .contacts__phones-item 
-                                h3.contacts__title WhatsApp
-                                a.contacts__phones-phone(href="tel:+79060400020" titlle="") +7 (906) 040-00-20
-                            .contacts__phones-item 
-                                h3.contacts__title Telegram
-                                a.contacts__phones-phone(href="tel:+79060400020" titlle="") +7 (906) 040-00-20
+                            li.contacts__phones-item 
+                                h3.contacts__title Телефон:
+                                a.contacts__phones-phone(href="tel:+78123367211" titlle="phone" target="_blank") +7 (812) 336-72-11
+                            li.contacts__phones-item 
+                                h3.contacts__title WhatsApp:
+                                a.contacts__phones-phone(href="https://api.whatsapp.com/send/?phone=79060400020" titlle="whatsapp"  target="_blank") +7 (906) 040-00-20
+                            li.contacts__phones-item 
+                                h3.contacts__title Telegram:
+                                a.contacts__phones-phone(href="https://t.me/+79060400020" titlle="telegram"  target="_blank") +7 (906) 040-00-20
                     .contacts__content-info
                         ul.contacts__text-list
                             li.contacts__text-item
@@ -117,7 +117,7 @@ block content
                                     p В выходные и праздничные дни доставка не осуществляется.
                     .contacts__map
                         <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A76092c3719c6ad848d55281fe33d1f20bebdaeec4a6765a4f8deacddc3a87639&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
-                .contacts__content-item(data-index="2")
+                li.contacts__content-item(data-index="2")
                     .contacts__content-address
                         ul.contacts__text-list
                             li.contacts__text-item
@@ -131,15 +131,15 @@ block content
                                 .contacts__content-text.contacts__content-text_grey
                                     p 9:00 - 17:00, по рабочим дням.
                         ul.contacts__phones-list
-                            .contacts__phones-item 
-                                h3.contacts__title Телефон
-                                a.contacts__phones-phone(href="tel:+78612101420" titlle="") +7 (861) 210-14-20
-                            .contacts__phones-item 
-                                h3.contacts__title WhatsApp
-                                a.contacts__phones-phone(href="tel:+79060400020" titlle="") +7 (906) 040-00-20
-                            .contacts__phones-item 
-                                h3.contacts__title Telegram
-                                a.contacts__phones-phone(href="tel:+79060400020" titlle="") +7 (906) 040-00-20
+                            li.contacts__phones-item 
+                                h3.contacts__title Телефон:
+                                a.contacts__phones-phone(href="tel:+78612101420" titlle="phone" target="_blank") +7 (861) 210-14-20
+                            li.contacts__phones-item 
+                                h3.contacts__title WhatsApp:
+                                a.contacts__phones-phone(href="https://api.whatsapp.com/send/?phone=79060400020" titlle="whatsapp"  target="_blank") +7 (906) 040-00-20
+                            li.contacts__phones-item 
+                                h3.contacts__title Telegram:
+                                a.contacts__phones-phone(href="https://t.me/+79060400020" titlle="telegram"  target="_blank") +7 (906) 040-00-20
                     .contacts__content-info
                         ul.contacts__text-list
                             li.contacts__text-item
@@ -150,7 +150,7 @@ block content
                                     p Доставка заказов стоимостью от 3000 руб. осуществляется #[span.contacts__content-text_bold бесплатно]. 
                     .contacts__map
                         <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A85c04bf7ffd35645a9c1783614f30ed70d01714fda91550f651d9965cdf51e5b&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
-                .contacts__content-item(data-index="3")
+                li.contacts__content-item(data-index="3")
                     .contacts__content-address
                         ul.contacts__text-list
                             li.contacts__text-item
@@ -164,16 +164,16 @@ block content
                                 .contacts__content-text.contacts__content-text_grey
                                     p 9:00 - 18:00, по рабочим дням.
                         ul.contacts__phones-list
-                            .contacts__phones-item 
-                                h3.contacts__title Телефон
-                                a.contacts__phones-phone(href="tel:+7846)2777850" titlle="") +7 (846) 277-78-50,
-                                a.contacts__phones-phone(href="tel:+7846)2777851" titlle="") +7 (846) 277-78-51
-                            .contacts__phones-item 
-                                h3.contacts__title WhatsApp
-                                a.contacts__phones-phone(href="tel:+79060400020" titlle="") +7 (906) 040-00-20
-                            .contacts__phones-item 
-                                h3.contacts__title Telegram
-                                a.contacts__phones-phone(href="tel:+79060400020" titlle="") +7 (906) 040-00-20
+                            li.contacts__phones-item.contacts__phones-item_smr
+                                h3.contacts__title.contacts__title_smr Телефон:
+                                a.contacts__phones-phone.contacts__phones-phone_smr1(href="tel:+7846)2777850" titlle="phone" target="_blank") +7 (846) 277-78-50,
+                                a.contacts__phones-phone.contacts__phones-phone_smr2(href="tel:+7846)2777851" titlle="phone" target="_blank") +7 (846) 277-78-51
+                            li.contacts__phones-item 
+                                h3.contacts__title WhatsApp:
+                                a.contacts__phones-phone(href="https://api.whatsapp.com/send/?phone=79060400020" titlle="whatsapp"  target="_blank") +7 (906) 040-00-20
+                            li.contacts__phones-item 
+                                h3.contacts__title Telegram:
+                                a.contacts__phones-phone(href="https://t.me/+79060400020" titlle="telegram"  target="_blank") +7 (906) 040-00-20
                     .contacts__content-info
                         ul.contacts__text-list
                             li.contacts__text-item

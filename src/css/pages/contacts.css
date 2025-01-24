@@ -7,29 +7,438 @@
 
 .contacts__wrapper-content {
     width: 67.683%;
-    padding: 2.34vw 0 5.73vw;
 
-    border-radius: 0.52vw;
     background: #EEE;
     box-shadow: 1.30vw 1.61vw 2.08vw 0px rgba(0, 0, 0, 0.06), 0.31vw 0.42vw 1.15vw 0px rgba(0, 0, 0, 0.07);
 }
 
+.contacts__controll-list {
+    display: flex;
+    height: 3.13vw;
+}
 
+.contacts__controll-item {
+    display: grid;
+    width: 100%;
+    place-items: center;
+
+    font-family: 'Play';
+    font-size: 1.04vw;
+    font-weight: 400;
+
+    color: #2F5F6D;
+    background: #E5E4E9;
+
+    cursor: pointer;
+}
+
+.contacts__controll-item_active {
+    background: #2F5F6D;
+    color: #fff;
+
+    pointer-events: none;
+}
+
+.contacts__content-list {
+    position: relative;
+    padding: 4.90vw 2.60vw 4.38vw;
+}
+
+.contacts__content-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: min-content min-content;
+    height: 0;
+    width: 100%;
+    row-gap: 1.93vw;
+    column-gap: 1.20vw;
+
+    transition: opacity 0.3s linear;
+
+    opacity: 0;
+}
+
+.contacts__content-item_active {
+    position: relative;
+    z-index: 1;
+
+    opacity: 1;
+    height: 100%;
+}
+
+.contacts__content-address, 
+.contacts__content-info {
+    padding: 1.35vw 1.51vw;
+    grid-row: 1;
+
+    box-shadow: 1.30vw 1.61vw 2.08vw 0px rgba(0, 0, 0, 0.06), 0.31vw 0.42vw 1.15vw 0px rgba(0, 0, 0, 0.07);
+    background: #FFF;
+}
+
+.contacts__content-address {
+    grid-column: 1;    
+}
+
+.contacts__content-info {
+    grid-column: 2;
+}
+
+.contacts__map {
+    height: 36.46vw;
+    grid-row: 2;
+    grid-column: 1/3;
+
+    border: 1px solid #2F5F6D;
+    box-shadow: 1.30vw 1.61vw 2.08vw 0px rgba(0, 0, 0, 0.06), 0.31vw 0.42vw 1.15vw 0px rgba(0, 0, 0, 0.07);
+}
+
+.contacts__text-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.83vw;
+}
+
+.contacts__title {
+    font-family: 'Play';
+    font-size: 1.04vw;
+    font-weight: 700;
+    
+    text-shadow: 0px 0px 0.21vw #FFF;
+    color: #2F5F6D;
+}
+
+.contacts__content-text {
+    font-family: 'Play';
+    font-size: 1.04vw;
+    font-weight: 400;
+}
+
+.contacts__content-text_grey {
+    color: #505050;
+}
+.contacts__content-text_green {
+    color: #2F5F6D;
+}
+
+.contacts__content-text_bold {
+    font-weight: 700;
+}
+
+.contacts__phones-list {
+    display: flex;
+    margin-top: 0.83vw;
+    margin-bottom: 1.30vw;
+    flex-direction: column;
+}
+
+.contacts__phones-list_msk {
+    margin-bottom: 0;
+    gap: 0.68vw;
+}
+
+.contacts__phones-item {
+    display: flex;
+    align-items: center;
+    gap: 0.42vw;
+}
+
+.contacts__phones-icon {
+    width: 1.67vw;
+    height: 1.67vw;
+}
+
+.contacts__phones-icon_phone {
+    background: no-repeat url('../../svg/contacts-phone.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.contacts__phones-icon_whatsapp {
+    background: no-repeat url('../../svg/contacts-whatsapp.svg');
+    background-size: contain;
+    background-position: center;
+}
+.contacts__phones-icon_telegram {
+    background: no-repeat url('../../svg/contacts-telegram.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.contacts__phones-phone {
+    font-family: 'Play';
+    font-size: 1.04vw;
+    font-weight: 400;
+
+    color: #505050;
+}
+
+.contacts__wr-requisites {
+    margin-top: 1.41vw;
+    margin-bottom: 1.98vw;
+}
+
+.contacts__requisites-link {
+    font-family: 'Play';
+    font-size: 1.04vw;
+    font-weight: 400;
+    text-decoration: underline;
+    text-underline-offset: under;
+
+    color: #2F5F6D;
+}
+
+.contacts__wr-route {
+    display: flex;
+    margin-top: 4.79vw;
+    gap: 1.30vw;
+    align-items: center;
+}
+
+.contacts__route-icon {
+    width: 4.06vw;
+    height: 4.06vw;
+
+    background: no-repeat url('../../svg/contacts-route.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.contacts__route-link {
+    width: 15.47vw;
+
+    font-family: 'Play';
+    font-size: 1.04vw;
+    font-weight: 400;
+    text-decoration: underline;
+    text-underline-position: under;
+    text-underline-offset: 1px;
+
+    color: #2F5F6D;
+}
+
+
+
+@media(min-width: 962px) {
+    .contacts__controll-item:hover {
+        background: linear-gradient(270deg, #2F5F6D 0%, #6AE9FB 100%);  
+        color: #fff;
+    }
+}
 
 
 @media(max-width: 961px) {
     .contacts__wrapper {
         padding-top: 8vw;
-        padding-bottom: 16.27vw;
+        padding-bottom: 24.53vw;
     }
 }
 
 @media(max-width: 961px) {
     .contacts__wrapper-content {
         width: 100%;
-        padding: 8vw 0 18.93vw;
 
-        border-radius: initial;
         box-shadow: 6.67vw 8.27vw 10.67vw 0px rgba(0, 0, 0, 0.06), 1.60vw 2.13vw 5.87vw 0px rgba(0, 0, 0, 0.07);
     }
+}
+
+@media(max-width: 961px) {
+    .contacts__controll-list {
+        height: 10.93vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .contacts__controll-item {
+        padding-left: 2%;
+        padding-right: 2%;
+
+        font-size: 3.73vw;
+        white-space: nowrap;
+    }
+
+    .contacts__controll-item_active {
+        background: linear-gradient(270deg, #2F5F6D 0%, #6AE9FB 100%);
+        color: #fff;
+        pointer-events: none;
+    }
+}
+
+@media(max-width: 961px) {
+    .contacts__content-list {
+        padding: 13.07vw 5.33vw 22.67vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .contacts__content-item {
+        display: flex;
+        flex-direction: column;
+        gap: 8vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .contacts__content-address, 
+    .contacts__content-info {
+        min-height: 65.07vw;
+        padding: 5.33vw 2.13vw;
+        box-shadow: 6.67vw 8.27vw 10.67vw 0px rgba(0, 0, 0, 0.06), 1.60vw 2.13vw 5.87vw 0px rgba(0, 0, 0, 0.07);
+    }
+}
+
+@media(max-width: 961px) {
+    .contacts__text-list {
+        gap: 5.60vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .contacts__title {
+        font-size: 3.73vw;
+        text-align: center;
+    }
+}
+
+@media(max-width: 961px) {
+    .contacts__content-text {
+        font-size: 3.73vw;
+        text-align: center;
+    }
+}
+
+@media(max-width: 961px) {
+    .contacts__phones-list {
+        margin-top: 9.07vw;
+        margin-bottom: 4.27vw;
+        align-items: center;
+        row-gap: 1vw;
+    }
+
+    .contacts__phones-list_msk {
+        margin-top: 2.13vw;
+        margin-bottom: 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+        column-gap: 2.93vw;
+        row-gap: 2.40vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .contacts__phones-item {
+        gap: 2.13vw;
+    }
+
+    .contacts__phones-item_smr {
+        display: grid;
+        grid-template-columns: min-content 1fr;
+        grid-template-rows: min-content min-content;
+        row-gap: 0;
+    }
+
+    .contacts__title_smr {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .contacts__phones-phone_smr1 {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .contacts__phones-phone_smr1 {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .contacts__phones-item_msk {
+        width: 48%;
+    }
+}
+
+@media(max-width: 961px) {
+    .contacts__phones-icon {
+        width: 8vw;
+        height: 8vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .contacts__phones-phone {
+        font-size: 3.73vw;
+
+        white-space: nowrap;
+    }
+}
+
+@media(max-width: 961px) {
+    .contacts__wr-requisites {
+        display: none;
+    }
+}
+
+@media(max-width: 961px) {
+    .contacts__wr-route {
+        margin-top: 10.67vw;
+        gap: 2.67vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .contacts__route-icon {
+        width: 16.7vw;
+        height: 13.73vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .contacts__route-link {
+        width: auto;
+
+        font-size: 4vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .contacts__map {
+        height: 118.67vw;
+
+        box-shadow: 6.67vw 8.27vw 10.67vw 0px rgba(0, 0, 0, 0.06), 1.60vw 2.13vw 5.87vw 0px rgba(0, 0, 0, 0.07);
+    }
+}
+
+@media(max-width: 961px) {
+    
+}
+
+@media(max-width: 961px) {
+    
+}
+
+@media(max-width: 961px) {
+    
+}
+
+@media(max-width: 961px) {
+    
+}
+
+@media(max-width: 961px) {
+    
+}
+
+@media(max-width: 961px) {
+    
+}
+
+@media(max-width: 961px) {
+    
+}
+
+@media(max-width: 961px) {
+    
 }
