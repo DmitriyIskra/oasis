@@ -1,0 +1,194 @@
+extends layout/layout
+
+include mixines/bread-crumbs/bread-crumbs
+
+block content   
+    +bread-crumbs(bread_crumbs)
+
+    .contacts.contacts__wrapper
+        .contacts__wrapper-content 
+            ul.contacts__controll-list
+                li.contacts__controll-item(data-index="0") Москва
+                li.contacts__controll-item(data-index="1") Санкт-Петербург
+                li.contacts__controll-item(data-index="2") Краснодар
+                li.contacts__controll-item(data-index="3") Самара
+
+            .contacts__content-list 
+                .contacts__content-item(data-index="0")
+                    .contacts__content-address
+                        ul.contacts__text-list
+                            li.contacts__text-item
+                                .contacts__wr-title
+                                    h3.contacts__title Интернет-магазин Оазис:
+                                .contacts__content-text.contacts__content-text_grey
+                                    p 123007, Россия, город Москва, Хорошевское шоссе, д. 32, корп. А, подъезд 2, офис 109.
+                            li.contacts__text-item
+                                .contacts__wr-title
+                                    h3.contacts__title Время работы:
+                                .contacts__content-text.contacts__content-text_grey
+                                    p 10:00 - 18:00, по рабочим дням.
+                            li.contacts__text-item
+                                .contacts__wr-title
+                                    h3.contacts__title Вход на территорию: 
+                                .contacts__content-text.contacts__content-text_grey
+                                    p Для прохода на территорию БЦ при себе необходимо иметь документ удостоверяющий личность. 
+                            li.contacts__text-item
+                                .contacts__content-text.contacts__content-text_grey
+                                    p Для заезда на территорию БЦ "Солид-Кама" Вам необходимо оформить пропуск по телефону: 8 (495) 789-67-27
+                        ul.contacts__phones-list
+                            .contacts__phones-item 
+                                .contacts__phones-icon 
+                                a.contacts__phones-phone(href="tel:+74957896727" title="") +7 (495) 789-67-27
+                            .contacts__phones-item 
+                                .contacts__phones-icon
+                                a.contacts__phones-phone(href="tel:+79060400020" title="") +7 (906) 040-00-20
+                            .contacts__phones-item 
+                                .contacts__phones-icon 
+                                a.contacts__phones-phone(href="tel:+79060400020" title="") +7 (906) 040-00-20
+                        .contacts__wr-requisites
+                            a.contacts__requisites-link(href="./requisites.html" title="") Реквизиты
+                    .contacts__content-info
+                        ul.contacts__text-list
+                            li.contacts__text-item
+                                .contacts__wr-title
+                                    h3.contacts__title Как добраться на автомобиле:
+                                .contacts__content-text.contacts__content-text_grey
+                                    p Сверните с Хорошевского шоссе на 1-й Хорошевский проезд, через 50 метров поверните налево, далее, двигайтесь прямо, вдоль четырехэтажных домов до красного кирпичного здания с зеленой крышей.
+                            li.contacts__text-item
+                                .contacts__wr-title
+                                    h3.contacts__title На метро:
+                                .contacts__content-text.contacts__content-text_grey
+                                    p Метро Беговая, первый вагон из центра, выход направо, далее вверх по лестнице. При выходе из метро – направо, по диагонали, к четырехэтажному дому желтого цвета, затем налево, мимо четырехэтажных домов к красному кирпичному зданию с зеленой крышей. Внимание! Не забудьте паспорт для оформления на КПП.
+                        .contacts__wr-route
+                            a.contacts__route-icon
+                            a.contacts__route-link(href="#0" title="Фотоинструкция как добраться до нашего шоурума" target="_blank") Фотоинструкция как добраться до нашего шоурума
+                    .contacts__map
+                        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A3689c070c809de9c1032d2edfa1c3e4040189ba8d31834d44536c4723401dbdd&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
+                .contacts__content-item(data-index="1")
+                    .contacts__content-address
+                        ul.contacts__text-list
+                            li.contacts__text-item
+                                .contacts__wr-title
+                                    h3.contacts__title Интернет-магазин Оазис СПБ:
+                                .contacts__content-text.contacts__content-text_grey
+                                    p 191014, г. Санкт-Петербург, ул. Жуковского, д. 3, лит. А.
+                            li.contacts__text-item
+                                .contacts__wr-title
+                                    h3.contacts__title Время работы:
+                                .contacts__content-text.contacts__content-text_grey
+                                    p 10:00 - 19:00, по рабочим дням.
+                        ul.contacts__phones-list
+                            .contacts__phones-item 
+                                h3.contacts__title Телефон
+                                a.contacts__phones-phone(href="tel:+78123367211" titlle="") +7 (812) 336-72-11
+                            .contacts__phones-item 
+                                h3.contacts__title WhatsApp
+                                a.contacts__phones-phone(href="tel:+79060400020" titlle="") +7 (906) 040-00-20
+                            .contacts__phones-item 
+                                h3.contacts__title Telegram
+                                a.contacts__phones-phone(href="tel:+79060400020" titlle="") +7 (906) 040-00-20
+                    .contacts__content-info
+                        ul.contacts__text-list
+                            li.contacts__text-item
+                                .contacts__content-text.contacts__content-text_green
+                                    p Доставка осуществляется по Санкт-Петербургу курьером при заказе от 500 руб.
+                            li.contacts__text-item
+                                .contacts__content-text.contacts__content-text_green
+                                    p Доставка осуществляется #[span.contacts__content-text_bold бесплатно в пределах КАД]  до 18:00 при сумме заказа от 2000 руб.
+                                    p Стоимость доставки за пределы КАД при сумме заказа от 2000 руб. составляет 350 руб. до 18:00 и 450 руб. с 18:00 до 20:00.
+                                    p Если сумма заказа меньше 2000 руб., стоимость доставки рассчитывается следующим способом:
+                            li.contacts__text-item
+                                .contacts__wr-title
+                                    h3.contacts__title В пределах КАД
+                                .contacts__content-text.contacts__content-text_green
+                                    p до 18:00 — 250 руб.
+                                    p с 18:00 до 20:00 — 350 руб.
+                            li.contacts__text-item
+                                .contacts__wr-title
+                                    h3.contacts__title За пределами КАД
+                                .contacts__content-text.contacts__content-text_green
+                                    p до 18:00 — 400 руб.
+                                    p с 18:00 до 20:00 — 500 руб.
+                            li.contacts__text-item
+                                .contacts__content-text.contacts__content-text_green
+                                    p Самовывоз бесплатно в офисе на ул. Жуковского, д3, на следующий день после оформления заказа.
+                            li.contacts__text-item
+                                .contacts__content-text.contacts__content-text_green
+                                    p В выходные и праздничные дни доставка не осуществляется.
+                    .contacts__map
+                        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A76092c3719c6ad848d55281fe33d1f20bebdaeec4a6765a4f8deacddc3a87639&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
+                .contacts__content-item(data-index="2")
+                    .contacts__content-address
+                        ul.contacts__text-list
+                            li.contacts__text-item
+                                .contacts__wr-title
+                                    h3.contacts__title Интернет-магазин Оазис Краснодар:
+                                .contacts__content-text.contacts__content-text_grey
+                                    p 350000, г. Краснодар, ул. Одесская, д. 54/1
+                            li.contacts__text-item
+                                .contacts__wr-title
+                                    h3.contacts__title Время работы:
+                                .contacts__content-text.contacts__content-text_grey
+                                    p 9:00 - 17:00, по рабочим дням.
+                        ul.contacts__phones-list
+                            .contacts__phones-item 
+                                h3.contacts__title Телефон
+                                a.contacts__phones-phone(href="tel:+78612101420" titlle="") +7 (861) 210-14-20
+                            .contacts__phones-item 
+                                h3.contacts__title WhatsApp
+                                a.contacts__phones-phone(href="tel:+79060400020" titlle="") +7 (906) 040-00-20
+                            .contacts__phones-item 
+                                h3.contacts__title Telegram
+                                a.contacts__phones-phone(href="tel:+79060400020" titlle="") +7 (906) 040-00-20
+                    .contacts__content-info
+                        ul.contacts__text-list
+                            li.contacts__text-item
+                                .contacts__content-text.contacts__content-text_green
+                                    p Доставка заказов в пределах г. Краснодар.
+                            li.contacts__text-item
+                                .contacts__content-text.contacts__content-text_green
+                                    p Доставка заказов стоимостью от 3000 руб. осуществляется #[span.contacts__content-text_bold бесплатно]. 
+                    .contacts__map
+                        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A85c04bf7ffd35645a9c1783614f30ed70d01714fda91550f651d9965cdf51e5b&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
+                .contacts__content-item(data-index="3")
+                    .contacts__content-address
+                        ul.contacts__text-list
+                            li.contacts__text-item
+                                .contacts__wr-title
+                                    h3.contacts__title Интернет-магазин Оазис Самара:
+                                .contacts__content-text.contacts__content-text_grey
+                                    p 443080, Самара, ул Санфирова 99
+                            li.contacts__text-item
+                                .contacts__wr-title
+                                    h3.contacts__title Время работы:
+                                .contacts__content-text.contacts__content-text_grey
+                                    p 9:00 - 18:00, по рабочим дням.
+                        ul.contacts__phones-list
+                            .contacts__phones-item 
+                                h3.contacts__title Телефон
+                                a.contacts__phones-phone(href="tel:+7846)2777850" titlle="") +7 (846) 277-78-50,
+                                a.contacts__phones-phone(href="tel:+7846)2777851" titlle="") +7 (846) 277-78-51
+                            .contacts__phones-item 
+                                h3.contacts__title WhatsApp
+                                a.contacts__phones-phone(href="tel:+79060400020" titlle="") +7 (906) 040-00-20
+                            .contacts__phones-item 
+                                h3.contacts__title Telegram
+                                a.contacts__phones-phone(href="tel:+79060400020" titlle="") +7 (906) 040-00-20
+                    .contacts__content-info
+                        ul.contacts__text-list
+                            li.contacts__text-item
+                                .contacts__content-text.contacts__content-text_green
+                                    p Доставка заказов в пределах г. Самара.
+                                    p Доставка заказов стоимостью #[span.contacts__content-text_bold от 1000 руб. осуществляется бесплатно].
+                                    p Стоимость доставки заказов менее 1000 руб. – 250 руб.
+                            li.contacts__text-item
+                                .contacts__content-text.contacts__content-text_green
+                                    p Самовывоз: нет.
+                            li.contacts__text-item
+                                .contacts__content-text.contacts__content-text_green
+                                    p Оплата за товар производиться за наличный расчет, при получении заказа (для Самары), расчеты совершаются только в рублях, на руки курьеру при получении заказа.
+                            li.contacts__text-item
+                                .contacts__content-text.contacts__content-text_green
+                                    p Аренда кофемашин, ремонт, ТО, сопровождение, обучение.
+                    .contacts__map
+                        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ad2758c2f013297f63a9106f16568582da7408037f1dc309eba3ade9d385a76a1&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>

@@ -1,0 +1,35 @@
+.contacts__wrapper {
+    display: flex;
+    padding-top: 4.11vw;
+    padding-bottom: 11.67vw;
+    justify-content: center;
+}
+
+.contacts__wrapper-content {
+    width: 67.683%;
+    padding: 2.34vw 0 5.73vw;
+
+    border-radius: 0.52vw;
+    background: #EEE;
+    box-shadow: 1.30vw 1.61vw 2.08vw 0px rgba(0, 0, 0, 0.06), 0.31vw 0.42vw 1.15vw 0px rgba(0, 0, 0, 0.07);
+}
+
+
+
+
+@media(max-width: 961px) {
+    .contacts__wrapper {
+        padding-top: 8vw;
+        padding-bottom: 16.27vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .contacts__wrapper-content {
+        width: 100%;
+        padding: 8vw 0 18.93vw;
+
+        border-radius: initial;
+        box-shadow: 6.67vw 8.27vw 10.67vw 0px rgba(0, 0, 0, 0.06), 1.60vw 2.13vw 5.87vw 0px rgba(0, 0, 0, 0.07);
+    }
+}
