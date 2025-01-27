@@ -45,29 +45,18 @@
 }
 
 .contacts__content-item {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    display: grid;
+    display: none;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: min-content min-content;
-    height: 0;
     width: 100%;
     row-gap: 1.93vw;
     column-gap: 1.20vw;
 
     transition: opacity 0.3s linear;
-
-    opacity: 0;
 }
 
-.contacts__content-item_active {
-    position: relative;
-    z-index: 1;
-
-    opacity: 1;
-    height: 100%;
+.contacts__content-item_active {  
+    display: grid;
 }
 
 .contacts__content-address, 
@@ -275,9 +264,12 @@
 
 @media(max-width: 961px) {
     .contacts__content-item {
-        display: flex;
         flex-direction: column;
         gap: 8vw;
+    }
+
+    .contacts__content-item_active {
+        display: flex;
     }
 }
 

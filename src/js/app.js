@@ -48,6 +48,8 @@ import RedrawChoiceType from "./product-card-choice-type/RedrawChoiceType";
 import ControllChoiceType from "./product-card-choice-type/ControllChoiceType";
 // Переключение контента на странице доставка
 import deliverySwitchingMobile from "./delivery-switching-mobile/delivery-switching-mobile";
+// Переключение табов в контактах
+import switchingContactsTabs from "./switching-contacts-tabs/switching-contacts-tabs";
 
 // ---------------------------------------------------------------------
 
@@ -240,6 +242,11 @@ const controll = new ControllChoiceType(redraw);
 controll.init();
 }
 
+
+// Переключение табов в контактах
+const tabsContacts = document.querySelector('.contacts__controll-list');
+const contentsContacts = document.querySelector('.contacts__content-list');
+if(tabsContacts && contentsContacts) switchingContactsTabs(tabsContacts, contentsContacts);
 
 
 // MOBILE
