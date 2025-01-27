@@ -300,6 +300,15 @@ module.exports = {
         }),
         new HtmlWebPackPlugin({
             // title: '....' // здесь можно указать title конкретной страницы
+            template: './src/pug/favorites.pug',
+            filename: './favorites.html',   // куда компилировать
+            minify: {
+              html: false // отключаем минификацию html, еще есть версия minify: false
+            },
+            scriptLoading: 'blocking', // defer | module. можно также указать inject: 'body' скрипт будет в конце body но с defer
+        }),
+        new HtmlWebPackPlugin({
+            // title: '....' // здесь можно указать title конкретной страницы
             template: './src/pug/requisites.pug',
             filename: './requisites.html',   // куда компилировать
             minify: {

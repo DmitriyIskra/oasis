@@ -1,0 +1,19 @@
+extends layout/layout
+
+include mixines/bread-crumbs/bread-crumbs
+include mixines/sku-card-list
+
+block content
+    
+    +bread-crumbs(bread_crumbs)
+
+    .favorites.favorites__wrapper
+
+        .favorites__content
+            .favorites__wr-clear
+                button.favorites__clear Сбросить все
+            //- КНОПКА вверх только в мобилке?
+            //- ПАГИНАЦИЯ в product-list
+            //- Кнопка вверх в product-list
+            .favorites__wr-cards
+                +sku_cards_list(5)

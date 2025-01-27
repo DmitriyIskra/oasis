@@ -1,0 +1,78 @@
+.favorites__wrapper {
+    display: flex;
+    padding-top: 3.13vw;
+    padding-bottom: 6.41vw;
+    justify-content: center;
+}
+
+.favorites__content {
+    width: 68.787%;
+    padding-top: 0.2vw;
+}
+
+.favorites__clear {
+    width: 12.29vw;
+    height: 2.08vw;
+
+    font-family: 'Play';
+    font-size: 0.83vw;
+    font-weight: 400;
+
+    color: #fff;
+    border: 0;
+    outline: 0;
+    border-radius: 0.42vw;
+    background: #4D96AB;
+    box-shadow: -0.21vw 0.21vw 9px 0px #9AA4A7;
+}
+
+.favorites__wr-cards {
+    margin-top: 3.65vw;
+}
+
+
+
+
+
+
+@media(max-width: 961px) {
+    .favorites__wrapper {
+        position: relative;
+        
+        padding-top: 8.27vw;
+        flex-direction: column;
+        padding-right: 0;
+        padding-bottom: 30.40vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .favorites__content {
+        width: 100%;
+    }   
+}
+
+@media(max-width: 961px) {
+    .favorites__wr-clear {
+        padding-left: 5.335%;
+    }   
+}
+
+@media(max-width: 961px) {
+    .favorites__clear {
+        width: 32vw;
+        height: 8vw;
+
+        font-size: 3.73vw;
+
+        border-radius: 2.13vw;
+    }   
+}
+
+@media(max-width: 961px) {
+    .favorites__wr-cards {
+        margin-top: 10.93vw;
+    }   
+}
+
+

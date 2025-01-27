@@ -24,6 +24,7 @@ import './css/pages/payment.css';
 import './css/pages/about-us.css';
 import './css/pages/contacts.css';
 import './css/pages/requisites.css';
+import './css/pages/favorites.css';
 import './css/pages/exchange-and-refund.css';
 import './css/components/component-nav-catalog.css';
 import './css/components/component-burger.css';
