@@ -1,0 +1,121 @@
+._404__wrapper {
+    display: flex;
+    padding-top: 4.69vw;
+    padding-bottom: 10.10vw;
+    justify-content: center;
+}
+
+._404__wrapper-content {
+    width: 43.88%;
+}
+
+._404__text {
+    padding-left: 11.9%;
+
+    font-family: 'Play';
+    font-size: 1.67vw;
+    font-weight: 400;
+
+    color: #671993;
+}
+
+._404__code-error {
+    display: grid;
+    place-items: center;
+    height: 32.81vw;
+
+    font-family: 'Play';
+    font-size: 13.02vw;
+    font-weight: 700;
+    
+    text-shadow: 
+        1.04vw 1.20vw 0.47vw rgba(0, 0, 0, 0.01), 
+        0.68vw 0.78vw 0.42vw rgba(0, 0, 0, 0.04), 
+        0.36vw 0.42vw 0.36vw rgba(0, 0, 0, 0.15), 
+        0.16vw 0.21vw 0.26vw rgba(0, 0, 0, 0.26), 
+        0.05vw 0.05vw 0.16vw rgba(0, 0, 0, 0.29);
+    color: #FF7A00;
+    background: no-repeat url('../../svg/404.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+._404__wr-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.99vw;
+}
+
+._404__button {
+    display: grid;
+    width: 14.79vw;
+    height: 2.60vw;
+    place-items: center;
+
+    
+    font-family: 'Play';
+    font-size: 0.83vw;
+    font-weight: 400;
+    
+    color: #FFF;
+    border-radius: 0.42vw;
+    background: #4D96AB;
+    box-shadow: -0.21vw 4px 0.47vw 0px #9AA4A7;
+}
+
+
+@media(max-width: 961px) {
+    ._404__wrapper {
+        padding-top: 13.87vw;
+        padding-bottom: 0;
+    }
+}
+
+@media(max-width: 961px) {
+    ._404__wrapper-content {
+        width: 100%;
+    }
+}
+
+@media(max-width: 961px) {
+    ._404__text {
+        padding-left: 14.7%;
+
+        font-size: 3.73vw;
+
+        color: #671993;
+    }   
+}
+
+@media(max-width: 961px) {
+    ._404__code-error {
+        height: 70.13vw;
+
+        font-size: 29.33vw;
+
+        text-shadow: 
+        5.33vw 6.13vw 2.40vw rgba(0, 0, 0, 0.01), 
+        3.47vw 4vw 2.13vw rgba(0, 0, 0, 0.04), 
+        1.87vw 2.13vw 1.87vw rgba(0, 0, 0, 0.15), 
+        0.80vw 1.07vw 1.33vw rgba(0, 0, 0, 0.26), 
+        0.27vw 0.27vw 0.80vw rgba(0, 0, 0, 0.29);
+    }   
+}
+
+@media(max-width: 961px) {
+    ._404__wr-button {
+        margin-top: 8.53vw;
+    }
+}
+
+@media(max-width: 961px) {
+    ._404__button {
+        width: 51.73vw;
+        height: 10.67vw;
+
+        font-size: 4.27vw;
+
+        border-radius: 2.13vw;
+        box-shadow: -1.07vw 1.07vw 2.40vw 0px #9AA4A7;
+    }
+}
