@@ -2,6 +2,7 @@ extends layout/layout
 
 include mixines/bread-crumbs/bread-crumbs
 include mixines/sku-card-list
+include mixines/arrow-to-up
 
 block content
     
@@ -16,4 +17,9 @@ block content
             //- ПАГИНАЦИЯ в product-list
             //- Кнопка вверх в product-list
             .favorites__wr-cards
-                +sku_cards_list(5)
+                +sku_cards_list(16)
+                .favorites__arrow-up.favorites__arrow-up_active
+                    +arrow-to-up
+
+            .favorites__wr-pagination.favorites__wr-pagination_active
+                    include components/pagination

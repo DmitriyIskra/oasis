@@ -51,6 +51,7 @@ import deliverySwitchingMobile from "./delivery-switching-mobile/delivery-switch
 // Переключение табов в контактах
 import switchingContactsTabs from "./switching-contacts-tabs/switching-contacts-tabs";
 
+
 // ---------------------------------------------------------------------
 
 // Чекбокс для управления мобильным меню
@@ -242,11 +243,12 @@ const controll = new ControllChoiceType(redraw);
 controll.init();
 }
 
-
 // Переключение табов в контактах
 const tabsContacts = document.querySelector('.contacts__controll-list');
 const contentsContacts = document.querySelector('.contacts__content-list');
 if(tabsContacts && contentsContacts) switchingContactsTabs(tabsContacts, contentsContacts);
+
+
 
 
 // MOBILE

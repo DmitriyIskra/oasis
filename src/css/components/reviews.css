@@ -119,65 +119,8 @@
     overflow: hidden;
 }
 
-.reviews__pagination-list {
-    display: flex;
+.reviews__wr-pagination {
     margin-top: 1.88vw;
-    gap: 0.26vw;
-}
-
-.reviews__pagination-item {
-    display: flex;
-    height: 1.67vw;
-    width: 1.67vw;
-    align-items: center;
-    justify-content: center;
-
-    
-    font-family: "Open Sans";
-    font-size: 0.68vw;
-    font-weight: 600;
-    
-    color: #333;
-    border-radius: 0.42vw;
-    border: 1px solid #F1F1F1;
-    background-color: #FFF;
-
-    cursor: pointer;
-}
-
-.reviews__pagination_active {
-    background: #671993;
-    color: #FFF;
-
-    pointer-events: none;
-}
-
-.reviews__pagination_start {
-    background-image: url('../../svg/reviews-pagination-arrow-start.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: auto 0.42vw;
-}
-
-.reviews__pagination_prev {
-    background-image: url('../../svg/reviews-pagination-arrow-prev.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: auto 0.42vw;
-}
-
-.reviews__pagination_next {
-    background-image: url('../../svg/reviews-pagination-arrow-next.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: auto 0.42vw;
-}
-
-.reviews__pagination_end {
-    background-image: url('../../svg/reviews-pagination-arrow-end.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: auto 0.42vw;
 }
 
 #switcher-reviews-modal {
@@ -684,37 +627,11 @@
 }
 
 @media(max-width: 961px) {
-    .reviews__pagination-list {
+    .reviews__wr-pagination {
         margin-top: 0;
         padding-top: 13.87vw;
         padding-bottom: 17.07vw;
-        gap: 2.13vw;
-    }
-}
-
-@media(max-width: 961px) {
-    .reviews__pagination-item {
-        height: 9.33vw;
-        width: 9.33vw;
-
-        font-size: 3.47vw;
-
-        border-radius: 2.13vw;
-        box-shadow: 0 0 1.8vw rgba(0, 0, 0, 0.25);
-    }
-
-    .reviews__pagination-item:nth-child(5n) {
-        display: none;
-    }
-}
-
-@media(max-width: 961px) {
-    .reviews__pagination_start,
-    .reviews__pagination_prev,
-    .reviews__pagination_next,
-    .reviews__pagination_end {
-        background-size: auto 2.4vw;
-    }
+    }   
 }
 
 @media(max-width: 961px) {

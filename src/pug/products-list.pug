@@ -2,6 +2,7 @@ extends layout/layout
 
 include mixines/bread-crumbs/bread-crumbs
 include mixines/sku-card-list
+include mixines/arrow-to-up
 
 block content
     
@@ -85,4 +86,9 @@ block content
                     h1.prod-list__title Чай Althaus
                 .sku__wr-open-filter_mob 
                     .sku__open-filter_mob
-                +sku_cards_list(10)
+                .prod-list__wr-prod-list
+                    +sku_cards_list(16)
+                    .prod-list__arrow-up.prod-list__arrow-up_active
+                        +arrow-to-up
+                .prod-list__wr-pagination.prod-list__wr-pagination_active
+                    include components/pagination

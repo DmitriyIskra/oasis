@@ -27,9 +27,33 @@
 }
 
 .favorites__wr-cards {
+    position: relative;
     margin-top: 3.65vw;
 }
 
+.favorites__arrow-up {
+    position: absolute;
+    right: -6.1%;
+    bottom: 0;
+
+    display: none;
+    width: 2.92vw;
+    height: 2.92vw;
+}
+
+.favorites__arrow-up_active {
+    display: block;
+}
+
+.favorites__wr-pagination {
+    display: none;
+    justify-content: center;
+    margin-top: 3vw;
+}
+
+.favorites__wr-pagination_active {
+    display: flex;
+}
 
 
 
@@ -71,8 +95,28 @@
 
 @media(max-width: 961px) {
     .favorites__wr-cards {
+        display: flex;
         margin-top: 10.93vw;
+        flex-direction: column;
+        gap: 8.27vw;
     }   
+} 
+
+@media(max-width: 961px) {
+    .favorites__arrow-up {
+        position: static;
+    
+        width: 12vw;
+        height: 12vw;
+        margin-right: 5.07%;
+        align-self: end;
+    }   
+}
+
+@media(max-width: 961px) {
+    .favorites__wr-pagination {
+        margin-top: 10.13vw;
+    }
 }
 
 

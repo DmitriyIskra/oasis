@@ -4,7 +4,7 @@
 
 .prod-list__wrapper {
     display: flex;
-    padding-right: 7.02vw;
+    padding-right: 8.093%;
     padding-bottom: 6.41vw;
 }
 
@@ -146,6 +146,7 @@
 }
 
 .prod-list__wr-title {
+    width: 94.3%;
     padding-bottom: 2.24vw;
 }
 
@@ -160,6 +161,35 @@
 
 .sku__wr-open-filter_mob {
     display: none;
+}
+
+.prod-list__wr-prod-list {
+    position: relative;
+}
+
+.prod-list__arrow-up {
+    position: absolute;
+    right: -6.1%;
+    bottom: 0;
+
+    display: none;
+    width: 2.92vw;
+    height: 2.92vw;
+    align-self: end;
+}
+
+.prod-list__arrow-up_active {
+    display: block;
+}
+
+.prod-list__wr-pagination {
+    display: none;
+    justify-content: center;
+    margin-top: 3vw;
+}
+
+.prod-list__wr-pagination_active {
+    display: flex;
 }
 
 @media(max-width: 961px) {
@@ -327,6 +357,7 @@
 
 @media(max-width: 961px) {
     .prod-list__wr-title {
+        width: 100%;
         padding-bottom: 6.13vw;
     }
 }
@@ -354,6 +385,30 @@
         background: no-repeat url('../../svg/open-mobile.filter.svg');
         background-size: contain;
         background-position: center;
+    }
+}
+
+@media(max-width: 961px) {
+    .prod-list__wr-prod-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10.13vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .prod-list__arrow-up {
+        position: static;
+
+        width: 12vw;
+        height: 12vw;
+        margin-right: 5.07%;
+    }
+}
+
+@media(max-width: 961px) {
+    .prod-list__wr-pagination {
+        margin-top: 8.27vw;
     }
 }
 

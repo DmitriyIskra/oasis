@@ -2,7 +2,7 @@ export default class RedrawFilterPL {
     constructor(el, openButton) {
         this.el = el;
         this.openButton = openButton;
-        console.log(openButton)
+
         this.points = [...this.el.querySelectorAll('input[type="checkbox"]')];
     }
 
