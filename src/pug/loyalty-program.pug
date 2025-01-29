@@ -1,0 +1,20 @@
+extends layout/layout
+
+include mixines/bread-crumbs/bread-crumbs
+
+block content   
+    +bread-crumbs(bread_crumbs)
+
+    .loyalty.loyalty__wrapper
+        .loyalty__wrapper-content 
+            ul.loyalty__list
+                li.loyalty__item
+                    .loyalty__reg-discount-icon 
+                    .loyalty__title.loyalty__reg-discount-title 
+                        p При регистрации в личном кабинете, Вы получаете скидку 5% на первую покупку.
+                li.loyalty__item
+                    .loyalty__bank-icon
+                    .loyalty__bank-text
+                li.loyalty__item
+                    
+                li.loyalty__item

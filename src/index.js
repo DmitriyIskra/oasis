@@ -27,6 +27,7 @@ import './css/pages/requisites.css';
 import './css/pages/favorites.css';
 import './css/pages/exchange-and-refund.css';
 import './css/pages/404.css';
+import './css/pages/loyalty-program.css';
 import './css/components/component-nav-catalog.css';
 import './css/components/component-burger.css';
 import './css/components/component-nav-bar-mobile.css';
