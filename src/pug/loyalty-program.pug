@@ -8,13 +8,75 @@ block content
     .loyalty.loyalty__wrapper
         .loyalty__wrapper-content 
             ul.loyalty__list
-                li.loyalty__item
-                    .loyalty__reg-discount-icon 
-                    .loyalty__title.loyalty__reg-discount-title 
-                        p При регистрации в личном кабинете, Вы получаете скидку 5% на первую покупку.
-                li.loyalty__item
-                    .loyalty__bank-icon
+                li.loyalty__item.loyalty__item-discount
+                    .loyalty__reg-discount
+                        .loyalty__reg-discount-icon
+                        .loyalty__reg-discount-num 5%
+                    h2.loyalty__title.loyalty__reg-discount-title При регистрации в личном кабинете,#[br] Вы получаете скидку #[span.loyalty__title_percent 5%] на первую покупку.
+                
+                li.loyalty__item-discount-bank
+                    .loyalty__icon.loyalty__bank-icon
+                    h2.loyalty__title.loyalty__bank-title Оплачивайте Ваши покупки бонусами
                     .loyalty__bank-text
-                li.loyalty__item
-                    
-                li.loyalty__item
+                        p #[span 1] бонусный балл = #[span 1] рублю
+                        p Оплатить бонусами Вы сможете до #[span 40%] от Вашей покупки.
+                        p Бонусы действуют в течении #[span 6 месяцев] с момента начисления.
+                
+                li.loyalty__item.loyalty__item-birth
+                    .loyalty__icon.loyalty__birth-icon
+                    h2.loyalty__title.loyalty__birth-title Скидка 15% в день рождения
+                    .loyalty__bank-text 
+                        p Скидка действует в течении 5 дней до и после дня рождения. В акции участвует весь ассортимент, на который не распростороняются другие скидки.
+                
+                li.loyalty__item.loyalty__item-cashback
+                    .loyalty__cashback-icon
+                        h2.loyalty__title.loyalty__cashback-title Несгораемая скидка плюс кэшбек
+                    ul.loyalty__statuses-list.loyalty__statuses-list_top
+                        li.loyalty__statuses-item 
+                            .loyalty__statuses-balls 50 000
+                            .loyalty__statuses-text 
+                                p 
+                                    span При достижении общей суммы покупок свыше #[span.loyalty__statuses_orange 50 000]р
+                                    span Вы получаете несгораемую скидку #[span.loyalty__statuses_orange 5% + 3% кэшбек]
+                        li.loyalty__statuses-item 
+                            .loyalty__statuses-balls 100 000
+                            .loyalty__statuses-text 
+                                p 
+                                    span При достижении общей суммы покупок свыше #[span.loyalty__statuses_orange 100 000]р
+                                    span Вы получаете несгораемую скидку #[span.loyalty__statuses_orange 7% + 3% кэшбек]
+                        li.loyalty__statuses-item 
+                            .loyalty__statuses-balls 150 000
+                            .loyalty__statuses-text 
+                                p 
+                                    span При достижении общей суммы покупок свыше #[span.loyalty__statuses_orange 150 000]р
+                                    span Вы получаете несгораемую скидку #[span.loyalty__statuses_orange 10% + 3% кэшбек]
+
+
+                    h2.loyalty__statuses-title Далее Вам присваиваются статусы, которые увеличивают Ваш кэшбек
+
+
+                    ul.loyalty__statuses-list.loyalty__statuses-list_bottom
+                        li.loyalty__statuses-item 
+                            .loyalty__statuses-balls 250 000
+                            .loyalty__statuses-text 
+                                p 
+                                    span При достижении общей суммы покупок свыше #[span.loyalty__statuses_orange 250 000]р
+                                    span Вы получаете несгораемую скидку #[span.loyalty__statuses_orange 10% + 4% кэшбек]
+                        li.loyalty__statuses-item 
+                            .loyalty__statuses-balls 300 000
+                            .loyalty__statuses-text 
+                                p 
+                                    span При достижении общей суммы покупок свыше #[span.loyalty__statuses_orange 300 000]р
+                                    span Вы получаете несгораемую скидку #[span.loyalty__statuses_orange 10% + 5% кэшбек]
+                        li.loyalty__statuses-item 
+                            .loyalty__statuses-balls 350 000
+                            .loyalty__statuses-text 
+                                p 
+                                    span При достижении общей суммы покупок свыше #[span.loyalty__statuses_orange 350 000]р
+                                    span Вы получаете несгораемую скидку #[span.loyalty__statuses_orange 10% + 6% кэшбек]
+                        li.loyalty__statuses-item 
+                            .loyalty__statuses-balls 400 000
+                            .loyalty__statuses-text 
+                                p 
+                                    span При достижении общей суммы покупок свыше #[span.loyalty__statuses_orange 400 000]р
+                                    span Вы получаете несгораемую скидку #[span.loyalty__statuses_orange 10% + 7% кэшбек]

@@ -28,6 +28,26 @@ include mixines/bread-crumbs/bread-crumbs
                             <path d="M2 2L19 19L2 36" stroke="white" stroke-width="3" stroke-linecap="round"/>
                         </svg>
             .main-content 
+            
+                .widgets__wrapper
+                    input#widget__loyalty.widget__cntrl.widget__loyalty_cntrl(type="checkbox" checked)
+                    .widget.widget__loyalty
+                        a.widget__link(href="./loyalty.html" title="Программа лояльности")
+                            .widget__link-background
+                            .widget__loyalty-text
+                                p 
+                                    span ваша
+                                    span скидка
+                                    span 15%
+                        label.widget__close(for="widget__loyalty")
+
+                    input#widget__birthday.widget__cntrl.widget__birthday_cntrl(type="checkbox" checked)
+                    .widget.widget__birthday
+                        a.widget__link(href="#0" title="Программа лояльности")
+                            .widget__birth-icon 
+                            .widget__birt-text Ваша скидка 15%
+                        label.widget__close(for="widget__birthday")
+
                 section.goods-day.goods-day__section
                     .goods-day__wr-title 
                         h2 Товар дня
