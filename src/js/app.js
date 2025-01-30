@@ -50,6 +50,8 @@ import ControllChoiceType from "./product-card-choice-type/ControllChoiceType";
 import deliverySwitchingMobile from "./delivery-switching-mobile/delivery-switching-mobile";
 // Переключение табов в контактах
 import switchingContactsTabs from "./switching-contacts-tabs/switching-contacts-tabs";
+// Двигает виджеты за страницей с определенного момента
+import moovingWidgets from "./mooving-widgets/mooving-widgets";
 
 
 // ---------------------------------------------------------------------
@@ -91,6 +93,12 @@ if(mainSlider) {
 
     mainSlider(modules, classes);
 }
+
+// Двигает виджеты за страницей с определенного момента
+const widgets = document.querySelector('.widgets__wrapper');
+if(widgets) {
+    moovingWidgets(widgets);
+} 
 
 // Слайдер товары по акции
 const sliderPromo =  document.querySelector('.goods-promo__slider');
