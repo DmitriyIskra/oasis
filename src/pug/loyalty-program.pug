@@ -2,10 +2,13 @@ extends layout/layout
 
 include mixines/bread-crumbs/bread-crumbs
 
-block content   
-    +bread-crumbs(bread_crumbs)
+block content
+    .loyalty-wr-bc 
+        +bread-crumbs(bread_crumbs)
 
     .loyalty.loyalty__wrapper
+        .loyalty-wr-back-link
+            a.loyalty-back-link(href="/" title="Главная") 
         .loyalty__wrapper-content 
             ul.loyalty__list
                 li.loyalty__item.loyalty__item-discount
