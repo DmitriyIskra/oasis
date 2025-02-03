@@ -60,6 +60,14 @@
     gap: 6.67vw;
 }
 
+.bar__link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
 .bar__button-to {
     display: grid;
     width: 47.57%;

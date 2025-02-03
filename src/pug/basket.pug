@@ -8,25 +8,93 @@ block content
     
     .basket.basket__wrapper
         .basket__wrapper-content
-            .basket__wr-order-forms
+
+            .basket__forms
                 .basket__wr-title
                     h1.basket__title Оформление заказа в интернет-магазине “Оазис МСК”
-                .basket__wr-text-no-reg 
+                .basket__text-no-reg 
                     p 
                         span Вы незарегистрированны в личном кабинете.
                         span При регистрации, Вы получаете скидку #[span.basket__text-no-reg_color 5%] на первую покупку и будете участвовать в программе лояльности.
             
                 form.basket__form-user(name="basket-form-user")
                     .basket__form-user-item.basket__wr-form-user-name
-
+                        +label-input('Имя', 'basket__wr-form-user-name', 'name', true)
                     .basket__form-user-item.basket__wr-form-user-surname
-
+                        +label-input('Фамилия', 'basket__wr-form-user-surname', 'surname', true)
                     .basket__form-user-item.basket__wr-form-user-phone
-
+                        +label-input('Телефон', 'basket__wr-form-user-phone', 'phone', true)
                     .basket__form-user-item.basket__wr-form-user-email
-
+                        +label-input('Почта', 'basket__wr-form-user-email', 'email', true)
                     .basket__form-user-item.basket__wr-form-user-additional-phone
+                        +label-input('Доп. номер телефона', 'basket__wr-form-user-additional-phone', 'additional-phone', false)
+            
+            
+            .basket__goods
+                ul.basket__goods-item.order-goods__list 
+                    li.order-goods__item
+                        .order-goods__img 
+                            img(src=require('../img/content/sales-hits-image2-content.webp') alt="")
+                        .order-goods__text
+                            .order-goods__description 
+                                .order-goods__name
+                                    p Аlthaus
+                                    p Malty assam
+                                .order-goods__type
+                                    p черный чай
+                            .order-goods__calc 
+                                .order-goods__button.order-goods__decrement -
+                                input.order-goods__units(type="text" name="goods-units" value="0")
+                                .order-goods__button.order-goods__increment +
+                            .order-goods__summ 1500 р
+                    li.order-goods__item
+                        .order-goods__img 
+                            img(src=require('../img/content/sales-hits-image2-content.webp') alt="")
+                        .order-goods__text
+                            .order-goods__description 
+                                .order-goods__name
+                                    p Аlthaus
+                                    p Malty assam
+                                .order-goods__type
+                                    p черный чай
+                            .order-goods__calc 
+                                .order-goods__button.order-goods__decrement -
+                                input.order-goods__units(type="text" name="goods-units" value="0")
+                                .order-goods__button.order-goods__increment +
+                            .order-goods__summ 1500 р
+                    li.order-goods__item
+                        .order-goods__img 
+                            img(src=require('../img/content/sales-hits-image2-content.webp') alt="")
+                        .order-goods__text
+                            .order-goods__description 
+                                .order-goods__name
+                                    p Аlthaus
+                                    p Malty assam
+                                .order-goods__type
+                                    p черный чай
+                            .order-goods__calc 
+                                .order-goods__button.order-goods__decrement -
+                                input.order-goods__units(type="text" name="goods-units" value="0")
+                                .order-goods__button.order-goods__increment +
+                            .order-goods__summ 1500 р
 
-            
-            
-            .basket__wr-order-goods
+                .basket__goods-item.order-total__info
+                    ul.order-total__info-list
+                        li.order-total__item.order-total__wr-summ
+                            .order-total__title Сумма товара:
+                            .order-total__summ 4500 р
+                        li.order-total__item.order-total__wr-discount
+                            .order-total__title Скидка:
+                            .order-total__summ 500 р
+                        li.order-total__item.order-total__wr-delivery
+                            .order-total__title Доставка:
+                            .order-total__summ 00 р
+
+                    .order-total__line
+
+                    .order-total__final-price
+                        .order-total__title Итог:
+                        .order-total__summ 4000 р
+
+                    .place-order__wrapper
+                        button.place-order__button Оформить заказ
