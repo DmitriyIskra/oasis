@@ -286,6 +286,15 @@
     fill: #6ae9fb;
 }
 
+.header__basket-icon > a {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+}
+
 .header__basket-counter {
     position: absolute;
     top: -39%;

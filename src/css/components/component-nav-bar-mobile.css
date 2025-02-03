@@ -61,7 +61,9 @@
 }
 
 .bar__button-to {
+    display: grid;
     width: 47.57%;
+    place-items: center;
 
     background: #671993;
     box-shadow: 
