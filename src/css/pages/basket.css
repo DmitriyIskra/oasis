@@ -50,8 +50,8 @@
 
 .basket__form-in-list {
     display: grid;
-    grid-template-rows: repeat(4, min-content);
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, min-content);
     row-gap: 1.51vw;
 }
 
@@ -59,7 +59,61 @@
     width: 95.87%;
 }
 
+.basket__form-in-item.basket__form-wishes {
+    width: 100%;
+    grid-row: 3;
+    grid-column: 1/5;
+}
 
+
+
+/* Сетка для способы доставки и оплаты */
+.basket__grid-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: min-content min-content;
+}
+
+.basket__form-tab {
+    grid-row: 1;
+}
+
+.basket__grid-form {
+    display: none;
+    grid-row: 2;
+    grid-column: 1/5;
+}
+
+.basket__form-tab[active] + .basket__grid-form {
+    display: block;
+}
+
+/* START способы доставки */
+.basket__form-tab_mkad {
+    grid-column: 1;
+}
+.basket__form-tab_behind-mkad {
+    grid-column: 2;
+}
+.basket__form-tab_behind-pickup {
+    grid-column: 3;
+}
+.basket__form-tab_behind-regions {
+    grid-column: 4;
+}
+.basket__form-tab_behind-points {
+    grid-column: 5;
+}
+
+.basket__form-deliv {
+    row-gap: 0.94vw;
+}
+
+/* END способы доставки */
+
+
+
+/* START перечень товаров и цена */
 
 .basket__goods {
     display: flex;
@@ -188,6 +242,7 @@
 .order-total__item {
     display: flex;
     justify-content: space-between;
+    align-items: end;
 }
 
 .order-total__title {
@@ -243,6 +298,7 @@
     cursor: pointer;
 }
 
+/* END перечень товаров и цена */
 
 
 
