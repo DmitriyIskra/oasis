@@ -19,20 +19,22 @@ block content
             
                 form.basket__form-user(name="basket-form-user")
                     .basket__form-in-list
-                        .basket__form-in-item.basket__form-user-item.basket__wr-form-user-name
+                        .basket__form-in-item
                             +label-input('Имя', 'basket__wr-form-user-name', 'name', true)
-                        .basket__form-in-item.basket__form-user-item.basket__wr-form-user-surname
+                        .basket__form-in-item
                             +label-input('Фамилия', 'basket__wr-form-user-surname', 'surname', true)
-                        .basket__form-in-item.basket__form-user-item.basket__wr-form-user-phone
+                        .basket__form-in-item
                             +label-input('Телефон', 'basket__wr-form-user-phone', 'phone', true)
-                        .basket__form-in-item.basket__form-user-item.basket__wr-form-user-email
+                        .basket__form-in-item
                             +label-input('Почта', 'basket__wr-form-user-email', 'email', true)
-                        .basket__form-in-item.basket__form-user-item.basket__wr-form-user-additional-phone
+                        .basket__form-in-item
                             +label-input('Доп. номер телефона', 'basket__wr-form-user-additional-phone', 'additional-phone', false)
             
+                //- ======================== START Способ доставки ================================
                 .basket__delivery 
                     h2.basket__title Способ доставки
                 form.basket__deliv-form
+                    //- start tabs
                     .basket__form-tabs-list
                         .basket__form-tabs-item
                             label.basket__tab
@@ -48,11 +50,53 @@ block content
                                 .basket__tab-title Самовывоз
                         .basket__form-tabs-item
                             label.basket__tab
-                                input.basket__tab-check(type="checkbox" name="to_regions" value="В регионы")
+                                input.basket__tab-check(type="checkbox" name="regions" value="В регионы")
                                 .basket__tab-title В регионы
+                        .basket__form-tabs-item
+                            label.basket__tab
+                                input.basket__tab-check(type="checkbox" name="points" value="Пункты выдачи")
+                                .basket__tab-title В регионы
+                    //- end tabs
+                    //- ----------------------------------------------
+                    //- start forms
+                    .basket__deliv-forms-list
+                        //- mkad behind_mkad pickup regions points
+                        //- .basket__deliv-forms-item_active
+                        .basket__deliv-forms-item(data-item="")
+                            .basket__form-in-list.basket__form-deliv
+                                .basket__form-in-item(style="display: none;")
+                                    +label-input('Город', 'basket__wr-form-deliv-city', 'city', true)
+                                .basket__form-in-item
+                                    +label-input('Улица', 'basket__wr-form-deliv-street', 'street', true)
+                                .basket__form-in-item
+                                    +label-input('Дом', 'basket__wr-form-deliv-house', 'house', true)
+                                .basket__form-in-item
+                                    +label-input('Квартира/Офис', 'basket__wr-form-deliv-apartment', 'apartment', false)
+                                .basket__form-in-item
+                                    +label-input('Подъезд', 'basket__wr-form-deliv-entrance', 'entrance', false)
+                                .basket__form-in-item
+                                    +label-input('Этаж', 'basket__wr-form-deliv-additional-floor', 'floor', false)
+                                .basket__form-in-item
+                                    +label-input('Код домофона', 'basket__wr-form-deliv-additional-intercom', 'intercom', false)
+                                .basket__form-in-item.basket__form-pickup-wr-text
+                                    .basket__pickup-text
+                                        p Вы можете забрать товары из нашего шоурума, #[span.basket__pickup-text_bold по рабочим дням с 10:00 до 18:00.]
+                                        p По адресу: Россия, город Москва, Хорошевское шоссе, д. 32, корп. А, подъезд 2, офис 109.
+                                    .basket__pickup-text
+                                        p Перемещение заказов с оптового склада на пункт выдачи составляет 1-2 дня.
+                                        p Стоимость самовывоза - бесплатно.
+                                    .basket__pickup-text
+                                        p Возможен заезд на территорию на личном #[br]транспорте, кроме такси и каршеринга.
+                                        p Тел. для заказа пропуска: #[a.basket__pickup-tel(href="tel:+74957896727") +7 (495) 789-67-27]
+                                    .basket__pickup-text
+                                        p #[span.basket__pickup-text_bold Для входа на территорию офиса необходимо иметь при себе паспорт или другой документ удостоверяющий личность!]
+                                .basket__form-in-item
+                                    textarea(name="text" maxlength="260") 
 
 
+                    //- end forms
 
+                //- ======================== END Способ доставки ================================
 
 
             
