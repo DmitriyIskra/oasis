@@ -45,18 +45,19 @@
 }
 
 .basket__form-user {
-    display: flex;
     margin-top: 2.08vw;
+}
+
+.basket__form-in-list {
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     row-gap: 1.51vw;
 }
 
-.basket__form-user-item {
+.basket__form-in-item {
     width: 23.87%;
 }
-
-
 
 
 
