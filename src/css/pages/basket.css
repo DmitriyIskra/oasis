@@ -64,16 +64,10 @@
     width: 95.87%;
 }
 
-.basket__form-in-item.basket__form-wishes {
-    width: 100%;
-    grid-row: 3;
-    grid-column: 1/5;
-}
-
 
 
 /* START Общая сетка для способы доставки и оплаты */
-.basket__grid-list {
+.basket__grid-forms-list {
     display: grid;
     margin-top: 0.64vw;
     grid-template-rows: min-content min-content;
@@ -151,10 +145,6 @@
     ;
 }
 
-.basket__tab[active] + .basket__grid-form {
-    display: block;
-}
-
 .basket__tab_mkad {
     grid-column: 1;
 }
@@ -171,9 +161,16 @@
     grid-column: 5;
 }
 
+
+.basket__tab[active] + .basket__grid-form {
+    display: block;
+}
+
 .basket__deliv-form {
     grid-column: 1 / 7;
 }
+
+
 
 .basket__form-deliv {
     row-gap: 0.94vw;
@@ -182,12 +179,115 @@
 .basket__form-wishes {
     height: 5.99vw;
     width: 100%;
+    grid-row: 3;
+    grid-column: 1/5;
 }
 
 .basket__form-deliv-wishes.label-textarea__area {
     width: 53.372%;
 }
+
+.basket__pickup-wr-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+
+    font-family: 'Play';
+    font-size: 1.04vw;
+    font-weight: 400;
+    
+    color: #505050;
+}
+
+.basket__pickup-text_bold {
+    font-weight: 700;
+}
+
+.basket__pickup-tel {
+    color: inherit;
+}
+
+.basket__form-pickup-area {
+    margin-top: 1.51vw;
+}
+
+.basket__points-description {
+    font-family: 'Play';
+    font-size: 1.04vw;
+    font-weight: 400;
+
+    color: #505050;
+}
+
+.basket__points-wr-search {
+    padding-top: 1.88vw;
+}
+
+.basket__points-search {
+    width: 42.66%;
+}
+
+.basket__points-map {
+    height: 23.80vw;
+    width: 48.18vw;
+    margin-top: 1.72vw;
+
+    border: 0.16vw solid #2F5F6D;
+}
+
+.basket__points-wr-address {
+    display: flex;
+    padding-top: 2.03vw;
+    gap: 3.59vw;
+    align-items: start;
+}
+
+.basket__points-address-text {
+    max-width: 54%;
+
+    font-family: 'Play';
+    font-size: 1.04vw;
+    font-weight: 400;
+    line-height: 0.95;
+
+    color: #505050;
+}
+
+.basket__points-button {
+    width: 15.68vw;
+    height: 2.08vw;
+
+    font-family: 'Play';
+    font-size: 0.83vw;
+    font-weight: 400;
+    
+    border: 0;
+    color: #FFF;
+    border-radius: 0.42vw;
+    background: #4D96AB;
+    box-shadow: -0.21vw 0.21vw 0.47vw 0px #9AA4A7;
+
+    cursor: pointer;
+}
 /* END способы доставки */
+
+/* START способы оплаты */
+
+.basket__delivery {
+    padding-top: 4.06vw;
+}
+
+.basket__pay-forms {
+    grid-template-columns: 
+        15.68%
+        18.155%
+        15.68%
+        1fr;
+}
+
+
+
+/* END способы оплаты */
 
 
 

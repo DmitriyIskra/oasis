@@ -34,12 +34,12 @@ block content
                 //- ======================== START Способ доставки ================================
                 .basket__delivery 
                     h2.basket__title Способ доставки
-                form.basket__grid-list.basket__deliv-forms
+                .basket__grid-forms-list.basket__deliv-forms
 
                     label.basket__tab.basket__tab_mkad(data-item="mkad" )
                         input.basket__tab-check(type="checkbox" name="mkad" value="Москва в пределах МКАД")
                         span.basket__tab-title Москва в пределах #[br] МКАД
-                    .basket__grid-form.basket__deliv-form.basket__deliv-form_mkad(data-item="mkad")
+                    form.basket__grid-form.basket__deliv-form.basket__deliv-form_mkad(data-item="mkad" name="form_deliv_mkad")
                         .basket__form-in-list.basket__form-deliv
                             .basket__form-in-item.basket__form-in.basket__form-in-street
                                 +label-input('Улица', 'basket__wr-form-deliv-street', 'street', true)
@@ -60,7 +60,7 @@ block content
                     label.basket__tab.basket__tab_behind-mkad(data-item="behind_mkad" )
                         input.basket__tab-check(type="checkbox" name="behind_mkad" value="Более 5 км от МКАДа")
                         span.basket__tab-title Более 5 км#[br] от МКАДа
-                    .basket__grid-form.basket__deliv-form.basket__deliv-form_behind-mkad(data-item="behind_mkad")
+                    form.basket__grid-form.basket__deliv-form.basket__deliv-form_behind-mkad(data-item="behind_mkad" name="form_deliv_behind_mkad")
                         .basket__form-in-list.basket__form-deliv
                             .basket__form-in-item.basket__form-in.basket__form-in-city
                                 +label-input('Город', 'basket__wr-form-deliv-city', 'city', true)
@@ -80,10 +80,10 @@ block content
                                 +textarea('Комментарии к заказу', 'basket__form-deliv-wishes', 'wishes') 
                     //- --
                     
-                    label.basket__tab.basket__tab_pickup(data-item="pickup" active)
+                    label.basket__tab.basket__tab_pickup(data-item="pickup" )
                         input.basket__tab-check(type="checkbox" name="pickup" value="Самовывоз")
                         .basket__tab-title Самовывоз
-                    .basket__grid-form.basket__deliv-form.basket__deliv-form_pickup(data-item="pickup")
+                    form.basket__grid-form.basket__deliv-form.basket__deliv-form_pickup(data-item="pickup" name="form_deliv_pickup")
                         .basket__pickup-wr-text
                             .basket__pickup-text
                                 p Вы можете забрать товары из нашего шоурума, #[span.basket__pickup-text_bold по рабочим дням с 10:00 до 18:00.]
@@ -96,16 +96,14 @@ block content
                                 p Тел. для заказа пропуска: #[a.basket__pickup-tel(href="tel:+74957896727") +7 (495) 789-67-27]
                             .basket__pickup-text
                                 p #[span.basket__pickup-text_bold Для входа на территорию офиса необходимо иметь при себе паспорт или другой документ удостоверяющий личность!]
-                        .basket__form-in-list.basket__form-deliv
-                            .basket__form-in-item.basket__form-pickup-wr-text
-                                .basket__form-in-item.basket__form-wishes
-                                    +textarea('Комментарии к заказу', 'basket__form-deliv-wishes', 'wishes')
+                        .basket__form-wishes.basket__form-pickup-area
+                            +textarea('Комментарии к заказу', 'basket__form-deliv-wishes', 'wishes')
                     //- --
 
-                    label.basket__tab.basket__tab_regions(data-item="regions" )
+                    label.basket__tab.basket__tab_regions(data-item="regions" active)
                         input.basket__tab-check(type="checkbox" name="regions" value="В регионы")
                         .basket__tab-title В регионы
-                    .basket__grid-form.basket__deliv-form.basket__deliv-form_regions(data-item="regions")
+                    form.basket__grid-form.basket__deliv-form.basket__deliv-form_regions(data-item="regions" name="form_deliv_regions")
                         .basket__form-in-list.basket__form-deliv
                             .basket__form-in-item.basket__form-in.basket__form-in-zipcode
                                 +label-input('Индекс', 'basket__wr-form-deliv-zipcode', 'zipcode', false)
@@ -125,20 +123,21 @@ block content
                                 +textarea('Комментарии к заказу', 'basket__form-deliv-wishes', 'wishes') 
                     //- --
                     
-                    label.basket__tab.basket__tab_points(data-item="points")
+                    label.basket__tab.basket__tab_points(data-item="points" )
                         input.basket__tab-check(type="checkbox" name="points" value="Пункты выдачи")
                         .basket__tab-title В регионы
-                    .basket__grid-form.basket__deliv-form.basket__deliv-form_points(data-item="points")
+                    form.basket__grid-form.basket__deliv-form.basket__deliv-form_points(data-item="points" name="form_deliv_points")
                         .basket__deliv-points
                             .basket__points-description 
                                 p Вы можете выбрать пункт выдачи. Для доставки мы используем компанию.......
                             .basket__points-wr-search 
-                                p Введите нужный вам пункт выдачи
-                                input.basket__points-search(type="text")
+                                +label-input('Введите нужный вам пункт выдачи', 'basket__points-search', false, false)
                             .basket__points-map
                             .basket__points-wr-address 
-                                input.basket__points-address(type="text" name="point_address" disable)
-                                button.basket__points-button
+                                .basket__points-address-text
+                                    .basket__points-label Вы выбрали адрес:
+                                    .basket__points-address г. Москва, ул. Хорошевская, д.32
+                                button.basket__points-button Подтвердить
 
 
                 //- ======================== END Способ доставки ================================
@@ -147,7 +146,27 @@ block content
 
                 .basket__delivery 
                     h2.basket__title Способ оплаты
-                
+                .basket__grid-list.basket__pay-forms
+                    label.basket__tab.basket__tab_cash(data-item="cash" )
+                        input.basket__tab-check(type="checkbox" name="cash" value="Наличные")
+                        span.basket__tab-title Наличные
+                    
+                    label.basket__tab.basket__tab_card(data-item="card" )
+                        input.basket__tab-check(type="checkbox" name="mkad" value="Картой на сайте")
+                        span.basket__tab-title Картой на сайте
+                    
+                    label.basket__tab.basket__tab_legal(data-item="legal" active)
+                        input.basket__tab-check(type="checkbox" name="mkad" value="Для юр. лица")
+                        span.basket__tab-title Для юр. лица
+                    .basket__grid-form.basket__pay-form.basket__pay-form-legal 
+                        .basket__pay-form-in-text 
+                            +label-input('Название организации, адрес, ИНН и ОГРН', 'basket__pay-form-input', 'legal', true)
+                        .basket__pay-file 
+                            p.basket__pay-file-title
+                            label.basket__pay-file-label
+                                span.basket__pay-file-text Ператащите сюда файл или нажмите кнопку
+                                batton
+                                input(type="file" name="file_legal")
 
                 //- ======================== END Способ оплаты ==================================
 
