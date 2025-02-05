@@ -2,6 +2,7 @@ extends layout/layout
 
 include mixines/bread-crumbs/bread-crumbs
 include mixines/label-input
+include mixines/textarea
 
 block content   
     +bread-crumbs(bread_crumbs)
@@ -12,7 +13,7 @@ block content
             .basket__forms
                 .basket__wr-title
                     h1.basket__title Оформление заказа в интернет-магазине “Оазис МСК”
-                .basket__text-no-reg 
+                .basket__text-no-reg.basket__text-no-reg_active
                     p 
                         span Вы незарегистрированны в личном кабинете.
                         span При регистрации, Вы получаете скидку #[span.basket__text-no-reg_color 5%] на первую покупку и будете участвовать в программе лояльности.
@@ -35,10 +36,9 @@ block content
                     h2.basket__title Способ доставки
                 form.basket__grid-list.basket__deliv-forms
 
-                    .basket__form-tab.basket__form-tab_mkad(data-item="mkad")
-                        label.basket__tab
-                            input.basket__tab-check(type="checkbox" name="mkad" value="Москва в пределах МКАД")
-                            .basket__tab-title Москва в пределах МКАД
+                    label.basket__tab.basket__tab_mkad(data-item="mkad" )
+                        input.basket__tab-check(type="checkbox" name="mkad" value="Москва в пределах МКАД")
+                        span.basket__tab-title Москва в пределах #[br] МКАД
                     .basket__grid-form.basket__deliv-form.basket__deliv-form_mkad(data-item="mkad")
                         .basket__form-in-list.basket__form-deliv
                             .basket__form-in-item.basket__form-in.basket__form-in-street
@@ -54,14 +54,12 @@ block content
                             .basket__form-in-item.basket__form-in.basket__form-in-intercom
                                 +label-input('Код домофона', 'basket__wr-form-deliv-intercom', 'intercom', false)
                             .basket__form-in-item.basket__form-wishes
-                                p Комментарии к заказу
-                                textarea(name="text" maxlength="260") 
+                                +textarea('Комментарии к заказу', 'basket__form-deliv-wishes', 'wishes')
                     //- --
                     
-                    .basket__form-tab.basket__form-tab_behind-mkad(data-item="behind_mkad" )
-                        label.basket__tab
-                            input.basket__tab-check(type="checkbox" name="behind_mkad" value="Более 5 км от МКАДа")
-                            .basket__tab-title Более 5 км от МКАДа
+                    label.basket__tab.basket__tab_behind-mkad(data-item="behind_mkad" )
+                        input.basket__tab-check(type="checkbox" name="behind_mkad" value="Более 5 км от МКАДа")
+                        span.basket__tab-title Более 5 км#[br] от МКАДа
                     .basket__grid-form.basket__deliv-form.basket__deliv-form_behind-mkad(data-item="behind_mkad")
                         .basket__form-in-list.basket__form-deliv
                             .basket__form-in-item.basket__form-in.basket__form-in-city
@@ -79,14 +77,12 @@ block content
                             .basket__form-in-item.basket__form-in.basket__form-in-intercom
                                 +label-input('Код домофона', 'basket__wr-form-deliv-intercom', 'intercom', false)
                             .basket__form-in-item.basket__form-wishes
-                                p Комментарии к заказу
-                                textarea(name="text" maxlength="260") 
+                                +textarea('Комментарии к заказу', 'basket__form-deliv-wishes', 'wishes') 
                     //- --
                     
-                    .basket__form-tab.basket__form-tab_pickup(data-item="pickup" )
-                        label.basket__tab
-                            input.basket__tab-check(type="checkbox" name="pickup" value="Самовывоз")
-                            .basket__tab-title Самовывоз
+                    label.basket__tab.basket__tab_pickup(data-item="pickup" active)
+                        input.basket__tab-check(type="checkbox" name="pickup" value="Самовывоз")
+                        .basket__tab-title Самовывоз
                     .basket__grid-form.basket__deliv-form.basket__deliv-form_pickup(data-item="pickup")
                         .basket__pickup-wr-text
                             .basket__pickup-text
@@ -103,14 +99,12 @@ block content
                         .basket__form-in-list.basket__form-deliv
                             .basket__form-in-item.basket__form-pickup-wr-text
                                 .basket__form-in-item.basket__form-wishes
-                                    p Комментарии к заказу
-                                    textarea(name="text" maxlength="260") 
+                                    +textarea('Комментарии к заказу', 'basket__form-deliv-wishes', 'wishes')
                     //- --
-                    
-                    .basket__form-tab.basket__form-tab_regions(data-item="regions" )
-                        label.basket__tab
-                            input.basket__tab-check(type="checkbox" name="regions" value="В регионы")
-                            .basket__tab-title В регионы
+
+                    label.basket__tab.basket__tab_regions(data-item="regions" )
+                        input.basket__tab-check(type="checkbox" name="regions" value="В регионы")
+                        .basket__tab-title В регионы
                     .basket__grid-form.basket__deliv-form.basket__deliv-form_regions(data-item="regions")
                         .basket__form-in-list.basket__form-deliv
                             .basket__form-in-item.basket__form-in.basket__form-in-zipcode
@@ -128,14 +122,12 @@ block content
                             .basket__form-in-item.basket__form-in.basket__form-in-apartment
                                 +label-input('Квартира/Офис', 'basket__wr-form-deliv-apartment', 'apartment', false)
                             .basket__form-in-item.basket__form-wishes
-                                p Комментарии к заказу
-                                textarea(name="text" maxlength="260") 
+                                +textarea('Комментарии к заказу', 'basket__form-deliv-wishes', 'wishes') 
                     //- --
                     
-                    .basket__form-tab.basket__form-tab_points(data-item="points" active)
-                        label.basket__tab
-                            input.basket__tab-check(type="checkbox" name="points" value="Пункты выдачи")
-                            .basket__tab-title В регионы
+                    label.basket__tab.basket__tab_points(data-item="points")
+                        input.basket__tab-check(type="checkbox" name="points" value="Пункты выдачи")
+                        .basket__tab-title В регионы
                     .basket__grid-form.basket__deliv-form.basket__deliv-form_points(data-item="points")
                         .basket__deliv-points
                             .basket__points-description 
@@ -150,6 +142,14 @@ block content
 
 
                 //- ======================== END Способ доставки ================================
+
+                //- ======================== START Способ оплаты ================================
+
+                .basket__delivery 
+                    h2.basket__title Способ оплаты
+                
+
+                //- ======================== END Способ оплаты ==================================
 
 
             

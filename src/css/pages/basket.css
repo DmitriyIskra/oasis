@@ -24,6 +24,7 @@
 }
 
 .basket__text-no-reg {
+    display: none;
     margin-top: 0.47vw;
 
     font-family: "SofiaSans";
@@ -31,6 +32,10 @@
     font-weight: 400;
 
     color: #2F5F6D;
+}
+
+.basket__text-no-reg_active {
+    display: block;
 }
 
 .basket__text-no-reg > p {
@@ -67,48 +72,121 @@
 
 
 
-/* Сетка для способы доставки и оплаты */
+/* START Общая сетка для способы доставки и оплаты */
 .basket__grid-list {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    margin-top: 0.64vw;
     grid-template-rows: min-content min-content;
+    column-gap: 2%;
+    row-gap: 2.30vw;
 }
 
-.basket__form-tab {
+.basket__tab {
+    display: flex;
+    height: 3.65vw;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
     grid-row: 1;
+
+    border-radius: 0.47vw;
+    border: 1px solid #615F5D;
+    background: #FFF;
+    box-shadow: 0.21vw 0.21vw 0.52vw 0px rgba(0, 0, 0, 0.25);
+
+    cursor: pointer;
+}
+
+.basket__tab-check {
+    display: none;
+}
+
+.basket__tab-title {
+    display: flex;
+    align-items: center;
+    gap: 0.83vw;
+
+    font-family: "SofiaSans";
+    font-size: 0.73vw;
+    font-weight: 400;
+
+    color: #671993;
+
+    user-select: none;
+}
+
+.basket__tab-title::before {
+    content: "";
+
+    display: block;
+    width: 0.57vw;
+    height: 0.57vw;
+    flex-shrink: 0;
+
+    background-color: #D9D9D9;
+    border-radius: 50%;
+}
+
+.basket__tab-check:checked + .basket__tab-title::before {
+    background-color: #671993;
+    box-shadow: 0px 0px 0.32vw 0.17vw rgba(103, 25, 147, 0.35);
 }
 
 .basket__grid-form {
     display: none;
     grid-row: 2;
-    grid-column: 1/5;
+}
+/* END Общая сетка для способы доставки и оплаты */
+
+/* START способы доставки */
+
+.basket__deliv-forms {
+    grid-template-columns: 
+        19.15%
+        15.68%
+        15.68%
+        15.68%
+        17.262%
+        1fr
+    ;
 }
 
-.basket__form-tab[active] + .basket__grid-form {
+.basket__tab[active] + .basket__grid-form {
     display: block;
 }
 
-/* START способы доставки */
-.basket__form-tab_mkad {
+.basket__tab_mkad {
     grid-column: 1;
 }
-.basket__form-tab_behind-mkad {
+.basket__tab_behind-mkad {
     grid-column: 2;
 }
-.basket__form-tab_behind-pickup {
+.basket__tab_behind-pickup {
     grid-column: 3;
 }
-.basket__form-tab_behind-regions {
+.basket__tab_behind-regions {
     grid-column: 4;
 }
-.basket__form-tab_behind-points {
+.basket__tab_behind-points {
     grid-column: 5;
+}
+
+.basket__deliv-form {
+    grid-column: 1 / 7;
 }
 
 .basket__form-deliv {
     row-gap: 0.94vw;
 }
 
+.basket__form-wishes {
+    height: 5.99vw;
+    width: 100%;
+}
+
+.basket__form-deliv-wishes.label-textarea__area {
+    width: 53.372%;
+}
 /* END способы доставки */
 
 

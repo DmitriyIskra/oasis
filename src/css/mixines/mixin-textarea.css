@@ -1,0 +1,56 @@
+.label-textarea__label {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    gap: 0.09vw;
+}
+
+.label-textarea__text {
+    font-family: 'Play';
+    font-size: 0.73vw;
+    font-weight: 400;
+    color: #333;
+}
+
+.label-textarea__area{
+    height: 100%;
+    width: 100%;
+    padding: 0.31vw 0.31vw;
+
+    font-family: 'Play';
+    font-size: 0.8vw;
+    font-weight: 400;
+    
+    outline: 0;
+    border-radius: 0.21vw;
+    border: 1px solid #615F5D;
+    background-color: #EFEFEF;
+    caret-color: #333;
+    color: #333;
+    resize: none;
+}
+
+
+
+@media(max-width: 961px) {
+    .label-textarea__label {
+        gap: 1.60vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .label-textarea__text {
+        font-size: 4.27vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .label-textarea__area {
+        padding: 3.71vw 2.51vw;
+
+        font-size: 3.73vw;
+
+        border-radius: 1.07vw;
+    }
+}
