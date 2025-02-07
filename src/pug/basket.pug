@@ -4,13 +4,16 @@ include mixines/bread-crumbs/bread-crumbs
 include mixines/label-input
 include mixines/textarea
 
-block content   
-    +bread-crumbs(bread_crumbs)
+block content
+    .bread-crumbs__basket
+        +bread-crumbs(bread_crumbs)
     
     .basket.basket__wrapper
         .basket__wrapper-content
 
-            .basket__forms
+            .basket__forms.basket__active
+                .basket__wr-arrow-back
+                    .basket__arrow-back
                 .basket__wr-title
                     h1.basket__title Оформление заказа в интернет-магазине “Оазис МСК”
                 .basket__text-no-reg.basket__text-no-reg_active
@@ -84,7 +87,7 @@ block content
                                 +textarea('Комментарии к заказу', 'basket__form-deliv-wishes', 'wishes') 
                     //- --
                     
-                    label.basket__tab.basket__tab_pickup(data-item="pickup" )
+                    label.basket__tab.basket__tab_pickup(data-item="pickup" active)
                         input.basket__tab-check(type="checkbox" name="pickup" value="Самовывоз")
                         .basket__tab-title Самовывоз
                     form.basket__grid-form.basket__deliv-form.basket__deliv-form_pickup(data-item="pickup" name="form_deliv_pickup")
@@ -104,7 +107,7 @@ block content
                             +textarea('Комментарии к заказу', 'basket__form-deliv-wishes', 'wishes')
                     //- --
 
-                    label.basket__tab.basket__tab_regions(data-item="regions" active)
+                    label.basket__tab.basket__tab_regions(data-item="regions" )
                         input.basket__tab-check(type="checkbox" name="regions" value="В регионы")
                         .basket__tab-title В регионы
                     form.basket__grid-form.basket__deliv-form.basket__deliv-form_regions(data-item="regions" name="form_deliv_regions")
@@ -150,6 +153,15 @@ block content
 
                 .basket__pay-title
                     h2.basket__title Способ оплаты
+
+                .basket__balls.basket__balls_active
+                    .basket__balls-amount
+                        p У Вас #[span.basket__balls-amount_bold 750] бонусных баллов
+                    label.basket__balls-wr-deduct
+                        span.basket__balls-text Списать бонусы
+                        input.basket__balls-deduct-input(type="number" placeholder="0")
+
+
                 .basket__grid-forms-list.basket__pay-forms
                     label.basket__tab.basket__tab_cash(data-item="cash" )
                         input.basket__tab-check(type="checkbox" name="cash" value="Наличные")
