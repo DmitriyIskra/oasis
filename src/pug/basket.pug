@@ -87,7 +87,7 @@ block content
                                 +textarea('Комментарии к заказу', 'basket__form-deliv-wishes', 'wishes') 
                     //- --
                     
-                    label.basket__tab.basket__tab_pickup(data-item="pickup" active)
+                    label.basket__tab.basket__tab_pickup(data-item="pickup" )
                         input.basket__tab-check(type="checkbox" name="pickup" value="Самовывоз")
                         .basket__tab-title Самовывоз
                     form.basket__grid-form.basket__deliv-form.basket__deliv-form_pickup(data-item="pickup" name="form_deliv_pickup")
@@ -130,9 +130,9 @@ block content
                                 +textarea('Комментарии к заказу', 'basket__form-deliv-wishes', 'wishes') 
                     //- --
                     
-                    label.basket__tab.basket__tab_points(data-item="points" )
+                    label.basket__tab.basket__tab_points(data-item="points" active)
                         input.basket__tab-check(type="checkbox" name="points" value="Пункты выдачи")
-                        .basket__tab-title В регионы
+                        .basket__tab-title Пункты выдачи
                     form.basket__grid-form.basket__deliv-form.basket__deliv-form_points(data-item="points" name="form_deliv_points")
                         .basket__deliv-points
                             .basket__points-description 
