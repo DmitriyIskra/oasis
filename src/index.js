@@ -35,6 +35,7 @@ import './css/components/component-nav-bar-mobile.css';
 import './css/components/component-nav-mobile.css';
 import './css/components/component-reviews.css';
 import './css/components/component-pagination.css';
+import './css/components/component-select-address.css';
 import './css/mixines/mixin-bread-crumbs.css';
 import './css/mixines/mixin-catalog-card.css';
 import './css/mixines/mixin-brand-card.css';

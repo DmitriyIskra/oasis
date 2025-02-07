@@ -54,7 +54,7 @@
 .label-input__input:required {
     background-image: url('../../svg/required-star.svg');
     background-repeat: no-repeat;
-    background-size: 2.7%;
+    background-size: 0.35vw;
     background-position: right 0.1vw top 0.17vw;
 }
 

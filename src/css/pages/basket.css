@@ -134,6 +134,16 @@
 
 /* START способы доставки */
 
+.basket__wr-type-address {
+    display: none;
+    padding-top: 1.15vw;
+    padding-bottom: 1.6vw;
+}
+
+.basket__wr-type-address_active {
+    display: block;
+}
+
 .basket__deliv-forms {
     grid-template-columns: 
         19.15%
@@ -273,8 +283,8 @@
 
 /* START способы оплаты */
 
-.basket__delivery {
-    padding-top: 4.06vw;
+.basket__pay-title {
+    padding-top: 2vw;
 }
 
 .basket__pay-forms {
@@ -285,10 +295,114 @@
         1fr;
 }
 
+.basket__pay-form {
+    grid-column: 1 / 5;
+}
 
+.basket__wr-pay-file {
+    padding-top: 1.88vw;
+}
 
+.basket__file-title {
+    padding-bottom: 0.31vw;
+
+    font-family: 'Play';
+    font-size: 0.73vw;
+    font-weight: 400;
+
+    color: #333;
+}
+
+.basket__file {
+    display: flex;
+    width: 35.614%;
+    height: 5.99vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.52vw;
+
+    border-radius: 0.21vw;
+    border: 1px solid #615F5D;
+    background: #FFF;
+}
+
+.basket__file-text {
+    font-family: "SofiaSans";
+    font-size: 0.63vw;
+    font-weight: 400;
+
+    color: #CCC;
+}
+
+.basket__file-label {
+    display: grid;
+    place-items: center;
+    width: 7.81vw;
+    height: 1.56vw;
+
+    
+    font-family: 'Play';
+    font-size: 0.83vw;
+    font-weight: 400;
+    
+    color: #FFF;
+    border-radius: 0.42vw;
+    background: #4D96AB;
+    box-shadow: -0.21vw 0.21vw 0.47vw 0px #9AA4A7;
+
+    cursor: pointer;
+}
+
+.basket__file-input {
+    display: none;
+}
 /* END способы оплаты */
 
+
+/* START персональные данные */
+.basket__wr-cons-data {
+    padding-top: 2.86vw;
+}
+
+.basket__cons-data {
+    font-family: 'Play';
+    font-size: 0.73vw;
+    font-weight: 400;
+
+    cursor: pointer;
+}
+
+.basket__cons-data-checkbox {
+    display: none;
+}
+
+.basket__cons-data-text {
+    display: flex;
+    gap: 0.47vw;
+    align-items: end;
+
+    user-select: none;
+}
+
+.basket__cons-data-text::before {
+    content: "";
+
+    display: inline-block;
+    width: 1.30vw;
+    height: 1.30vw;
+
+    border-radius: 0.42vw;
+    background-color: #EFEFEF;
+    border: 1px solid #4D96AB;
+}
+
+.basket__cons-data-checkbox:checked + .basket__cons-data-text::before {
+    background: no-repeat url('../../svg/checkmark-green.svg');
+    background-size: 60% auto;
+    background-position: center;
+}
+/* END персональные данные */
 
 
 /* START перечень товаров и цена */

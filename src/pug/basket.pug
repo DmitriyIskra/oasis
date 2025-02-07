@@ -32,8 +32,12 @@ block content
                             +label-input('Доп. номер телефона', 'basket__wr-form-user-additional-phone', 'additional-phone', false)
             
                 //- ======================== START Способ доставки ================================
-                .basket__delivery 
+                .basket__del-title
                     h2.basket__title Способ доставки
+
+                .basket__wr-type-address.basket__wr-type-address_active
+                    include components/select-address
+
                 .basket__grid-forms-list.basket__deliv-forms
 
                     label.basket__tab.basket__tab_mkad(data-item="mkad" )
@@ -144,9 +148,9 @@ block content
 
                 //- ======================== START Способ оплаты ================================
 
-                .basket__delivery 
+                .basket__pay-title
                     h2.basket__title Способ оплаты
-                .basket__grid-list.basket__pay-forms
+                .basket__grid-forms-list.basket__pay-forms
                     label.basket__tab.basket__tab_cash(data-item="cash" )
                         input.basket__tab-check(type="checkbox" name="cash" value="Наличные")
                         span.basket__tab-title Наличные
@@ -161,17 +165,21 @@ block content
                     .basket__grid-form.basket__pay-form.basket__pay-form-legal 
                         .basket__pay-form-in-text 
                             +label-input('Название организации, адрес, ИНН и ОГРН', 'basket__pay-form-input', 'legal', true)
-                        .basket__pay-file 
-                            p.basket__pay-file-title
-                            label.basket__pay-file-label
-                                span.basket__pay-file-text Ператащите сюда файл или нажмите кнопку
-                                batton
-                                input(type="file" name="file_legal")
+                        .basket__wr-pay-file 
+                            p.basket__file-title Прикрепите документ (jpg, png, txt, doc, docx, pdf)
+                            .basket__file
+                                span.basket__file-text Ператащите сюда файл или нажмите кнопку
+                                label.basket__file-label
+                                    | Загрузить
+                                    input.basket__file-input(type="file" name="file_legal" multiple)
 
                 //- ======================== END Способ оплаты ==================================
 
+                .basket__wr-cons-data
+                    label.basket__cons-data
+                        input.basket__cons-data-checkbox(type="checkbox")
+                        p.basket__cons-data-text Согласие на обработку персональных данных
 
-            
             .basket__goods
                 ul.basket__goods-item.order-goods__list 
                     li.order-goods__item
