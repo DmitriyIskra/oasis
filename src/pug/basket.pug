@@ -11,7 +11,7 @@ block content
     .basket.basket__wrapper
         .basket__wrapper-content
 
-            .basket__forms.basket__active
+            .basket__forms
                 .basket__wr-arrow-back
                     .basket__arrow-back
                 .basket__wr-title
@@ -24,15 +24,15 @@ block content
                 form.basket__form-user(name="basket-form-user")
                     .basket__form-in-list
                         .basket__form-in-item
-                            +label-input('Имя', 'basket__wr-form-user-name', 'name', true)
+                            +label-input('Имя', 'basket__form-user-name', 'name', true)
                         .basket__form-in-item
-                            +label-input('Фамилия', 'basket__wr-form-user-surname', 'surname', true)
+                            +label-input('Фамилия', 'basket__form-user-surname', 'surname', true)
                         .basket__form-in-item
-                            +label-input('Телефон', 'basket__wr-form-user-phone', 'phone', true)
+                            +label-input('Телефон', 'basket__form-user-phone', 'phone', true)
                         .basket__form-in-item
-                            +label-input('Почта', 'basket__wr-form-user-email', 'email', true)
+                            +label-input('Почта', 'basket__form-user-email', 'email', true)
                         .basket__form-in-item
-                            +label-input('Доп. номер телефона', 'basket__wr-form-user-additional-phone', 'additional-phone', false)
+                            +label-input('Доп. номер телефона', 'basket__form-user-additional-phone', 'additional-phone', false)
             
                 //- ======================== START Способ доставки ================================
                 .basket__del-title
@@ -43,8 +43,8 @@ block content
 
                 .basket__grid-forms-list.basket__deliv-forms
 
-                    label.basket__tab.basket__tab_mkad(data-item="mkad" )
-                        input.basket__tab-check(type="checkbox" name="mkad" value="Москва в пределах МКАД")
+                    label.basket__tab.basket__tab_mkad(data-item="mkad" active)
+                        //- input.basket__tab-check(type="checkbox" name="mkad" value="Москва в пределах МКАД")
                         span.basket__tab-title Москва в пределах #[br] МКАД
                     form.basket__grid-form.basket__deliv-form.basket__deliv-form_mkad(data-item="mkad" name="form_deliv_mkad")
                         .basket__form-in-list.basket__form-deliv
@@ -65,7 +65,7 @@ block content
                     //- --
                     
                     label.basket__tab.basket__tab_behind-mkad(data-item="behind_mkad" )
-                        input.basket__tab-check(type="checkbox" name="behind_mkad" value="Более 5 км от МКАДа")
+                        //- input.basket__tab-check(type="checkbox" name="behind_mkad" value="Более 5 км от МКАДа")
                         span.basket__tab-title Более 5 км#[br] от МКАДа
                     form.basket__grid-form.basket__deliv-form.basket__deliv-form_behind-mkad(data-item="behind_mkad" name="form_deliv_behind_mkad")
                         .basket__form-in-list.basket__form-deliv
@@ -88,7 +88,7 @@ block content
                     //- --
                     
                     label.basket__tab.basket__tab_pickup(data-item="pickup" )
-                        input.basket__tab-check(type="checkbox" name="pickup" value="Самовывоз")
+                        //- input.basket__tab-check(type="checkbox" name="pickup" value="Самовывоз")
                         .basket__tab-title Самовывоз
                     form.basket__grid-form.basket__deliv-form.basket__deliv-form_pickup(data-item="pickup" name="form_deliv_pickup")
                         .basket__pickup-wr-text
@@ -108,7 +108,7 @@ block content
                     //- --
 
                     label.basket__tab.basket__tab_regions(data-item="regions" )
-                        input.basket__tab-check(type="checkbox" name="regions" value="В регионы")
+                        //- input.basket__tab-check(type="checkbox" name="regions" value="В регионы")
                         .basket__tab-title В регионы
                     form.basket__grid-form.basket__deliv-form.basket__deliv-form_regions(data-item="regions" name="form_deliv_regions")
                         .basket__form-in-list.basket__form-deliv
@@ -130,8 +130,8 @@ block content
                                 +textarea('Комментарии к заказу', 'basket__form-deliv-wishes', 'wishes') 
                     //- --
                     
-                    label.basket__tab.basket__tab_points(data-item="points" active)
-                        input.basket__tab-check(type="checkbox" name="points" value="Пункты выдачи")
+                    label.basket__tab.basket__tab_points(data-item="points" )
+                        //- input.basket__tab-check(type="checkbox" name="points" value="Пункты выдачи")
                         .basket__tab-title Пункты выдачи
                     form.basket__grid-form.basket__deliv-form.basket__deliv-form_points(data-item="points" name="form_deliv_points")
                         .basket__deliv-points
@@ -159,20 +159,20 @@ block content
                         p У Вас #[span.basket__balls-amount_bold 750] бонусных баллов
                     label.basket__balls-wr-deduct
                         span.basket__balls-text Списать бонусы
-                        input.basket__balls-deduct-input(type="number" placeholder="0")
+                        input.basket__balls-deduct-input(type="text" placeholder="0")
 
 
                 .basket__grid-forms-list.basket__pay-forms
-                    label.basket__tab.basket__tab_cash(data-item="cash" )
-                        input.basket__tab-check(type="checkbox" name="cash" value="Наличные")
+                    label.basket__tab.basket__tab_cash(data-item="cash" active)
+                        //- input.basket__tab-check(type="checkbox" name="cash" value="Наличные")
                         span.basket__tab-title Наличные
                     
                     label.basket__tab.basket__tab_card(data-item="card" )
-                        input.basket__tab-check(type="checkbox" name="mkad" value="Картой на сайте")
+                        //- input.basket__tab-check(type="checkbox" name="mkad" value="Картой на сайте")
                         span.basket__tab-title Картой на сайте
                     
-                    label.basket__tab.basket__tab_legal(data-item="legal" active)
-                        input.basket__tab-check(type="checkbox" name="mkad" value="Для юр. лица")
+                    label.basket__tab.basket__tab_legal(data-item="legal" )
+                        //- input.basket__tab-check(type="checkbox" name="mkad" value="Для юр. лица")
                         span.basket__tab-title Для юр. лица
                     .basket__grid-form.basket__pay-form.basket__pay-form-legal 
                         .basket__pay-form-in-text 
@@ -192,7 +192,9 @@ block content
                         input.basket__cons-data-checkbox(type="checkbox")
                         p.basket__cons-data-text Согласие на обработку персональных данных
 
-            .basket__goods
+            //- ======================== START Перечень товаров в корзине ================================
+
+            .basket__goods.basket__active
                 ul.basket__goods-item.order-goods__list 
                     li.order-goods__item
                         .order-goods__img 
@@ -260,3 +262,5 @@ block content
 
                     .place-order__wrapper
                         button.place-order__button Оформить заказ
+
+            //- ======================== END Перечень товаров в корзине ================================

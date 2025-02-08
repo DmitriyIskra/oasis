@@ -95,9 +95,6 @@
     cursor: pointer;
 }
 
-.basket__tab-check {
-    display: none;
-}
 
 .basket__tab-title {
     display: flex;
@@ -125,7 +122,7 @@
     border-radius: 50%;
 }
 
-.basket__tab-check:checked + .basket__tab-title::before {
+.basket__tab[active] > .basket__tab-title::before {
     background-color: #671993;
     box-shadow: 0px 0px 0.32vw 0.17vw rgba(103, 25, 147, 0.35);
 }
@@ -348,16 +345,6 @@
     caret-color: #333;
 }
 
-/* Webkit (Chrome и Safari)*/
-.basket__balls-deduct-input::-webkit-inner-spin-button,
-.basket__balls-deduct-input::-webkit-outer-spin-button {
-    appearance: none; 
-}
-/* FireFox */
-.basket__balls-deduct-input {
-    appearance: textfield; 
-}
-
 .basket__balls-deduct-input:focus::placeholder {
     visibility: hidden;
 }
@@ -484,6 +471,7 @@
 
 .basket__goods {
     display: flex;
+    padding-top: 15.20vw;
     width: 33.726%;
     flex-direction: column;
     gap: 1.41vw;

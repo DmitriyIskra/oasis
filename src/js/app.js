@@ -52,7 +52,11 @@ import deliverySwitchingMobile from "./delivery-switching-mobile/delivery-switch
 import switchingContactsTabs from "./switching-contacts-tabs/switching-contacts-tabs";
 // Двигает виджеты за страницей с определенного момента
 import moovingWidgets from "./mooving-widgets/mooving-widgets";
-
+// Корзина
+import RedrawBasket from "./basket/RedrawBasket";
+import ControllBasket from "./basket/ControllBasket";
+// Маска для телефона
+import IMask from "imask";
 
 // ---------------------------------------------------------------------
 
@@ -255,6 +259,14 @@ controll.init();
 const tabsContacts = document.querySelector('.contacts__controll-list');
 const contentsContacts = document.querySelector('.contacts__content-list');
 if(tabsContacts && contentsContacts) switchingContactsTabs(tabsContacts, contentsContacts);
+
+// Корзина
+const basket = document.querySelector('.basket');
+if (basket) {
+    const redrawBasket = new RedrawBasket(basket, IMask);
+    const controllBasket = new ControllBasket(redrawBasket);
+    controllBasket.init();
+}
 
 
 
