@@ -321,7 +321,7 @@
 
 .basket__balls-text {
     font-family: 'Play';
-    font-size: 16px;
+    font-size: 0.83vw;
     font-weight: 400;
 
     color: #505050;
@@ -634,7 +634,7 @@
     justify-content: center;
 }
 
-.place-order__button {
+.place-order__button_desc {
     width: 96.28%;
     height: 2.60vw;
     
@@ -652,6 +652,10 @@
     cursor: pointer;
 }
 
+
+.place-order__button_mob {
+    display: none;
+}
 /* END перечень товаров и цена */
 
 
@@ -773,6 +777,17 @@
     }
 }
 
+
+/* START Общая сетка для способы доставки и оплаты */
+@media(max-width: 961px) {
+    .basket__grid-form {
+        display: block;
+        height: 0;
+
+        overflow: hidden;
+    }
+}
+/* УТВ Общая сетка для способы доставки и оплаты */
 
 /* START способы доставки */
 @media(max-width: 961px) {
@@ -914,9 +929,61 @@
 
 /* END способы доставки */
 
+
+/* START способы оплаты */
 @media(max-width: 961px) {
-    
+    .basket__balls {
+        padding-top: 9.33vw;
+        padding-bottom: 8.80vw;
+    }
 }
+
+@media(max-width: 961px) {
+    .basket__pay-forms {
+        margin-top: 6.67vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .basket__balls-amount {
+        font-size: 4.27vw;
+        text-align: center;
+    }
+}
+
+@media(max-width: 961px) {
+    .basket__balls-wr-deduct {
+        padding-top: 3.20vw;
+        gap: 0;
+        justify-content: space-between;
+    }
+}
+
+@media(max-width: 961px) {
+    .basket__balls-text {
+        font-size: 4.27vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .basket__balls-deduct-input {
+        width: 49.33vw;
+        height: 8vw;
+        padding-left: 1.36vw;
+        padding-right: 1.36vw;
+
+        font-size: 4.27vw;
+
+        border-radius: 1.07vw;
+    }
+}
+
+/* END способы оплаты */
+
+
+/* START Согласие на обработку персональных даннных */
+/* END Согласие на обработку персональных даннных */
+
 
 @media(max-width: 961px) {
     
@@ -934,25 +1001,8 @@
     
 }
 
-@media(max-width: 961px) {
-    
-}
 
-@media(max-width: 961px) {
-    
-}
 
-@media(max-width: 961px) {
-    
-}
-
-@media(max-width: 961px) {
-    
-}
-
-@media(max-width: 961px) {
-    
-}
 
 /* START перечень товаров и цена */
 
@@ -1092,14 +1142,26 @@
 }
 
 @media(max-width: 961px) {
-    .place-order__button {
+    .place-order__button_mob {
+        display: block;
         width: 100%;
         height: 10.67vw;
 
+        font-family: 'Play';
         font-size: 4.27vw;
-
+        font-weight: 400;
+    
+        color: #FFF;
+        border: 0;
+        outline: 0;
         border-radius: 2.13vw;
         box-shadow: -1.07vw 1.07vw 2.40vw 0px #9AA4A7;
+        background: #4D96AB;
+        box-shadow: -0.21vw 0.21vw 0.47vw 0px #9AA4A7;
+    }
+
+    .place-order__button_desc {
+        display: none;
     }
 }
 /* END перечень товаров и цена */

@@ -11,7 +11,7 @@ block content
     .basket.basket__wrapper
         .basket__wrapper-content
 
-            .basket__forms
+            .basket__forms.basket__active
                 .basket__wr-arrow-back
                     .basket__arrow-back
                 .basket__wr-title
@@ -187,14 +187,18 @@ block content
 
                 //- ======================== END Способ оплаты ==================================
 
+
+                //- ======================== START Согласие на обработку персональных данных ================================
                 .basket__wr-cons-data
                     label.basket__cons-data
                         input.basket__cons-data-checkbox(type="checkbox")
                         p.basket__cons-data-text Согласие на обработку персональных данных
+                //- ======================== END Согласие на обработку персональных данных ================================
+
 
             //- ======================== START Перечень товаров в корзине ================================
 
-            .basket__goods.basket__active
+            .basket__goods
                 ul.basket__goods-item.order-goods__list 
                     li.order-goods__item
                         .order-goods__img 
@@ -261,6 +265,7 @@ block content
                         .order-total__summ 4000 р
 
                     .place-order__wrapper
-                        button.place-order__button Оформить заказ
+                        button.place-order__button_desc Оформить заказ
+                        button.place-order__button_mob Оформить заказ
 
             //- ======================== END Перечень товаров в корзине ================================

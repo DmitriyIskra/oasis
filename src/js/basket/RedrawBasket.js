@@ -3,6 +3,9 @@ export default class RedrawBasket {
         this.el = el;
         this.Imask = Imask;
 
+        this.goodsList = this.el.querySelector('.basket__goods')
+        this.formstList = this.el.querySelector('.basket__forms')
+
         this.inputsPhone = [
             this.el.querySelector('.basket__form-user-phone'),
             this.el.querySelector('.basket__form-user-additional-phone'),
@@ -64,11 +67,17 @@ export default class RedrawBasket {
 
         arr.forEach((item, index) => {
             if(!/\d/.test(item)) {
-                // const index = arr.indexOf(key);
-                if(index >= 0) arr.splice(index, 1);
+                arr.splice(index, 1);
+                
             }
         });
-        
+
         el.value = arr.join('');
+    }
+    
+    // ONLY MOBILE 
+    switchScreens() {
+        this.goodsList.classList.toggle('basket__active');
+        this.formstList.classList.toggle('basket__active');
     }
 }

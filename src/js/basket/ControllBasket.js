@@ -34,6 +34,11 @@ export default class ControllBasket {
             this.redraw.offTab(parrentOfTab);
             this.redraw.onTab(tab);
         }
+
+        // переключае экранов в мобилке между списком товаров и формами
+        if(e.target.closest('.place-order__button_mob') || e.target.closest('.basket__arrow-back')) {
+            this.redraw.switchScreens();
+        }
     }
 
     keydown(e) {
