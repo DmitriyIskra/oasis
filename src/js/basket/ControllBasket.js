@@ -6,7 +6,6 @@ export default class ControllBasket {
         this.focus = this.focus.bind(this);
         this.blur = this.blur.bind(this);
         this.input = this.input.bind(this);
-        this.keydown = this.keydown.bind(this);
     }
 
     init() {
@@ -23,25 +22,44 @@ export default class ControllBasket {
         });
 
         this.redraw.inputBalls.addEventListener('input', this.input);
-        this.redraw.inputBalls.addEventListener('keyup', this.keydown);
     }
 
     click(e) {
+        // переключение табов, разделено по двум разным блокам формы и товары
+        // табы можно переключать и совсем выключать
         if(e.target.closest('.basket__tab')) {
             const tab = e.target.closest('.basket__tab');
-            const parrentOfTab = e.target.closest('.basket__grid-forms-list');
+            const parent = tab.parentElement;
 
-            this.redraw.offTab(parrentOfTab);
-            this.redraw.onTab(tab);
+            let typeTab;
+            if(parent.classList.contains('basket__deliv-forms')) {
+                typeTab = 'currentActiveTabD';
+            };
+            if(parent.classList.contains('basket__pay-forms')) {
+                typeTab = 'currentActiveTabP';
+            };
+
+
+            if(this.redraw[typeTab] && this.redraw[typeTab] === tab) {
+                this.redraw.offTab(parent, parent.dataset.typeforms);
+                return;
+            }
+
+            if(this.redraw[typeTab] && this.redraw[typeTab] !== tab) {
+                this.redraw.offTab(parent, parent.dataset.typeforms);
+                this.redraw.onTab(tab, parent.dataset.typeforms);
+            }
+            
+            if(!this.redraw[typeTab]) {
+                this.redraw.onTab(tab, parent.dataset.typeforms);
+                this.redraw.openForm(parent.dataset.typeforms)
+            }
         }
 
         // переключае экранов в мобилке между списком товаров и формами
         if(e.target.closest('.place-order__button_mob') || e.target.closest('.basket__arrow-back')) {
             this.redraw.switchScreens();
         }
-    }
-
-    keydown(e) {
     }
     
     input(e) {

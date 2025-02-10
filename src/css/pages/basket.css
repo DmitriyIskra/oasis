@@ -240,10 +240,13 @@
     width: 42.66%;
 }
 
+.basket__points-wr-map {
+    padding-top: 1.72vw;
+}
+
 .basket__points-map {
     height: 23.80vw;
     width: 48.18vw;
-    margin-top: 1.72vw;
 
     border: 0.16vw solid #2F5F6D;
 }
@@ -424,7 +427,12 @@
 
 /* START персональные данные */
 .basket__wr-cons-data {
+    display: none;
     padding-top: 2.86vw;
+}
+
+.basket__wr-cons-data_active {
+    display: block;
 }
 
 .basket__cons-data {
@@ -695,8 +703,8 @@
 
 @media(max-width: 961px) {
     .basket__forms {
-        width: 88.393%;
         flex-direction: column;
+        align-items: center;
         flex-grow: initial;
     }
 }
@@ -704,6 +712,7 @@
 @media(max-width: 961px) {
     .basket__wr-arrow-back {
         display: block;
+        width: 88.393%;
         padding-top: 4vw;
         padding-bottom: 8.80vw;
     }   
@@ -750,6 +759,7 @@
 
 @media(max-width: 961px) {
     .basket__text-no-reg {
+        width: 88.393%;
         margin-top: 5.33vw;
 
         font-size: 3.73vw;
@@ -759,6 +769,7 @@
 
 @media(max-width: 961px) {
     .basket__form-user {
+        width: 88.393%;
         margin-top: 6.13vw;
     }
 }
@@ -784,14 +795,24 @@
         display: block;
         height: 0;
 
+        transition: height 0.2s linear;
+
         overflow: hidden;
     }
 }
-/* УТВ Общая сетка для способы доставки и оплаты */
+
+@media(max-width: 961px) {
+    .basket__grid-form-content {
+        width: 88.393%;
+        margin: 0 auto;
+    }
+}
+/* END Общая сетка для способы доставки и оплаты */
 
 /* START способы доставки */
 @media(max-width: 961px) {
     .basket__del-title {
+        width: 88.393%;
         margin-top: 9.33vw;
     }
 }
@@ -805,6 +826,7 @@
 @media(max-width: 961px) {
     .basket__wr-type-address {
         height: 8vw;
+        width: 88.393%;
         margin-top: 13.87vw;
         margin-bottom: 1.6vw;
     }
@@ -813,6 +835,7 @@
 @media(max-width: 961px) {
     .basket__grid-forms-list {
         display: flex;
+        width: 100%;
         flex-direction: column;
         column-gap: 0;
         row-gap: 5.33vw;
@@ -822,6 +845,8 @@
 @media(max-width: 961px) {
     .basket__tab {
         height: 18.67vw;
+        width: 88.393%;
+        margin: 0 auto;
         padding-left: 30%;
         justify-content: start;
 
@@ -871,6 +896,12 @@
 }
 
 @media(max-width: 961px) {
+    .basket__deliv-points {
+        padding-bottom: 6vw;
+    }
+}
+
+@media(max-width: 961px) {
     .basket__points-description {
         font-size: 5.33vw;
     }
@@ -889,10 +920,15 @@
 }
 
 @media(max-width: 961px) {
+    .basket__points-wr-map {
+        padding-top: 8.80vw;
+    }
+}
+
+@media(max-width: 961px) {
     .basket__points-map {
         height: 118.67vw;
         width: 100%;
-        margin-top: 8.80vw;
 
         border: 0.80vw solid #2F5F6D;
     }
@@ -932,7 +968,14 @@
 
 /* START способы оплаты */
 @media(max-width: 961px) {
+    .basket__pay-title {
+        width: 88.393%;
+    }
+}
+
+@media(max-width: 961px) {
     .basket__balls {
+        width: 88.393%;
         padding-top: 9.33vw;
         padding-bottom: 8.80vw;
     }
@@ -982,24 +1025,38 @@
 
 
 /* START Согласие на обработку персональных даннных */
+@media(max-width: 961px) {
+    .basket__wr-cons-data {
+        width: 88.393%;
+    }   
+}
+
+@media(max-width: 961px) {
+    .basket__cons-data {
+        font-size: 3.7vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .basket__cons-data-text {
+        gap: 2.40vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .basket__cons-data-text::before {
+        width: 6.67vw;
+        height: 6.67vw;
+
+        border-radius: 1.33vw;
+    }
+}
+
+@media(max-width: 961px) {
+    
+}
 /* END Согласие на обработку персональных даннных */
 
-
-@media(max-width: 961px) {
-    
-}
-
-@media(max-width: 961px) {
-    
-}
-
-@media(max-width: 961px) {
-    
-}
-
-@media(max-width: 961px) {
-    
-}
 
 
 

@@ -3,7 +3,7 @@
     width: 100%;
     height: 100%;
     flex-direction: column;
-    gap: 0.09vw;
+    row-gap: 0.09vw;
 }
 
 .label-textarea__text {
@@ -35,7 +35,7 @@
 
 @media(max-width: 961px) {
     .label-textarea__label {
-        gap: 1.60vw;
+        row-gap: 1.60vw;
     }
 }
 

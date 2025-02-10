@@ -41,110 +41,117 @@ block content
                 .basket__wr-type-address.basket__wr-type-address_active
                     include components/select-address
 
-                .basket__grid-forms-list.basket__deliv-forms
-
-                    label.basket__tab.basket__tab_mkad(data-item="mkad" active)
+                .basket__grid-forms-list.basket__deliv-forms(data-typeforms='delivery')
+                    //- для открытия формы, к табу добавляем атрибут active
+                    label.basket__tab.basket__tab_mkad(data-item="mkad" )
                         //- input.basket__tab-check(type="checkbox" name="mkad" value="Москва в пределах МКАД")
                         span.basket__tab-title Москва в пределах #[br] МКАД
                     form.basket__grid-form.basket__deliv-form.basket__deliv-form_mkad(data-item="mkad" name="form_deliv_mkad")
-                        .basket__form-in-list.basket__form-deliv
-                            .basket__form-in-item.basket__form-in.basket__form-in-street
-                                +label-input('Улица', 'basket__wr-form-deliv-street', 'street', true)
-                            .basket__form-in-item.basket__form-in.basket__form-in-house
-                                +label-input('Дом', 'basket__wr-form-deliv-house', 'house', true)
-                            .basket__form-in-item.basket__form-in.basket__form-in-apartment
-                                +label-input('Квартира/Офис', 'basket__wr-form-deliv-apartment', 'apartment', false)
-                            .basket__form-in-item.basket__form-in.basket__form-in-entrance
-                                +label-input('Подъезд', 'basket__wr-form-deliv-entrance', 'entrance', false)
-                            .basket__form-in-item.basket__form-in.basket__form-in-floor
-                                +label-input('Этаж', 'basket__wr-form-deliv-additional-floor', 'floor', false)
-                            .basket__form-in-item.basket__form-in.basket__form-in-intercom
-                                +label-input('Код домофона', 'basket__wr-form-deliv-intercom', 'intercom', false)
-                            .basket__form-in-item.basket__form-wishes
-                                +textarea('Комментарии к заказу', 'basket__form-deliv-wishes', 'wishes')
+                        .basket__grid-form-content
+                            .basket__form-in-list.basket__form-deliv
+                                .basket__form-in-item.basket__form-in.basket__form-in-street
+                                    +label-input('Улица', 'basket__wr-form-deliv-street', 'street', true)
+                                .basket__form-in-item.basket__form-in.basket__form-in-house
+                                    +label-input('Дом', 'basket__wr-form-deliv-house', 'house', true)
+                                .basket__form-in-item.basket__form-in.basket__form-in-apartment
+                                    +label-input('Квартира/Офис', 'basket__wr-form-deliv-apartment', 'apartment', false)
+                                .basket__form-in-item.basket__form-in.basket__form-in-entrance
+                                    +label-input('Подъезд', 'basket__wr-form-deliv-entrance', 'entrance', false)
+                                .basket__form-in-item.basket__form-in.basket__form-in-floor
+                                    +label-input('Этаж', 'basket__wr-form-deliv-additional-floor', 'floor', false)
+                                .basket__form-in-item.basket__form-in.basket__form-in-intercom
+                                    +label-input('Код домофона', 'basket__wr-form-deliv-intercom', 'intercom', false)
+                                .basket__form-in-item.basket__form-wishes
+                                    +textarea('Комментарии к заказу', 'basket__form-deliv-wishes', 'wishes')
                     //- --
                     
                     label.basket__tab.basket__tab_behind-mkad(data-item="behind_mkad" )
                         //- input.basket__tab-check(type="checkbox" name="behind_mkad" value="Более 5 км от МКАДа")
                         span.basket__tab-title Более 5 км#[br] от МКАДа
                     form.basket__grid-form.basket__deliv-form.basket__deliv-form_behind-mkad(data-item="behind_mkad" name="form_deliv_behind_mkad")
-                        .basket__form-in-list.basket__form-deliv
-                            .basket__form-in-item.basket__form-in.basket__form-in-city
-                                +label-input('Город', 'basket__wr-form-deliv-city', 'city', true)
-                            .basket__form-in-item.basket__form-in.basket__form-in-street
-                                +label-input('Улица', 'basket__wr-form-deliv-street', 'street', true)
-                            .basket__form-in-item.basket__form-in.basket__form-in-house
-                                +label-input('Дом', 'basket__wr-form-deliv-house', 'house', true)
-                            .basket__form-in-item.basket__form-in.basket__form-in-apartment
-                                +label-input('Квартира/Офис', 'basket__wr-form-deliv-apartment', 'apartment', false)
-                            .basket__form-in-item.basket__form-in.basket__form-in-entrance
-                                +label-input('Подъезд', 'basket__wr-form-deliv-entrance', 'entrance', false)
-                            .basket__form-in-item.basket__form-in.basket__form-in-floor
-                                +label-input('Этаж', 'basket__wr-form-deliv-additional-floor', 'floor', false)
-                            .basket__form-in-item.basket__form-in.basket__form-in-intercom
-                                +label-input('Код домофона', 'basket__wr-form-deliv-intercom', 'intercom', false)
-                            .basket__form-in-item.basket__form-wishes
-                                +textarea('Комментарии к заказу', 'basket__form-deliv-wishes', 'wishes') 
+                        .basket__grid-form-content
+                            .basket__form-in-list.basket__form-deliv
+                                .basket__form-in-item.basket__form-in.basket__form-in-city
+                                    +label-input('Город', 'basket__wr-form-deliv-city', 'city', true)
+                                .basket__form-in-item.basket__form-in.basket__form-in-street
+                                    +label-input('Улица', 'basket__wr-form-deliv-street', 'street', true)
+                                .basket__form-in-item.basket__form-in.basket__form-in-house
+                                    +label-input('Дом', 'basket__wr-form-deliv-house', 'house', true)
+                                .basket__form-in-item.basket__form-in.basket__form-in-apartment
+                                    +label-input('Квартира/Офис', 'basket__wr-form-deliv-apartment', 'apartment', false)
+                                .basket__form-in-item.basket__form-in.basket__form-in-entrance
+                                    +label-input('Подъезд', 'basket__wr-form-deliv-entrance', 'entrance', false)
+                                .basket__form-in-item.basket__form-in.basket__form-in-floor
+                                    +label-input('Этаж', 'basket__wr-form-deliv-additional-floor', 'floor', false)
+                                .basket__form-in-item.basket__form-in.basket__form-in-intercom
+                                    +label-input('Код домофона', 'basket__wr-form-deliv-intercom', 'intercom', false)
+                                .basket__form-in-item.basket__form-wishes
+                                    +textarea('Комментарии к заказу', 'basket__form-deliv-wishes', 'wishes') 
                     //- --
                     
                     label.basket__tab.basket__tab_pickup(data-item="pickup" )
                         //- input.basket__tab-check(type="checkbox" name="pickup" value="Самовывоз")
                         .basket__tab-title Самовывоз
                     form.basket__grid-form.basket__deliv-form.basket__deliv-form_pickup(data-item="pickup" name="form_deliv_pickup")
-                        .basket__pickup-wr-text
-                            .basket__pickup-text
-                                p Вы можете забрать товары из нашего шоурума, #[span.basket__pickup-text_bold по рабочим дням с 10:00 до 18:00.]
-                                p По адресу: Россия, город Москва, Хорошевское шоссе, д. 32, корп. А, подъезд 2, офис 109.
-                            .basket__pickup-text
-                                p Перемещение заказов с оптового склада на пункт выдачи составляет 1-2 дня.
-                                p Стоимость самовывоза - бесплатно.
-                            .basket__pickup-text
-                                p Возможен заезд на территорию на личном #[br]транспорте, кроме такси и каршеринга.
-                                p Тел. для заказа пропуска: #[a.basket__pickup-tel(href="tel:+74957896727") +7 (495) 789-67-27]
-                            .basket__pickup-text
-                                p #[span.basket__pickup-text_bold Для входа на территорию офиса необходимо иметь при себе паспорт или другой документ удостоверяющий личность!]
-                        .basket__form-wishes.basket__form-pickup-area
-                            +textarea('Комментарии к заказу', 'basket__form-deliv-wishes', 'wishes')
+                        .basket__grid-form-content
+                            .basket__pickup-wr-text
+                                .basket__pickup-text
+                                    p Вы можете забрать товары из нашего шоурума, #[span.basket__pickup-text_bold по рабочим дням с 10:00 до 18:00.]
+                                    p По адресу: Россия, город Москва, Хорошевское шоссе, д. 32, корп. А, подъезд 2, офис 109.
+                                .basket__pickup-text
+                                    p Перемещение заказов с оптового склада на пункт выдачи составляет 1-2 дня.
+                                    p Стоимость самовывоза - бесплатно.
+                                .basket__pickup-text
+                                    p Возможен заезд на территорию на личном #[br]транспорте, кроме такси и каршеринга.
+                                    p Тел. для заказа пропуска: #[a.basket__pickup-tel(href="tel:+74957896727") +7 (495) 789-67-27]
+                                .basket__pickup-text
+                                    p #[span.basket__pickup-text_bold Для входа на территорию офиса необходимо иметь при себе паспорт или другой документ удостоверяющий личность!]
+                            .basket__form-wishes.basket__form-pickup-area
+                                +textarea('Комментарии к заказу', 'basket__form-deliv-wishes', 'wishes')
                     //- --
 
                     label.basket__tab.basket__tab_regions(data-item="regions" )
                         //- input.basket__tab-check(type="checkbox" name="regions" value="В регионы")
                         .basket__tab-title В регионы
                     form.basket__grid-form.basket__deliv-form.basket__deliv-form_regions(data-item="regions" name="form_deliv_regions")
-                        .basket__form-in-list.basket__form-deliv
-                            .basket__form-in-item.basket__form-in.basket__form-in-zipcode
-                                +label-input('Индекс', 'basket__wr-form-deliv-zipcode', 'zipcode', false)
-                            .basket__form-in-item.basket__form-in.basket__form-in-area
-                                +label-input('Область', 'basket__wr-form-deliv-area', 'area', true)
-                            .basket__form-in-item.basket__form-in.basket__form-in-district
-                                +label-input('Район', 'basket__wr-form-deliv-district', 'district', true)
-                            .basket__form-in-item.basket__form-in.basket__form-in-city
-                                +label-input('Город', 'basket__wr-form-deliv-city', 'city', true)
-                            .basket__form-in-item.basket__form-in.basket__form-in-street
-                                +label-input('Улица', 'basket__wr-form-deliv-street', 'street', true)
-                            .basket__form-in-item.basket__form-in.basket__form-in-house
-                                +label-input('Дом', 'basket__wr-form-deliv-house', 'house', true)
-                            .basket__form-in-item.basket__form-in.basket__form-in-apartment
-                                +label-input('Квартира/Офис', 'basket__wr-form-deliv-apartment', 'apartment', false)
-                            .basket__form-in-item.basket__form-wishes
-                                +textarea('Комментарии к заказу', 'basket__form-deliv-wishes', 'wishes') 
+                        .basket__grid-form-content
+                            .basket__form-in-list.basket__form-deliv
+                                .basket__form-in-item.basket__form-in.basket__form-in-zipcode
+                                    +label-input('Индекс', 'basket__wr-form-deliv-zipcode', 'zipcode', false)
+                                .basket__form-in-item.basket__form-in.basket__form-in-area
+                                    +label-input('Область', 'basket__wr-form-deliv-area', 'area', true)
+                                .basket__form-in-item.basket__form-in.basket__form-in-district
+                                    +label-input('Район', 'basket__wr-form-deliv-district', 'district', true)
+                                .basket__form-in-item.basket__form-in.basket__form-in-city
+                                    +label-input('Город', 'basket__wr-form-deliv-city', 'city', true)
+                                .basket__form-in-item.basket__form-in.basket__form-in-street
+                                    +label-input('Улица', 'basket__wr-form-deliv-street', 'street', true)
+                                .basket__form-in-item.basket__form-in.basket__form-in-house
+                                    +label-input('Дом', 'basket__wr-form-deliv-house', 'house', true)
+                                .basket__form-in-item.basket__form-in.basket__form-in-apartment
+                                    +label-input('Квартира/Офис', 'basket__wr-form-deliv-apartment', 'apartment', false)
+                                .basket__form-in-item.basket__form-wishes
+                                    +textarea('Комментарии к заказу', 'basket__form-deliv-wishes', 'wishes') 
                     //- --
                     
                     label.basket__tab.basket__tab_points(data-item="points" )
                         //- input.basket__tab-check(type="checkbox" name="points" value="Пункты выдачи")
                         .basket__tab-title Пункты выдачи
                     form.basket__grid-form.basket__deliv-form.basket__deliv-form_points(data-item="points" name="form_deliv_points")
-                        .basket__deliv-points
-                            .basket__points-description 
-                                p Вы можете выбрать пункт выдачи. Для доставки мы используем компанию.......
-                            .basket__points-wr-search 
-                                +label-input('Введите нужный вам пункт выдачи', 'basket__points-search', false, false)
-                            .basket__points-map
-                            .basket__points-wr-address 
-                                .basket__points-address-text
-                                    .basket__points-label Вы выбрали адрес:
-                                    .basket__points-address г. Москва, ул. Хорошевская, д.32
-                                button.basket__points-button Подтвердить
+                        .basket__grid-form-content
+                            .basket__deliv-points
+                                .basket__points-description 
+                                    p Вы можете выбрать пункт выдачи. Для доставки мы используем компанию.......
+                                .basket__points-wr-search 
+                                    +label-input('Введите нужный вам пункт выдачи', 'basket__points-search', false, false)
+                                .basket__points-wr-map
+                                    .basket__points-map
+                                .basket__points-wr-address 
+                                    .basket__points-address-text
+                                        .basket__points-label Вы выбрали адрес:
+                                        .basket__points-address г. Москва, ул. Хорошевская, д.32
+                                    
+                                    button.basket__points-button Подтвердить
 
 
                 //- ======================== END Способ доставки ================================
@@ -162,8 +169,8 @@ block content
                         input.basket__balls-deduct-input(type="text" placeholder="0")
 
 
-                .basket__grid-forms-list.basket__pay-forms
-                    label.basket__tab.basket__tab_cash(data-item="cash" active)
+                .basket__grid-forms-list.basket__pay-forms(data-typeforms='payment')
+                    label.basket__tab.basket__tab_cash(data-item="cash" )
                         //- input.basket__tab-check(type="checkbox" name="cash" value="Наличные")
                         span.basket__tab-title Наличные
                     
@@ -175,21 +182,22 @@ block content
                         //- input.basket__tab-check(type="checkbox" name="mkad" value="Для юр. лица")
                         span.basket__tab-title Для юр. лица
                     .basket__grid-form.basket__pay-form.basket__pay-form-legal 
-                        .basket__pay-form-in-text 
-                            +label-input('Название организации, адрес, ИНН и ОГРН', 'basket__pay-form-input', 'legal', true)
-                        .basket__wr-pay-file 
-                            p.basket__file-title Прикрепите документ (jpg, png, txt, doc, docx, pdf)
-                            .basket__file
-                                span.basket__file-text Ператащите сюда файл или нажмите кнопку
-                                label.basket__file-label
-                                    | Загрузить
-                                    input.basket__file-input(type="file" name="file_legal" multiple)
+                        .basket__grid-form-content
+                            .basket__pay-form-in-text 
+                                +label-input('Название организации, адрес, ИНН и ОГРН', 'basket__pay-form-input', 'legal', true)
+                            .basket__wr-pay-file 
+                                p.basket__file-title Прикрепите документ (jpg, png, txt, doc, docx, pdf)
+                                .basket__file
+                                    span.basket__file-text Ператащите сюда файл или нажмите кнопку
+                                    label.basket__file-label
+                                        | Загрузить
+                                        input.basket__file-input(type="file" name="file_legal" multiple)
 
                 //- ======================== END Способ оплаты ==================================
 
 
                 //- ======================== START Согласие на обработку персональных данных ================================
-                .basket__wr-cons-data
+                .basket__wr-cons-data.basket__wr-cons-data_active
                     label.basket__cons-data
                         input.basket__cons-data-checkbox(type="checkbox")
                         p.basket__cons-data-text Согласие на обработку персональных данных

@@ -13,18 +13,72 @@ export default class RedrawBasket {
         // инпут для списания баллов
         this.inputBalls = this.el.querySelector('.basket__balls-deduct-input');
 
-        // текущий instance Шьфыл
+        // текущий instance Imask
         this.currentImask = null;
-    }
 
+        // последний активный tab forms
+        this.currentActiveTabD = null;
+        // текущая открытая форма forms
+        this.currentOpenFormD = null;
+        // последний активный tab goods
+        this.currentActiveTabP = null;
+        // текущая открытая форма goods
+        this.currentOpenFormP = null;
+    }
+    
     // Включает подсветку на индикаторе таба
-    onTab(tab) {
-        tab.setAttribute('active', ''); 
+    onTab(tab, type) {
+        console.log('on')
+        tab.setAttribute('active', '')
+
+        if(type === 'delivery') {
+            this.currentOpenFormD = tab.nextElementSibling;
+            this.currentActiveTabD = tab;        
+        }
+        if(type === 'payment') {
+            this.currentOpenFormP = tab.nextElementSibling;
+            this.currentActiveTabP = tab;        
+        }
     }
     // Выключает подсветку на индикаторе таба
-    offTab(parentOfTab) {
-        const currentTab = parentOfTab.querySelector('.basket__tab[active]');
-        currentTab.removeAttribute('active');
+    offTab(parent, type) {
+        console.log('off')
+        const lastActive = parent.querySelector('.basket__tab[active]');
+        if(lastActive) lastActive.removeAttribute('active');
+        
+        if(type === 'delivery') {
+            this.currentActiveTabD = null;
+            this.currentOpenFormD = null;
+        }
+        if(type === 'payment') {
+            this.currentActiveTabP = null;
+            this.currentOpenFormP = null;
+        }
+    }
+
+    // Открытие/закрытие формы для МОБИЛЬНОЙ версии
+    openForm(type) {
+        if(type === 'delivery') {
+            let totalHeight = 0;
+
+            const children = [...this.currentOpenFormD.children]
+
+            if(children) {
+                totalHeight = children.reduce((acc, item) => {
+                    console.log(item.offsetHeight)
+                    return acc += item.offsetHeight;
+                }, 0)
+
+                this.currentOpenFormD.style.height = `${totalHeight}px`
+            }
+        }
+
+        if(type === 'payment') {
+
+        }
+    }
+    closeForm() {
+
     }
 
     // установка и удаление маски для телефон
