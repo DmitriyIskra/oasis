@@ -139,10 +139,22 @@
     border: 1px solid #79747E;
 }
 
+.bar__item_color {
+    background-color: #4D96AB;
+}
+
 .bar__item svg {
     display: block;
     height: 100%;
     width: 100%;
+}
+
+.bar__item_color.bar__item-favorites svg > path {
+    stroke: white;
+}
+.bar__item-basket.bar__item_color svg > path,
+.bar__item-account.bar__item_color svg > path {
+    fill: white;
 }
 
 .bar__item:first-child {

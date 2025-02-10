@@ -279,8 +279,8 @@ controllSearch();
 navMobileButton(checkboxNavMobile);
 
 // Активация кнопки купить для nav-bar-mobile, если страница карточка товара
-const barButtonsBuy = document.querySelector('.bar__buttons');
-if(barButtonsBuy) navBarMobile(barButtonsBuy);
+const bar = document.querySelector('.bar');
+if(bar) navBarMobile(bar);
 
 // Переключение контента на странице доставка
 const contrDeliv = document.querySelector('.delivery__controll-list');

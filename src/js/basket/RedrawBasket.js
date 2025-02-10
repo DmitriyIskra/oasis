@@ -10,6 +10,8 @@ export default class RedrawBasket {
             this.el.querySelector('.basket__form-user-phone'),
             this.el.querySelector('.basket__form-user-additional-phone'),
         ];
+
+        this.inputsZipCode = [...this.el.querySelectorAll("input[name='zipcode']")];
         // инпут для списания баллов
         this.inputBalls = this.el.querySelector('.basket__balls-deduct-input');
 
@@ -28,21 +30,21 @@ export default class RedrawBasket {
     
     // Включает подсветку на индикаторе таба
     onTab(tab, type) {
-        console.log('on')
         tab.setAttribute('active', '')
 
+        const nextElement = tab.nextElementSibling;
+
         if(type === 'delivery') {
-            this.currentOpenFormD = tab.nextElementSibling;
+            this.currentOpenFormD = nextElement.tagName === 'FORM' ? nextElement : null;
             this.currentActiveTabD = tab;        
         }
         if(type === 'payment') {
-            this.currentOpenFormP = tab.nextElementSibling;
+            this.currentOpenFormP = nextElement.tagName === 'FORM' ? nextElement : null;
             this.currentActiveTabP = tab;        
         }
     }
     // Выключает подсветку на индикаторе таба
     offTab(parent, type) {
-        console.log('off')
         const lastActive = parent.querySelector('.basket__tab[active]');
         if(lastActive) lastActive.removeAttribute('active');
         
@@ -58,27 +60,43 @@ export default class RedrawBasket {
 
     // Открытие/закрытие формы для МОБИЛЬНОЙ версии
     openForm(type) {
-        if(type === 'delivery') {
-            let totalHeight = 0;
-
+        let totalHeight = 0;
+        if(type === 'delivery' && this.currentOpenFormD) {
             const children = [...this.currentOpenFormD.children]
 
-            if(children) {
-                totalHeight = children.reduce((acc, item) => {
-                    console.log(item.offsetHeight)
-                    return acc += item.offsetHeight;
-                }, 0)
+            totalHeight = children.reduce((acc, item) => {
+                return acc += item.offsetHeight;
+            }, 0)
 
-                this.currentOpenFormD.style.height = `${totalHeight}px`
-            }
+            this.currentOpenFormD.style.height = `${totalHeight}px`
+            this.currentOpenFormD.style.display = `block`;
         }
 
-        if(type === 'payment') {
+        if(type === 'payment' && this.currentOpenFormP) {
+            const children = [...this.currentOpenFormP.children]
 
+            totalHeight = children.reduce((acc, item) => {
+                return acc += item.offsetHeight;
+            }, 0)
+
+            this.currentOpenFormP.style.height = `${totalHeight}px`
+            this.currentOpenFormP.style.display = `block`;
         }
     }
-    closeForm() {
+    closeForm(type) {
+        if(type === 'delivery' && this.currentOpenFormD) {
+            this.currentOpenFormD.style.height = '0px';
+            this.currentOpenFormD.addEventListener('transitionend', (e) => {
+                e.target.style.display = '';
+            }, {once: true})
+        }
 
+        if(type === 'payment' && this.currentOpenFormP) {
+            this.currentOpenFormP.style.height = '0px';
+            this.currentOpenFormP.addEventListener('transitionend', (e) => {
+                e.target.style.display = '';
+            }, {once: true})
+        }
     }
 
     // установка и удаление маски для телефон

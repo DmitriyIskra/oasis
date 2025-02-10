@@ -22,6 +22,10 @@ export default class ControllBasket {
         });
 
         this.redraw.inputBalls.addEventListener('input', this.input);
+
+        this.redraw.inputsZipCode.forEach(input => {
+            input.addEventListener('input', this.input);
+        })
     }
 
     click(e) {
@@ -41,18 +45,21 @@ export default class ControllBasket {
 
 
             if(this.redraw[typeTab] && this.redraw[typeTab] === tab) {
+                this.redraw.closeForm(parent.dataset.typeforms);
                 this.redraw.offTab(parent, parent.dataset.typeforms);
                 return;
             }
 
             if(this.redraw[typeTab] && this.redraw[typeTab] !== tab) {
+                this.redraw.closeForm(parent.dataset.typeforms);
                 this.redraw.offTab(parent, parent.dataset.typeforms);
                 this.redraw.onTab(tab, parent.dataset.typeforms);
+                this.redraw.openForm(parent.dataset.typeforms);
             }
             
             if(!this.redraw[typeTab]) {
                 this.redraw.onTab(tab, parent.dataset.typeforms);
-                this.redraw.openForm(parent.dataset.typeforms)
+                this.redraw.openForm(parent.dataset.typeforms);
             }
         }
 
@@ -64,7 +71,12 @@ export default class ControllBasket {
     
     input(e) {
         if(e.target.closest('.basket__balls-deduct-input')) {
-            this.redraw.onlyNum(e.target, e.key);
+            this.redraw.onlyNum(e.target);
+            this.redraw.maxSize(e.target, 6);
+        }
+
+        if(e.target.matches("input[name='zipcode']")) {
+            this.redraw.onlyNum(e.target);
             this.redraw.maxSize(e.target, 6);
         }
     }

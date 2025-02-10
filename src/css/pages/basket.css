@@ -792,10 +792,9 @@
 /* START Общая сетка для способы доставки и оплаты */
 @media(max-width: 961px) {
     .basket__grid-form {
-        display: block;
         height: 0;
 
-        transition: height 0.2s linear;
+        transition: height 0.25s linear;
 
         overflow: hidden;
     }
@@ -810,158 +809,158 @@
 /* END Общая сетка для способы доставки и оплаты */
 
 /* START способы доставки */
-@media(max-width: 961px) {
-    .basket__del-title {
-        width: 88.393%;
-        margin-top: 9.33vw;
-    }
-}
-
-@media(max-width: 961px) {
-    .basket__deliv-forms {
-        margin-top: 6.67vw;
-    }
-}
-
-@media(max-width: 961px) {
-    .basket__wr-type-address {
-        height: 8vw;
-        width: 88.393%;
-        margin-top: 13.87vw;
-        margin-bottom: 1.6vw;
-    }
-}
-
-@media(max-width: 961px) {
-    .basket__grid-forms-list {
-        display: flex;
-        width: 100%;
-        flex-direction: column;
-        column-gap: 0;
-        row-gap: 5.33vw;
-    }
-}
-
-@media(max-width: 961px) {
-    .basket__tab {
-        height: 18.67vw;
-        width: 88.393%;
-        margin: 0 auto;
-        padding-left: 30%;
-        justify-content: start;
-
-        border-radius: 2.40vw;
-        box-shadow: 1.07vw 1.07vw 2.67vw 0px rgba(0, 0, 0, 0.25);
-    }
-}
-
-@media(max-width: 961px) {
-    .basket__tab-title {
-        gap: 2.93vw;
-
-        font-size: 3.73vw;
+    @media(max-width: 961px) {
+        .basket__del-title {
+            width: 88.393%;
+            margin-top: 9.33vw;
+        }
     }
 
-    .basket__tab-title::before {
-        width: 2.93vw;
-        height: 2.93vw;
+    @media(max-width: 961px) {
+        .basket__deliv-forms {
+            margin-top: 6.67vw;
+        }
     }
 
-    .basket__tab-check:checked + .basket__tab-title::before {
-        box-shadow: 0px 0px 1.72vw 1.17vw rgba(103, 25, 147, 0.3);
+    @media(max-width: 961px) {
+        .basket__wr-type-address {
+            height: 8vw;
+            width: 88.393%;
+            margin-top: 13.87vw;
+            margin-bottom: 1.6vw;
+        }
     }
-}
 
-@media(max-width: 961px) {
-    .basket__form-deliv-wishes.label-textarea__area {
-        height: 35.73vw;
-        width: 100%;
+    @media(max-width: 961px) {
+        .basket__grid-forms-list {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            column-gap: 0;
+            row-gap: 5.33vw;
+        }
     }
-}
 
-@media(max-width: 961px) {
-    .basket__pickup-wr-text {
-        gap: 7.20vw;
+    @media(max-width: 961px) {
+        .basket__tab {
+            height: 18.67vw;
+            width: 88.393%;
+            margin: 0 auto;
+            padding-left: 30%;
+            justify-content: start;
 
-        font-size: 5.33vw;
-        text-align: center;
+            border-radius: 2.40vw;
+            box-shadow: 1.07vw 1.07vw 2.67vw 0px rgba(0, 0, 0, 0.25);
+        }
     }
-}
 
-@media(max-width: 961px) {
-    .basket__form-pickup-area {
-        margin-top: 0;
-        padding-top: 7.20vw;
+    @media(max-width: 961px) {
+        .basket__tab-title {
+            gap: 2.93vw;
+
+            font-size: 3.73vw;
+        }
+
+        .basket__tab-title::before {
+            width: 2.93vw;
+            height: 2.93vw;
+        }
+
+        .basket__tab-check:checked + .basket__tab-title::before {
+            box-shadow: 0px 0px 1.72vw 1.17vw rgba(103, 25, 147, 0.3);
+        }
     }
-}
 
-@media(max-width: 961px) {
-    .basket__deliv-points {
-        padding-bottom: 6vw;
+    @media(max-width: 961px) {
+        .basket__form-deliv-wishes.label-textarea__area {
+            height: 35.73vw;
+            width: 100%;
+        }
     }
-}
 
-@media(max-width: 961px) {
-    .basket__points-description {
-        font-size: 5.33vw;
+    @media(max-width: 961px) {
+        .basket__pickup-wr-text {
+            gap: 7.20vw;
+
+            font-size: 5.33vw;
+            text-align: center;
+        }
     }
-}
 
-@media(max-width: 961px) {
-    .basket__points-wr-search {
-        padding-top: 6.13vw;
+    @media(max-width: 961px) {
+        .basket__form-pickup-area {
+            margin-top: 0;
+            padding-top: 7.20vw;
+        }
     }
-}
 
-@media(max-width: 961px) {
-    .basket__points-search {
-        width: 100%;
+    @media(max-width: 961px) {
+        .basket__deliv-points {
+            padding-bottom: 3.2vw;
+        }
     }
-}
 
-@media(max-width: 961px) {
-    .basket__points-wr-map {
-        padding-top: 8.80vw;
+    @media(max-width: 961px) {
+        .basket__points-description {
+            font-size: 5.33vw;
+        }
     }
-}
 
-@media(max-width: 961px) {
-    .basket__points-map {
-        height: 118.67vw;
-        width: 100%;
-
-        border: 0.80vw solid #2F5F6D;
+    @media(max-width: 961px) {
+        .basket__points-wr-search {
+            padding-top: 6.13vw;
+        }
     }
-}
 
-@media(max-width: 961px) {
-    .basket__points-wr-address {
-        padding-top: 11.20vw;
-        flex-direction: column;
-        gap: 5.33vw;
-        align-items: initial;
+    @media(max-width: 961px) {
+        .basket__points-search {
+            width: 100%;
+        }
     }
-}
 
-@media(max-width: 961px) {
-    .basket__points-address-text {
-        max-width: initial;
-
-        font-size: 5.33vw;
+    @media(max-width: 961px) {
+        .basket__points-wr-map {
+            padding-top: 8.80vw;
+        }
     }
-}
 
-@media(max-width: 961px) {
-    .basket__points-button {
-        width: 100%;
-        height: 10.67vw;
+    @media(max-width: 961px) {
+        .basket__points-map {
+            height: 118.67vw;
+            width: 100%;
 
-        font-size: 4.27vw;
-
-        border-radius: 2.13vw;
-        box-shadow: -1.07vw 1.07vw 2.40vw 0px #9AA4A7;
+            border: 0.80vw solid #2F5F6D;
+        }
     }
-}
+
+    @media(max-width: 961px) {
+        .basket__points-wr-address {
+            padding-top: 11.20vw;
+            flex-direction: column;
+            gap: 5.33vw;
+            align-items: initial;
+        }
+    }
+
+    @media(max-width: 961px) {
+        .basket__points-address-text {
+            max-width: initial;
+
+            font-size: 5.33vw;
+        }
+    }
+
+    @media(max-width: 961px) {
+        .basket__points-button {
+            width: 100%;
+            height: 10.67vw;
+
+            font-size: 4.27vw;
+
+            border-radius: 2.13vw;
+            box-shadow: -1.07vw 1.07vw 2.40vw 0px #9AA4A7;
+        }
+    }
 
 /* END способы доставки */
 
@@ -970,6 +969,7 @@
 @media(max-width: 961px) {
     .basket__pay-title {
         width: 88.393%;
+        padding-top: 8.3vw;
     }
 }
 
@@ -1021,6 +1021,46 @@
     }
 }
 
+@media(max-width: 961px) {
+    .basket__wr-pay-file {
+        padding-top: 3.47vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .basket__file-title {
+        padding-bottom: 1.60vw;
+
+        font-size: 3.73vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .basket__file {
+        height: 35.73vw;
+        width: 100%;
+        gap: 7.20vw;
+
+        border-radius: 1.07vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .basket__file-text {
+        font-size: 3.20vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .basket__file-label {
+        width: 40vw;
+        height: 8vw;
+
+        font-size: 3.73vw;
+
+        border-radius: 2.13vw;
+    }
+}
 /* END способы оплаты */
 
 
@@ -1028,6 +1068,7 @@
 @media(max-width: 961px) {
     .basket__wr-cons-data {
         width: 88.393%;
+        padding-top: 8.86vw;
     }   
 }
 
