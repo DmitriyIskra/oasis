@@ -2,11 +2,127 @@ extends layout/layout
 
 include mixines/bread-crumbs/bread-crumbs
 include mixines/catalog-card
+include mixines/label-input
 
 
 block content
     
     +bread-crumbs(bread_crumbs)
 
-    .accont.accont__wrapper
-        .accont__wrapper-content
+    .account.account__wrapper
+        .account__wrapper-content
+
+            ul.account__ctrl-list 
+                li.account__ctrl-item(data-ctrl="user") Профиль
+                li.account__ctrl-item(data-ctrl="address") Адреса доставки
+                li.account__ctrl-item(data-ctrl="history") История заказов
+                li.account__ctrl-item(data-ctrl="favorites") Избранное
+                li.account__ctrl-item(data-ctrl="loyalty") Программа лояльности
+
+            ul.account__screen-list
+                li.account__screen-item(data-screen="user")
+                    .acc-user 
+                        .acc-user__icon
+                            .acc-user__discount #[span 10%]
+                            .acc-user__avatar
+                        form.acc-user__form(name="acc-user-data")
+                            ul.acc-user__form-list 
+                                li.acc-user__form-item.acc-user__item-second-name 
+                                    +label-input('Имя', 'acc-user__second-name', 'second-name', true)
+                                li.acc-user__form-item.acc-user__item-name 
+                                    +label-input('Фамилия', 'acc-user__name', 'name', true)
+                                li.acc-user__form-item.acc-user__item-patronimyc 
+                                    +label-input('Отчество', 'acc-user__patronimyc', 'patronimyc', false)
+                                li.acc-user__form-item.acc-user__item-phone
+                                    +label-input('Телефон', 'acc-user__phone', 'phone', true)
+                                li.acc-user__form-item.acc-user__item-email
+                                    +label-input('Почта', 'acc-user__email', 'email', true)
+                                li.acc-user__form-item.acc-user__item-birth-date 
+                                li.acc-user__form-item.acc-user__item-checkmarks 
+                                    label.acc-user__personal-data
+                                        input.acc-user__personal-input(type="checkbox" name="personal-data" required)
+                                        span.acc-user__personal-text Согласие на обработку персональных данных
+                                    label.acc-user__mailing
+                                        input.acc-user__mailing-input(type="checkbox" name="mailing")
+                                        span.acc-user__mailing-text Согласие на обработку персональных данных
+                                li.acc-user__form-item.acc-user__item-buttons 
+                                    button.acc-user__button.acc-user__button-save(type="button") Сохранить
+                                    button.acc-user__button.acc-user__button-cancel(type="button") Отмена
+                                    button.acc-user__button.acc-user__button-delete(type="button") Удалить профиль
+
+
+                li.account__screen-item(data-screen="address")
+                    .acc-addr 
+                        .acc-addr__my-addresses
+                            .account__wr-title
+                                h2.account__title Мои адреса
+                            .acc-addr__wr-select
+                                include components/select-address
+                        form.acc-addr__inputs(name="acc-address")
+                            ul.acc-addr__form-list
+                                li.acc-addr__form-item.acc-addr__item-zipcode
+                                    +label-input('Индекс', 'acc-user__zipcode', 'zipcode', true)
+                                li.acc-addr__form-item.acc-addr__item-area
+                                    +label-input('Область', 'acc-user__area', 'area', true)
+                                li.acc-addr__form-item.acc-addr__item-district
+                                    +label-input('Район', 'acc-user__district', 'district', false)
+                                li.acc-addr__form-item.acc-addr__item-city
+                                    +label-input('Город', 'acc-user__city', 'city', true)
+                                li.acc-addr__form-item.acc-addr__item-street
+                                    +label-input('Улица', 'acc-user__street', 'street', true)
+                                li.acc-addr__form-item.acc-addr__item-house
+                                    +label-input('Дом', 'acc-user__house', 'house', true)
+                                li.acc-addr__form-item.acc-addr__item-appartment
+                                    +label-input('Квартира/Офис', 'acc-user__appartment', 'appartment', true)
+                                li.acc-addr__form-item.acc-user__item-buttons 
+                                    button.acc-addr__button.acc-addr__button-save(type="button") Сохранить
+                                    button.acc-addr__button.acc-addr__button-cancel(type="button") Добавить
+                                    button.acc-addr__button.acc-addr__button-delete(type="button") Удалить
+
+
+                li.account__screen-item(data-screen="history")
+                    .acc-hist 
+                        .account__wr-title
+                            h2.account__title Мои заказы
+                        ul.acc-hist__orders-list 
+                            li.acc-hist__orders-item 
+
+                                .acc-hist__order
+
+                                    .acc-hist__order-data 
+                                        .acc-hist__date 23 мая 2024
+                                        .acc-hist__number Закакз № 256263
+                                        ul.acc-hist__state-list 
+                                            li.acc-hist__state-item.acc-hist__state-active Выдан
+                                            li.acc-hist__state-item Новый заказ
+                                            li.acc-hist__state-item Ждем оплаты
+                                            li.acc-hist__state-item Оплачен
+                                            li.acc-hist__state-item Собран
+                                            li.acc-hist__state-item Самовывоз
+                                            li.acc-hist__state-item Доставляется
+                                            li.acc-hist__state-item Выполнен (доставлен и оплачен)
+                                            li.acc-hist__state-item Отменен
+                                    ul.acc-hist__goods-list
+                                        li.acc-hist__goods-item
+                                            .acc-hist__sku-info 
+                                                .acc-hist__wr-img
+                                                    img.acc-hist__img(img="#0" alt="")
+                                                .acc-hist__wr-descr
+                                                    .acc-hist__drand Аlthaus
+                                                    .acc-hist__name Malty assam
+                                                    .acc-hist__type Черный чай
+                                            .acc-hist__amount 3
+                                            .acc-hist__price 1500 р
+                                    .acc-hist__wr-total
+                                        .acc-hist__total
+                                            p Итог: 3000 р
+
+                                .acc-hist__wr-button
+                                    button.acc-hist__button(type="button") Повторить
+
+
+
+                li.account__screen-item(data-screen="favorites")
+
+
+                li.account__screen-item(data-screen="loyalty")
