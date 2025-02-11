@@ -29,6 +29,7 @@ import './css/pages/basket.css';
 import './css/pages/exchange-and-refund.css';
 import './css/pages/404.css';
 import './css/pages/loyalty-program.css';
+import './css/pages/account.css';
 import './css/components/component-nav-catalog.css';
 import './css/components/component-burger.css';
 import './css/components/component-nav-bar-mobile.css';

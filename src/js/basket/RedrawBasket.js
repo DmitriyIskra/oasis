@@ -26,6 +26,8 @@ export default class RedrawBasket {
         this.currentActiveTabP = null;
         // текущая открытая форма goods
         this.currentOpenFormP = null;
+
+        this.lastLoadWidth = innerWidth;
     }
     
     // Включает подсветку на индикаторе таба

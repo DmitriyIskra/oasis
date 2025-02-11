@@ -6,6 +6,7 @@ export default class ControllBasket {
         this.focus = this.focus.bind(this);
         this.blur = this.blur.bind(this);
         this.input = this.input.bind(this);
+        this.resize = this.resize.bind(this);
     }
 
     init() {
@@ -14,6 +15,8 @@ export default class ControllBasket {
     }
     
     registerEvents() {
+        window.addEventListener('resize', this.resize);
+
         this.redraw.el.addEventListener('click', this.click);
 
         this.redraw.inputsPhone.forEach(item => {
@@ -27,14 +30,13 @@ export default class ControllBasket {
             input.addEventListener('input', this.input);
         })
     }
-
     click(e) {
         // переключение табов, разделено по двум разным блокам формы и товары
         // табы можно переключать и совсем выключать
         if(e.target.closest('.basket__tab')) {
             const tab = e.target.closest('.basket__tab');
             const parent = tab.parentElement;
-
+            
             let typeTab;
             if(parent.classList.contains('basket__deliv-forms')) {
                 typeTab = 'currentActiveTabD';
@@ -43,13 +45,13 @@ export default class ControllBasket {
                 typeTab = 'currentActiveTabP';
             };
 
-
+            
             if(this.redraw[typeTab] && this.redraw[typeTab] === tab) {
                 this.redraw.closeForm(parent.dataset.typeforms);
                 this.redraw.offTab(parent, parent.dataset.typeforms);
                 return;
             }
-
+            
             if(this.redraw[typeTab] && this.redraw[typeTab] !== tab) {
                 this.redraw.closeForm(parent.dataset.typeforms);
                 this.redraw.offTab(parent, parent.dataset.typeforms);
@@ -74,24 +76,49 @@ export default class ControllBasket {
             this.redraw.onlyNum(e.target);
             this.redraw.maxSize(e.target, 6);
         }
-
+        
         if(e.target.matches("input[name='zipcode']")) {
             this.redraw.onlyNum(e.target);
             this.redraw.maxSize(e.target, 6);
         }
     }
-
+    
     focus(e) {
         // для телефонов, маску назначаем
         if(e.target.closest('input[name="phone"]') || e.target.closest('input[name="additional-phone"]')) {
             this.redraw.setPhoneImask(e.target);
         }
     }
-
+    
     blur(e) {
         // для телефонов, если пользователь ничего не ввел, маску убираем
         if(e.target.closest('input[name="phone"]') || e.target.closest('input[name="additional-phone"]')) {
             this.redraw.removePhoneImask(e.target);
         }
+    }
+
+    resize(e) {
+        // С мобилки на десктоп
+        if(innerWidth > 961 && this.redraw.lastLoadWidth <= 961) {
+            if(this.redraw.currentActiveTabD) {
+                this.redraw.currentOpenFormD.style = ''
+            }
+
+            if(this.redraw.currentActiveTabP) {
+                this.redraw.currentOpenFormP.style = ''
+            }
+        }
+
+        // С десктоп на мобилку
+        if(innerWidth <= 961 && this.redraw.lastLoadWidth > 961) {
+            if(this.redraw.currentActiveTabD) {
+                this.redraw.openForm('delivery');
+            }
+
+            if(this.redraw.currentActiveTabP) {
+                this.redraw.openForm('payment');
+            }
+        }
+        this.redraw.lastLoadWidth = innerWidth;
     }
 }

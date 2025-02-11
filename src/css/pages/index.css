@@ -749,7 +749,11 @@
 
 /* END ХИТЫ ПРОДАЖ */
 
-
+@media(max-width: 961px) {
+    .widgets__wrapper {
+        display: none;
+    }
+}
 
 /* START ГЛАВНЫЙ СЛАЙДЕР */
 
