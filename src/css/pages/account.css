@@ -16,6 +16,7 @@
     height: 3.13vw;
     
     background-color: #E5E4E9;
+    box-shadow: 1.30vw 1.61vw 2.08vw 0px rgba(0, 0, 0, 0.06), 0.31vw 0.42vw 1.15vw 0px rgba(0, 0, 0, 0.07);
 }
 
 .account__ctrl-item {
@@ -69,7 +70,6 @@
 
 .acc-loyal__item {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
 
@@ -80,18 +80,20 @@
     0px 0px 1.56vw 0.42vw rgba(0, 0, 0, 0.25);
 }
 
+.acc-loyal__item-level {
+    padding-top: 2.19vw;
+    padding-bottom: 1.93vw;
+    grid-column: 1 / 3;
+    grid-row: 1;
+    flex-direction: column;
+}
+
 .acc-loyal__level-title {
     font-family: 'Play';
     font-size: 1.88vw;
     font-weight: 700;
 
     color: #671993;
-}
-
-.acc-loyal__item-level {
-    height: 34.38vw;
-    grid-column: 1 / 3;
-    grid-row: 1;
 }
 
 .acc-loyal__about-level {
@@ -101,10 +103,23 @@
     justify-content: center;
 }
 
+.acc-loyal__level-side {
+    display: flex;
+    align-items: center;
+}
+
 .acc-loyal__level-item {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.acc-loyal__level-item-side {
+    transform: translateY(-6.1%);
+}
+
+.acc-loyal__level-item-l {
+    transform: translateX(12%);
 }
 
 .acc-loyal__level-circle-small {
@@ -115,7 +130,6 @@
 .acc-loyal__level-back {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;  
 
     background: no-repeat url('../../svg/disc-with-dot-green.svg');
@@ -126,6 +140,7 @@
 .acc-loyal__level-disc-icon {
     height: 2.34vw;
     width: 2.34vw;
+    margin-top: 1.1vw;
 
     background: no-repeat url('../../svg/star-level-percent.svg');
     background-size: contain;
@@ -158,6 +173,7 @@
 .acc-loyal__level-line-side {
     width: 4.17vw;
     height: 0.45vw;
+    margin-bottom: 1.76vw;
     align-self: end;
 }
 
@@ -167,31 +183,80 @@
     background-position: center;
 }
 
+.acc-loyal__level-line-l {
+    transform: rotate(-21deg);
+}
+
 .acc-loyal__level-circle-big {
     height: 10.83vw;
     width: 10.83vw;
 }
 
+.acc-loyal__level-summ-icon {
+    width: 3.33vw;
+    height: 1.67vw;
+    margin-top: 2.2vw;
+
+    background: no-repeat url('../../svg/level-summ.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.acc-loyal__level-summ-num {
+    margin-top: 0.75vw;
+
+    font-family: 'Play';
+    font-size: 2.08vw;
+    font-weight: 700;
+    line-height: 0.9;
+    
+    text-shadow: 0px 0.21vw 0.21vw rgba(0, 0, 0, 0.25);
+    color: #2F5F6D;
+}
+
+.acc-loyal__level-text-summ {
+    margin-top: 0;
+
+    text-shadow: 0px 0.21vw 0.21vw rgba(0, 0, 0, 0.25);
+    color: #2F5F6D;
+}
+
 .acc-loyal__level-line-r {
-    transform: rotate(180deg);
-    outline: 1px solid red;
+    transform: rotate(201deg);
 }
 
 .acc-loyal__level-line-b {
     height: 4.32vw;
     width: 0.45vw;
-    margin: 0 auto;
+    margin: 0.42vw auto 0.83vw;
 
     background: no-repeat url('../../svg/line-for-level-Y.svg');
     background-size: contain;
     background-position: center;
 }
 
+.acc-loyal__level-bonus-icon {
+    width: 2.19vw;
+    height: 2.76vw;
+    margin-top: 0.65vw;
 
+    background: no-repeat url('../../svg/loyalty-bank-icon.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.acc-loyal__level-bonus-num {
+    color: #FF7A00;
+}
+
+.acc-loyal__level-item-r {
+    transform: translateX(-12%);
+}
 
 .acc-loyal__level-cash-icon {
     height: 2.34vw;
     width: 2.34vw;
+    margin-top: 1vw;
 
     background: no-repeat url('../../svg/cash-level.svg');
     background-size: contain;
@@ -199,6 +264,8 @@
 }
 
 .acc-loyal__level-cash-num {
+    padding-right: 0.3vw;
+
     color: #07E069;
 }
 
@@ -339,10 +406,6 @@
     margin-top: 2.66vw;
 }
 
-.acc-loyal__statuses-item {
-    width: 11.98vw;
-}
-
 .acc-loyal__statuses-balls {
     display: grid;
     width: 4.17vw;
@@ -362,7 +425,12 @@
     text-shadow: 0px 0.21vw 0.21vw rgba(0, 0, 0, 0.25);
 }
 
+.acc-loyal__statuses-icon_raised {
+    background-color: #BBD0D6;
+}
+
 .acc-loyal__statuses-text {
+    width: 11.7vw;
     margin-top: 1.25vw;
 
     font-family: 'Play';
@@ -381,6 +449,84 @@
     
     color: #FF7A00;
 }
+
+
+
+
+.acc-loyal__wr-progress {
+    padding-top: 0.36vw;
+}
+
+.acc-loyal__indication {
+    display: flex;
+    height: 0.63vw;
+    align-items: end;
+    justify-content: center;
+    gap: 0.10vw;
+}
+
+.acc-loyal__indication-list {
+    display: flex;
+    width: 91.5%;
+    flex-shrink: 0;
+    gap: 0.10vw;
+}
+
+.acc-loyal__indication-item {
+    height: 0.10vw;
+    flex-basis: 20%;
+    flex-shrink: 1;
+
+    background: #D7D7D7;
+}
+
+.acc-loyal__indication_viol {
+    background: #671993;
+}
+.acc-loyal__indication_green {
+    background: #00CE18;
+}
+
+.acc-loyal__indication-icon {
+    display: none;
+    width: 7.2%;
+    height: 100%;
+    flex-shrink: 0;
+
+    background: no-repeat url('../../svg/checkmark-light-green.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.acc-loyal__indication-icon_active {
+    display: block;
+}
+
+.acc-loyal__progress-wr-text {
+    padding-top: 1px;
+}
+
+.acc-loyal__progress-text {
+    display: none;
+
+    font-family: 'Play';
+    font-size: 0.42vw;
+    text-align: center;
+}
+
+.acc-loyal__progress-text_active {
+    display: block;
+}
+
+.acc-loyal__progress_orange {
+    font-weight: 700;
+
+    color: #FF7A00;
+}
+
+
+
+
 
 .acc-loyal__cashback-title_b {
     margin-top: 1.88vw;
@@ -425,6 +571,7 @@
 @media(max-width: 961px) {
     .acc-loyal__list {
         display: flex;
+        width: auto;
         flex-direction: column;
         align-items: center;
         column-gap: 0;
@@ -434,13 +581,77 @@
 
 @media(max-width: 961px) {
     .acc-loyal__item {
-        width: 95.74%;
+        width: 95.734%;
         flex-direction: column;
         gap: 0;
 
         border: 1.33vw solid #69E8FA;
         box-shadow: 0px 0px 4.27vw 0.80vw rgba(0, 0, 0, 0.25), 0px 0px 8vw 2.13vw rgba(0, 0, 0, 0.25);
     }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__item-level {
+        padding-top: 9.87vw;
+        padding-bottom: 19.73vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__level-title {
+        font-size: 20px;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__about-level {
+        margin-top: 12vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__level-circle-small {
+        height: 19.47vw;
+        width: 19.47vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__level-disc-icon {
+        width: 5.07vw;
+        height: 5.07vw;
+        margin-top: 4vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__level-num {
+        font-size: 5.33vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__level-text {
+        width: 69%;
+
+        font-size: 3.47vw;
+    }
+}
+
+@media(max-width: 961px) {
+    
+}
+
+@media(max-width: 961px) {
+    
+}
+
+@media(max-width: 961px) {
+    
+}
+
+@media(max-width: 961px) {
+    
 }
 
 @media(max-width: 961px) {
@@ -576,12 +787,6 @@
 }
 
 @media(max-width: 961px) {
-    .acc-loyal__statuses-item {
-        width: 62.7vw;
-    }
-}
-
-@media(max-width: 961px) {
     .acc-loyal__statuses-balls {
         width: 26.67vw;
         height: 26.67vw;
@@ -595,10 +800,58 @@
 
 @media(max-width: 961px) {
     .acc-loyal__statuses-text {
+        width: 62.7vw;
         margin-top: 4vw;
 
         font-size: 3.73vw;
     }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__wr-progress {
+        padding-top: 3vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__indication {
+        height: 3.20vw;
+        width: 96%;
+        margin: 0 auto;
+        gap: 0.5vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__indication-list {
+        gap: 0.53vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__indication-item {
+        height: 0.53vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__progress-wr-text {
+        padding-top: 0.53vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__progress-text {
+        font-size: 2.13vw;
+    }
+}
+
+@media(max-width: 961px) {
+    
+}
+
+@media(max-width: 961px) {
+    
 }
 
 @media(max-width: 961px) {

@@ -121,7 +121,6 @@ block content
                                     button.acc-hist__button(type="button") Повторить
 
 
-
                 li.account__screen-item(data-screen="favorites")
                     .acc-fav 
                         .account__wr-title
@@ -140,7 +139,7 @@ block content
                             .acc-loyal__about-level
                                 //- ??
                                 .acc-loyal__level-side
-                                    .acc-loyal__level-item
+                                    .acc-loyal__level-item.acc-loyal__level-item-side.acc-loyal__level-item-l
                                         .acc-loyal__level-circle-small.acc-loyal__level-back
                                             .acc-loyal__level-disc-icon
                                             .acc-loyal__level-num.acc-loyal__level-disc-num 7%
@@ -156,7 +155,7 @@ block content
                                         .acc-loyal__level-circle-big.acc-loyal__level-back
                                             .acc-loyal__level-summ-icon
                                             .acc-loyal__level-summ-num 250000
-                                            .acc-loyal__level-text
+                                            .acc-loyal__level-text.acc-loyal__level-text-summ
                                                 p Вы достигли суммы
 
                                         .acc-loyal__level-line.acc-loyal__level-line-side.acc-loyal__level-line-r
@@ -172,16 +171,13 @@ block content
 
                                 //- ??
                                 .acc-loyal__level-side     
-                                    .acc-loyal__level-item
+                                    .acc-loyal__level-item.acc-loyal__level-item-side.acc-loyal__level-item-r
                                         .acc-loyal__level-circle-small.acc-loyal__level-back
                                             .acc-loyal__level-cash-icon
                                             .acc-loyal__level-num.acc-loyal__level-cash-num 10%
                                         .acc-loyal__level-text
                                             p Ваш кэшбэк в этом месяце
                                         
-
-
-
                         li.acc-loyal__item.acc-loyal__item-discount
                             .acc-loyal__wr-discount-icon
                                 .acc-loyal__reg-discount-icon
@@ -207,24 +203,60 @@ block content
                             h2.acc-loyal__title.acc-loyal__cashback-title Несгораемая скидка плюс кэшбек
                             ul.acc-loyal__statuses-list.acc-loyal__statuses-list_top
                                 li.acc-loyal__statuses-item 
-                                    .acc-loyal__statuses-balls 50 000
+                                    .acc-loyal__statuses-balls.acc-loyal__statuses-icon_raised 50 000
                                     .acc-loyal__statuses-text 
                                         p 
                                             span При достижении общей суммы покупок свыше #[span.acc-loyal__statuses_orange 50 000]р
                                             span Вы получаете несгораемую скидку #[span.acc-loyal__statuses_orange 5% + 3% кэшбек]
+                                    .acc-loyal__wr-progress
+                                        .acc-loyal__indication
+                                            ul.acc-loyal__indication-list 
+                                                li.acc-loyal__indication-item.acc-loyal__indication_green
+                                                li.acc-loyal__indication-item.acc-loyal__indication_green
+                                                li.acc-loyal__indication-item.acc-loyal__indication_green
+                                                li.acc-loyal__indication-item.acc-loyal__indication_green
+                                                li.acc-loyal__indication-item.acc-loyal__indication_green
+                                            .acc-loyal__indication-icon.acc-loyal__indication-icon_active
+                                        .acc-loyal__progress-wr-text
+                                            .acc-loyal__progress-text.acc-loyal__progress-raised.acc-loyal__progress-text_active Ваш уровень повышен
+                                            .acc-loyal__progress-text.acc-loyal__progress-remain Осталось #[span.acc-loyal__progress_orange 49 250] до следующего уровня
                                 li.acc-loyal__statuses-item 
                                     .acc-loyal__statuses-balls 100 000
                                     .acc-loyal__statuses-text 
                                         p 
                                             span При достижении общей суммы покупок свыше #[span.acc-loyal__statuses_orange 100 000]р
                                             span Вы получаете несгораемую скидку #[span.acc-loyal__statuses_orange 7% + 3% кэшбек]
+                                    .acc-loyal__wr-progress
+                                        .acc-loyal__indication
+                                            ul.acc-loyal__indication-list 
+                                                li.acc-loyal__indication-item.acc-loyal__indication_viol
+                                                li.acc-loyal__indication-item.acc-loyal__indication_viol
+                                                li.acc-loyal__indication-item
+                                                li.acc-loyal__indication-item
+                                                li.acc-loyal__indication-item
+                                            //- .acc-loyal__indication-icon_active
+                                            .acc-loyal__indication-icon
+                                        .acc-loyal__progress-wr-text
+                                            .acc-loyal__progress-text.acc-loyal__progress-raised Ваш уровень повышен
+                                            .acc-loyal__progress-text.acc-loyal__progress-remain.acc-loyal__progress-text_active Осталось #[span.acc-loyal__progress_orange 49 250] до следующего уровня
                                 li.acc-loyal__statuses-item 
                                     .acc-loyal__statuses-balls 150 000
                                     .acc-loyal__statuses-text 
                                         p 
                                             span При достижении общей суммы покупок свыше #[span.acc-loyal__statuses_orange 150 000]р
                                             span Вы получаете несгораемую скидку #[span.acc-loyal__statuses_orange 10% + 3% кэшбек]
-
+                                    .acc-loyal__wr-progress
+                                        .acc-loyal__indication
+                                            ul.acc-loyal__indication-list 
+                                                li.acc-loyal__indication-item
+                                                li.acc-loyal__indication-item
+                                                li.acc-loyal__indication-item
+                                                li.acc-loyal__indication-item
+                                                li.acc-loyal__indication-item
+                                            .acc-loyal__indication-icon
+                                        .acc-loyal__progress-wr-text
+                                            .acc-loyal__progress-text.acc-loyal__progress-raised Ваш уровень повышен
+                                            .acc-loyal__progress-text.acc-loyal__progress-remain.acc-loyal__progress-text_active Осталось #[span.acc-loyal__progress_orange 150 000] до следующего уровня
 
                             h2.acc-loyal__title.acc-loyal__cashback-title_b Далее Вам присваиваются статусы, которые увеличивают Ваш кэшбек
 
@@ -237,6 +269,19 @@ block content
                                         p 
                                             span При достижении общей суммы покупок свыше #[span.acc-loyal__statuses_orange 250 000]р
                                             span Вы получаете несгораемую скидку #[span.acc-loyal__statuses_orange 10% + 4% кэшбек]
+                                    .acc-loyal__wr-progress
+                                        .acc-loyal__indication
+                                            ul.acc-loyal__indication-list 
+                                                li.acc-loyal__indication-item
+                                                li.acc-loyal__indication-item
+                                                li.acc-loyal__indication-item
+                                                li.acc-loyal__indication-item
+                                                li.acc-loyal__indication-item
+                                            .acc-loyal__indication-icon
+                                        .acc-loyal__progress-wr-text
+                                            .acc-loyal__progress-text.acc-loyal__progress-raised Ваш уровень повышен
+                                            .acc-loyal__progress-text.acc-loyal__progress-remain.acc-loyal__progress-text_active Осталось #[span.acc-loyal__progress_orange 250 000] до следующего уровня
+
                                 li.acc-loyal__statuses-item 
                                     .acc-loyal__statuses-balls 300 000
                                     .acc-loyal__statuses-title Эксперт
@@ -244,6 +289,19 @@ block content
                                         p 
                                             span При достижении общей суммы покупок свыше #[span.acc-loyal__statuses_orange 300 000]р
                                             span Вы получаете несгораемую скидку #[span.acc-loyal__statuses_orange 10% + 5% кэшбек]
+                                    .acc-loyal__wr-progress
+                                        .acc-loyal__indication
+                                            ul.acc-loyal__indication-list 
+                                                li.acc-loyal__indication-item
+                                                li.acc-loyal__indication-item
+                                                li.acc-loyal__indication-item
+                                                li.acc-loyal__indication-item
+                                                li.acc-loyal__indication-item
+                                            .acc-loyal__indication-icon
+                                        .acc-loyal__progress-wr-text
+                                            .acc-loyal__progress-text.acc-loyal__progress-raised Ваш уровень повышен
+                                            .acc-loyal__progress-text.acc-loyal__progress-remain.acc-loyal__progress-text_active Осталось #[span.acc-loyal__progress_orange 300 000] до следующего уровня
+
                                 li.acc-loyal__statuses-item 
                                     .acc-loyal__statuses-balls 350 000
                                     .acc-loyal__statuses-title Амбассадор
@@ -251,6 +309,19 @@ block content
                                         p 
                                             span При достижении общей суммы покупок свыше #[span.acc-loyal__statuses_orange 350 000]р
                                             span Вы получаете несгораемую скидку #[span.acc-loyal__statuses_orange 10% + 6% кэшбек]
+                                    .acc-loyal__wr-progress
+                                        .acc-loyal__indication
+                                            ul.acc-loyal__indication-list 
+                                                li.acc-loyal__indication-item
+                                                li.acc-loyal__indication-item
+                                                li.acc-loyal__indication-item
+                                                li.acc-loyal__indication-item
+                                                li.acc-loyal__indication-item
+                                            .acc-loyal__indication-icon
+                                        .acc-loyal__progress-wr-text
+                                            .acc-loyal__progress-text.acc-loyal__progress-raised Ваш уровень повышен
+                                            .acc-loyal__progress-text.acc-loyal__progress-remain.acc-loyal__progress-text_active Осталось #[span.acc-loyal__progress_orange 350 000] до следующего уровня
+
                                 li.acc-loyal__statuses-item 
                                     .acc-loyal__statuses-balls 400 000
                                     .acc-loyal__statuses-title VIP персона
@@ -258,3 +329,15 @@ block content
                                         p 
                                             span При достижении общей суммы покупок свыше #[span.acc-loyal__statuses_orange 400 000]р
                                             span Вы получаете несгораемую скидку #[span.acc-loyal__statuses_orange 10% + 7% кэшбек]
+                                    .acc-loyal__wr-progress
+                                        .acc-loyal__indication
+                                            ul.acc-loyal__indication-list 
+                                                li.acc-loyal__indication-item
+                                                li.acc-loyal__indication-item
+                                                li.acc-loyal__indication-item
+                                                li.acc-loyal__indication-item
+                                                li.acc-loyal__indication-item
+                                            .acc-loyal__indication-icon
+                                        .acc-loyal__progress-wr-text
+                                            .acc-loyal__progress-text.acc-loyal__progress-raised Ваш уровень повышен
+                                            .acc-loyal__progress-text.acc-loyal__progress-remain.acc-loyal__progress-text_active Осталось #[span.acc-loyal__progress_orange 400 000] до следующего уровня
