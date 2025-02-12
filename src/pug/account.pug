@@ -1,8 +1,8 @@
 extends layout/layout
 
 include mixines/bread-crumbs/bread-crumbs
-include mixines/catalog-card
 include mixines/label-input
+include mixines/sku-card-list
 
 
 block content
@@ -13,7 +13,7 @@ block content
         .account__wrapper-content
 
             ul.account__ctrl-list 
-                li.account__ctrl-item(data-ctrl="user") Профиль
+                li.account__ctrl-item.account__ctrl-item_active(data-ctrl="user") Профиль
                 li.account__ctrl-item(data-ctrl="address") Адреса доставки
                 li.account__ctrl-item(data-ctrl="history") История заказов
                 li.account__ctrl-item(data-ctrl="favorites") Избранное
@@ -123,6 +123,138 @@ block content
 
 
                 li.account__screen-item(data-screen="favorites")
+                    .acc-fav 
+                        .account__wr-title
+                            h2.account__title Избранное
+                        .acc-fav__wr-button 
+                            .acc-fav__button Сбросить все
+                        ul.acc-fav__list 
+                            li.acc-fav__item
 
 
-                li.account__screen-item(data-screen="loyalty")
+                li.account__screen-item.account__screen-item_active(data-screen="loyalty")
+                    ul.acc-loyal__list
+                        li.acc-loyal__item.acc-loyal__item-level 
+                            .acc-loyal__wr-level-title
+                                h2.acc-loyal__level-title Ваш уровень-Дегустатор
+                            .acc-loyal__about-level
+                                //- ??
+                                .acc-loyal__level-side
+                                    .acc-loyal__level-item
+                                        .acc-loyal__level-circle-small.acc-loyal__level-back
+                                            .acc-loyal__level-disc-icon
+                                            .acc-loyal__level-num.acc-loyal__level-disc-num 7%
+                                        .acc-loyal__level-text
+                                            p В этом масяце Ваша скидка
+                                
+                                //- ??
+                                .acc-loyal__level-center 
+
+                                    .acc-loyal__level-center-cont
+                                        .acc-loyal__level-line.acc-loyal__level-line-side.acc-loyal__level-line-l
+
+                                        .acc-loyal__level-circle-big.acc-loyal__level-back
+                                            .acc-loyal__level-summ-icon
+                                            .acc-loyal__level-summ-num 250000
+                                            .acc-loyal__level-text
+                                                p Вы достигли суммы
+
+                                        .acc-loyal__level-line.acc-loyal__level-line-side.acc-loyal__level-line-r
+
+                                    .acc-loyal__level-line.acc-loyal__level-line-b
+
+                                    .acc-loyal__level-item.acc-loyal__wr-level-bonus
+                                        .acc-loyal__level-circle-small.acc-loyal__level-back
+                                            .acc-loyal__level-bonus-icon
+                                            .acc-loyal__level-num.acc-loyal__level-bonus-num 750
+                                        .acc-loyal__level-text
+                                            p Ваши бонусны
+
+                                //- ??
+                                .acc-loyal__level-side     
+                                    .acc-loyal__level-item
+                                        .acc-loyal__level-circle-small.acc-loyal__level-back
+                                            .acc-loyal__level-cash-icon
+                                            .acc-loyal__level-num.acc-loyal__level-cash-num 10%
+                                        .acc-loyal__level-text
+                                            p Ваш кэшбэк в этом месяце
+                                        
+
+
+
+                        li.acc-loyal__item.acc-loyal__item-discount
+                            .acc-loyal__wr-discount-icon
+                                .acc-loyal__reg-discount-icon
+                                .acc-loyal__reg-discount-num 5%
+                            h2.acc-loyal__title.acc-loyal__reg-discount-title При регистрации в личном кабинете,#[br] Вы получаете скидку #[span.acc-loyal__title_percent 5%] на первую покупку.
+                        
+                        li.acc-loyal__item.acc-loyal__item-bank
+                            .acc-loyal__icon.acc-loyal__bank-icon
+                            h2.acc-loyal__title.acc-loyal__bank-title Оплачивайте#[br] Ваши покупки бонусами
+                            .acc-loyal__text.acc-loyal__bank-text
+                                p #[span.acc-loyal__text_violet 1] бонусный балл = #[span.acc-loyal__text_violet 1] рублю
+                                p Оплатить бонусами Вы сможете до #[span.acc-loyal__text_violet 40%] от Вашей покупки.
+                                p Бонусы действуют в течении #[span.acc-loyal__text_violet 6 месяцев] с момента начисления.
+                        
+                        li.acc-loyal__item.acc-loyal__item-birth
+                            .acc-loyal__icon.acc-loyal__birth-icon
+                            h2.acc-loyal__title.acc-loyal__birth-title Скидка 15%#[br] в день рождения
+                            .acc-loyal__text.acc-loyal__birth-text 
+                                p Скидка действует в течении 5 дней до и после дня рождения. В акции участвует весь ассортимент, на который не распростороняются другие скидки.
+                        
+                        li.acc-loyal__item.acc-loyal__item-cashback
+                            .acc-loyal__cashback-icon
+                            h2.acc-loyal__title.acc-loyal__cashback-title Несгораемая скидка плюс кэшбек
+                            ul.acc-loyal__statuses-list.acc-loyal__statuses-list_top
+                                li.acc-loyal__statuses-item 
+                                    .acc-loyal__statuses-balls 50 000
+                                    .acc-loyal__statuses-text 
+                                        p 
+                                            span При достижении общей суммы покупок свыше #[span.acc-loyal__statuses_orange 50 000]р
+                                            span Вы получаете несгораемую скидку #[span.acc-loyal__statuses_orange 5% + 3% кэшбек]
+                                li.acc-loyal__statuses-item 
+                                    .acc-loyal__statuses-balls 100 000
+                                    .acc-loyal__statuses-text 
+                                        p 
+                                            span При достижении общей суммы покупок свыше #[span.acc-loyal__statuses_orange 100 000]р
+                                            span Вы получаете несгораемую скидку #[span.acc-loyal__statuses_orange 7% + 3% кэшбек]
+                                li.acc-loyal__statuses-item 
+                                    .acc-loyal__statuses-balls 150 000
+                                    .acc-loyal__statuses-text 
+                                        p 
+                                            span При достижении общей суммы покупок свыше #[span.acc-loyal__statuses_orange 150 000]р
+                                            span Вы получаете несгораемую скидку #[span.acc-loyal__statuses_orange 10% + 3% кэшбек]
+
+
+                            h2.acc-loyal__title.acc-loyal__cashback-title_b Далее Вам присваиваются статусы, которые увеличивают Ваш кэшбек
+
+
+                            ul.acc-loyal__statuses-list.acc-loyal__statuses-list_bottom
+                                li.acc-loyal__statuses-item 
+                                    .acc-loyal__statuses-balls 250 000
+                                    .acc-loyal__statuses-title Дегустатор
+                                    .acc-loyal__statuses-text 
+                                        p 
+                                            span При достижении общей суммы покупок свыше #[span.acc-loyal__statuses_orange 250 000]р
+                                            span Вы получаете несгораемую скидку #[span.acc-loyal__statuses_orange 10% + 4% кэшбек]
+                                li.acc-loyal__statuses-item 
+                                    .acc-loyal__statuses-balls 300 000
+                                    .acc-loyal__statuses-title Эксперт
+                                    .acc-loyal__statuses-text 
+                                        p 
+                                            span При достижении общей суммы покупок свыше #[span.acc-loyal__statuses_orange 300 000]р
+                                            span Вы получаете несгораемую скидку #[span.acc-loyal__statuses_orange 10% + 5% кэшбек]
+                                li.acc-loyal__statuses-item 
+                                    .acc-loyal__statuses-balls 350 000
+                                    .acc-loyal__statuses-title Амбассадор
+                                    .acc-loyal__statuses-text 
+                                        p 
+                                            span При достижении общей суммы покупок свыше #[span.acc-loyal__statuses_orange 350 000]р
+                                            span Вы получаете несгораемую скидку #[span.acc-loyal__statuses_orange 10% + 6% кэшбек]
+                                li.acc-loyal__statuses-item 
+                                    .acc-loyal__statuses-balls 400 000
+                                    .acc-loyal__statuses-title VIP персона
+                                    .acc-loyal__statuses-text 
+                                        p 
+                                            span При достижении общей суммы покупок свыше #[span.acc-loyal__statuses_orange 400 000]р
+                                            span Вы получаете несгораемую скидку #[span.acc-loyal__statuses_orange 10% + 7% кэшбек]

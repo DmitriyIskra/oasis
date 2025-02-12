@@ -1,19 +1,408 @@
 .account__wrapper {
     display: flex;
-    padding-top: 4.11vw;
-    padding-bottom: 11.67vw;
+    padding-top: 6.61vw;
+    padding-bottom: 5.16vw;
     justify-content: center;
 }
 
 .account__wrapper-content {
-    width: 67.683%;
+    width: 83.683%;
     padding: 2.34vw 0 5.73vw;
+}
+
+/* -------- START CONTROL --------- */
+.account__ctrl-list {
+    display: flex;
+    height: 3.13vw;
+    
+    background-color: #E5E4E9;
+}
+
+.account__ctrl-item {
+    display: grid;
+    place-items: center;
+    width: 20%;
+    
+    font-family: 'Play';
+    font-size: 1.04vw;
+    
+    color: #2F5F6D;
+
+    cursor: pointer;
+}
+
+.account__ctrl-item_active {
+    background-color: #2F5F6D;
+    color: #fff;
+
+    pointer-events: none;
+}
+
+.account__ctrl-item:hover {
+    background: linear-gradient(270deg, #2F5F6D 0%, #6AE9FB 100%);
+    color: #fff;
+}
+/* -------- END CONTROL --------- */
+
+
+
+.account__screen-item {
+    display: none;
+    justify-content: center;
+}
+
+.account__screen-item_active {
+    display: flex;
+}
+
+
+/* -------- START LOYALTY --------- */
+.acc-loyal__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, min-content);
+    column-gap: 2.81vw;
+    row-gap: 2.08vw;
+    width: 81.51%;
+    padding-top: 3.65vw;
+}
+
+.acc-loyal__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border: 0.26vw solid #69E8FA;
+    background: #FFF;
+    box-shadow: 
+    0px 0px 0.89vw 0.16vw rgba(0, 0, 0, 0.25), 
+    0px 0px 1.56vw 0.42vw rgba(0, 0, 0, 0.25);
+}
+
+.acc-loyal__level-title {
+    font-family: 'Play';
+    font-size: 1.88vw;
+    font-weight: 700;
+
+    color: #671993;
+}
+
+.acc-loyal__item-level {
+    height: 34.38vw;
+    grid-column: 1 / 3;
+    grid-row: 1;
+}
+
+.acc-loyal__about-level {
+    display: flex;
+    margin-top: 1.98vw;
+    width: 100%;
+    justify-content: center;
+}
+
+.acc-loyal__level-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.acc-loyal__level-circle-small {
+    width: 8.13vw;
+    height: 8.13vw;
+}
+
+.acc-loyal__level-back {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+
+    background: no-repeat url('../../svg/disc-with-dot-green.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.acc-loyal__level-disc-icon {
+    height: 2.34vw;
+    width: 2.34vw;
+
+    background: no-repeat url('../../svg/star-level-percent.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.acc-loyal__level-num {
+    font-family: 'Play';
+    font-size: 3.33vw;
+    font-weight: 700;
+    line-height: 0.8;
+}
+
+.acc-loyal__level-disc-num {
+    color: #671993;
+}
+
+.acc-loyal__level-text {
+    margin-top: 0.31vw;
+
+    font-family: 'Play';
+    font-size: 0.83vw;
+    text-align: center;
+}
+
+.acc-loyal__level-center-cont {
+    display: flex;
+}
+
+.acc-loyal__level-line-side {
+    width: 4.17vw;
+    height: 0.45vw;
+    align-self: end;
+}
+
+.acc-loyal__level-line {
+    background: no-repeat url('../../svg/line-for-level.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.acc-loyal__level-circle-big {
+    height: 10.83vw;
+    width: 10.83vw;
+}
+
+.acc-loyal__level-line-r {
+    transform: rotate(180deg);
+    outline: 1px solid red;
+}
+
+.acc-loyal__level-line-b {
+    height: 4.32vw;
+    width: 0.45vw;
+    margin: 0 auto;
+
+    background: no-repeat url('../../svg/line-for-level-Y.svg');
+    background-size: contain;
+    background-position: center;
 }
 
 
 
+.acc-loyal__level-cash-icon {
+    height: 2.34vw;
+    width: 2.34vw;
+
+    background: no-repeat url('../../svg/cash-level.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.acc-loyal__level-cash-num {
+    color: #07E069;
+}
 
 
+.acc-loyal__item-discount {
+    height: 10.73vw;
+    justify-content: center;
+    align-items: center;
+    gap: 1.98vw;
+    grid-column: 1 / 3;
+    grid-row: 2;
+}
+
+.acc-loyal__item-cashback {
+    grid-column: 1 / 3;
+    grid-row: 4;
+}
+
+.acc-loyal__wr-discount-icon {
+    display: flex;
+    gap: 0.94vw;
+    align-items: center;
+}
+
+.acc-loyal__reg-discount-icon {
+    height: 4.95vw;
+    width: 4.95vw;
+
+    background: no-repeat url('../../svg/loyalty-percent.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.acc-loyal__reg-discount-num {
+    font-family: 'Play';
+    font-size: 5vw;
+    font-weight: 700;
+
+    color: #FF7A00;
+}
+
+.acc-loyal__title {
+    font-family: 'Play';
+    font-size: 1.25vw;
+    font-weight: 400;
+
+    color: #671993;
+}
+
+.acc-loyal__title_percent {
+    font-size: 1.67vw;
+}
+
+.acc-loyal__item-cashback,
+.acc-loyal__item-bank,
+.acc-loyal__item-birth {
+    flex-direction: column;
+    align-items: center;
+}
+
+.acc-loyal__item-bank,
+.acc-loyal__item-birth {
+    height: 100%;
+    padding-top: 2.60vw;
+    padding-bottom: 5.31vw;
+}
+
+.acc-loyal__icon {
+    height: 8.07vw;
+    width: 6.35vw;
+}
+
+.acc-loyal__bank-icon {
+    background: no-repeat url('../../svg/loyalty-bank-icon.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.acc-loyal__bank-title,
+.acc-loyal__birth-title {
+    margin-top: 1.35vw;
+
+    text-align: center;
+}
+
+.acc-loyal__text {
+    margin-top: 1.09vw;
+
+    font-family: 'Play';
+    font-size: 1.25vw;
+    font-weight: 400;
+    text-align: center;
+}
+.acc-loyal__text_violet {
+    font-weight: 700;
+
+    color: #671993;
+}
+
+.acc-loyal__bank-text {
+    width: 75.5%;
+}
+
+.acc-loyal__birth-icon {
+    background: no-repeat url('../../svg/loyalty-birth-icon.svg');
+    background-size: contain;
+    background-position: center bottom;
+}
+
+.acc-loyal__birth-text {
+    width: 91%;
+}
+
+.acc-loyal__item-cashback {
+    padding-top: 1.88vw;
+    padding-bottom: 7.08vw;
+}
+
+.acc-loyal__cashback-icon {
+    width: 7.08vw;
+    height: 6.46vw;
+
+    background: no-repeat url('../../svg/loyalty-cashback-icon.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.acc-loyal__cashback-title {
+    margin-top: 0.94vw;
+}
+
+.acc-loyal__statuses-list {
+    display: flex;
+    gap: 3.18vw;
+}
+
+.acc-loyal__statuses-list_top {
+    margin-top: 2.66vw;
+}
+
+.acc-loyal__statuses-item {
+    width: 11.98vw;
+}
+
+.acc-loyal__statuses-balls {
+    display: grid;
+    width: 4.17vw;
+    height: 4.17vw;
+    margin: 0 auto;
+    place-items: center;
+    
+    font-family: 'Play';
+    font-size: 0.73vw;
+    font-weight: 700;
+    text-align: center;
+    
+    border-radius: 50%;
+    background-color: #4D96AB;
+    filter: drop-shadow(0.31vw 0.42vw 0.78vw rgba(0, 0, 0, 0.25));
+    color: #FFF;
+    text-shadow: 0px 0.21vw 0.21vw rgba(0, 0, 0, 0.25);
+}
+
+.acc-loyal__statuses-text {
+    margin-top: 1.25vw;
+
+    font-family: 'Play';
+    font-size: 0.73vw;
+    font-weight: 400;
+    text-align: center;
+}
+
+.acc-loyal__statuses-text > p {
+    display: flex;
+    flex-direction: column;
+}
+
+.acc-loyal__statuses_orange {
+    font-weight: 700;
+    
+    color: #FF7A00;
+}
+
+.acc-loyal__cashback-title_b {
+    margin-top: 1.88vw;
+}
+
+.acc-loyal__statuses-list_bottom {
+    margin-top: 1.35vw;
+}
+
+.acc-loyal__statuses-title {
+    margin-top: 0.68vw;
+
+    font-family: 'Play';
+    font-size: 0.73vw;
+    font-weight: 400;
+    text-align: center;
+}
+
+.acc-loyal__statuses-list_bottom .acc-loyal__statuses-text {
+    margin-top: 0.99vw;
+}
+/* -------- END LOYALTY -------------*/
 
 
 @media(max-width: 961px) {
@@ -29,3 +418,213 @@
         padding: 8vw 0 18.93vw;
     }
 }
+
+
+
+/* -------- START LOYALTY -------------*/
+@media(max-width: 961px) {
+    .acc-loyal__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        column-gap: 0;
+        row-gap: 8vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__item {
+        width: 95.74%;
+        flex-direction: column;
+        gap: 0;
+
+        border: 1.33vw solid #69E8FA;
+        box-shadow: 0px 0px 4.27vw 0.80vw rgba(0, 0, 0, 0.25), 0px 0px 8vw 2.13vw rgba(0, 0, 0, 0.25);
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__item-discount {
+        height: auto;
+        padding-top: 10.67vw;
+        padding-bottom: 12.27vw;
+        justify-content: initial;
+        align-items: center;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__wr-discount-icon {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        align-items: center;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__reg-discount-icon {
+        height: 13.33vw;
+        width: 13.33vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__reg-discount-num {
+        font-size: 10.67vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__title {
+        margin-top: 5.33vw;
+
+        font-size: 3.73vw;
+        text-align: center;
+    }
+    .acc-loyal__title_percent {
+        font-size: 3.73vw;
+        font-weight: 700;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__item-bank {
+        padding-top: 5.87vw;
+        padding-bottom: 5.8vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__bank-icon {
+        width: 20vw;
+        height: 25.33vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__title:not(.acc-loyal__reg-discount-title) {
+        font-size: 6.40vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__text {
+        margin-top: 7.20vw;
+
+        font-size: 4.27vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__bank-text {
+        width: 87.5%;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__item-birth {
+        padding-top: 7.20vw;
+        padding-bottom: 19.20vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__birth-icon {
+        width: 24vw;
+        height: 24vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__birth-text {
+        width: 89%;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__item-cashback {
+        padding-top: 7.47vw;
+        padding-bottom: 23.47vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__cashback-icon {
+        width: 24.80vw;
+        height: 22.40vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__cashback-title {
+        width: 80%;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__statuses-list {
+        flex-direction: column;
+        gap: 6.13vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__statuses-list_top {
+        margin-top: 10.40vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__statuses-item {
+        width: 62.7vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__statuses-balls {
+        width: 26.67vw;
+        height: 26.67vw;
+
+        font-size: 5.33vw;
+
+        text-shadow: 0px 1.07vw 1.07vw rgba(0, 0, 0, 0.25);
+        filter: drop-shadow(1.60vw 2.13vw 3.73vw rgba(0, 0, 0, 0.25));
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__statuses-text {
+        margin-top: 4vw;
+
+        font-size: 3.73vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__cashback-title_b {
+        width: 93%;
+        margin-top: 10.67vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__statuses-list_bottom {
+        margin-top: 6.13vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__statuses-title {
+        margin-top: 3.67vw;
+
+        font-size: 4.27vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__statuses-list_bottom .acc-loyal__statuses-text {
+        margin-top: 9.07vw;
+    }
+}
+/* -------- END LOYALTY -------------*/
