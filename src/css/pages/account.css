@@ -656,7 +656,7 @@
 
 @media(max-width: 961px) {
     .acc-loyal__level-item-side {
-        margin-bottom: 4vw;
+        margin-bottom: 4.2vw;
     }   
 }
 
@@ -764,7 +764,7 @@
     .acc-loyal__level-line-b {
         height: 13.5vw;
         width: 1.4vw;
-        margin: 0.52vw auto 1.5vw;
+        margin: 0.72vw auto 1.5vw;
 
         background-size: auto 100%;
         background-position: top center;
