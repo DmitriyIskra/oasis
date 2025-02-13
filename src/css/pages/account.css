@@ -638,7 +638,7 @@
 
 @media(max-width: 961px) {
     .acc-loyal__level-title {
-        font-size: 20px;
+        font-size: 5.33vw;
     }
 }
 
@@ -655,7 +655,15 @@
 }
 
 @media(max-width: 961px) {
+    .acc-loyal__level-item-side {
+        margin-bottom: 4vw;
+    }   
+}
+
+@media(max-width: 961px) {
     .acc-loyal__level-item-l {
+        margin-right: -10vw;
+
         transform: initial;
     }   
 }
@@ -677,13 +685,16 @@
 
 @media(max-width: 961px) {
     .acc-loyal__level-num {
+        margin-top: 0.2vw;
+
         font-size: 5.33vw;
     }
 }
 
 @media(max-width: 961px) {
     .acc-loyal__level-text {
-        width: 69%;
+        width: 93%;
+        margin-top: 2vw;
 
         font-size: 3.47vw;
     }
@@ -691,14 +702,19 @@
 
 @media(max-width: 961px) {
     .acc-loyal__level-line-side {
-        width: 13.6vw;
+        width: 16.6vw;
         height: 1.07vw;
-        margin-bottom: 0;
+        margin-bottom: -5vw;
+
+        background-size: 100% auto;
+        background-position: center;
     }
 }
 
 @media(max-width: 961px) {
     .acc-loyal__level-line-l {
+        margin-right: -9vw;
+
         transform: rotate(-39deg);
     }
 }
@@ -738,7 +754,36 @@
 
 @media(max-width: 961px) {
     .acc-loyal__level-line-r {
-        
+        margin-left: -9vw;
+
+        transform: rotate(219deg);
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__level-line-b {
+        height: 13.5vw;
+        width: 1.4vw;
+        margin: 0.52vw auto 1.5vw;
+
+        background-size: auto 100%;
+        background-position: top center;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__level-bonus-icon {
+        height: 6.40vw;
+        width: 5.07vw;
+        margin-top: 3vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-loyal__level-cash-icon {
+        height: 5.07vw;
+        width: 5.07vw;
+        margin-top: 4vw;
     }
 }
 
@@ -751,7 +796,17 @@
 }
 
 @media(max-width: 961px) {
+    
+}
+
+@media(max-width: 961px) {
+    
+}
+
+@media(max-width: 961px) {
     .acc-loyal__level-item-r {
+        margin-left: -10vw;
+
         transform: initial;
     }
 }
