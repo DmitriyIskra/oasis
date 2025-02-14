@@ -57,6 +57,378 @@
 }
 
 
+/* -------- START USER --------- */
+.acc-user {
+    width: 81.1%;
+}
+
+.acc-user__icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.42vw;
+}
+
+.acc-user__discount {
+    display: flex;
+    width: 2.86vw;
+    height: 2.50vw;
+    justify-content: center;
+    align-items: end;
+
+    background: no-repeat url('../../svg/crown.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.acc-user__discount-text {
+    font-family: 'Play';
+    font-size: 1.04vw;
+
+    color: #FFF;
+}
+
+.acc-user__avatar {
+    height: 8.13vw;
+    width: 8.13vw;
+
+    background: no-repeat url('../../svg/account-avatar.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.acc-user__form {
+    margin-top: 2.03vw;
+}
+
+.acc-user__inputs-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, min-content);
+    column-gap: 1.98vw;
+    row-gap: 0.83vw;
+}
+
+.acc-user__item-birth-date {
+    margin-top: 2.29vw;
+}
+
+.acc-user__item-checkmarks {
+    display: flex;
+    margin-top: 3.75vw;
+    gap: 0.57vw;
+    flex-direction: column;
+}
+
+.acc-user__checkmarks-input {
+    display: none;
+}
+
+.acc-user__checkmarks-text {
+    display: flex;
+    gap: 0.47vw;
+    align-items: end;
+
+    font-family: 'Play';
+    font-size: 0.73vw;
+
+    cursor: pointer;
+}
+
+.acc-user__checkmarks-input_invalid + .acc-user__checkmarks-text {
+    color: #F00;
+}
+
+.acc-user__checkmarks-input:checked + .acc-user__checkmarks-text {
+    color: #000;
+}
+
+.acc-user__checkmarks-text::before {
+    content: "";
+
+    display: inline-block;
+    width: 1.30vw;
+    height: 1.30vw;
+
+    border-radius: 0.21vw;
+    background-color: #EFEFEF;
+    border: 1px solid #4D96AB;
+}
+
+.acc-user__checkmarks-input_invalid + .acc-user__checkmarks-text::before {
+    border: 1px solid #F00;
+}
+
+.acc-user__checkmarks-input:checked + .acc-user__checkmarks-text::before {
+    border: 1px solid #4D96AB;
+    background-image: url('../../svg/checkmark-green.svg');
+    background-repeat: no-repeat;
+    background-size: 60% auto;
+    background-position: center;
+}
+
+
+
+.acc-user__buttons {
+    margin-top: 5.63vw;
+}
+
+.account__form-buttons {
+    display: flex;
+    gap: 0.63vw;
+}
+
+.account__form-button {
+    width: 12.29vw;
+    height: 2.60vw;
+
+    font-family: 'Play';
+    font-size: 0.83vw;
+    
+    color: #FFF;
+    border: 0;
+    outline: 0;
+    border-radius: 0.42vw;
+    background: #4D96AB;
+    box-shadow: -0.21vw 0.21vw 0.47vw 0px #9AA4A7;
+
+    cursor: pointer;
+}
+/* -------- END USER --------- */
+
+
+/* -------- START MY ADDRESSES --------- */
+.acc-addr {
+    width: 81.1%;
+}
+
+.acc-addr__wr-select {
+    height: 1.56vw;
+    margin-top: 3.02vw;
+}
+
+.acc-addr__inputs {
+    margin-top: 1.93vw;
+}
+
+.acc-addr__form-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, min-content);
+    column-gap: 1.98vw;
+    row-gap: 0.83vw;
+}
+
+.acc-addr__item-zipcode {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.acc-addr__item-area {
+    grid-row: 2;
+    grid-column: 1;
+}
+
+.acc-addr__item-district {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+.acc-addr__item-city {
+    grid-row: 2;
+    grid-column: 3;
+}
+
+.acc-addr__item-street {
+    grid-row: 3;
+    grid-column: 1;
+}
+
+.acc-addr__item-house {
+    grid-row: 3;
+    grid-column: 2;
+}
+
+.acc-addr__item-appartment {
+    grid-row: 3;
+    grid-column: 3;
+}
+
+.acc-addr__buttons {
+    margin-top: 5.78vw;
+}
+/* -------- END MY ADDRESSES --------- */
+
+
+
+/* -------- START HISTORY --------- */
+.acc-hist {
+    width: 79.5%;
+}
+
+.acc-hist__orders-list  {
+    display: flex;
+    padding-top: 3.18vw;
+    flex-direction: column;
+    gap: 1.04vw;
+}
+
+.acc-hist__orders-item {
+    display: flex;
+    align-items: end;
+    gap: 1.85%;
+}
+
+.acc-hist__order {
+    display: flex;
+    padding: 0.94vw 1.98vw 0.94vw 1.04vw;
+    flex-basis: 75.83%;
+    flex-shrink: 0;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    background: #EFEFEF;
+}
+
+.acc-hist__date {
+    font-family: 'Play';
+    font-size: 0.73vw;
+
+    color: #671993;
+}
+
+.acc-hist__number {
+    margin-top: 0.73vw;
+
+    font-family: 'Play';
+    font-size: 0.83vw;
+
+    color: #505050;
+}
+
+.acc-hist__state-list {
+    margin-top: 0.21vw;
+}
+
+.acc-hist__state-item {
+    display: none;
+
+    font-family: 'Play';
+    font-size: 0.68vw;
+    color: #505050;
+}
+
+.acc-hist__state-active {
+    display: block;
+}
+
+.acc-hist__goods-list {
+    display: flex;
+    width: 61.5%;
+    gap: 1.04vw;
+    flex-direction: column;
+}
+
+.acc-hist__goods-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.acc-hist__sku-info {
+    display: flex;
+    align-items: center;
+    gap: 1.98vw;
+}
+
+.acc-hist__wr-img {
+    width: 3.54vw;
+    height: 5.21vw;
+}
+
+.acc-hist__img {
+    height: 100%;
+    width: 100%;
+
+    filter: drop-shadow(-0.16vw 0.16vw 0.36vw rgb(0, 0, 0, 0.25));
+    
+    object-fit: contain;
+    object-position: center;
+}
+
+.acc-hist__drand,
+.acc-hist__name {
+    font-family: 'Play';
+    font-size: 1.04vw;
+}
+
+.acc-hist__type {
+    margin-top: 0.21vw;
+
+    font-family: "SofiaSans";
+    font-size: 0.78vw;
+
+    color: #8E8E8E;
+}
+
+.acc-hist__amount {
+    display: flex;
+    width: 2.45vw;
+    height: 1.46vw;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid #FFF;
+    background: #FFF;
+}
+
+.acc-hist__price {
+    font-family: "SofiaSans";
+    font-size: 1.04vw;
+    font-weight: 700;
+
+    color: #671993;
+}
+
+.acc-hist__total {
+    font-family: "SofiaSans";
+    font-size: 1.04vw;
+    font-weight: 700;
+
+    color: #671993;
+}
+
+.acc-hist__wr-total {
+    display: flex;
+    width: 100%;
+    padding-top: 1.30vw;
+    justify-content: end;
+}
+
+.acc-hist__wr-button {
+    flex-grow: 1;
+}
+
+.acc-hist__button {
+    width: 100%;
+    height: 2.60vw;
+
+    font-family: 'Play';
+    font-size: 0.83vw;
+
+    color: #FFF;
+    border: 0;
+    outline: 0;
+    border-radius: 0.42vw;
+    background: #4D96AB;
+    box-shadow: -0.21vw 0.21vw 0.47vw 0px #9AA4A7;
+
+    cursor: pointer;
+}
+/* -------- END HISTORY --------- */
+
+
+
 /* -------- START FAVORITES --------- */
 .acc-fav {
     width: 82.2%;
@@ -75,8 +447,8 @@
 }
 
 .acc-fav__button {
-    width: 236px;
-    height: 40px;
+    width: 12.29vw;
+    height: 2.08vw;
 
     font-family: 'Play';
     font-size: 0.83vw;
@@ -87,6 +459,8 @@
     border-radius: 0.42vw;
     background: #4D96AB;
     box-shadow: -0.21vw 0.21vw 0.47vw 0px #9AA4A7;
+
+    cursor: pointer;
 }
 
 .acc-fav__wr-list {

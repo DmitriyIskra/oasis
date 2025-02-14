@@ -455,6 +455,14 @@
     user-select: none;
 }
 
+.basket__cons-data-checkbox_invalid + .basket__cons-data-text {
+    color: #F00;
+}
+
+.basket__cons-data-checkbox:checked + .basket__cons-data-text {
+    color: #000;
+}
+
 .basket__cons-data-text::before {
     content: "";
 
@@ -462,13 +470,19 @@
     width: 1.30vw;
     height: 1.30vw;
 
-    border-radius: 0.42vw;
+    border-radius: 0.21vw;
     background-color: #EFEFEF;
     border: 1px solid #4D96AB;
 }
 
+.basket__cons-data-checkbox_invalid + .basket__cons-data-text::before {
+    border: 1px solid #F00;
+}
+
 .basket__cons-data-checkbox:checked + .basket__cons-data-text::before {
-    background: no-repeat url('../../svg/checkmark-green.svg');
+    border: 1px solid #4D96AB;
+    background-image: url('../../svg/checkmark-green.svg');
+    background-repeat: no-repeat;
     background-size: 60% auto;
     background-position: center;
 }
