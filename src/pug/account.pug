@@ -3,6 +3,7 @@ extends layout/layout
 include mixines/bread-crumbs/bread-crumbs
 include mixines/label-input
 include mixines/sku-card-list
+include mixines/arrow-to-up
 
 
 block content
@@ -80,8 +81,8 @@ block content
                                     button.acc-addr__button.acc-addr__button-delete(type="button") Удалить
 
 
-                li.account__screen-item(data-screen="history")
-                    .acc-hist 
+                li.account__screen-item.account__screen-item_active(data-screen="history")
+                    .acc-hist.account__item-content
                         .account__wr-title
                             h2.account__title Мои заказы
                         ul.acc-hist__orders-list 
@@ -121,18 +122,23 @@ block content
                                     button.acc-hist__button(type="button") Повторить
 
 
-                li.account__screen-item(data-screen="favorites")
-                    .acc-fav 
+                li.account__screen-item(data-screen="favorites") 
+                    .acc-fav.account__item-content
                         .account__wr-title
                             h2.account__title Избранное
                         .acc-fav__wr-button 
-                            .acc-fav__button Сбросить все
-                        ul.acc-fav__list 
-                            li.acc-fav__item
+                            button.acc-fav__button(type="button") Сбросить все
+                        .acc-fav__wr-list  
+                            +sku_cards_list(16)
+                            .acc-fav__arrow-up.acc-fav__arrow-up_active
+                                +arrow-to-up
+
+                        .acc-fav__wr-pagination.acc-fav__wr-pagination_active
+                            include components/pagination
 
 
-                li.account__screen-item.account__screen-item_active(data-screen="loyalty")
-                    ul.acc-loyal__list
+                li.account__screen-item(data-screen="loyalty")
+                    ul.acc-loyal__list.account__item-content
                         li.acc-loyal__item.acc-loyal__item-level 
                             .acc-loyal__wr-level-title
                                 h2.acc-loyal__level-title Ваш уровень-Дегустатор

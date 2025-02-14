@@ -479,7 +479,6 @@
 
 .basket__goods {
     display: flex;
-    padding-top: 15.20vw;
     width: 33.726%;
     flex-direction: column;
     gap: 1.41vw;
@@ -1107,6 +1106,7 @@
 @media(max-width: 961px) {
     .basket__goods {
         width: 100%;
+        padding-top: 15.20vw;
         gap: 5.33vw;
     }
 }

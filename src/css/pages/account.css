@@ -52,6 +52,75 @@
     display: flex;
 }
 
+.account__item-content {
+    padding-top: 4.90vw;
+}
+
+
+/* -------- START FAVORITES --------- */
+.acc-fav {
+    width: 82.2%;
+}
+
+.account__title {
+    font-family: 'Play';
+    font-size: 1.04vw;
+    font-weight: 700;
+
+    color: #671993;
+}
+
+.acc-fav__wr-button {
+    padding-top: 4.90vw;
+}
+
+.acc-fav__button {
+    width: 236px;
+    height: 40px;
+
+    font-family: 'Play';
+    font-size: 0.83vw;
+    
+    color: #FFF;
+    border: 0;
+    outline: 0;
+    border-radius: 0.42vw;
+    background: #4D96AB;
+    box-shadow: -0.21vw 0.21vw 0.47vw 0px #9AA4A7;
+}
+
+.acc-fav__wr-list {
+    position: relative;
+
+    padding-top: 2.86vw;
+}
+
+.acc-fav__arrow-up {
+    position: absolute;
+    right: -6.1%;
+    bottom: 0;
+
+    display: none;
+    width: 2.92vw;
+    height: 2.92vw;
+}
+
+.acc-fav__arrow-up_active {
+    display: block;
+}
+
+.acc-fav__wr-pagination {
+    display: none;
+    justify-content: center;
+    margin-top: 3vw;
+}
+
+.acc-fav__wr-pagination_active {
+    display: flex;
+}
+/* -------- END FAVORITES --------- */
+
+
 
 /* -------- START LOYALTY --------- */
 .acc-loyal__list {
@@ -61,7 +130,6 @@
     column-gap: 2.81vw;
     row-gap: 2.08vw;
     width: 81.51%;
-    padding-top: 3.65vw;
 }
 
 .acc-loyal__item {
@@ -605,6 +673,12 @@
 
 /* -------- START LOYALTY -------------*/
 @media(max-width: 961px) {
+    .account__screen-item[data-screen="loyalty"] > .account__item-content {
+        background-color: #E5E4E9;
+    } 
+}
+
+@media(max-width: 961px) {
     .acc-loyal__list {
         display: flex;
         width: auto;
@@ -613,8 +687,6 @@
         align-items: center;
         column-gap: 0;
         row-gap: 8vw;
-
-        background-color: #E5E4E9;
     }
 }
 
