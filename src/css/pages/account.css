@@ -113,8 +113,46 @@
     row-gap: 0.83vw;
 }
 
-.acc-user__item-birth-date {
+.acc-user__birth-date {
     margin-top: 2.29vw;
+}
+
+.acc-user__birth-label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.09vw;
+}
+
+.acc-user__birth-text {
+    font-family: 'Play';
+    font-size: 0.73vw;
+
+    color: #333;
+
+    cursor: pointer;
+}
+
+.acc-user__birth-input {
+    height: 100%;
+    width: 27.88%;
+    padding: 0.71vw 0.51vw;
+
+    font-family: 'Play';
+    font-size: 0.8vw;
+    font-weight: 400;
+
+    color: #333;
+    outline: 0;
+    border-radius: 0.21vw;
+    border: 1px solid #CFCFCF;
+    background-color: #EFEFEF;
+    background-image: url('../../svg/calendar-fon.svg');
+    background-repeat: no-repeat;
+    background-size: auto 90%;
+    background-position: right 2% center;
+    caret-color: #333;
+
+    cursor: pointer;
 }
 
 .acc-user__item-checkmarks {
@@ -1395,11 +1433,62 @@
         border-radius: 2.13vw;
     }
 }
+/* -------- END HISTORY -------------*/
+
+
+/* -------- START FAVORITES -------------*/
+@media(max-width: 961px) {
+    .acc-fav {
+        width: 100%;
+    }
+}
 
 @media(max-width: 961px) {
-    
+    .acc-fav__wr-button {
+        display: flex;
+        justify-content: center;
+        padding-top: 7.20vw;
+    }
 }
-/* -------- END HISTORY -------------*/
+
+@media(max-width: 961px) {
+    .acc-fav__button {
+        width: 60.73%;
+        height: 10vw;
+    
+        font-size: 4.27vw;
+    
+        box-shadow: -1.07vw 1.07vw 2.40vw 0px #9AA4A7;
+        border-radius: 2.13vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-fav__wr-list {
+        display: flex;
+        flex-direction: column;
+        padding-top: 11.47vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-fav__arrow-up {
+        position: static;
+    
+        width: 12vw;
+        height: 12vw;
+        margin-top: 6vw;
+        margin-right: 3vw;
+        align-self: end;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-fav__wr-pagination {
+        margin-top: 8vw;
+    }
+}
+/* -------- END FAVORITES -------------*/
 
 
 

@@ -55,8 +55,13 @@ import moovingWidgets from "./mooving-widgets/mooving-widgets";
 // Корзина
 import RedrawBasket from "./basket/RedrawBasket";
 import ControllBasket from "./basket/ControllBasket";
+// Страница контакты
+import ControllAccountPage from "./account-page/ControllAccountPage";
+import RedrawAccountPage from "./account-page/RedrawAccountPage";
 // Маска для телефона
 import IMask from "imask";
+// Календарь
+import AirDatepicker from "air-datepicker";
 
 // ---------------------------------------------------------------------
 
@@ -268,7 +273,16 @@ if (basket) {
     controllBasket.init();
 }
 
+// Страница аккаунт
+const accPage = document.querySelector('.account__wrapper-content');
+if(accPage) {
+    const ctrl = document.querySelector('.account__ctrl-list');
+    const screens = document.querySelector('.account__screen-list');
 
+    const redraw = new RedrawAccountPage(ctrl, screens);
+    const controll = new ControllAccountPage(redraw, AirDatepicker);
+    controll.init();
+};
 
 
 // MOBILE

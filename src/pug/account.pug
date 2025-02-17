@@ -24,7 +24,7 @@ block content
                 li.account__ctrl-item(data-ctrl="loyalty") Программа лояльности
 
             ul.account__screen-list
-                li.account__screen-item(data-screen="user")
+                li.account__screen-item.account__screen-item_active(data-screen="user")
                     .acc-user.account__item-content 
                         .acc-user__icon
                             .acc-user__discount #[span.acc-user__discount-text 10%]
@@ -41,8 +41,10 @@ block content
                                     +label-input('Телефон', 'acc-user__phone', 'phone', true)
                                 li.acc-user__inputs-item.acc-user__item-email
                                     +label-input('Почта', 'acc-user__email', 'email', true)
-                            .acc-user__item-birth-date 
-                                | Дата рождения
+                            .acc-user__birth-date 
+                                label.acc-user__birth-label
+                                    span.acc-user__birth-text Дата рождения
+                                    input.acc-user__birth-input(type="text" readonly value name="birth-date")
                             .acc-user__item-checkmarks 
                                 label.acc-user__checkmarks-label.acc-user__personal-data
                                     //- .acc-user__checkmarks-input_invalid
@@ -168,7 +170,7 @@ block content
                                     button.acc-hist__button(type="button") Повторить
 
 
-                li.account__screen-item.account__screen-item_active(data-screen="favorites") 
+                li.account__screen-item(data-screen="favorites") 
                     .acc-fav.account__item-content
                         .account__wr-title
                             h2.account__title Избранное
