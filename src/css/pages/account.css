@@ -1,3 +1,7 @@
+.account__wr-logout {
+    display: none;
+}
+
 .account__wrapper {
     display: flex;
     padding-top: 6.61vw;
@@ -378,6 +382,10 @@
     justify-content: center;
     align-items: center;
 
+    font-family: 'Play';
+    font-size: 1.04vw;
+    
+    color: #726B68;
     border: 1px solid #FFF;
     background: #FFF;
 }
@@ -990,8 +998,31 @@
 
 
 @media(max-width: 961px) {
-    .account__wrapper {
+    .account__wr-bread-crumbs {
+        display: none;
+    }   
+}
+
+@media(max-width: 961px) {
+    .account__wr-logout {
+        display: block;
         padding-top: 8vw;
+        padding-left: 5.33vw;
+    }   
+}
+
+@media(max-width: 961px) {
+    .account__logout {
+        font-family: 'Play';
+        font-size: 4.27vw;
+
+        color: #2F5F6D;
+    }
+}
+
+@media(max-width: 961px) {
+    .account__wrapper {
+        padding-top: 0;
         padding-bottom: 16.27vw;
     }
 }
@@ -999,7 +1030,7 @@
 @media(max-width: 961px) {
     .account__wrapper-content {
         width: 100%;
-        padding: 8vw 0 18.93vw;
+        padding: 6.5vw 0 18.93vw;
     }
 }
 
@@ -1042,6 +1073,333 @@
 }
 
 /* -------- END CONTROL -------------*/
+
+
+
+/* -------- START USER -------------*/
+@media(max-width: 961px) {
+    .account__item-content {
+        padding-top: 9.07vw;
+    }  
+}
+
+@media(max-width: 961px) {
+    .acc-user {
+        width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-user__icon {
+        gap: 2.13vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-user__discount {
+        width: 12.27vw;
+        height: 10.67vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-user__discount-text {
+        font-size: 4.5vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-user__avatar {
+        width: 32.80vw;
+        height: 32.80vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-user__form {
+        margin-top: 4.80vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-user__inputs-list {
+        display: flex;
+        flex-direction: column;
+        gap: 3.47vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-user__item-birth-date {
+        margin-top: 9.07vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-user__item-checkmarks {
+        margin-top: 9.07vw;
+        gap: 6.93vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-user__checkmarks-text {
+        gap: 2.40vw;
+
+        font-size: 3.73vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-user__checkmarks-text::before {
+        width: 6.67vw;
+        height: 6.67vw;
+        border-radius: 1.07vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-user__buttons {
+        margin-top: 11.47vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .account__form-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 4vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .account__form-button {
+        width: 72.6%;
+        height: 10.67vw;
+
+        font-size: 4.27vw;
+
+        border-radius: 2.13vw;
+
+        box-shadow: -1.07vw 1.07vw 2.40vw 0px #9AA4A7;
+    }
+}
+/* -------- END USER -------------*/
+
+
+/* -------- START ADDRESS -------------*/
+@media(max-width: 961px) {
+    .acc-addr {
+        width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+@media(max-width: 961px) {
+    .account__item-content {
+        padding-top: 9.07vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .account__title {
+        font-size: 4.27vw;
+        text-align: center;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-addr__wr-select {
+        height: 8vw;
+        margin-top: 13.07vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-addr__inputs {
+        margin-top: 7.73vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-addr__form-list {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-addr__buttons {
+        margin-top: 17.33vw;
+    }
+}
+/* -------- END ADDRESS -------------*/
+
+
+/* -------- START HISTORY -------------*/
+
+@media(max-width: 961px) {
+    .acc-hist {
+        width: 100%;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-hist__orders-list {
+        padding-top: 16.80vw;
+        gap: 21.33vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-hist__orders-item {
+        flex-direction: column;
+        gap: 6.13vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-hist__order {
+        flex-basis: initial;
+        flex-shrink: initial;
+        width: 100%;
+        padding: 4.80vw 5.33vw 4.53vw;
+        flex-direction: column;
+        justify-content: initial;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-hist__date {
+        font-size: 3.73vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-hist__number {
+        margin-top: 3.73vw;
+
+        font-size: 4.27vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-hist__state-list {
+        margin-top: 1.07vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-hist__state-item {
+        font-size: 3.47vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-hist__goods-list {
+        width: 100%;
+        margin-top: 6.13vw;
+        gap: 18.40vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-hist__goods-item {
+        display: grid;
+        grid-template-columns: 80% 1fr;
+        grid-template-rows: 1fr 1fr;
+        align-items: center;
+        justify-content: initial;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-hist__sku-info {
+        grid-column: 1;
+        grid-row: 1 / 3;
+        gap: 9.87vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-hist__wr-img {
+        width: 17.87vw;
+        height: 26.13vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-hist__drand, .acc-hist__name {
+        font-size: 5.33vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-hist__type {
+        margin-top: 1.07vw;
+
+        font-size: 4vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-hist__amount {
+        width: 12.53vw;
+        height: 7.47vw;
+        justify-self: end;
+
+        font-size: 5.33vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-hist__price {
+        justify-self: end;
+
+        font-size: 5.33vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-hist__wr-total {
+        padding-top: 0;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-hist__total {
+        font-size: 4.80vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-hist__wr-button {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        flex-grow: initial;
+    }
+}
+
+@media(max-width: 961px) {
+    .acc-hist__button {
+        width: 60.73%;
+        height: 10.67vw;
+
+        font-size: 4.27vw;
+
+        box-shadow: -1.07vw 1.07vw 2.40vw 0px #9AA4A7;
+        border-radius: 2.13vw;
+    }
+}
+
+@media(max-width: 961px) {
+    
+}
+/* -------- END HISTORY -------------*/
 
 
 

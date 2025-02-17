@@ -7,8 +7,11 @@ include mixines/arrow-to-up
 
 
 block content
-    
-    +bread-crumbs(bread_crumbs)
+    .account__wr-bread-crumbs
+        +bread-crumbs(bread_crumbs)
+
+    .account__wr-logout 
+        a.account__logout(href="" title="logout") Выйти
 
     .account.account__wrapper
         .account__wrapper-content
@@ -21,7 +24,7 @@ block content
                 li.account__ctrl-item(data-ctrl="loyalty") Программа лояльности
 
             ul.account__screen-list
-                li.account__screen-item.account__screen-item_active(data-screen="user")
+                li.account__screen-item(data-screen="user")
                     .acc-user.account__item-content 
                         .acc-user__icon
                             .acc-user__discount #[span.acc-user__discount-text 10%]
@@ -165,7 +168,7 @@ block content
                                     button.acc-hist__button(type="button") Повторить
 
 
-                li.account__screen-item(data-screen="favorites") 
+                li.account__screen-item.account__screen-item_active(data-screen="favorites") 
                     .acc-fav.account__item-content
                         .account__wr-title
                             h2.account__title Избранное
