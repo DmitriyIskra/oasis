@@ -96,7 +96,7 @@ export default class RedrawBasket {
         if(type === 'payment' && this.currentOpenFormP) {
             this.currentOpenFormP.style.height = '0px';
             this.currentOpenFormP.addEventListener('transitionend', (e) => {
-                e.target.style.display = '';
+                e.target.style.display = ''; 
             }, {once: true})
         }
     }

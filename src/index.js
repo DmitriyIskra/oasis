@@ -46,4 +46,6 @@ import './css/mixines/mixin-sku-card-list.css';
 import './css/mixines/arrow-to-up.css';
 import './css/modules/footer.css';
 import './css/effects.css';
+import './css/modals/modals.css';
+
 import 'air-datepicker/air-datepicker.css';

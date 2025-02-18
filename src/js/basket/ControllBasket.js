@@ -69,6 +69,11 @@ export default class ControllBasket {
         if(e.target.closest('.place-order__button_mob') || e.target.closest('.basket__arrow-back')) {
             this.redraw.switchScreens();
         }
+
+        // Отправка данных на сервер
+        if(e.target.closest('.place-order__button')) {
+            
+        }
     }
     
     input(e) {

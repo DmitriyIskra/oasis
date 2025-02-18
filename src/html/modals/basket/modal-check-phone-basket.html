@@ -1,0 +1,37 @@
+<dialog class="dialog" data-type="check-phone" open>
+
+    <div class="dialog__wr-close">
+        <div class="dialog__close"></div>
+    </div>
+
+    <div class="dialog__content">
+
+        <div class="dialog__wr-check-phone-title">
+            <h2 class="dialog__title">Проверка номера телефона</h2>
+        </div>
+
+        <div class="dialog__wr-check-phone-text">
+            <p class="dialog__text">Для проверки Вам будет отправлен код.</p>
+        </div>
+
+        <div class="dialog__wr-check-phone-input"> 
+            <label class="label-input__label">
+                <span class="label-input__label-text">Введите код</span>
+                <span class="label-input__label-error"></span>
+                <input class="label-input__input dialog__phone-input"type="text" name="phone" required>
+            </label>
+        </div>
+
+        <div class="dialog__timer">
+            <span class="dialog__timer-num">0</span>
+            <span class="dialog__timer-text">сек</span>
+        </div>
+
+        <div class="dialog__wr-buttons dialog__wr-check-phone-buttons">
+            <button class="dialog__button dialog__button-send">Отправить код</button>
+            <button class="dialog__button dialog__button dialog__button-repeat">Отправить код повторно</button>
+        </div>
+
+    </div>
+
+</dialog>

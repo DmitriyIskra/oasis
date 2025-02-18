@@ -386,6 +386,9 @@ module.exports = {
             { from: 'src/svg/brand-logo-wmf.svg', to: 'svg/' },
 
             { from: 'src/files/price.pdf', to: 'files/' },
+
+            { from: 'src/html/basket/modal-check-phone.html', to: 'modals/basket/' },
+            { from: 'src/html/account/modal-check-phone.html', to: 'modals/account/' },
             
           ],
         }),

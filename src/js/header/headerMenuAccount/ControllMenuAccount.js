@@ -19,11 +19,6 @@ export default class ControllMenuAccount {
         if(e.target.closest('.header__account-icon')) {
             this.redraw.open();
         }
-
-        // if(e.target.closest('.header__wr-favourite-icon') ||
-        // e.target.closest('.header__wr-basket-icon')) {
-        //     this.redraw.close();
-        // }
     }
 
     mouseOut(e) {
