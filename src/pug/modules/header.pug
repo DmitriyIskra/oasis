@@ -33,16 +33,27 @@ block header
                             input.header__search-line(type="text" placeholder="Найти на Oasis...")
                     .header__phone-icon.icon-scale-filter
                         a(href="#0" title="") 
-                    a.header__favourite-icon.icon-scale-filter(href="./favorites.html" title="Избранное")
-                    .header__account-icon.icon-scale-filter
-                        a(href="./account.html" title="вход в аккаунт") 
-                    //- .header__basket-icon_active
-                    .header__basket-icon.icon-scale-filter.header__basket-icon_active
-                        <svg viewBox="0 0 26 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M24.25 1.00067H0.5V3.50067H3.375L7.475 14.7507C7.73289 15.4801 8.21009 16.1119 8.84117 16.5595C9.47225 17.0071 10.2263 17.2485 11 17.2507H21.75V14.7507H11C10.7431 14.7506 10.4925 14.6713 10.2822 14.5237C10.072 14.3761 9.91234 14.1673 9.825 13.9257L9.25 12.2507H20.85C21.3925 12.2499 21.9201 12.0726 22.353 11.7457C22.786 11.4187 23.1008 10.9598 23.25 10.4382L25.5 2.58817C25.5508 2.42402 25.5672 2.25116 25.5482 2.08039C25.5293 1.90961 25.4753 1.74458 25.3896 1.59561C25.304 1.44663 25.1886 1.31692 25.0506 1.21455C24.9125 1.11219 24.7549 1.03938 24.5875 1.00067C24.4758 0.981548 24.3617 0.981548 24.25 1.00067ZM20.8125 9.75067H8.3125L6.0375 3.50067H22.5875L20.8125 9.75067Z" fill="#FAF8F1"/>
-                        </svg>
-                        a(href="./basket.html" title="корзина") 
-                        .header__basket-counter 2
+                    .header__wr-group-icon.header__wr-favourite-icon
+                        a.header__favourite-icon.icon-scale-filter(href="./favorites.html" title="Избранное")
+                    .header__wr-group-icon.header__wr-account-icon
+                        .header__account-icon.icon-scale-filter
+                            a(href="./account.html" title="вход в аккаунт") 
+                        
+                        //- .header__acc-menu_active
+                        .header__acc-menu
+                            .header__acc-menu-item.header__acc-menu-item_active
+                                a.header__acc-menu-link(href="#0" title="Войти") Войти
+                            .header__acc-menu-item
+                                a.header__acc-menu-link(href="./account.html" title="Личный кабинет") Личный кабинет
+                                a.header__acc-menu-link(href="#0" title="Выйти") Выйти
+                    .header__wr-group-icon.header__wr-basket-icon
+                        //- .header__basket-icon_active
+                        .header__basket-icon.icon-scale-filter.header__basket-icon_active
+                            <svg viewBox="0 0 26 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M24.25 1.00067H0.5V3.50067H3.375L7.475 14.7507C7.73289 15.4801 8.21009 16.1119 8.84117 16.5595C9.47225 17.0071 10.2263 17.2485 11 17.2507H21.75V14.7507H11C10.7431 14.7506 10.4925 14.6713 10.2822 14.5237C10.072 14.3761 9.91234 14.1673 9.825 13.9257L9.25 12.2507H20.85C21.3925 12.2499 21.9201 12.0726 22.353 11.7457C22.786 11.4187 23.1008 10.9598 23.25 10.4382L25.5 2.58817C25.5508 2.42402 25.5672 2.25116 25.5482 2.08039C25.5293 1.90961 25.4753 1.74458 25.3896 1.59561C25.304 1.44663 25.1886 1.31692 25.0506 1.21455C24.9125 1.11219 24.7549 1.03938 24.5875 1.00067C24.4758 0.981548 24.3617 0.981548 24.25 1.00067ZM20.8125 9.75067H8.3125L6.0375 3.50067H22.5875L20.8125 9.75067Z" fill="#FAF8F1"/>
+                            </svg>
+                            a(href="./basket.html" title="корзина") 
+                            .header__basket-counter 2
 
 
         

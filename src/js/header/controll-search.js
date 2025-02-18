@@ -5,5 +5,5 @@ export default function controllSearch() {
 
     button.addEventListener('change', (e) => {
         logo.classList.toggle('header__logo_hide');
-    })
+    }) 
 }

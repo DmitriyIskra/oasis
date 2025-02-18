@@ -5,6 +5,9 @@ import RedrawBurger from "./burger-menu/RedrawBurger";
 import controllSearch from "./header/controll-search"; 
 // Закрытие каталога меню, при открытии мобильной навигации
 import navMobileButton from "./header/nav-mobileButton";
+// Меню аккаунт в хедер
+import ControllMenuAccount from "./header/headerMenuAccount/ControllMenuAccount";
+import RedrawMenuAccount from "./header/headerMenuAccount/RedrawMenuAccount";
 // Свайпер для слайдеров
 import Swiper from "swiper";
 import { 
@@ -63,6 +66,7 @@ import IMask from "imask";
 // Календарь
 import AirDatepicker from "air-datepicker";
 
+
 // ---------------------------------------------------------------------
 
 // Чекбокс для управления мобильным меню
@@ -82,6 +86,15 @@ if(navMobile) {
     const controll = new ControllBurger(redraw);
     controll.init();
 } 
+
+// Меню аккаунт в хедер
+const iconsHeaderList = document.querySelector('.header__icons-group');
+if(iconsHeaderList) {
+    const redraw = new RedrawMenuAccount(iconsHeaderList);
+    const controll = new ControllMenuAccount(redraw);
+    controll.init();
+};
+
 
 // Главный слайдер, на главной странице
 const sliderMain = document.querySelector('.main__slider');
@@ -271,7 +284,7 @@ if (basket) {
     const redrawBasket = new RedrawBasket(basket, IMask);
     const controllBasket = new ControllBasket(redrawBasket);
     controllBasket.init();
-}
+} 
 
 // Страница аккаунт
 const accPage = document.querySelector('.account__wrapper-content');
