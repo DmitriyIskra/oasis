@@ -387,8 +387,8 @@ module.exports = {
 
             { from: 'src/files/price.pdf', to: 'files/' },
 
-            { from: 'src/html/basket/modal-check-phone.html', to: 'modals/basket/' },
-            { from: 'src/html/account/modal-check-phone.html', to: 'modals/account/' },
+            // { from: 'src/html/basket/modal-check-phone.html', to: 'modals/basket/' },
+            // { from: 'src/html/account/modal-check-phone.html', to: 'modals/account/' },
             
           ],
         }),

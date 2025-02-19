@@ -16,6 +16,26 @@ html(lang='ru')
     title Главная
 
   body
+
+    //- ======================== START модалки ================================
+    dialog.dialog(open)
+      .dialog__wr-close 
+          //- .dialog__back
+          .dialog__close
+      .dialog__content
+        //- wr-title icon form отступы общие для всех модалок auth
+        //- form input свойства общие для всех модалок auth 
+        //- !!! ДОБАВИТЬ form в проверку кода на телефон, margin вынести в 2 класса с модификаторами _check и _auth
+        .dialog__wr-auth-title
+          h2.dialog__title Личный кабинет
+        .dialog__icon.dialog__auth-icon
+        form.dialog__form(name="form-login")
+        .dialog__wr-buttons.dialog__wr-auth-buttons
+          button.dialog__button.dialog__button-login Вход
+          button.dialog__button.dialog__button-reg Регистрация
+          
+    //- ======================== END модалки ================================
+
     .wrapper
       input#nav-mobile(type="checkbox")
       include ../modules/header
