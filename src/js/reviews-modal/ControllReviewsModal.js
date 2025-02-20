@@ -10,7 +10,7 @@ export default class ControllReviewsModal {
     }
 
     init() {
-        this.registerEvents();
+        this.registerEvents(); 
     }
 
     registerEvents() {
@@ -79,7 +79,9 @@ export default class ControllReviewsModal {
 
     change(e) {
         // изменение состояния инпута отвечающего за открытие модалки отзывов
-        if(e.target.closest('.switcher-reviews-modal')) {
+        // и скрытие scrollbar
+        if(e.target.closest('#switcher-reviews-modal')) {
+            console.log('dis')
             if(e.target.checked && innerWidth > 961) this.redraw.disableScroll();
             if(!e.target.checked && innerWidth > 961) this.redraw.enableScroll();
         }

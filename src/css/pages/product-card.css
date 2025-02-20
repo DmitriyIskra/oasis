@@ -83,7 +83,7 @@
 .product__favorites {
     position: absolute;
     top: 2.7vw;
-    right: 1.6%;
+    right: 7.3%;
 
     width: 1.56vw;
     height: 1.56vw;
@@ -185,7 +185,6 @@
     flex-direction: column;
     flex-grow: 1;
     padding-top: 2.29vw;
-    padding-left: 2.53%;
     padding-right: 4.89%;
 }
 
@@ -227,6 +226,7 @@
 
 .product__characteristics {
     margin-top: 2.71vw;
+    padding-left: 0.8vw;
 }
 
 .characteristics__item {
@@ -432,15 +432,15 @@
     content: "";
 
     position: absolute;
-    left: 50%;
     top: 50%;
+    right: -4px;
+    left: -4px;
 
-    width: 133%;
     height: 1px;
 
     background: #505050;
 
-    transform: translate(-50%, -50%) rotate(-15deg);
+    transform: translate(-0%, -50%) rotate(-12deg); /*15*/
 }
 
 .characteristics__price_m {
@@ -757,8 +757,7 @@
     font-family: 'Play';
     font-size: 1.04vw;
     font-weight: 700;
-    text-decoration: underline;
-
+    
     color: #615F5D;
 
     cursor: pointer;
@@ -766,6 +765,7 @@
 
 .package__tabs-item_active {
     color: #000;
+    text-decoration: underline;
 }
 
 .product-desc__wr-title {
@@ -1031,9 +1031,6 @@
         transform var(--timing) linear;
 }
 
-
-
-
 @media(min-width: 962px) {
     .interesting-sl__slide.swiper-slide-active {
         z-index: 2;
@@ -1045,6 +1042,7 @@
         transform: scale(1.099);
     }
 }
+
 
 .interesting-sl__wr-img {
     width: 42%;
@@ -1188,6 +1186,25 @@
 
 
 
+
+
+/* 1600 */
+
+@media(max-width: 1600px) {
+    .product__wr-price-old::after {
+        right: -4px;
+        left: -4px;
+    }
+}
+
+/* 1366 */
+
+@media(max-width: 1366px) {
+    .product__wr-price-old::after {
+        right: -3px;
+        left: -3px;
+    }
+}
 
 
 
@@ -1365,6 +1382,11 @@
 
     .product__wr-price-old {
         font-size: 5.33vw;
+    }
+
+    .product__wr-price-old::after {
+        right: -6px;
+        left: -6px;
     }
 }
 
@@ -1743,9 +1765,6 @@
 
 
 
-
-
-
 @media(max-width: 961px) {
     .interesting {
         width: 100%;
@@ -1863,6 +1882,15 @@
 @media(max-width: 961px) {
     .interesting-sl__arrows {
         display: none;
+    }
+}
+
+/* 428 */
+
+@media(max-width: 428px) {
+    .product__wr-price-old::after {
+        right: -4px;
+        left: -4px;
     }
 }
 

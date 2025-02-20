@@ -1,6 +1,7 @@
 export default class RedrawReviewsModal {
     constructor(el) {
         this.el = el;
+
         this.form = this.el.querySelector('.reviews__form');
         // inputs которые стоят в DOM перед div со звездами
         this.inputStars = [...this.el.querySelectorAll('.reviews__input-star')];
@@ -23,7 +24,7 @@ export default class RedrawReviewsModal {
             error : document.querySelector('.reviews__response-cover-error'),
         }
 
-        this.activeResultModal = null;
+        this.activeResultModal = null; 
     }
 
     choiceStars(star) {
@@ -72,10 +73,13 @@ export default class RedrawReviewsModal {
         this.inputControll.checked = false;
     }
 
+    /**
+     * @description скрывает scrollbar на странице
+     * */ 
     disableScroll() {
         const widthClient = document.body.offsetWidth;
         const widthWindow = innerWidth;
-
+        
         document.body.style.overflow = 'hidden';
         document.body.style.paddingRight = `${widthWindow - widthClient}px`;
     }
