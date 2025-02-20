@@ -35,3 +35,8 @@ https://dmitriyiskra.github.io/oasis/product-card-milk-system-cleaner.html
 https://dmitriyiskra.github.io/oasis/product-card-t-short.html
 https://dmitriyiskra.github.io/oasis/product-card-broths.html
 https://dmitriyiskra.github.io/oasis/product-card-coffee-machines.html
+
+
+## ЗАМЕТКИ
+При открытии модалки на document вешаем событие, которое сработает один раз. Если при открытой модалки при всплытии 
+не получаем объект модалки, закрываем все к чертям.

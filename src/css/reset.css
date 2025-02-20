@@ -15,3 +15,23 @@ a {
 
     color: #000;
 }
+
+/* * {
+    scrollbar-width: thin;
+    scrollbar-color: #2F5F6D #e1ded9;
+} */
+
+/* для Chrome/Edge/Safari */
+/* body::-webkit-scrollbar {
+    height: 12px;
+    width: 12px;
+}
+body::-webkit-scrollbar-track {
+background: #e1ded9;
+}
+body::-webkit-scrollbar-thumb {
+background-color: #2F5F6D;
+border-radius: 10px;
+border: 1px solid #e1ded9;
+} */
+

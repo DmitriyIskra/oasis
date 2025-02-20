@@ -1,28 +1,50 @@
 
 /* START ОБЩИЕ ДЛЯ МОДАЛОК СВОЙСТВА */
 .dialog {
-    position: fixed;
-    top: 50%;
-    left: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
     z-index: 50000;
 
-    min-height: 28.44vw;
-    width: 31.15vw;
-    padding: 1.30vw 1.30vw 2.66vw;
+    min-height: 100%;
+    min-width: 100%;
+    width: 100%;
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;
 
     border: 0;
     outline: 0;
-    border-radius: 0.52vw;
-    background: #FFF;
-    box-shadow: 0px 0px 0.83vw 0.16vw rgba(0, 0, 0, 0.25),
-     0px 0px 1.56vw 0.42vw rgba(0, 0, 0, 0.25);
+    background-color: transparent;
+    scrollbar-width: thin;
 
-    transform: translate(-50%, -50%);
+    overflow: overlay;
+}
+
+.dialog[open] {
+    display: grid;
+    place-items: center;
 }
 
 .dialog::backdrop {
     background: rgba(0, 0, 0, 0.45);
     backdrop-filter: blur(2px);
+}
+
+.dialog__window {
+    /* position: absolute;
+    top: 50%;
+    left: 50%; */
+
+    min-height: 28.44vw;
+    width: 31.15vw;
+    padding: 1.30vw 1.30vw 2.66vw;
+
+    border-radius: 0.52vw;
+    background: #FFF;
+    box-shadow: 0px 0px 0.83vw 0.16vw rgba(0, 0, 0, 0.25),
+     0px 0px 1.56vw 0.42vw rgba(0, 0, 0, 0.25);
+
+    /* transform: translate(-50%, -50%); */
 }
 
 .dialog__wr-close {
@@ -86,11 +108,18 @@
 }
 
 .dialog__form {
-
+    display: flex;
+    margin-top: 1.20vw;
+    flex-direction: column;
+    gap: 0.83vw;
 }
 
 .dialog__form__check {
     margin-top: 3.28vw;
+}
+
+.dialog__form__auth {
+    margin-top: 1.20vw;
 }
 
 .dialog__timer {
@@ -145,7 +174,9 @@
     background: rgba(77, 150, 171, 0.60);
 }
 
-
+.dialog__wr-buttons_mb {
+    margin-bottom: 2vw;
+}
 
 /* проверка номера телефона */
 .dialog__wr-check-phone-title {
@@ -163,6 +194,7 @@
 .dialog__wr-check-phone-buttons {
     margin-top: 0.42vw;
 }
+
 /* проверка номера телефона */
 
 /* успех */
@@ -245,10 +277,48 @@
     background-position: center;
 }
 
+/* auth */
 .dialog__wr-auth-buttons {
-    margin-top: 4.69vw;
-    margin-bottom: 3vw;
+    margin-top: 4.43vw;
 }
+
+/* login */
+.dialog__forget {
+    margin-top: 0.73vw;
+
+    font-family: 'Play';
+    font-size: 0.73vw;
+    text-align: center;
+    
+    color: #2F5F6D;
+}
+
+.dialog__wr-login-buttons {
+    margin-top: 3.65vw;
+}
+
+/* reg1 */
+.dialog__rass-rules {
+    display: flex;
+    margin-top: 0.52vw;
+    flex-direction: column;
+    align-items: center;
+    
+    font-family: 'Play';
+    font-size: 0.63vw;
+
+    color: #C1C1C1;
+}
+
+.dialog__wr-reg1-buttons {
+    margin-top: 1.61vw;
+}
+
+/* reg2 */
+.dialog__wr-reg2-buttons {
+    margin-top: 4.32vw;
+}
+
 /* --== END AUTH ==-- */
 
 
@@ -256,15 +326,16 @@
 
 
 /* --== START ОБЩИЕ ДЛЯ МОДАЛОК СВОЙСТВА ==-- */
+
 @media(max-width: 961px) {
-    .dialog {
+    .dialog__window {
         min-height: 86.40vw;
         width: 84.68%;
         padding: 6.67vw 6.67vw 8.27vw;
         
         border-radius: 2.67vw;
         box-shadow: 0px 0px 4.27vw 0.80vw rgba(0, 0, 0, 0.25), 0px 0px 8vw 2.13vw rgba(0, 0, 0, 0.25);
-    }
+    }   
 }
 
 @media(max-width: 961px) {
@@ -309,11 +380,16 @@
 
 @media(max-width: 961px) {
     .dialog__form {
-        
+        margin-top: 4.53vw;
+        gap: 2.67vw;
     }
 
     .dialog__form__check {
         margin-top: 14.40vw;
+    }
+
+    .dialog__form__auth {
+        margin-top: 4.80vw;
     }
 }
 
@@ -345,6 +421,12 @@
         font-size: 4.27vw;
 
         border-radius: 2.13vw;
+    }
+}
+
+@media(max-width: 961px) {
+    .dialog__wr-buttons_mb {
+        margin-bottom: 0;
     }
 }
 /* --== END ОБЩИЕ ДЛЯ МОДАЛОК СВОЙСТВА ==-- */
@@ -459,23 +541,54 @@
     }
 }
 
+/* auth */
 @media(max-width: 961px) {
     .dialog__wr-auth-buttons {
-        margin-top: 7.47vw;
-        margin-bottom: 12vw;
+        margin-top: 6.67vw;
+    }
+}
+
+/* login */
+@media(max-width: 961px) {
+    .dialog__forget {
+        margin-top: 4vw;
+    
+        font-family: 'Play';
+        font-size: 3.73vw;
+        text-align: center;
+        
+        color: #2F5F6D;
     }
 }
 
 @media(max-width: 961px) {
-    
+    .dialog__wr-login-buttons {
+        margin-top: 7.73vw;
+    }
+}
+
+/* reg1 */
+@media(max-width: 961px) {
+    .dialog__rass-rules {
+        margin-top: 1.60vw;
+
+        font-size: 2.93vw;
+        text-align: center;
+        white-space: nowrap;
+    }
 }
 
 @media(max-width: 961px) {
-    
+    .dialog__wr-reg1-buttons {
+        margin-top: 5.07vw;
+    }
 }
 
+/* reg2 */
 @media(max-width: 961px) {
-    
+    .dialog__wr-reg2-buttons {
+        margin-top: 22.13vw;
+    }
 }
 
 @media(max-width: 961px) {

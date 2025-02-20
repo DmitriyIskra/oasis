@@ -18,21 +18,46 @@ html(lang='ru')
   body
 
     //- ======================== START модалки ================================
-    dialog.dialog(open)
-      .dialog__wr-close 
-          //- .dialog__back
-          .dialog__close
-      .dialog__content
-        //- wr-title icon form отступы общие для всех модалок auth
-        //- form input свойства общие для всех модалок auth 
-        //- !!! ДОБАВИТЬ form в проверку кода на телефон, margin вынести в 2 класса с модификаторами _check и _auth
-        .dialog__wr-auth-title
-          h2.dialog__title Личный кабинет
-        .dialog__icon.dialog__auth-icon
-        form.dialog__form(name="form-login")
-        .dialog__wr-buttons.dialog__wr-auth-buttons
-          button.dialog__button.dialog__button-login Вход
-          button.dialog__button.dialog__button-reg Регистрация
+    dialog.dialog
+      .dialog__window
+        .dialog__wr-close 
+            .dialog__back
+            .dialog__close
+        .dialog__content
+          <div class="dialog__wr-auth-title">
+            <h2 class="dialog__title">Регистрация в личном кабинете</h2>
+          </div>
+          <div class="dialog__icon dialog__auth-icon"></div>
+          <form class="dialog__form dialog__form__reg2" name="form-reg2">
+            <label class="label-input__label">
+                <span class="label-input__label-text">Фамилия</span>
+                <span class="label-input__label-error"></span>
+                <input class="label-input__input dialog__input" type="text" name="second-name" required="">
+            </label>
+            <label class="label-input__label">
+                <span class="label-input__label-text">Имя</span>
+                <span class="label-input__label-error"></span>
+                <input class="label-input__input dialog__input" type="text" name="name" required="">
+            </label>
+            <label class="label-input__label">
+                <span class="label-input__label-text">Отчество</span>
+                <span class="label-input__label-error"></span>
+                <input class="label-input__input dialog__input" type="text" name="patronymic" required="">
+            </label>
+            <label class="label-input__label">
+                <span class="label-input__label-text">Почта</span>
+                <span class="label-input__label-error"></span>
+                <input class="label-input__input dialog__input" type="text" name="email" required="">
+            </label>
+            <label class="label-input__label">
+                <span class="label-input__label-text">Телефон</span>
+                <span class="label-input__label-error"></span>
+                <input class="label-input__input dialog__input" type="text" name="phone" required="">
+            </label>
+          </form>
+          <div class="dialog__wr-buttons dialog__wr-buttons_mb dialog__wr-reg2-buttons">
+              <button class="dialog__button dialog__button-login">Далее</button>
+          </div>
           
     //- ======================== END модалки ================================
 
