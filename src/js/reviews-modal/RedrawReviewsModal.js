@@ -7,6 +7,7 @@ export default class RedrawReviewsModal {
         this.inputStars = [...this.el.querySelectorAll('.reviews__input-star')];
         // div в которых звезды
         this.stars = [...this.el.querySelectorAll('.reviews__modal-star')];
+        this.starsError = this.el.querySelector('.reviews__modal-stars-error');
 
         this.inputName = this.el.querySelector('.reviews__modal-input[name="name"]');
         this.inputEmail = this.el.querySelector('.reviews__modal-input[name="email"]');
@@ -20,50 +21,13 @@ export default class RedrawReviewsModal {
 
         // модалки с результатом отправки отзыва
         this.resultModals = {
-            successfull : document.querySelector('.reviews__response-cover-success '),
-            error : document.querySelector('.reviews__response-cover-error'),
+            review: this.el.querySelector('.reviews__modal'),
+            success : this.el.querySelector('.reviews__modal-success'),
+            error : this.el.querySelector('.reviews__modal-error'),
         }
 
         this.activeResultModal = null; 
-    }
-
-    choiceStars(star) {
-        const num = +star.dataset.num;
-        this.stars.forEach(star => {
-            const input = star.previousElementSibling;
-            if(+star.dataset.num <= num) {
-                star.classList.add('reviews__stars_active');              
-
-                return;
-            }
-
-            star.className = 'reviews__modal-star';
-        })
-
-        // Очистка чекбоксов которые были выбраны ранее, если таковые есть
-        this.inputStars.forEach(checkbox => {
-            const numCheckbox = +checkbox.nextElementSibling.dataset.num;
-            if(num !== numCheckbox && checkbox.checked) checkbox.checked = false; 
-        })
-    }
-
-    setInvalid(input, textError) {
-        const parent = input.parentElement;
-        const error = input.previousElementSibling;
-        input.setCustomValidity(textError);
-
-        parent.setAttribute('invalid', '');
-        error.textContent = textError;
-    }
-
-    removeInvalid(input) {
-        const parent = input.parentElement;
-        const error = input.previousElementSibling;
-
-        input.setCustomValidity('');
-
-        parent.removeAttribute('invalid');
-        error.textContent = '';
+        this.submitIsActive = false; // активна ли кнопка отправить
     }
 
     /**
@@ -89,6 +53,93 @@ export default class RedrawReviewsModal {
         document.body.style.paddingRight = ``;
     }
 
+    // открывает нужное (переданное) окно модалки
+    openWindowModal(name) {
+        this.activeResultModal = this.resultModals[name];
+        this.activeResultModal.classList.add('reviews__response_active');
+
+        this.activeResultModal.addEventListener('click', (e) => {
+            if(e.target.closest('.reviews__modal-close')) {
+                this.activeResultModal.classList.remove('reviews__response_active');
+            }
+        }, {once : true})
+    }
+
+    // закрывает активное окно модалки
+    closeWindowModal() {
+
+    }
+
+    choiceStars(star) {
+        const num = +star.dataset.num;
+        this.stars.forEach(star => {
+            const input = star.previousElementSibling;
+            if(+star.dataset.num <= num) {
+                star.classList.add('reviews__stars_active');              
+
+                return;
+            }
+
+            star.className = 'reviews__modal-star';
+        })
+
+        // Очистка чекбоксов которые были выбраны ранее, если таковые есть
+        this.inputStars.forEach(checkbox => {
+            const numCheckbox = +checkbox.nextElementSibling.dataset.num;
+            if(num !== numCheckbox && checkbox.checked) checkbox.checked = false; 
+        })
+    }
+    /**
+     * @description Устанавливает инпут не валидным и устанавливает ошибку
+     * */ 
+    setInvalidInput(input, textError) {
+        const parent = input.parentElement;
+        const error = input.previousElementSibling;
+        input.setCustomValidity(textError);
+
+        parent.setAttribute('invalid', '');
+        error.textContent = textError;
+    }
+    /**
+     * @description Снимает невалидность с инпут
+     * */ 
+    removeInvalidInput(input) {
+        const parent = input.parentElement;
+        const error = input.previousElementSibling;
+
+        input.setCustomValidity('');
+
+        parent.removeAttribute('invalid');
+        error.textContent = '';
+    }
+
+    /**
+     * @description Показывает ошибку невалидности звезд
+     * */ 
+    setInvalidStars() {
+        this.starsError.setAttribute('invalid', '');
+    }
+    /**
+     * @description Убирает ошибку невалидности звезд
+     * */ 
+    removeInvalidStars() {
+        this.starsError.removeAttribute('invalid', '');
+    }
+
+    disableButtonSubmit() {
+        if(this.buttonSubmit.classList.contains('reviews__modal-submit_active')) {
+            this.buttonSubmit.classList.remove('reviews__modal-submit_active');
+            this.submitIsActive = false;
+        }
+    }
+
+    enableButtonSubmit() {
+        if(!this.buttonSubmit.classList.contains('reviews__modal-submit_active')) {
+            this.buttonSubmit.classList.add('reviews__modal-submit_active');
+            this.submitIsActive = true;
+        }
+    }
+
     /**
      * @description контроль количества введенных символов в textarea
      * */ 
@@ -103,29 +154,5 @@ export default class RedrawReviewsModal {
         }
 
         this.counter.textContent = amount;
-    }
-
-    controllResultModal(name) {
-        this.closeModal();
-        this.activeResultModal = this.resultModals[name];
-        this.activeResultModal.classList.add('reviews__response_active');
-
-        this.activeResultModal.addEventListener('click', (e) => {
-            if(e.target.closest('.reviews__modal-close')) {
-                this.activeResultModal.classList.remove('reviews__response_active');
-            }
-        }, {once : true})
-    }
-
-    disableButtonSubmit() {
-        if(this.buttonSubmit.classList.contains('reviews__modal-submit_active')) {
-            this.buttonSubmit.classList.remove('reviews__modal-submit_active');
-        }
-    }
-
-    enableButtonSubmit() {
-        if(!this.buttonSubmit.classList.contains('reviews__modal-submit_active')) {
-            this.buttonSubmit.classList.add('reviews__modal-submit_active');
-        }
     }
 }

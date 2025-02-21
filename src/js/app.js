@@ -232,7 +232,7 @@ if(modalReviews) {
 
 // Hезультатом отправки отзыва по клику на крестик закрывается
 const reviewsRespModals = document.querySelectorAll('.reviews__response-cover');
-if(reviewsRespModals) closeReviewsResponseModal(reviewsRespModals);
+// if(reviewsRespModals) closeReviewsResponseModal(reviewsRespModals);
 
 // Фильтры для списка товаров
 const filterPL = document.querySelector('.filters')

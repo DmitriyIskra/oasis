@@ -69,7 +69,8 @@ ul.reviews__list
 
 input#switcher-reviews-modal(type="checkbox")
 .reviews__modal-cover
-    .reviews__modal
+    //- .reviews__modal_active
+    .review__modal
         .reviews__modal-wr-close
             label.reviews__modal-close(for="switcher-reviews-modal")
         .reviews__modal-wr-title 
@@ -79,23 +80,25 @@ input#switcher-reviews-modal(type="checkbox")
                 li.reviews__modal-stars-item 
                     label.reviews__modal-wr-star
                         input.reviews__input-star(type="checkbox" name="star-1")
-                        div.reviews__modal-star(data-num="0")
+                        span.reviews__modal-star(data-num="0")
                 li.reviews__modal-stars-item 
                     label.reviews__modal-wr-star
                         input.reviews__input-star(type="checkbox" name="star-2")
-                        div.reviews__modal-star(data-num="1")
+                        span.reviews__modal-star(data-num="1")
                 li.reviews__modal-stars-item  
                     label.reviews__modal-wr-star
                         input.reviews__input-star(type="checkbox" name="star-3")
-                        div.reviews__modal-star(data-num="2")
+                        span.reviews__modal-star(data-num="2")
                 li.reviews__modal-stars-item 
                     label.reviews__modal-wr-star
                         input.reviews__input-star(type="checkbox" name="star-4")
-                        div.reviews__modal-star(data-num="3")
+                        span.reviews__modal-star(data-num="3")
                 li.reviews__modal-stars-item  
                     label.reviews__modal-wr-star
                         input.reviews__input-star(type="checkbox" name="star-5")
-                        div.reviews__modal-star(data-num="4")
+                        span.reviews__modal-star(data-num="4")
+            //- invalid
+            .reviews__modal-stars-error Поставьте, пожалуйста, оценку.
 
             .reviews__modal-wr-text 
                 textarea(name="text" placeholder="Расскажите о товаре, нам важно Ваше мнение" maxlength="250") 
@@ -130,8 +133,7 @@ input#switcher-reviews-modal(type="checkbox")
         
         
 
-//- .reviews__response_active  
-.reviews__response-cover.reviews__response-cover-success
+    //- .reviews__modal_active  
     .reviews__response.reviews__modal-success 
         .reviews__modal-wr-close
             .reviews__modal-close
@@ -139,7 +141,7 @@ input#switcher-reviews-modal(type="checkbox")
         .reviews__modal-text 
             p Ваш отзыв успешно отправлен
 
-.reviews__response-cover.reviews__response-cover-error
+    //- .reviews__modal_active
     .reviews__response.reviews__modal-error 
         .reviews__modal-wr-close
             .reviews__modal-close

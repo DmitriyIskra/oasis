@@ -35,19 +35,37 @@ export default class ControllReviewsModal {
             this.redraw.choiceStars(e.target.closest('.reviews__modal-star'));
         }
 
-        // отправка отзыва, валидация
+        // отправка отзыва и валидация
         if(e.target.matches('.reviews__modal-submit')) {
             e.preventDefault();
 
-            // валидация на корректность ввода
+            // START ВАЛИДАЦИЯ
+            // -- валидация на заполненность полей и выбор звезд
+            const resultInputs = this.validationRequiredInputs();
+            if(Boolean(resultInputs.length)) {
+                resultInputs.forEach(input => this.redraw.setInvalidInput(
+                    input,
+                    'Поле обязательное для заполнения'
+                ))
+            }
+            
+            const resultStars = this.validationRequiredStars();
+            if(!resultStars) this.redraw.setInvalidStars();
+            // когда звезды не выбраны или есть не заполненные поля
+            //  останавливаем и показываем ошибки
+            if(Boolean(resultInputs.length) || !resultStars) return;
+
+            // -- валидация на корректность ввода
             if(!/^[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+.+\.[A-Za-z]{2,4}$/i.test(this.redraw.inputEmail.value)) {
-                this.redraw.setInvalid(
+                this.redraw.setInvalidInput(
                     this.redraw.inputEmail,
                     'Некорректное значение'
                 );
 
                 return;
             }
+
+            // END ВАЛИДАЦИЯ
 
             (async () => {
                 // в  formData будет только один чекбокс соответствующий 
@@ -56,13 +74,13 @@ export default class ControllReviewsModal {
 
                 const response = await this.restApi.create(formData);
 
-                if(!response) this.redraw.controllResultModal('error');
+                if(!response) this.redraw.openWindowModal('error');
 
-                if(response) this.redraw.controllResultModal('successfull');             
+                if(response) this.redraw.openWindowModal('success');             
             })()
         }
 
-
+        // Клик вне модалки по затемненному фону, закрывает модалку
         if(e.target.matches('.reviews__modal-cover')) {
             this.redraw.closeModal();
             let event = new Event("change");
@@ -73,44 +91,73 @@ export default class ControllReviewsModal {
     focus(e) {
         // если элемент был не валиден при фокусе снимаем это свойство
         if(e.target.validity.customError) {
-            this.redraw.removeInvalid(e.target);
+            this.redraw.removeInvalidInput(e.target);
         }
     }
 
     change(e) {
         // изменение состояния инпута отвечающего за открытие модалки отзывов
-        // и скрытие scrollbar
+        // при ее открытии или закрытии
+        // и скрытие scrollbar если модалка открыта
         if(e.target.closest('#switcher-reviews-modal')) {
-            console.log('dis')
             if(e.target.checked && innerWidth > 961) this.redraw.disableScroll();
             if(!e.target.checked && innerWidth > 961) this.redraw.enableScroll();
+
+            
         }
 
-        // отвечает за изменение состояния инпута отвечающего за звезду
-        if(e.target.closest('.reviews__input-star')) this.validationRequired();
+        // ВЫБОР ЗВЕЗДЫ
+        // блокирует или разблокирует кнопку отправить
+        // если показывается ошибка на звездах снимает ее
+        if(e.target.closest('.reviews__input-star')) {
+            this.switchingButtonSubmit();
+            if(this.redraw.starsError.hasAttribute('invalid')) {
+                this.redraw.removeInvalidStars();
+            }
+        };
     }
 
     input(e) {
         // считает количество символов введенных в текстовое поле
         if(e.target.closest('textarea')) this.redraw.countCymbols(e.target);
 
+        // БЛОКИРОВКА / РАЗБЛОКИРОВКА КНОПКИ ОТПРАВИТЬ
+        // При запонении одного из обязательных полей,
+        // проверяем заполнены ли они все и выбрана ли звезда, по результатам 
+        // разблокировка или блокировка кнопки отправить
         if(e.target.closest('.reviews__modal-input[required]')) {
-            this.validationRequired();
+            this.switchingButtonSubmit(); // проверяет все ли параметры выбраны
         }
     }
 
-    validationRequired() {
-        const checkStar = this.redraw.inputStars.some(item => item.checked);
-
+    // разблокировка или блокировка кнопки отправить
+    // по результатам проверки заполнены ли все обязательные поля и выбрана ли звезда
+    switchingButtonSubmit() {
         if(
-            this.redraw.inputName.value &&
-            this.redraw.inputEmail.value &&
-            checkStar
+            !Boolean(this.validationRequiredInputs().length) &&
+            this.validationRequiredStars()
         ) {
             this.redraw.enableButtonSubmit();
             return;
         };
 
         this.redraw.disableButtonSubmit();
+    }
+
+    // валидирует инпуты на заполненность
+    validationRequiredInputs() {
+        const elements = [...this.redraw.el.querySelectorAll('.reviews__modal-input[required]')];
+        const elNoValid = elements.filter(el => !el.value);
+
+        return elNoValid;
+    }
+    
+    // валидирует выбранна ли звезда
+    validationRequiredStars() {
+        // выбрана ли хоть одна звезда
+        const checkStar = this.redraw.inputStars.some(item => item.checked);
+        if(!checkStar) return false;
+
+        return true;
     }
 }
