@@ -86,6 +86,13 @@ export default class ControllReviewsModal {
             let event = new Event("change");
             this.redraw.inputControll.dispatchEvent(event);
         }
+
+        // Закрытие модалки по крестику
+        if(e.target.closest('.reviews__modal-close')) {
+            this.redraw.closeModal();
+            let event = new Event("change");
+            this.redraw.inputControll.dispatchEvent(event);
+        }
     }
 
     focus(e) {
@@ -96,14 +103,16 @@ export default class ControllReviewsModal {
     }
 
     change(e) {
-        // изменение состояния инпута отвечающего за открытие модалки отзывов
-        // при ее открытии или закрытии
+        // SCROLLBAR, CHOOICE WINDOW FOR MODAL
+        // выбор окна модалки при открытии
         // и скрытие scrollbar если модалка открыта
         if(e.target.closest('#switcher-reviews-modal')) {
-            if(e.target.checked && innerWidth > 961) this.redraw.disableScroll();
-            if(!e.target.checked && innerWidth > 961) this.redraw.enableScroll();
+            if(e.target.checked) this.redraw.openWindowModal('review');
 
-            
+            if(e.target.checked) this.redraw.disableScroll();
+
+            if(!e.target.checked) this.redraw.enableScroll();
+
         }
 
         // ВЫБОР ЗВЕЗДЫ

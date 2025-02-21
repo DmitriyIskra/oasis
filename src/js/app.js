@@ -230,10 +230,6 @@ if(modalReviews) {
     controll.init();
 }
 
-// Hезультатом отправки отзыва по клику на крестик закрывается
-const reviewsRespModals = document.querySelectorAll('.reviews__response-cover');
-// if(reviewsRespModals) closeReviewsResponseModal(reviewsRespModals);
-
 // Фильтры для списка товаров
 const filterPL = document.querySelector('.filters')
 // Кнопка для открытия фильтра в мобильной версии

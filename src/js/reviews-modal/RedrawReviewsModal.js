@@ -26,15 +26,8 @@ export default class RedrawReviewsModal {
             error : this.el.querySelector('.reviews__modal-error'),
         }
 
-        this.activeResultModal = null; 
+        this.activeWinModal = null; // активное окно модалки
         this.submitIsActive = false; // активна ли кнопка отправить
-    }
-
-    /**
-     * @description Закрывает модалку по клику на подложку
-     * */ 
-    closeModal() {
-        this.inputControll.checked = false;
     }
 
     /**
@@ -55,19 +48,23 @@ export default class RedrawReviewsModal {
 
     // открывает нужное (переданное) окно модалки
     openWindowModal(name) {
-        this.activeResultModal = this.resultModals[name];
-        this.activeResultModal.classList.add('reviews__response_active');
-
-        this.activeResultModal.addEventListener('click', (e) => {
-            if(e.target.closest('.reviews__modal-close')) {
-                this.activeResultModal.classList.remove('reviews__response_active');
-            }
-        }, {once : true})
+        this.closeWindowModal();
+        this.activeWinModal = this.resultModals[name];
+        this.activeWinModal.classList.add('reviews__modal_active');
     }
 
-    // закрывает активное окно модалки
+    // закрывает только активное окно модалки (без подложки)
     closeWindowModal() {
+        if(this.activeWinModal) this.activeWinModal.classList.remove('reviews__modal_active');
+        this.activeWinModal = null;
+    }
 
+    /**
+     * @description Закрывает модалку полностью
+     * */ 
+    closeModal() {
+        this.inputControll.checked = false;
+        this.closeWindowModal();
     }
 
     choiceStars(star) {

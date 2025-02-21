@@ -150,10 +150,9 @@
     display: flex;
 }
 
-.review__modal {
-    position: sticky;
-    top: 0.52vw;
-
+.reviews__modal {
+    display: none;
+    flex-direction: column;
     width: 31.43%;
     height: fit-content;
     margin-top: 0.3vw;
@@ -479,26 +478,6 @@
     text-transform: uppercase;
 }
 
-/* .reviews__response-cover {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
-    display: none;
-    place-items: center;
-
-    background-color: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(2px);
-
-    z-index: 100000;
-} */
-
-/* .reviews__response_active {
-    display: grid;
-} */
-
 .reviews__response {
     display: none;
     width: 18.23vw;
@@ -506,6 +485,7 @@
     padding: 1.04vw;
     flex-direction: column;
     align-items: center;
+    align-self: center;
 
     border-radius: 0.52vw;
     background: #FFF;
@@ -514,7 +494,7 @@
         0px 0px 1.56vw 0.42vw rgba(0, 0, 0, 0.25);
 }
 
-.reviews__response_active {
+.reviews__modal_active {
     display: flex;
 }
 
@@ -656,19 +636,8 @@
 }
 
 @media(max-width: 961px) {
-    .reviews__modal-cover {
-        position: absolute;
-        place-items: center;
-    }
-}
-
-@media(max-width: 961px) {
-    .review__modal {
-        position: static;
-        top: 144.52vw;
-
+    .reviews__modal {
         width: 89.34%;
-        margin-top: -30.3vw; /*2.3vw*/
         padding-top: 6.67vw;
         padding-right: 5.07vw;
         padding-bottom: 8.53vw;
@@ -724,6 +693,14 @@
 }
 
 @media(max-width: 961px) {
+    .reviews__modal-stars-error {
+        margin-top: 1.5vw;
+
+        font-size: 3vw;
+    }   
+}
+
+@media(max-width: 961px) {
     .reviews__modal-wr-text {
         padding-top: 7.47vw;
     }
@@ -731,7 +708,7 @@
 
 @media(max-width: 961px) {
     .reviews__modal-wr-text textarea {
-        height: 42.40vw;
+        height: 42.50vw;
         padding: 3.20vw 4.27vw;
 
         font-size: 3.4vw;
@@ -766,6 +743,10 @@
     .reviews__modal-input-name {
         font-size: 3.73vw;
     }
+
+    .reviews__modal-input-error {
+        font-size: 3.73vw;
+    }
 }
 
 @media(max-width: 961px) {
@@ -777,6 +758,11 @@
         font-size: 3.4vw;
 
         border-radius: 1.07vw;
+    }
+
+    .reviews__modal-input:required {
+        background-size: 1.42vw 1.42vw;
+        background-position: right 0.8% top 11%;
     }
 }
 
@@ -832,31 +818,6 @@
         font-size: 3vw;
     }
 }
-
-
-
-
-
-/* @media(max-width: 961px) {
-    .reviews__response-cover {
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-    
-        display: none;
-        place-items: center;
-    
-        background-color: rgba(0, 0, 0, 0.3);
-    
-        z-index: 100000;
-    }
-    
-    .reviews__response_active {
-        display: grid;
-    }
-} */
 
 @media(max-width: 961px) {
     .reviews__response {
