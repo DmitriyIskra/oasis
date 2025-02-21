@@ -41,8 +41,6 @@ import navBarMobile from "./nav-bar-mobile/nav-bar-mobile";
 import ControllReviewsModal from "./reviews-modal/ControllReviewsModal";
 import RedrawReviewsModal from "./reviews-modal/RedrawReviewsModal";
 import RestReviewsModal from "./reviews-modal/RestApiReviewsModal";
-// По клику на крестик закрывается окно с результатом отправки отзыва
-import closeReviewsResponseModal from "./close-reviews-response-modal/closeReviewsResponseModal";
 // Фильтры для списка товаров
 import ControllFilterPL from "./filter-prod-list/ControllFilterPL";
 import RedrawFilterPL from "./filter-prod-list/RedrawFilterPL";

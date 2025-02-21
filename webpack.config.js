@@ -387,8 +387,22 @@ module.exports = {
 
             { from: 'src/files/price.pdf', to: 'files/' },
 
-            // { from: 'src/html/basket/modal-check-phone.html', to: 'modals/basket/' },
-            // { from: 'src/html/account/modal-check-phone.html', to: 'modals/account/' },
+            { from: 'src/html/modals/account/modal-delete-address.html', to: 'modals/account/' },
+            { from: 'src/html/modals/account/modal-delete-profile.html', to: 'modals/account/' },
+            { from: 'src/html/modals/account/modal-success-delete-address.html', to: 'modals/account/' },
+            { from: 'src/html/modals/account/modal-success-delete-profile.html', to: 'modals/account/' },
+
+            { from: 'src/html/modals/auth/modal-auth.html', to: 'modals/auth/' }, 
+            { from: 'src/html/modals/auth/modal-check-phone-auth.html', to: 'modals/auth/' }, 
+            { from: 'src/html/modals/auth/modal-login.html', to: 'modals/auth/' }, 
+            { from: 'src/html/modals/auth/modal-reg1.html', to: 'modals/auth/' }, 
+            { from: 'src/html/modals/auth/modal-reg2.html', to: 'modals/auth/' }, 
+            { from: 'src/html/modals/auth/modal-success-auth.html', to: 'modals/auth/' }, 
+
+            { from: 'src/html/modals/basket/modal-check-phone-basket.html', to: 'modals/basket/' }, 
+            { from: 'src/html/modals/basket/modal-success-basket.html', to: 'modals/basket/' }, 
+
+            { from: 'src/html/modals/modal-fail.html', to: 'modals/' }, 
             
           ],
         }),
