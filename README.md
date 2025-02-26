@@ -34,6 +34,8 @@ https://dmitriyiskra.github.io/oasis/product-card-coffee-machines.html
 
 
 ## ЗАМЕТКИ
+разделить redrawscreens по классам
+
 -- АККАУНТ и КОРЗИНА Сделать проверку на формы в новых модалках и страницах аккаунт и корзина
 
 -- МОДАЛКИ НОВЫЕ вызов новых модалок
