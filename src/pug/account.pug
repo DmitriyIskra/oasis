@@ -17,14 +17,14 @@ block content
         .account__wrapper-content
 
             ul.account__ctrl-list 
-                li.account__ctrl-item.account__ctrl-item_active(data-ctrl="user") Профиль
+                li.account__ctrl-item.account__ctrl-item_active(data-ctrl="profile") Профиль
                 li.account__ctrl-item(data-ctrl="address") Адреса доставки
                 li.account__ctrl-item(data-ctrl="history") История заказов
                 li.account__ctrl-item(data-ctrl="favorites") Избранное
                 li.account__ctrl-item(data-ctrl="loyalty") Программа лояльности
 
             ul.account__screen-list
-                li.account__screen-item.account__screen-item_active(data-screen="user")
+                li.account__screen-item.account__screen-item_active(data-screen="profile")
                     .acc-user.account__item-content 
                         .acc-user__icon
                             .acc-user__discount #[span.acc-user__discount-text 10%]
@@ -32,31 +32,46 @@ block content
                         form.acc-user__form(name="acc-user-data")
                             ul.acc-user__inputs-list 
                                 li.acc-user__inputs-item.acc-user__item-second-name 
-                                    +label-input('Имя', 'acc-user__second-name', 'second-name', true)
+                                    label.label-input__label
+                                        span.label-input__label-text Фамилия
+                                        span.label-input__label-error
+                                        input.label-input__input.acc-user__second-name(type="text" name="second-name" required disabled)
                                 li.acc-user__inputs-item.acc-user__item-name 
-                                    +label-input('Фамилия', 'acc-user__name', 'name', true)
-                                li.acc-user__inputs-item.acc-user__item-patronimyc 
-                                    +label-input('Отчество', 'acc-user__patronimyc', 'patronimyc', false)
+                                    label.label-input__label
+                                        span.label-input__label-text Имя
+                                        span.label-input__label-error
+                                        input.label-input__input.acc-user__name(type="text" name="name" required disabled)
+                                li.acc-user__inputs-item.acc-user__item-patronimyc
+                                    label.label-input__label
+                                        span.label-input__label-text Отчество
+                                        span.label-input__label-error
+                                        input.label-input__input.acc-user__patronimyc(type="text" name="patronimyc" disabled)
                                 li.acc-user__inputs-item.acc-user__item-phone
-                                    +label-input('Телефон', 'acc-user__phone', 'phone', true)
+                                    label.label-input__label
+                                        span.label-input__label-text Телефон
+                                        span.label-input__label-error
+                                        input.label-input__input.acc-user__phone(type="text" name="phone" disabled)
                                 li.acc-user__inputs-item.acc-user__item-email
-                                    +label-input('Почта', 'acc-user__email', 'email', true)
+                                    label.label-input__label
+                                        span.label-input__label-text Почта
+                                        span.label-input__label-error
+                                        input.label-input__input.acc-user__email(type="text" name="email" required disabled)
                             .acc-user__birth-date 
                                 label.acc-user__birth-label
                                     span.acc-user__birth-text Дата рождения
-                                    input.acc-user__birth-input(type="text" readonly value name="birth-date")
+                                    input.acc-user__birth-input(type="text" readonly value name="birth-date" disabled)
                             .acc-user__item-checkmarks 
                                 label.acc-user__checkmarks-label.acc-user__personal-data
                                     //- .acc-user__checkmarks-input_invalid
-                                    input.acc-user__checkmarks-input.acc-user__personal-input(type="checkbox" name="personal-data" required)
+                                    input.acc-user__checkmarks-input.acc-user__personal-input(type="checkbox" name="personal-data" disabled required)
                                     span.acc-user__checkmarks-text.acc-user__personal-text Согласие на обработку персональных данных
                                 label.acc-user__checkmarks-label.acc-user__mailing
                                     //- .acc-user__checkmarks-input_invalid
                                     input.acc-user__checkmarks-input.acc-user__mailing-input(type="checkbox" name="mailing")
                                     span.acc-user__checkmarks-text.acc-user__mailing-text Согласие на обработку персональных данных
                             .account__form-buttons.acc-user__buttons 
-                                button.account__form-button.acc-user__button-save(type="button") Сохранить
-                                button.account__form-button.acc-user__button-cancel(type="button") Отмена
+                                button.account__form-button.acc-user__button-save(type="button" disabled) Сохранить
+                                button.account__form-button.acc-user__button-edit(type="button") Редактировать
                                 button.account__form-button.acc-user__button-delete(type="button") Удалить профиль
 
 

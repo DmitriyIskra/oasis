@@ -59,6 +59,7 @@ import ControllBasket from "./basket/ControllBasket";
 // Страница контакты
 import ControllAccountPage from "./account-page/ControllAccountPage";
 import RedrawAccountPage from "./account-page/RedrawAccountPage";
+import ValidationAccountPage from "./account-page/ValidationAccountPage";
 // Маска для телефона
 import IMask from "imask";
 // Календарь
@@ -287,7 +288,8 @@ if(accPage) {
     const screens = document.querySelector('.account__screen-list');
 
     const redraw = new RedrawAccountPage(ctrl, screens);
-    const controll = new ControllAccountPage(redraw, AirDatepicker);
+    const validation = new ValidationAccountPage();
+    const controll = new ControllAccountPage(redraw, validation, AirDatepicker);
     controll.init();
 };
 

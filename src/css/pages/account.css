@@ -128,8 +128,6 @@
     font-size: 0.73vw;
 
     color: #333;
-
-    cursor: pointer;
 }
 
 .acc-user__birth-input {
@@ -153,6 +151,10 @@
     caret-color: #333;
 
     cursor: pointer;
+}
+
+.acc-user__birth-input:disabled {
+    cursor: default;
 }
 
 .acc-user__item-checkmarks {
@@ -235,6 +237,10 @@
     box-shadow: -0.21vw 0.21vw 0.47vw 0px #9AA4A7;
 
     cursor: pointer;
+}
+
+.account__form-button:disabled {
+    background: rgba(77, 150, 171, 0.60);
 }
 /* -------- END USER --------- */
 

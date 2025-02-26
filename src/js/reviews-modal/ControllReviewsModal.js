@@ -62,7 +62,7 @@ export default class ControllReviewsModal {
                     'Некорректное значение'
                 );
 
-                return;
+                return; 
             }
 
             // END ВАЛИДАЦИЯ
