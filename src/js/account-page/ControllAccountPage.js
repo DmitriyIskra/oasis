@@ -1,6 +1,6 @@
 export default class ControllAccountPage {
-    constructor(redraw, validation, AirDatepicker) {
-        this.redraw = redraw;
+    constructor(redraws, validation, AirDatepicker) {
+        this.redraws = redraws;
         this.validation = validation;
         this.AirDatepicker = AirDatepicker;
         
@@ -9,7 +9,7 @@ export default class ControllAccountPage {
 
     init() {
         this.registerEvents();
-        this.registerLibraries();
+        this.registerLibraries(); 
     }
 
     registerLibraries() {
@@ -21,8 +21,8 @@ export default class ControllAccountPage {
     }
 
     registerEvents() {
-        this.redraw.ctrl.addEventListener('click', this.click);
-        this.redraw.screensWrapper.addEventListener('click', this.click);
+        this.redraws.tabs.tabs.addEventListener('click', this.click);
+        this.redraws.profile.screensWrapper.addEventListener('click', this.click);
     }
 
     click(e) {
@@ -30,19 +30,19 @@ export default class ControllAccountPage {
         if(e.target.closest('.account__ctrl-item')) {
             const target = e.target.closest('.account__ctrl-item');
 
-            this.redraw.switchingCtrl(target);
-            this.redraw.switchingScreen(target.dataset.ctrl);
+            this.redraws.tabs.switchingTabs(target);
+            this.redraws.tabs.switchingScreen(target.dataset.ctrl);
         }
 
         // ПРОФИЛЬ
         if(e.target.closest('.acc-user__button-edit')) {
-            this.redraw.enableProfile();
+            this.redraws.profile.enableProfile();
         }
         if(e.target.closest('.acc-user__button-save')) {
             // Валидация на заполненность
 
 
-            this.redraw.disableProfile();
+            this.redraws.profile.disableProfile();
         }
     }
 

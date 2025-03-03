@@ -58,7 +58,8 @@ import RedrawBasket from "./basket/RedrawBasket";
 import ControllBasket from "./basket/ControllBasket";
 // Страница контакты
 import ControllAccountPage from "./account-page/ControllAccountPage";
-import RedrawAccountPage from "./account-page/RedrawAccountPage";
+import RedrawAccountPageProfile from "./account-page/RedrawAccountPageProfile";
+import RedrawAccountPageTabs from "./account-page/RedrawAccountPageTabs";
 import ValidationAccountPage from "./account-page/ValidationAccountPage";
 // Маска для телефона
 import IMask from "imask";
@@ -284,12 +285,15 @@ if (basket) {
 // Страница аккаунт
 const accPage = document.querySelector('.account__wrapper-content');
 if(accPage) {
-    const ctrl = document.querySelector('.account__ctrl-list');
+    const tabs = document.querySelector('.account__ctrl-list');
     const screens = document.querySelector('.account__screen-list');
 
-    const redraw = new RedrawAccountPage(ctrl, screens);
+    const redraws = {
+        tabs: new RedrawAccountPageTabs(tabs, screens),
+        profile: new RedrawAccountPageProfile(screens)
+    };
     const validation = new ValidationAccountPage();
-    const controll = new ControllAccountPage(redraw, validation, AirDatepicker);
+    const controll = new ControllAccountPage(redraws, validation, AirDatepicker);
     controll.init();
 };
 

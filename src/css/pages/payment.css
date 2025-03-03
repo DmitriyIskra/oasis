@@ -24,11 +24,12 @@
     flex-wrap: wrap;
     column-gap: 2.60vw;
     row-gap: 2.60vw;
+    justify-content: center;
 }
 
 .payment__item {
     display: flex;
-    width: 48%;
+    width: 47.7%;
     min-height: 20.21vw;
     padding: 1.56vw;
     flex-direction: column;

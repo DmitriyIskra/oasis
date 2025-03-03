@@ -17,7 +17,7 @@
     height: 3.13vw;
 }
 
-.contacts__controll-item {
+.contacts__controll-item { 
     display: grid;
     width: 100%;
     place-items: center;
@@ -115,6 +115,10 @@
 
 .contacts__content-text_bold {
     font-weight: 700;
+}
+
+.contacts__text-phone {
+    white-space: nowrap;
 }
 
 .contacts__phones-list {

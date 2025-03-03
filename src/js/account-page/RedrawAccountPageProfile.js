@@ -1,6 +1,5 @@
-export default class RedrawAccountPage {
-    constructor(ctrl, screensWrapper) {
-        this.ctrl = ctrl;
+export default class RedrawAccountPageProfile {
+    constructor(screensWrapper) {
         this.screensWrapper = screensWrapper;
 
         this.screens = {
@@ -21,26 +20,9 @@ export default class RedrawAccountPage {
         this.profileButtonDelete = this.screens.profile.querySelector('.acc-user__button-delete');
     }
 
-    switchingCtrl(target) {
-        const activeCtrl = this.ctrl.querySelector('.account__ctrl-item_active');
-
-        activeCtrl.classList.remove('account__ctrl-item_active');
-        target.classList.add('account__ctrl-item_active');
-    }
-
-    switchingScreen(type) {
-        const activeScreen = this.screensWrapper.querySelector('.account__screen-item_active');
-        const nextScreen = this.screensWrapper.querySelector(`.account__screen-item[data-screen="${type}"]`);
-
-        activeScreen.classList.remove('account__screen-item_active');
-        nextScreen.classList.add('account__screen-item_active');
-    }
-
-    // PROFILE
     enableProfile() {
-        this.profileReq.forEach(input => {
-            input.removeAttribute('disabled');
-        })
+        console.log(this.profileReq)
+        this.profileReq.forEach(input => input.removeAttribute('disabled'))
 
         this.profileReq[0].focus();
         this.profileButtonSave.removeAttribute('disabled');
