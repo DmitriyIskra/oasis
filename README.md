@@ -39,3 +39,7 @@ https://dmitriyiskra.github.io/oasis/product-card-coffee-machines.html
 -- АККАУНТ и КОРЗИНА Сделать проверку на формы в новых модалках и страницах аккаунт и корзина
 
 -- МОДАЛКИ НОВЫЕ вызов новых модалок
+
+### web.yml
+ upload-pages-artifact@v1
+ deploy-pages@v1
