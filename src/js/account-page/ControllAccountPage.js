@@ -22,7 +22,7 @@ export default class ControllAccountPage {
 
     registerEvents() {
         this.redraws.tabs.tabs.addEventListener('click', this.click);
-        this.redraws.profile.screensWrapper.addEventListener('click', this.click);
+        this.redraws.profile.screen.addEventListener('click', this.click);
     }
 
     click(e) {
@@ -34,14 +34,35 @@ export default class ControllAccountPage {
             this.redraws.tabs.switchingScreen(target.dataset.ctrl);
         }
 
-        // ПРОФИЛЬ
         if(e.target.closest('.acc-user__button-edit')) {
             this.redraws.profile.enableProfile();
         }
         if(e.target.closest('.acc-user__button-save')) {
             // Валидация на заполненность
+            const resultReqInputs = this.validation.validationRequiredInputs(this.redraws.profile.requiredInputs);
+            const resultReqCheckbox = this.validation.validationCheckbox(this.redraws.profile.requiredCheckbox);
+            console.log('checkbox', resultReqInputs)
+            // Ставим ошибку что поле обязательно к заполнению на незаполненные поля
+            if(resultReqInputs.length) {
+                resultReqInputs.forEach(input => {
+                    this.redraws.profile.setError(input, 'Поле обязательно для заполнения');
+                });
+            }
+            // Если элемент найден значит он был заполнен и есть необходимость 
+            // проверить на соответствие шаблону
+            const elEmail = resultReqInputs.find(input => input.name === 'email');
+            console.log(elEmail)
+            const resultEmail = null;
+            if(elEmail) {
+                const resultEmail = this.validation.validationEmail(elEmail)
+            };
+            
+            console.log('email', resultEmail)
+            
+            // СОГЛАСИЕ НА ОБРАБОТКУ НУЖНО ЛИ ДАВАТЬ ВОЗМОЖНОСТЬ РЕДАКТИРОВАТЬ
+            // И БЛОКИРОВАТЬ ЛИ СОХРАНЕНИЕ БЕЗ ВЫБРАННОГО ЧЕКБОКСА
 
-
+            if(Boolean(resultReqInputs.length) || !resultReqCheckbox) return;
             this.redraws.profile.disableProfile();
         }
     }

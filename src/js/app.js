@@ -286,11 +286,18 @@ if (basket) {
 const accPage = document.querySelector('.account__wrapper-content');
 if(accPage) {
     const tabs = document.querySelector('.account__ctrl-list');
-    const screens = document.querySelector('.account__screen-list');
+    const screensWrapper = document.querySelector('.account__screen-list');
+    const screens = {
+        profile: screensWrapper.children[0],
+        address: screensWrapper.children[1],
+        history: screensWrapper.children[2],
+        favorites: screensWrapper.children[3],
+        loyalty: screensWrapper.children[4],
+    }
 
     const redraws = {
-        tabs: new RedrawAccountPageTabs(tabs, screens),
-        profile: new RedrawAccountPageProfile(screens)
+        tabs: new RedrawAccountPageTabs(tabs, screensWrapper),
+        profile: new RedrawAccountPageProfile(screens.profile),
     };
     const validation = new ValidationAccountPage();
     const controll = new ControllAccountPage(redraws, validation, AirDatepicker);

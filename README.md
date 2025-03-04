@@ -43,3 +43,17 @@ https://dmitriyiskra.github.io/oasis/product-card-coffee-machines.html
 ### web.yml
  upload-pages-artifact@v1
  deploy-pages@v1
+
+
+ 
+
+https://dmitriyiskra.github.io/oasis/product-card-tea.html - карточка чай
+https://dmitriyiskra.github.io/oasis/src/pug/product-card-t-short.pug - карточка футболка
+https://dmitriyiskra.github.io/oasis/product-card-coffee-machines.html - карточка кофемашина
+https://dmitriyiskra.github.io/oasis/catalog.html' - общий каталог
+https://dmitriyiskra.github.io/oasis/brands.html - список карточек по брендам
+https://dmitriyiskra.github.io/oasis/products-list.html - список карточек товаров по бренду и типу
+https://dmitriyiskra.github.io/oasis/requisites.html -  реквизиты
+https://dmitriyiskra.github.io/oasis/404.html - 404
+https://dmitriyiskra.github.io/oasis/loyalty-program.html - Программа лояльности
+

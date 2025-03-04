@@ -179,6 +179,10 @@
     cursor: pointer;
 }
 
+.acc-user__checkmarks-input:disabled + .acc-user__checkmarks-text {
+    cursor: default;
+}
+
 .acc-user__checkmarks-input_invalid + .acc-user__checkmarks-text {
     color: #F00;
 }

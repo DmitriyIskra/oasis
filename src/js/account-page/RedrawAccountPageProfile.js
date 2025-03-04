@@ -1,47 +1,56 @@
 export default class RedrawAccountPageProfile {
-    constructor(screensWrapper) {
-        this.screensWrapper = screensWrapper;
-
-        this.screens = {
-            profile: this.screensWrapper.children[0],
-            address: this.screensWrapper.children[1],
-            history: this.screensWrapper.children[2],
-            favorites: this.screensWrapper.children[3],
-            loyalty: this.screensWrapper.children[4],
-        }
+    constructor(screen) {
+        this.screen = screen;
 
         // PROFILE
-        this.profileReqInput = [...this.screens.profile.querySelectorAll('.label-input__input[required]')];
-        this.profileReqEmail = [...this.screens.profile.querySelectorAll('.label-input__input[name="email"]')];
-        this.profileReqCheck = [...this.screens.profile.querySelectorAll('input[type="checkbox"][required]')];
+        // Заблокированные поля
+        this.disabledInputs = [...this.screen.querySelectorAll('input[disabled]')];
+        // текстовые инпуты
+        this.requiredInputs = [...this.screen.querySelectorAll('.label-input__input[required]')];
+        // обязательные чекбоксы
+        this.requiredCheckbox = [...this.screen.querySelectorAll('input[type="checkbox"][required]')];
 
-        this.profileButtonSave = this.screens.profile.querySelector('.acc-user__button-save');
-        this.profileButtonEdit = this.screens.profile.querySelector('.acc-user__button-edit');
-        this.profileButtonDelete = this.screens.profile.querySelector('.acc-user__button-delete');
+        // Поля для email
+        this.emailInputs = [...this.screen.querySelectorAll('.label-input__input[name="email"]')];
+        
+        this.buttonSave = this.screen.querySelector('.acc-user__button-save');
+        this.buttonEdit = this.screen.querySelector('.acc-user__button-edit');
+        this.buttonDelete = this.screen.querySelector('.acc-user__button-delete');
     }
 
+    // Разблокирует поля для редактирования
     enableProfile() {
-        console.log(this.profileReq)
-        this.profileReq.forEach(input => input.removeAttribute('disabled'))
+        this.disabledInputs.forEach(input => input.removeAttribute('disabled'));
 
-        this.profileReq[0].focus();
-        this.profileButtonSave.removeAttribute('disabled');
+        this.requiredInputs[0].focus();
+        this.buttonSave.removeAttribute('disabled');
     }
 
+    // Блокирует поля для редактирования
     disableProfile() {
-        this.profileReq.forEach(input => {
-            input.setAttribute('disabled', '');
-        })
+        this.disabledInputs.forEach(input => input.setAttribute('disabled', ''));
 
-        this.profileButtonSave.setAttribute('disabled', '');
+        this.buttonSave.setAttribute('disabled', '');
     }
 
     // ОШИБКИ при валидации обязательных полей
     setError(el, textError) {
+        const parent = el.parentElement;
+        const elError = el.previousElementSibling;
 
+        parent.setAttribute('invalid', '');
+        el.setCustomValidity('error');
+        elError.textContent = textError;
     }
 
     removeError(el) {
+        const parent = el.parentElement;
+        const elError = el.previousElementSibling;
 
+        parent.removeAttribute('invalid');
+        el.setCustomValidity('');
+        elError.textContent = textError;
     }
+
+
 }
