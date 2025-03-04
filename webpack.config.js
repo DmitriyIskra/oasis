@@ -387,20 +387,21 @@ module.exports = {
 
             { from: 'src/files/price.pdf', to: 'files/' },
 
-            { from: 'src/html/modals/account/modal-delete-address.html', to: 'modals/account/' },
-            { from: 'src/html/modals/account/modal-delete-profile.html', to: 'modals/account/' },
-            { from: 'src/html/modals/account/modal-success-delete-address.html', to: 'modals/account/' },
-            { from: 'src/html/modals/account/modal-success-delete-profile.html', to: 'modals/account/' },
+            { from: 'src/html/modals/account/modal-account-delete-address.html', to: 'modals/account/' },
+            { from: 'src/html/modals/account/modal-account-delete-profile.html', to: 'modals/account/' },
+            { from: 'src/html/modals/account/modal-account-success-delete-address.html', to: 'modals/account/' },
+            { from: 'src/html/modals/account/modal-account-success-delete-profile.html', to: 'modals/account/' },
+            { from: 'src/html/modals/account/modal-account-success-edit-profile.html', to: 'modals/account/' },
 
             { from: 'src/html/modals/auth/modal-auth.html', to: 'modals/auth/' }, 
-            { from: 'src/html/modals/auth/modal-check-phone-auth.html', to: 'modals/auth/' }, 
-            { from: 'src/html/modals/auth/modal-login.html', to: 'modals/auth/' }, 
-            { from: 'src/html/modals/auth/modal-reg1.html', to: 'modals/auth/' }, 
-            { from: 'src/html/modals/auth/modal-reg2.html', to: 'modals/auth/' }, 
-            { from: 'src/html/modals/auth/modal-success-auth.html', to: 'modals/auth/' }, 
+            { from: 'src/html/modals/auth/modal-auth-check-phone.html', to: 'modals/auth/' }, 
+            { from: 'src/html/modals/auth/modal-auth-login.html', to: 'modals/auth/' }, 
+            { from: 'src/html/modals/auth/modal-auth-reg1.html', to: 'modals/auth/' }, 
+            { from: 'src/html/modals/auth/modal-auth-reg2.html', to: 'modals/auth/' }, 
+            { from: 'src/html/modals/auth/modal-auth-success.html', to: 'modals/auth/' }, 
 
-            { from: 'src/html/modals/basket/modal-check-phone-basket.html', to: 'modals/basket/' }, 
-            { from: 'src/html/modals/basket/modal-success-basket.html', to: 'modals/basket/' }, 
+            { from: 'src/html/modals/basket/modal-basket-check-phone.html', to: 'modals/basket/' }, 
+            { from: 'src/html/modals/basket/modal-basket-success.html', to: 'modals/basket/' }, 
 
             { from: 'src/html/modals/modal-fail.html', to: 'modals/' }, 
             

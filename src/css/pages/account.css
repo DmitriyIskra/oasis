@@ -183,14 +183,6 @@
     cursor: default;
 }
 
-.acc-user__checkmarks-input_invalid + .acc-user__checkmarks-text {
-    color: #F00;
-}
-
-.acc-user__checkmarks-input:checked + .acc-user__checkmarks-text {
-    color: #000;
-}
-
 .acc-user__checkmarks-text::before {
     content: "";
 

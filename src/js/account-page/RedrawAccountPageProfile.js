@@ -7,11 +7,9 @@ export default class RedrawAccountPageProfile {
         this.disabledInputs = [...this.screen.querySelectorAll('input[disabled]')];
         // текстовые инпуты
         this.requiredInputs = [...this.screen.querySelectorAll('.label-input__input[required]')];
-        // обязательные чекбоксы
-        this.requiredCheckbox = [...this.screen.querySelectorAll('input[type="checkbox"][required]')];
 
         // Поля для email
-        this.emailInputs = [...this.screen.querySelectorAll('.label-input__input[name="email"]')];
+        this.emailInputs = this.screen.querySelector('.label-input__input[name="email"]');
         
         this.buttonSave = this.screen.querySelector('.acc-user__button-save');
         this.buttonEdit = this.screen.querySelector('.acc-user__button-edit');

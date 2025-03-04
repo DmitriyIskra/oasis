@@ -65,9 +65,22 @@ import ValidationAccountPage from "./account-page/ValidationAccountPage";
 import IMask from "imask";
 // Календарь
 import AirDatepicker from "air-datepicker";
+// ResponsePopUp поп ап для ответов сервера
+import ControllResponsePopUp from "./response-modals/ControllResponsePopUp";
+import RedrawResponsePopUp from "./response-modals/RedrawResponsePopUp";
+import RestApiResponsePopUp from "./response-modals/RestApiResponsePopUp";
 
 
 // ---------------------------------------------------------------------
+
+// ResponsePopUp поп ап для ответов сервера
+const dialog = document.querySelector('.dialog');
+if(dialog) {
+    const restApi = new RestApiResponsePopUp();
+    const redraw = new RedrawResponsePopUp(dialog);
+    const controll = new ControllResponsePopUp(redraw, restApi);
+    window.dialogContr = 'controll'
+}
 
 // Чекбокс для управления мобильным меню
 const checkboxNavMobile = document.querySelector('#nav-mobile');
