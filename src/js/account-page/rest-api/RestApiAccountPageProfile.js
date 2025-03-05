@@ -1,15 +1,13 @@
 export default class RestApiAccountPageProfile {
-    constructor(createPath, readPath, updatePath, deletePath) {
-        this.createPath = createPath;
-        this.readPath = readPath;
-        this.updatePath = updatePath;
-        this.deletePath = deletePath;
+    constructor(paths) {
+        this.paths = paths;
     }
 
     async create(data) {
+        console.log(Object.fromEntries(data))
         return true;
         try {
-            const response = await fetch(this.createPath, {
+            const response = await fetch(this.paths.create, {
                 method: 'POST',
                 headers: {
 
@@ -25,7 +23,7 @@ export default class RestApiAccountPageProfile {
 
     async read() {
         try {
-            const response = await fetch(this.readPath);
+            const response = await fetch(this.paths.read);
 
             const respData = response.json();
         } catch (error) {
@@ -35,7 +33,7 @@ export default class RestApiAccountPageProfile {
 
     async update() {
         try {
-            const response = await fetch(this.updatePath, {
+            const response = await fetch(this.paths.update, {
                 method: 'PATCH',
                 headers: {
 
@@ -51,7 +49,7 @@ export default class RestApiAccountPageProfile {
 
     async delete() {
         try {
-            const response = await fetch(this.deletePath, {
+            const response = await fetch(this.paths.delete, {
                 method: 'DELETE',
                 headers: {
 

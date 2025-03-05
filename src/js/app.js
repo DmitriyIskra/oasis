@@ -56,11 +56,12 @@ import moovingWidgets from "./mooving-widgets/mooving-widgets";
 // Корзина
 import RedrawBasket from "./basket/RedrawBasket";
 import ControllBasket from "./basket/ControllBasket";
-// Страница контакты
+// Страница Аккаунт
 import ControllAccountPage from "./account-page/ControllAccountPage";
-import RedrawAccountPageProfile from "./account-page/RedrawAccountPageProfile";
-import RedrawAccountPageTabs from "./account-page/RedrawAccountPageTabs";
 import ValidationAccountPage from "./account-page/ValidationAccountPage";
+import RedrawAccountPageProfile from "./account-page/redraws/RedrawAccountPageProfile";
+import RedrawAccountPageTabs from "./account-page/redraws/RedrawAccountPageTabs";
+import RestApiAccountPageProfile from "./account-page/rest-api/RestApiAccountPageProfile";
 // Маска для телефона
 import IMask from "imask";
 // Календарь
@@ -308,13 +309,26 @@ if(accPage) {
         favorites: screensWrapper.children[3],
         loyalty: screensWrapper.children[4],
     }
-
     const redraws = {
         tabs: new RedrawAccountPageTabs(tabs, screensWrapper),
         profile: new RedrawAccountPageProfile(screens.profile),
     };
+
+
+    const paths = {
+        create: 'createPath',
+        read: 'readPath',
+        update: 'updatePath',
+        delete: 'deletePath',
+    }
+    const restApi = {
+        profile: new RestApiAccountPageProfile(paths),
+    }
+
     const validation = new ValidationAccountPage();
-    const controll = new ControllAccountPage(redraws, validation, AirDatepicker, controllRespPopUp);
+    const controll = new ControllAccountPage(
+        redraws, validation, AirDatepicker, controllRespPopUp, restApi
+    );
     controll.init();
 };
 

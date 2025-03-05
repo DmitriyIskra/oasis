@@ -1,9 +1,10 @@
 export default class ControllAccountPage {
-    constructor(redraws, validation, AirDatepicker, modals) {
+    constructor(redraws, validation, AirDatepicker, modals, restApi) {
         this.redraws = redraws;
         this.validation = validation;
         this.AirDatepicker = AirDatepicker;
         this.modals = modals;
+        this.restApi = restApi;
 
         this.click = this.click.bind(this);
         this.focus = this.focus.bind(this);
@@ -72,8 +73,10 @@ export default class ControllAccountPage {
             if(Boolean(resultReqInputs.length) || !resultEmail) return;
             
             // если нет ошибок собираем данные и отправляем на сервер
-            (this.redraws.profile.form)
-
+            const formData = new FormData(this.redraws.profile.form);
+            (async () => {
+                const response = await this.restApi.profile.create(formData);
+            })()
             // блокируем поля
             this.redraws.profile.disableProfile(); // блокируем поля
 
