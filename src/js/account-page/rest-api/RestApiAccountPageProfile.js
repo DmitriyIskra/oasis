@@ -4,8 +4,7 @@ export default class RestApiAccountPageProfile {
     }
 
     async create(data) {
-        console.log(Object.fromEntries(data))
-        return true;
+        return false;
         try {
             const response = await fetch(this.paths.create, {
                 method: 'POST',

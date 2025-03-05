@@ -30,6 +30,8 @@ export default class ControllAccountPage {
     }
 
     click(e) {
+        let modal;
+
         // TABS
         // переключение страничек (экранов) на странице
         if(e.target.closest('.account__ctrl-item')) {
@@ -40,9 +42,11 @@ export default class ControllAccountPage {
         }
 
         // PROFILE
+        // разблокируем поля для редактирования
         if(e.target.closest('.acc-user__button-edit')) {
             this.redraws.profile.enableProfile();
         }
+        // Редактируем профиль и сохраняем
         if(e.target.closest('.acc-user__button-save')) {
             // Валидация на заполненность
             const resultReqInputs 
@@ -74,16 +78,28 @@ export default class ControllAccountPage {
             
             // если нет ошибок собираем данные и отправляем на сервер
             const formData = new FormData(this.redraws.profile.form);
+            let resultRestCreate;
             (async () => {
-                const response = await this.restApi.profile.create(formData);
+                resultRestCreate = await this.restApi.profile.create(formData);
             })()
             // блокируем поля
             this.redraws.profile.disableProfile(); // блокируем поля
 
             (async () => {
-                const modal = await this.modals.getModal('account', 'success-edit-profile');
-                document.body.style.overflow = 'hidden';
-                modal.showModal();
+                if(resultRestCreate) {
+                    modal = await this.modals.getModal('account', 'success-edit-profile');
+                } else {
+                    modal = await this.modals.getModal('fail');
+                }
+
+                this.modals.showModal();
+            })()
+        }
+        // Удаляем профиль
+        if(e.target.closest('.acc-user__button-delete')) {
+            (async () => {
+                modal = await this.modals.getModal('account', 'delete-profile');
+                this.modals.showModal();
             })()
         }
     }

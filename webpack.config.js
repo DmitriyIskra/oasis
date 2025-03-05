@@ -403,7 +403,7 @@ module.exports = {
             { from: 'src/html/modals/basket/modal-basket-check-phone.html', to: 'modals/basket/' }, 
             { from: 'src/html/modals/basket/modal-basket-success.html', to: 'modals/basket/' }, 
 
-            { from: 'src/html/modals/modal-fail.html', to: 'modals/' }, 
+            { from: 'src/html/modals/fail/modal-fail.html', to: 'modals/fail/' }, 
             
           ],
         }),
