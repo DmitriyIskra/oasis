@@ -2,7 +2,8 @@ export default class RedrawAccountPageProfile {
     constructor(screen) {
         this.screen = screen;
 
-        // PROFILE
+        // Форма
+        this.form = this.screen.querySelector('form');
         // Заблокированные поля
         this.disabledInputs = [...this.screen.querySelectorAll('input[disabled]')];
         // текстовые инпуты
@@ -47,7 +48,7 @@ export default class RedrawAccountPageProfile {
 
         parent.removeAttribute('invalid');
         el.setCustomValidity('');
-        elError.textContent = textError;
+        elError.textContent = '';
     }
 
 

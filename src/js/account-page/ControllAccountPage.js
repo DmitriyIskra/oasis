@@ -1,16 +1,17 @@
 export default class ControllAccountPage {
-    constructor(redraws, validation, AirDatepicker, respModals) {
+    constructor(redraws, validation, AirDatepicker, modals) {
         this.redraws = redraws;
         this.validation = validation;
         this.AirDatepicker = AirDatepicker;
-        
+        this.modals = modals;
+
         this.click = this.click.bind(this);
+        this.focus = this.focus.bind(this);
     }
 
     init() {
         this.registerEvents();
         this.registerLibraries(); 
-        console.log(window.dialogContr)
     }
 
     registerLibraries() {
@@ -24,6 +25,7 @@ export default class ControllAccountPage {
     registerEvents() {
         this.redraws.tabs.tabs.addEventListener('click', this.click);
         this.redraws.profile.screen.addEventListener('click', this.click);
+        this.redraws.profile.requiredInputs.forEach(el => el.addEventListener('focus', this.focus));
     }
 
     click(e) {
@@ -65,16 +67,28 @@ export default class ControllAccountPage {
                             .setError(this.redraws.profile.emailInputs, 'Некорректный email');
                 }
             };
-            
-            // СОГЛАСИЕ НА ОБРАБОТКУ НУЖНО ЛИ ДАВАТЬ ВОЗМОЖНОСТЬ РЕДАКТИРОВАТЬ
-            // И БЛОКИРОВАТЬ ЛИ СОХРАНЕНИЕ БЕЗ ВЫБРАННОГО ЧЕКБОКСА
-
+        
+            // если есть ошибки при заполнении обязательных полей останавливаем
             if(Boolean(resultReqInputs.length) || !resultEmail) return;
-            this.redraws.profile.disableProfile();
+            
+            // если нет ошибок собираем данные и отправляем на сервер
+            (this.redraws.profile.form)
 
-            // const modal = this.read('account', 'success-edit-profile');
+            // блокируем поля
+            this.redraws.profile.disableProfile(); // блокируем поля
+
+            (async () => {
+                const modal = await this.modals.getModal('account', 'success-edit-profile');
+                document.body.style.overflow = 'hidden';
+                modal.showModal();
+            })()
         }
     }
 
+    focus(e) {
+        if(e.target.closest('input[required]') && !e.target.validity.valid) {
+            this.redraws.profile.removeError(e.target.closest('input[required]'));
+        }
+    }
     
 }

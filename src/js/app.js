@@ -75,11 +75,12 @@ import RestApiResponsePopUp from "./response-modals/RestApiResponsePopUp";
 
 // ResponsePopUp поп ап для ответов сервера
 const dialog = document.querySelector('.dialog');
+let controllRespPopUp
 if(dialog) {
     const restApi = new RestApiResponsePopUp();
     const redraw = new RedrawResponsePopUp(dialog);
-    const controll = new ControllResponsePopUp(redraw, restApi);
-    window.dialogContr = 'controll'
+    controllRespPopUp = new ControllResponsePopUp(redraw, restApi);
+    controllRespPopUp.init();
 }
 
 // Чекбокс для управления мобильным меню
@@ -313,7 +314,7 @@ if(accPage) {
         profile: new RedrawAccountPageProfile(screens.profile),
     };
     const validation = new ValidationAccountPage();
-    const controll = new ControllAccountPage(redraws, validation, AirDatepicker);
+    const controll = new ControllAccountPage(redraws, validation, AirDatepicker, controllRespPopUp);
     controll.init();
 };
 

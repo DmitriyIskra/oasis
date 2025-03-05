@@ -46,7 +46,6 @@ https://dmitriyiskra.github.io/oasis/product-card-coffee-machines.html
 
 
 
-
  
 
 https://dmitriyiskra.github.io/oasis/product-card-tea.html - карточка чай
