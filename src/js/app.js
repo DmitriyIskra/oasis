@@ -327,7 +327,7 @@ if(accPage) {
 
     const validation = new ValidationAccountPage();
     const controll = new ControllAccountPage(
-        redraws, validation, AirDatepicker, controllRespPopUp, restApi
+        redraws, validation, restApi, AirDatepicker, controllRespPopUp
     );
     controll.init();
 };

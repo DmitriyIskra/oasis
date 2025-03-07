@@ -4,7 +4,7 @@ export default class ControllResponsePopUp {
         this.rest = rest;
 
         this.closeModal = this.closeModal.bind(this);
-        this.onClick = this.onClick.bind(this);
+        this.onClick = null;
     }
 
     init() {
@@ -20,10 +20,7 @@ export default class ControllResponsePopUp {
         // для того чтобы в дальнейшем могла быть модалка с другим контентом и другим функционалом)
         // данные профиля успешно отредактированы
         if(param === 'delete-profile') {
-            const deleteButton = this.redraw.wrContentDialog.querySelector('.dialog__button-send');
-            const cancelButton = this.redraw.wrContentDialog.querySelector('.dialog__button-cancel');
-
-            this.redraw.wrContentDialog.addEventListener('click')
+            this.redraw.wrContentDialog.addEventListener('click', this.onClick);
         }
     }
 
@@ -53,21 +50,14 @@ export default class ControllResponsePopUp {
     closeModal() {
         this.redraw.closeModal();
         this.removeEvents();
+        this.onClick = null;
     }
 
-    // метод для назначения функционала по событию (для удаления при закрытии)
-    onClick(e) {
-        // удалить аккаунт
-        if(e.target.closest('.dialog__button-send')) {
-            
-        }
-        // отменить удаление аккаунта
-        if(e.target.closest('.dialog__button-cancel')) {
-            
-        }
 
-        if(e.target.closest('')) {
-            
+    // данный метод принимет другой метод с привязанным контекстом и необходимой функциональностью
+    registerHandlerOnClick(eventName, method) {
+        if(eventName === 'click') {
+            this.onClick = method;
         }
     }
 }

@@ -14,7 +14,12 @@
 ## Каталог и мобильная навигация взаимо исключают друг друга
 - Если открывается мобильная навигация, то каталог закрывается функция js/header/nav-mobileButton.js
 - Если открывается каталог, то мобильная навигация закрывается класс js/burger-menu/RedrawBurger.js => 
-метод openNav()
+  метод openNav()
+
+## POP UP для аккаунт и корзины
+- используется отдельный класс (папка response-modals) который имеет метод registerHandlerOnClick(eventName, method)
+  данный метод принимет другой метод с привязанным контекстом и необходимой функциональностью
+  и при формировании модального окна вешает его на слушатель событий модального окна
 
 https://dmitriyiskra.github.io/oasis/product-card-tea.html
 https://dmitriyiskra.github.io/oasis/product-card-coffee.html

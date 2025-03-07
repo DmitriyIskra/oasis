@@ -14,9 +14,9 @@ export default function promoSlider(modules, classes) {
         nextEl: next,
         prevEl: prev,
       },
-      autoplay: {
-        delay: 5000,
-      },
+      // autoplay: {
+      //   delay: 5000,
+      // },
       breakpoints: {
         // when window width is >= 320px
         320: {

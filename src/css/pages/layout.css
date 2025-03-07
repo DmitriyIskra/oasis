@@ -2,6 +2,10 @@
     display: none;
 }
 
+.wrapper {
+    background-color: #fff;
+}
+
 .main {
     position: relative;
     min-height: 100vh

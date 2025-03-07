@@ -30,6 +30,7 @@ include mixines/bread-crumbs/bread-crumbs
             .main-content 
             
                 .widgets__wrapper
+                    //- если нужен виджет включаем чекбокс
                     input#widget__loyalty.widget__cntrl.widget__loyalty_cntrl(type="checkbox" checked)
                     .widget.widget__loyalty
                         a.widget__link(href="./loyalty-program.html" title="Программа лояльности")
@@ -41,6 +42,7 @@ include mixines/bread-crumbs/bread-crumbs
                                     span 15%
                         label.widget__close(for="widget__loyalty")
 
+                    //- если нужен виджет включаем чекбокс
                     input#widget__birthday.widget__cntrl.widget__birthday_cntrl(type="checkbox" checked)
                     .widget.widget__birthday
                         a.widget__link(href="#0" title="Программа лояльности")
@@ -48,71 +50,90 @@ include mixines/bread-crumbs/bread-crumbs
                             .widget__birt-text Ваша скидка 15%
                         label.widget__close(for="widget__birthday")
 
+                .main-wr-title
+                    h1.main-title Магазин ОАЗИС. Кофе, чай, кофемашины, подарочные наборы, сиропы и напитки
+
                 section.goods-day.goods-day__section
                     .goods-day__wr-title 
                         h2 Товар дня
-                    .goods-day__content
-                        .goods-day__wr-img 
-                            img(src=require('../img/content/goods-of-day-content.webp') title="")
-                            a.scale1_1(href="#0" title="")
-                        .goods-day__wr-text 
-                            .goods-day__wr-tm-name
-                                h2 monin
-                                p новая коллеция
-                                p более 60 вкусов
-                            .goods-day__text
-                                p Чайные пирамидки с ярлыком для разовой заварки в индивидуальных конвертах.Чай черный байховый «NIKTEA»® среднелистовой с добавками растительного сырья с ароматом лесных ягод «Сибирский Сбор»15 пирамидок по 2.7 г
-                                p Искусно купажированный чай с плантаций Индии и Цейлона.Очень ароматный сбор на основе крепкого черного чая с душистыми таежными ягодами. Вкус многогранный, с живой кислинкой и лесной ноткой.
-                section.goods-promo.goods-promo__section
-                    .goods-promo__wr-title 
-                        h2 Товары по акции
-                    .goods-promo__wr-slider 
-                        .swiper.goods-promo__slider
-                            .swiper-wrapper.goods-promo__wrapper
-                                .swiper-slide.goods-promo__slide
-                                    .goods-promo__wr-slide-link 
-                                        a.stretch-to-right(href="#0" title="") 
-                                    .goods-promo__wr-slide-img
-                                        img.goods-promo__slide-img(src=require('../img/content/goods-promo-slider-img-content.webp') alt="" loading="lazy")
-                                    .goods-promo__wr-slide-icons 
-                                        .goods-promo__slide-favorites.animation-beat-heart.favorites__heart_active
-                                        .goods-promo__wr-slide-basket.scale1_1
-                                .swiper-slide.goods-promo__slide
-                                    .goods-promo__wr-slide-link 
-                                        a.stretch-to-right(href="#0" title="") 
-                                    .goods-promo__wr-slide-img
-                                        img.goods-promo__slide-img(src=require('../img/content/goods-promo-slider-img-content.webp') alt="" loading="lazy")
-                                    .goods-promo__wr-slide-icons 
-                                        .goods-promo__slide-favorites.animation-beat-heart
-                                        .goods-promo__wr-slide-basket.scale1_1
-                                .swiper-slide.goods-promo__slide
-                                    .goods-promo__wr-slide-link 
-                                        a.stretch-to-right(href="#0" title="") 
-                                    .goods-promo__wr-slide-img
-                                        img.goods-promo__slide-img(src=require('../img/content/goods-promo-slider-img-content.webp') alt="" loading="lazy")
-                                    .goods-promo__wr-slide-icons 
-                                        .goods-promo__slide-favorites.animation-beat-heart 
-                                        .goods-promo__wr-slide-basket.scale1_1
-                                .swiper-slide.goods-promo__slide
-                                    .goods-promo__wr-slide-link 
-                                        a.stretch-to-right(href="#0" title="") 
-                                    .goods-promo__wr-slide-img
-                                        img.goods-promo__slide-img(src=require('../img/content/goods-promo-slider-img-content.webp') alt="" loading="lazy")
-                                    .goods-promo__wr-slide-icons 
-                                        .goods-promo__slide-favorites.animation-beat-heart 
-                                        .goods-promo__wr-slide-basket.scale1_1
-                                .swiper-slide.goods-promo__slide
-                                    .goods-promo__wr-slide-link 
-                                        a.stretch-to-right(href="#0" title="") 
-                                    .goods-promo__wr-slide-img
-                                        img.goods-promo__slide-img(src=require('../img/content/goods-promo-slider-img-content.webp') alt="" loading="lazy")
-                                    .goods-promo__wr-slide-icons 
-                                        .goods-promo__slide-favorites.animation-beat-heart 
-                                        .goods-promo__wr-slide-basket.scale1_1
-                            
-                            .goods-promo__slider-wr-arrows
-                                .goods-promo__arrow.goods-promo__arrow-prev.scaleX1_1
-                                .goods-promo__arrow.goods-promo__arrow-next.scaleX1_1
+                    .section__wr-content
+                        .goods-day__content
+                            .goods-day__wr-img 
+                                img(src=require('../img/content/goods-of-day-content.webp') alt="")
+                                a.scale1_1(href="#0" title="")
+                            .goods-day__wr-text 
+                                .goods-day__wr-tm-name
+                                    h2 monin
+                                    p Новая коллеция
+                                    p более 60 вкусов
+                                .goods-day__text
+                                    p Чайные пирамидки с ярлыком для разовой заварки в индивидуальных конвертах.Чай черный байховый «NIKTEA»® среднелистовой с добавками растительного сырья с ароматом лесных ягод «Сибирский Сбор»15 пирамидок по 2.7 г
+                                    p Искусно купажированный чай с плантаций Индии и Цейлона.Очень ароматный сбор на основе крепкого черного чая с душистыми таежными ягодами. Вкус многогранный, с живой кислинкой и лесной ноткой.
+                        section.goods-promo.goods-promo__section
+                            .goods-promo__wr-title 
+                                h2 Товары по акции
+                            .goods-promo__wr-slider 
+                                .swiper.goods-promo__slider
+                                    .swiper-wrapper.goods-promo__wrapper
+                                        .swiper-slide.goods-promo__slide
+                                            .goods-promo__wr-slide-link 
+                                                a.stretch-to-right(href="#0" title="") 
+                                            .goods-promo__wr-slide-img
+                                                img.goods-promo__slide-img(src=require('../img/content/goods-promo-slider-img-content.webp') alt="" loading="lazy")
+                                            .goods-promo__wr-slide-icons 
+                                                .goods-promo__slide-favorites.animation-beat-heart.favorites__heart_active
+                                                .goods-promo__wr-slide-basket.scale1_1
+                                            .goods-promo__price-card 
+                                                .goods-promo__price.goods-promo__old-price 1 200 000 р 
+                                                .goods-promo__price.goods-promo__new-price 1 000 000 р
+                                        .swiper-slide.goods-promo__slide
+                                            .goods-promo__wr-slide-link 
+                                                a.stretch-to-right(href="#0" title="") 
+                                            .goods-promo__wr-slide-img
+                                                img.goods-promo__slide-img(src=require('../img/content/goods-promo-slider-img-content.webp') alt="" loading="lazy")
+                                            .goods-promo__wr-slide-icons 
+                                                .goods-promo__slide-favorites.animation-beat-heart
+                                                .goods-promo__wr-slide-basket.scale1_1
+                                            .goods-promo__price-card 
+                                                .goods-promo__price.goods-promo__old-price 1 200 000 р 
+                                                .goods-promo__price.goods-promo__new-price 1 000 000 р
+                                        .swiper-slide.goods-promo__slide
+                                            .goods-promo__wr-slide-link 
+                                                a.stretch-to-right(href="#0" title="") 
+                                            .goods-promo__wr-slide-img
+                                                img.goods-promo__slide-img(src=require('../img/content/goods-promo-slider-img-content.webp') alt="" loading="lazy")
+                                            .goods-promo__wr-slide-icons 
+                                                .goods-promo__slide-favorites.animation-beat-heart 
+                                                .goods-promo__wr-slide-basket.scale1_1
+                                            .goods-promo__price-card 
+                                                .goods-promo__price.goods-promo__old-price 1 200 000 р 
+                                                .goods-promo__price.goods-promo__new-price 1 000 000 р
+                                        .swiper-slide.goods-promo__slide
+                                            .goods-promo__wr-slide-link 
+                                                a.stretch-to-right(href="#0" title="") 
+                                            .goods-promo__wr-slide-img
+                                                img.goods-promo__slide-img(src=require('../img/content/goods-promo-slider-img-content.webp') alt="" loading="lazy")
+                                            .goods-promo__wr-slide-icons 
+                                                .goods-promo__slide-favorites.animation-beat-heart 
+                                                .goods-promo__wr-slide-basket.scale1_1
+                                            .goods-promo__price-card 
+                                                .goods-promo__price.goods-promo__old-price 1 200 000 р 
+                                                .goods-promo__price.goods-promo__new-price 1 000 000 р
+                                        .swiper-slide.goods-promo__slide
+                                            .goods-promo__wr-slide-link 
+                                                a.stretch-to-right(href="#0" title="") 
+                                            .goods-promo__wr-slide-img
+                                                img.goods-promo__slide-img(src=require('../img/content/goods-promo-slider-img-content.webp') alt="" loading="lazy")
+                                            .goods-promo__wr-slide-icons 
+                                                .goods-promo__slide-favorites.animation-beat-heart 
+                                                .goods-promo__wr-slide-basket.scale1_1
+                                            .goods-promo__price-card 
+                                                .goods-promo__price.goods-promo__old-price 1 200 000 р 
+                                                .goods-promo__price.goods-promo__new-price 1 000 000 р
+                                    
+                                    .goods-promo__slider-wr-arrows
+                                        .goods-promo__arrow.goods-promo__arrow-prev.scaleX1_1
+                                        .goods-promo__arrow.goods-promo__arrow-next.scaleX1_1
 
                 section.comfortable.comfortable__section 
                     .comfortable__wr-title 

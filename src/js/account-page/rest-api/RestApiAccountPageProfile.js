@@ -47,6 +47,7 @@ export default class RestApiAccountPageProfile {
     }
 
     async delete() {
+        return true;
         try {
             const response = await fetch(this.paths.delete, {
                 method: 'DELETE',
@@ -58,7 +59,7 @@ export default class RestApiAccountPageProfile {
 
             const respData = response.json();
         } catch (error) {
-            
+            console.error('Операция удаления аккаунта завершилась ошибкой: ', error);
         }
     }
 }

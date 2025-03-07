@@ -1,13 +1,17 @@
 export default class ControllAccountPage {
-    constructor(redraws, validation, AirDatepicker, modals, restApi) {
+    constructor(redraws, validation, restApi, AirDatepicker, modals) {
         this.redraws = redraws;
         this.validation = validation;
+        this.restApi = restApi;
         this.AirDatepicker = AirDatepicker;
         this.modals = modals;
-        this.restApi = restApi;
+
+        this.activeModal = null;
 
         this.click = this.click.bind(this);
         this.focus = this.focus.bind(this);
+
+        this.handlerModalClick = this.handlerModalClick.bind(this);
     }
 
     init() {
@@ -30,8 +34,6 @@ export default class ControllAccountPage {
     }
 
     click(e) {
-        let modal;
-
         // TABS
         // переключение страничек (экранов) на странице
         if(e.target.closest('.account__ctrl-item')) {
@@ -78,27 +80,27 @@ export default class ControllAccountPage {
             
             // если нет ошибок собираем данные и отправляем на сервер
             const formData = new FormData(this.redraws.profile.form);
-            let resultRestCreate;
-            (async () => {
-                resultRestCreate = await this.restApi.profile.create(formData);
-            })()
-            // блокируем поля
-            this.redraws.profile.disableProfile(); // блокируем поля
 
             (async () => {
-                if(resultRestCreate) {
-                    modal = await this.modals.getModal('account', 'success-edit-profile');
+                const resp = await this.restApi.profile.create(formData);
+
+                this.redraws.profile.disableProfile(); // блокируем поля
+
+                if(resp) {
+                    this.activeModal = await this.modals.getModal('account', 'success-edit-profile');
                 } else {
-                    modal = await this.modals.getModal('fail');
+                    this.activeModal = await this.modals.getModal('fail');
                 }
-
+    
                 this.modals.showModal();
             })()
         }
         // Удаляем профиль
         if(e.target.closest('.acc-user__button-delete')) {
+            this.modals.registerHandlerOnClick('click', this.handlerModalClick);
+
             (async () => {
-                modal = await this.modals.getModal('account', 'delete-profile');
+                this.activeModal = await this.modals.getModal('account', 'delete-profile');
                 this.modals.showModal();
             })()
         }
@@ -107,6 +109,36 @@ export default class ControllAccountPage {
     focus(e) {
         if(e.target.closest('input[required]') && !e.target.validity.valid) {
             this.redraws.profile.removeError(e.target.closest('input[required]'));
+        }
+    }
+
+    // МЕТОДЫ ДЛЯ ПРОБРАСЫВАНИЯ В КЛАСС С МОДАЛКАМИ
+    handlerModalClick(e) {
+        // ПОДТВЕРЖДЕНИЕ УДАЛЕНИЯ АККАУНТА
+        // удалить аккаунт
+        if(e.target.closest('.dialog__button-send')) {
+            (async () => {
+                const resp = await this.restApi.profile.delete();
+                this.modals.closeModal();
+
+                if(resp) {
+                    this.modals.registerHandlerOnClick('click', this.handlerModalClick);
+                    this.activeModal = await this.modals.getModal('account', 'success-delete-profile');
+                } else {
+                    this.activeModal = await this.modals.getModal('fail');
+                }
+
+                this.modals.showModal();
+            })()
+        }
+        // отменить удаление аккаунта
+        if(e.target.closest('.dialog__button-cancel')) {
+            this.modals.closeModal();
+        }
+        // ПОФИЛЬ УДАЛЕН УСПЕШНО
+        // редирект при клике на кнопку на главную 
+        if(e.target.closest('.dialog__button_redirect')) {
+            location.href = '/';
         }
     }
     
