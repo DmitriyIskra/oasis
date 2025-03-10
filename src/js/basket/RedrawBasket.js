@@ -22,6 +22,7 @@ export default class RedrawBasket {
         this.currentActiveTabD = null;
         // текущая открытая форма forms
         this.currentOpenFormD = null;
+
         // последний активный tab goods
         this.currentActiveTabP = null;
         // текущая открытая форма goods
@@ -87,18 +88,29 @@ export default class RedrawBasket {
     }
     closeForm(type) {
         if(type === 'delivery' && this.currentOpenFormD) {
-            this.currentOpenFormD.style.height = '0px';
-            this.currentOpenFormD.addEventListener('transitionend', (e) => {
-                e.target.style.display = '';
-            }, {once: true})
+            this.handlerCloseForm(this.currentOpenFormD);
+        }
+        
+        if(type === 'payment' && this.currentOpenFormP) {
+            this.handlerCloseForm(this.currentOpenFormP);
+        }
+    }
+    // меняет свойства у переданного элемента (формы), скрывает ее
+    handlerCloseForm(form) {
+        const valTransition = getComputedStyle(form).transition;
+
+        form.style.height = '0px';
+            
+        // Десктоп версия
+        if(valTransition === 'all') {
+            form.style.display = ''; 
+            return;
         }
 
-        if(type === 'payment' && this.currentOpenFormP) {
-            this.currentOpenFormP.style.height = '0px';
-            this.currentOpenFormP.addEventListener('transitionend', (e) => {
-                e.target.style.display = ''; 
-            }, {once: true})
-        }
+        // МОБИЛЬНАЯ ВЕРСИЯ
+        form.addEventListener('transitionend', (e) => {
+            e.target.style.display = '';
+        }, {once: true})
     }
 
     // установка и удаление маски для телефон
@@ -141,12 +153,12 @@ export default class RedrawBasket {
 
         arr.forEach((item, index) => {
             if(!/\d/.test(item)) {
-                arr.splice(index, 1);
-                
+                delete arr[index];
             }
         });
+        const result = arr.map(item => item);
 
-        el.value = arr.join('');
+        el.value = result.join('');
     }
     
     // ONLY MOBILE 

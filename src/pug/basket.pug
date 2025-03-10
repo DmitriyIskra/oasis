@@ -35,6 +35,7 @@ block content
                             +label-input('Доп. номер телефона', 'basket__form-user-additional-phone', 'additional-phone', false)
             
                 //- ======================== START Способ доставки ================================
+
                 .basket__del-title
                     h2.basket__title Способ доставки
 
@@ -42,9 +43,8 @@ block content
                     include components/select-address
 
                 .basket__grid-forms-list.basket__deliv-forms(data-typeforms='delivery')
-                    //- для открытия формы, к табу добавляем атрибут active
+                    //- для открытия формы, к табу (label) добавляем атрибут active
                     label.basket__tab.basket__tab_mkad(data-item="mkad" )
-                        //- input.basket__tab-check(type="checkbox" name="mkad" value="Москва в пределах МКАД")
                         span.basket__tab-title Москва в пределах #[br] МКАД
                     form.basket__grid-form.basket__deliv-form.basket__deliv-form_mkad(data-item="mkad" name="form_deliv_mkad")
                         .basket__grid-form-content
@@ -63,10 +63,9 @@ block content
                                     +label-input('Код домофона', 'basket__wr-form-deliv-intercom', 'intercom', false)
                                 .basket__form-in-item.basket__form-wishes
                                     +textarea('Комментарии к заказу', 'basket__form-deliv-wishes', 'wishes')
-                    //- --
                     
+                    //- --
                     label.basket__tab.basket__tab_behind-mkad(data-item="behind_mkad" )
-                        //- input.basket__tab-check(type="checkbox" name="behind_mkad" value="Более 5 км от МКАДа")
                         span.basket__tab-title Более 5 км#[br] от МКАДа
                     form.basket__grid-form.basket__deliv-form.basket__deliv-form_behind-mkad(data-item="behind_mkad" name="form_deliv_behind_mkad")
                         .basket__grid-form-content
@@ -90,7 +89,6 @@ block content
                     //- --
                     
                     label.basket__tab.basket__tab_pickup(data-item="pickup" )
-                        //- input.basket__tab-check(type="checkbox" name="pickup" value="Самовывоз")
                         .basket__tab-title Самовывоз
                     form.basket__grid-form.basket__deliv-form.basket__deliv-form_pickup(data-item="pickup" name="form_deliv_pickup")
                         .basket__grid-form-content
@@ -111,7 +109,6 @@ block content
                     //- --
 
                     label.basket__tab.basket__tab_regions(data-item="regions" )
-                        //- input.basket__tab-check(type="checkbox" name="regions" value="В регионы")
                         .basket__tab-title В регионы
                     form.basket__grid-form.basket__deliv-form.basket__deliv-form_regions(data-item="regions" name="form_deliv_regions")
                         .basket__grid-form-content
@@ -135,7 +132,6 @@ block content
                     //- --
                     
                     label.basket__tab.basket__tab_points(data-item="points" )
-                        //- input.basket__tab-check(type="checkbox" name="points" value="Пункты выдачи")
                         .basket__tab-title Пункты выдачи
                     form.basket__grid-form.basket__deliv-form.basket__deliv-form_points(data-item="points" name="form_deliv_points")
                         .basket__grid-form-content

@@ -14,7 +14,7 @@ export default class ControllBasket {
 
     }
     
-    registerEvents() {
+    registerEvents() { 
         window.addEventListener('resize', this.resize);
 
         this.redraw.el.addEventListener('click', this.click);
@@ -37,6 +37,7 @@ export default class ControllBasket {
             const tab = e.target.closest('.basket__tab');
             const parent = tab.parentElement;
             
+            // определяет к какому блоку относится tab "способ доставки" или "способ оплаты"
             let typeTab;
             if(parent.classList.contains('basket__deliv-forms')) {
                 typeTab = 'currentActiveTabD';
@@ -45,13 +46,15 @@ export default class ControllBasket {
                 typeTab = 'currentActiveTabP';
             };
 
-            
+            // один из табов и форм активен и совпадает с крайним открытым 
+            // т.е. выключает активный
             if(this.redraw[typeTab] && this.redraw[typeTab] === tab) {
                 this.redraw.closeForm(parent.dataset.typeforms);
                 this.redraw.offTab(parent, parent.dataset.typeforms);
                 return;
             }
-            
+            // один из табов и форм активен и не совпадает с крайним открытым
+            // т.е. переключаем с одного на другой
             if(this.redraw[typeTab] && this.redraw[typeTab] !== tab) {
                 this.redraw.closeForm(parent.dataset.typeforms);
                 this.redraw.offTab(parent, parent.dataset.typeforms);
@@ -59,6 +62,7 @@ export default class ControllBasket {
                 this.redraw.openForm(parent.dataset.typeforms);
             }
             
+            // включает таб и форму впервые
             if(!this.redraw[typeTab]) {
                 this.redraw.onTab(tab, parent.dataset.typeforms);
                 this.redraw.openForm(parent.dataset.typeforms);
@@ -76,13 +80,10 @@ export default class ControllBasket {
         }
     }
     
+    // При вводе данных в индекс или количество балов
+    // разрешено ввести только цифры и указанное количество символов
     input(e) {
-        if(e.target.closest('.basket__balls-deduct-input')) {
-            this.redraw.onlyNum(e.target);
-            this.redraw.maxSize(e.target, 6);
-        }
-        
-        if(e.target.matches("input[name='zipcode']")) {
+        if(e.target.closest('.basket__balls-deduct-input') || e.target.matches("input[name='zipcode']")) {
             this.redraw.onlyNum(e.target);
             this.redraw.maxSize(e.target, 6);
         }

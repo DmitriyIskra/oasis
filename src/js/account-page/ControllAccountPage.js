@@ -10,6 +10,7 @@ export default class ControllAccountPage {
 
         this.click = this.click.bind(this);
         this.focus = this.focus.bind(this);
+        this.input = this.input.bind(this);
 
         this.handlerModalClick = this.handlerModalClick.bind(this);
     }
@@ -29,8 +30,13 @@ export default class ControllAccountPage {
 
     registerEvents() {
         this.redraws.tabs.tabs.addEventListener('click', this.click);
+
         this.redraws.profile.screen.addEventListener('click', this.click);
         this.redraws.profile.requiredInputs.forEach(el => el.addEventListener('focus', this.focus));
+        
+        this.redraws.address.screen.addEventListener('click', this.click);
+        this.redraws.address.screen.addEventListener('input', this.input);
+        this.redraws.address.screen.addEventListener('paste', this.paste);
     }
 
     click(e) {
@@ -106,7 +112,15 @@ export default class ControllAccountPage {
         }
     }
 
+    input(e) {
+        if(e.target.closest('.acc-user__zipcode')) {
+            this.redraws.address.maxSize(e.target, 6);
+            this.redraws.address.onlyNum(e.target)
+        }
+    }
+
     focus(e) {
+        // снимает невалидность с элемента
         if(e.target.closest('input[required]') && !e.target.validity.valid) {
             this.redraws.profile.removeError(e.target.closest('input[required]'));
         }

@@ -61,6 +61,7 @@ import ControllAccountPage from "./account-page/ControllAccountPage";
 import ValidationAccountPage from "./account-page/ValidationAccountPage";
 import RedrawAccountPageProfile from "./account-page/redraws/RedrawAccountPageProfile";
 import RedrawAccountPageTabs from "./account-page/redraws/RedrawAccountPageTabs";
+import RedrawAccountPageAddress from "./account-page/redraws/RedrawAccountPageAddress";
 import RestApiAccountPageProfile from "./account-page/rest-api/RestApiAccountPageProfile";
 // Маска для телефона
 import IMask from "imask";
@@ -70,6 +71,8 @@ import AirDatepicker from "air-datepicker";
 import ControllResponsePopUp from "./response-modals/ControllResponsePopUp";
 import RedrawResponsePopUp from "./response-modals/RedrawResponsePopUp";
 import RestApiResponsePopUp from "./response-modals/RestApiResponsePopUp";
+// Выбор адреса кастомный селект
+import selectAddress from "./select-address/select-address";
 
 
 // ---------------------------------------------------------------------
@@ -177,6 +180,12 @@ if(salesHits) {
     salesHitsSlider(modules, classes, fewSliders);
 }
 
+// Кастомный селект
+const addresSelect = document.querySelector('.sel-address');
+if(addresSelect) {
+    selectAddress(addresSelect);
+}
+
 // Слайдер карточка товара
 const sliderCard = document.querySelector('.product__wr-images');
 if(sliderCard) {
@@ -219,6 +228,7 @@ if(characteristicsComposition) {
     productCardOpenComposition(characteristicsComposition, arrow);
 }
 
+// Слайдер Вам может быть интересно
 const sliderInteresting = document.querySelector('.interesting-sl');
 if(sliderInteresting) {
     const modules = {
@@ -312,6 +322,7 @@ if(accPage) {
     const redraws = {
         tabs: new RedrawAccountPageTabs(tabs, screensWrapper),
         profile: new RedrawAccountPageProfile(screens.profile),
+        address: new RedrawAccountPageAddress(screens.address),
     };
 
 
