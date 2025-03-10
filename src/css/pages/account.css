@@ -248,6 +248,7 @@
 
 .acc-addr__wr-select {
     height: 1.56vw;
+    width: fit-content;
     margin-top: 3.02vw;
 }
 
@@ -1254,6 +1255,7 @@
 @media(max-width: 961px) {
     .acc-addr__wr-select {
         height: 8vw;
+        width: 100%;
         margin-top: 13.07vw;
     }
 }

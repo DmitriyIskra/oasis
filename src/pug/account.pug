@@ -17,14 +17,14 @@ block content
         .account__wrapper-content
 
             ul.account__ctrl-list 
-                li.account__ctrl-item.account__ctrl-item_active(data-ctrl="profile") Профиль
-                li.account__ctrl-item(data-ctrl="address") Адреса доставки
+                li.account__ctrl-item(data-ctrl="profile") Профиль
+                li.account__ctrl-item.account__ctrl-item_active(data-ctrl="address") Адреса доставки
                 li.account__ctrl-item(data-ctrl="history") История заказов
                 li.account__ctrl-item(data-ctrl="favorites") Избранное
                 li.account__ctrl-item(data-ctrl="loyalty") Программа лояльности
 
             ul.account__screen-list
-                li.account__screen-item.account__screen-item_active(data-screen="profile")
+                li.account__screen-item(data-screen="profile")
                     .acc-user.account__item-content 
                         .acc-user__icon
                             .acc-user__discount #[span.acc-user__discount-text 10%]
@@ -73,7 +73,7 @@ block content
                                 button.account__form-button.acc-user__button-delete(type="button") Удалить профиль
 
 
-                li.account__screen-item(data-screen="address")
+                li.account__screen-item.account__screen-item_active(data-screen="address")
                     .acc-addr.account__item-content
                         .acc-addr__my-addresses
                             .account__wr-title
