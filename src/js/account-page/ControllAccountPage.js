@@ -1,10 +1,11 @@
 export default class ControllAccountPage {
-    constructor(redraws, validation, restApi, AirDatepicker, modals) {
+    constructor(redraws, validation, restApi, AirDatepicker, modals, handlers) {
         this.redraws = redraws;
         this.validation = validation;
         this.restApi = restApi;
         this.AirDatepicker = AirDatepicker;
         this.modals = modals;
+        this.handlers = handlers; // методы для регистрации к модальным окнам
 
         this.activeModal = null;
 
@@ -12,7 +13,7 @@ export default class ControllAccountPage {
         this.focus = this.focus.bind(this);
         this.input = this.input.bind(this);
 
-        this.handlerModalClick = this.handlerModalClick.bind(this);
+        this.activeHandler = null;
     }
 
     init() {
@@ -50,11 +51,11 @@ export default class ControllAccountPage {
         }
 
         // PROFILE
-        // разблокируем поля для редактирования
+        // разблокирование полей для редактирования
         if(e.target.closest('.acc-user__button-edit')) {
             this.redraws.profile.enableProfile();
         }
-        // Редактируем профиль и сохраняем
+        // Редактирование профиля и сохранение
         if(e.target.closest('.acc-user__button-save')) {
             // Валидация на заполненность
             const resultReqInputs 
@@ -66,6 +67,7 @@ export default class ControllAccountPage {
                     this.redraws.profile.setError(input, 'Поле обязательно для заполнения');
                 });
             }
+            // Прорверяем есть ли поле email среди не заполненных полей
             // Если элемент email не найден значит он был заполнен и есть необходимость 
             // проверить на соответствие шаблону
             const elEmail = resultReqInputs.find(input => input.name === 'email');
@@ -87,6 +89,7 @@ export default class ControllAccountPage {
             // если нет ошибок собираем данные и отправляем на сервер
             const formData = new FormData(this.redraws.profile.form);
 
+            // показываем соответствующую результату выполнения отправки данных на сервер pop up
             (async () => {
                 const resp = await this.restApi.profile.create(formData);
 
@@ -101,9 +104,12 @@ export default class ControllAccountPage {
                 this.modals.showModal();
             })()
         }
-        // Удаляем профиль
+
+        // Удаление профиля
         if(e.target.closest('.acc-user__button-delete')) {
-            this.modals.registerHandlerOnClick('click', this.handlerModalClick);
+            this.activeHandler = this.handlers.deleteAcc.bind(this);
+
+            this.modals.registerHandlerOnClick('click', this.activeHandler);
 
             (async () => {
                 this.activeModal = await this.modals.getModal('account', 'delete-profile');
@@ -126,34 +132,6 @@ export default class ControllAccountPage {
         }
     }
 
-    // МЕТОДЫ ДЛЯ ПРОБРАСЫВАНИЯ В КЛАСС С МОДАЛКАМИ
-    handlerModalClick(e) {
-        // ПОДТВЕРЖДЕНИЕ УДАЛЕНИЯ АККАУНТА
-        // удалить аккаунт
-        if(e.target.closest('.dialog__button-send')) {
-            (async () => {
-                const resp = await this.restApi.profile.delete();
-                this.modals.closeModal();
-
-                if(resp) {
-                    this.modals.registerHandlerOnClick('click', this.handlerModalClick);
-                    this.activeModal = await this.modals.getModal('account', 'success-delete-profile');
-                } else {
-                    this.activeModal = await this.modals.getModal('fail');
-                }
-
-                this.modals.showModal();
-            })()
-        }
-        // отменить удаление аккаунта
-        if(e.target.closest('.dialog__button-cancel')) {
-            this.modals.closeModal();
-        }
-        // ПОФИЛЬ УДАЛЕН УСПЕШНО
-        // редирект при клике на кнопку на главную 
-        if(e.target.closest('.dialog__button_redirect')) {
-            location.href = '/';
-        }
-    }
+    
     
 }

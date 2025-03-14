@@ -63,6 +63,7 @@ import RedrawAccountPageProfile from "./account-page/redraws/RedrawAccountPagePr
 import RedrawAccountPageTabs from "./account-page/redraws/RedrawAccountPageTabs";
 import RedrawAccountPageAddress from "./account-page/redraws/RedrawAccountPageAddress";
 import RestApiAccountPageProfile from "./account-page/rest-api/RestApiAccountPageProfile";
+import HandlersModalRequest from "./account-page/handlers-for-modal/handlersForModalRequest";
 // Маска для телефона
 import IMask from "imask";
 // Календарь
@@ -337,8 +338,9 @@ if(accPage) {
     }
 
     const validation = new ValidationAccountPage();
+    const handlers = new HandlersModalRequest();
     const controll = new ControllAccountPage(
-        redraws, validation, restApi, AirDatepicker, controllRespPopUp
+        redraws, validation, restApi, AirDatepicker, controllRespPopUp, handlers
     );
     controll.init();
 };

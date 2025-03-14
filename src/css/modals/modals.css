@@ -19,7 +19,7 @@
 
     overflow: overlay;
 }
-
+ 
 .dialog[open] {
     display: grid;
     place-items: center;
@@ -320,10 +320,79 @@
 }
 
 /* reg2 */
-.dialog__wr-reg2-buttons {
-    margin-top: 4.32vw;
+.dialog__item-checkmarks {
+    display: flex;
+    width: 69.4%;
+    margin-top: 1.98vw;
+    gap: 0.78vw;
+    flex-direction: column;
 }
 
+.dialog__checkmarks-label {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dialog__checkmarks-input {
+    display: none;
+}
+
+.dialog__checkmarks-text {
+    display: flex;
+    gap: 0.47vw;
+    align-items: end;
+
+    font-family: 'Play';
+    font-size: 0.63vw;
+
+    color: #615F5D;
+
+    cursor: pointer;
+}
+
+.dialog__checkmarks-input:disabled + .dialog__checkmarks-text {
+    cursor: default;
+}
+
+.dialog__checkmarks-text::before {
+    content: "";
+
+    display: inline-block;
+    width: 1.30vw;
+    height: 1.30vw;
+    flex-shrink: 0;
+
+    border-radius: 0.21vw;
+    background-color: #EFEFEF;
+    border: 1px solid #4D96AB;
+}
+
+.dialog__checkmarks-input_invalid + .dialog__checkmarks-text::before {
+    border: 1px solid #F00;
+}
+
+.dialog__checkmarks-input:checked + .dialog__checkmarks-text::before {
+    border: 1px solid #4D96AB;
+    background-image: url('../../svg/checkmark-green.svg');
+    background-repeat: no-repeat;
+    background-size: 60% auto;
+    background-position: center;
+}
+
+.dialog__reg2-doc {
+    display: inline-block;
+    width: 1.51vw;
+    height: 1.35vw;
+    flex-shrink: 0;
+
+    background: no-repeat url('../../svg/icon-pdf.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.dialog__wr-reg2-buttons {
+    margin-top: 3.02vw;
+}
 /* --== END AUTH ==-- */
 
 
@@ -591,29 +660,40 @@
 
 /* reg2 */
 @media(max-width: 961px) {
-    .dialog__wr-reg2-buttons {
-        margin-top: 22.13vw;
+    .dialog__item-checkmarks {
+        width: 85.3%;
+        margin-top: 9.07vw;
+        gap: 4vw;
     }
 }
 
 @media(max-width: 961px) {
-    
+    .dialog__checkmarks-text {
+        gap: 3.47vw;
+
+        font-size: 3.20vw;
+    }
 }
 
 @media(max-width: 961px) {
-    
+    .dialog__checkmarks-text::before {
+        width: 6.2vw;
+        height: 6.2vw;
+        border-radius: 1.07vw;
+    }
 }
 
 @media(max-width: 961px) {
-    
+    .dialog__reg2-doc {
+        width: 7.73vw;
+        height: 6.93vw;
+    }   
 }
 
 @media(max-width: 961px) {
-    
-}
-
-@media(max-width: 961px) {
-    
+    .dialog__wr-reg2-buttons {
+        margin-top: 13.87vw;
+    }
 }
 /* --== END AUTH ==-- */
 

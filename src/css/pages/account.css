@@ -157,56 +157,6 @@
     cursor: default;
 }
 
-.acc-user__item-checkmarks {
-    display: flex;
-    margin-top: 3.75vw;
-    gap: 0.57vw;
-    flex-direction: column;
-}
-
-.acc-user__checkmarks-input {
-    display: none;
-}
-
-.acc-user__checkmarks-text {
-    display: flex;
-    gap: 0.47vw;
-    align-items: end;
-
-    font-family: 'Play';
-    font-size: 0.73vw;
-
-    cursor: pointer;
-}
-
-.acc-user__checkmarks-input:disabled + .acc-user__checkmarks-text {
-    cursor: default;
-}
-
-.acc-user__checkmarks-text::before {
-    content: "";
-
-    display: inline-block;
-    width: 1.30vw;
-    height: 1.30vw;
-
-    border-radius: 0.21vw;
-    background-color: #EFEFEF;
-    border: 1px solid #4D96AB;
-}
-
-.acc-user__checkmarks-input_invalid + .acc-user__checkmarks-text::before {
-    border: 1px solid #F00;
-}
-
-.acc-user__checkmarks-input:checked + .acc-user__checkmarks-text::before {
-    border: 1px solid #4D96AB;
-    background-image: url('../../svg/checkmark-green.svg');
-    background-repeat: no-repeat;
-    background-size: 60% auto;
-    background-position: center;
-}
-
 
 
 .acc-user__buttons {
@@ -1175,29 +1125,6 @@
 @media(max-width: 961px) {
     .acc-user__item-birth-date {
         margin-top: 9.07vw;
-    }
-}
-
-@media(max-width: 961px) {
-    .acc-user__item-checkmarks {
-        margin-top: 9.07vw;
-        gap: 6.93vw;
-    }
-}
-
-@media(max-width: 961px) {
-    .acc-user__checkmarks-text {
-        gap: 2.40vw;
-
-        font-size: 3.73vw;
-    }
-}
-
-@media(max-width: 961px) {
-    .acc-user__checkmarks-text::before {
-        width: 6.67vw;
-        height: 6.67vw;
-        border-radius: 1.07vw;
     }
 }
 
