@@ -1,3 +1,5 @@
+// Валидация полей форм
+import ValidationPlacesForm from "./validation-places-form/ValidationPlacesForm";
 // Бургер меню
 import ControllBurger from "./burger-menu/ControllBurger";
 import RedrawBurger from "./burger-menu/RedrawBurger";
@@ -8,6 +10,8 @@ import navMobileButton from "./header/nav-mobileButton";
 // Меню аккаунт в хедер
 import ControllMenuAccount from "./header/headerMenuAccount/ControllMenuAccount";
 import RedrawMenuAccount from "./header/headerMenuAccount/RedrawMenuAccount";
+import HandlersForModalsMenuAccount from "./header/headerMenuAccount/HandlersForModalsMenuAccount";
+import RestApiMenuAccountLogin from "./header/headerMenuAccount/rest-api/RestApiMenuAccountLogin";
 // Свайпер для слайдеров
 import Swiper from "swiper";
 import { 
@@ -58,12 +62,11 @@ import RedrawBasket from "./basket/RedrawBasket";
 import ControllBasket from "./basket/ControllBasket";
 // Страница Аккаунт
 import ControllAccountPage from "./account-page/ControllAccountPage";
-import ValidationAccountPage from "./account-page/ValidationAccountPage";
 import RedrawAccountPageProfile from "./account-page/redraws/RedrawAccountPageProfile";
 import RedrawAccountPageTabs from "./account-page/redraws/RedrawAccountPageTabs";
 import RedrawAccountPageAddress from "./account-page/redraws/RedrawAccountPageAddress";
 import RestApiAccountPageProfile from "./account-page/rest-api/RestApiAccountPageProfile";
-import HandlersModalRequest from "./account-page/handlers-for-modal/handlersForModalRequest";
+import HandlersModalRequest from "./account-page/handlers-for-modal/HandlersForModalRequest";
 // Маска для телефона
 import IMask from "imask";
 // Календарь
@@ -77,6 +80,9 @@ import selectAddress from "./select-address/select-address";
 
 
 // ---------------------------------------------------------------------
+
+// Валидация полей форм
+const validation = new ValidationPlacesForm();
 
 // ResponsePopUp поп ап для ответов сервера
 const dialog = document.querySelector('.dialog');
@@ -109,8 +115,20 @@ if(navMobile) {
 // Меню аккаунт в хедер
 const iconsHeaderList = document.querySelector('.header__icons-group');
 if(iconsHeaderList) {
+    const pathsLogin = {
+        create: '',
+        read: '',
+        update: '',
+        delete: '',
+    }
+
+    const restApi = {
+        login: new RestApiMenuAccountLogin(pathsLogin),
+    }
+
     const redraw = new RedrawMenuAccount(iconsHeaderList);
-    const controll = new ControllMenuAccount(redraw);
+    const handlers = new HandlersForModalsMenuAccount();
+    const controll = new ControllMenuAccount(redraw, controllRespPopUp, handlers, validation, restApi);
     controll.init();
 };
 
@@ -272,7 +290,6 @@ if(filterPL) {
  * @description так как характеристики в DOM находятся не рядом c остальными
  * @description Для десктопа передается только элемент с кнопками и описанием
  * */ 
-
 const prodCardTabs = document.querySelector('.product-desc');
 if(prodCardTabs) {
     const redraw = new RedrawDescriptionProdCard();
@@ -337,7 +354,6 @@ if(accPage) {
         profile: new RestApiAccountPageProfile(paths),
     }
 
-    const validation = new ValidationAccountPage();
     const handlers = new HandlersModalRequest();
     const controll = new ControllAccountPage(
         redraws, validation, restApi, AirDatepicker, controllRespPopUp, handlers

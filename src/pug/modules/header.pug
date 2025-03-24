@@ -37,7 +37,8 @@ block header
                         a.header__favourite-icon.icon-scale-filter(href="./favorites.html" title="Избранное")
                     .header__wr-group-icon.header__wr-account-icon
                         .header__account-icon.icon-scale-filter
-                            a(href="./account.html" title="вход в аккаунт") 
+                            //- ./account.html или #0 - когда #0, тогда по клику на иконку вызывается попа вход-регистрация
+                            a.header__account-icon-link(href="#0" title="вход в аккаунт") 
                         
                         //- .header__acc-menu_active
                         .header__acc-menu

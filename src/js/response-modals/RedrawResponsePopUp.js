@@ -34,4 +34,23 @@ export default class RedrawResponsePopUp {
     clearContent() {
         [...this.wrContentDialog.children].forEach(el => el.remove());
     }
+
+    // ОШИБКИ при валидации обязательных полей
+    setError(el, textError) {
+        const parent = el.parentElement;
+        const elError = el.previousElementSibling;
+
+        parent.setAttribute('invalid', '');
+        el.setCustomValidity('error');
+        elError.textContent = textError; 
+    }
+
+    removeError(el) {
+        const parent = el.parentElement;
+        const elError = el.previousElementSibling;
+
+        parent.removeAttribute('invalid');
+        el.setCustomValidity('');
+        elError.textContent = '';
+    }
 }

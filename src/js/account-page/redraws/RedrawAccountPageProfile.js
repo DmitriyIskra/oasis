@@ -39,7 +39,7 @@ export default class RedrawAccountPageProfile {
 
         parent.setAttribute('invalid', '');
         el.setCustomValidity('error');
-        elError.textContent = textError;
+        elError.textContent = textError; 
     }
 
     removeError(el) {

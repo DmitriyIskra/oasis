@@ -2,7 +2,7 @@ export default class RestApiResponsePopUp {
     async read(dir, name) {
         try {
             // если name не передан то этой части url не будет сформировано
-            const path = './modals/' + dir + '/modal-' + dir + `${name ? `-${name}` : ''}` + '.html';
+            const path = './modals/' + dir + '/modal-' + dir + `${name ? `-${name}` : ''}` + '.html'; 
 
             const response = await fetch(path, {
                 headers: {

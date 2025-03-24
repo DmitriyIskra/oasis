@@ -37,6 +37,8 @@ https://dmitriyiskra.github.io/oasis/product-card-t-short.html
 https://dmitriyiskra.github.io/oasis/product-card-broths.html
 https://dmitriyiskra.github.io/oasis/product-card-coffee-machines.html
 
+## ОСтановился
+попап логин нужно сделать: сбор данных и имитацию отправки и получение разных ответов, вызов восстановления пароля
 
 ## ЗАМЕТКИ
 разделить redrawscreens по классам

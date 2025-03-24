@@ -3,7 +3,7 @@ export default class ControllAccountPage {
         this.redraws = redraws;
         this.validation = validation;
         this.restApi = restApi;
-        this.AirDatepicker = AirDatepicker;
+        this.AirDatepicker = AirDatepicker; 
         this.modals = modals;
         this.handlers = handlers; // методы для регистрации к модальным окнам
 
@@ -107,8 +107,9 @@ export default class ControllAccountPage {
 
         // Удаление профиля
         if(e.target.closest('.acc-user__button-delete')) {
+            // прикрепляем контекст
             this.activeHandler = this.handlers.deleteAcc.bind(this);
-
+            // прокидываем ручку в класс с поп ап, для дальнейшей регистрации на актуальном поп ап
             this.modals.registerHandlerOnClick('click', this.activeHandler);
 
             (async () => {
