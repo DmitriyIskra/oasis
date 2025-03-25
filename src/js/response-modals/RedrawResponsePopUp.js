@@ -6,29 +6,34 @@ export default class RedrawResponsePopUp {
         this.buttonClose = this.dialog.querySelector('.dialog__close');
     }
 
-    showModal() {
-        const widthScreen = innerWidth;
-        const widthDoc = document.body.offsetWidth;
-        const sizePaddingRight = widthScreen - widthDoc;
-        document.body.style.paddingRight = `${sizePaddingRight}px`;
-        document.body.style.backgroundColor = '#ebebeb';
-
-        document.body.style.overflow = 'hidden';
-
-        this.dialog.showModal();
+    showModal(fullShow = true) {
+        if(fullShow) {
+            const widthScreen = innerWidth;
+            const widthDoc = document.body.offsetWidth;
+            const sizePaddingRight = widthScreen - widthDoc;
+            document.body.style.paddingRight = `${sizePaddingRight}px`;
+            document.body.style.backgroundColor = '#ebebeb';
+    
+            document.body.style.overflow = 'hidden';
+    
+            this.dialog.showModal();
+        }
     }
 
-    closeModal() {
+    closeModal(fullClose = true) {
         if(this.buttonBack.classList.contains('dialog__back_active')) {
             this.buttonBack.classList.remove('dialog__back_active');
         }
 
-        document.body.style.overflow = '';
-        document.body.style.paddingRight = '';
-        document.body.style.backgroundColor = '';
-
         this.clearContent();
-        this.dialog.close();
+        
+        if(fullClose) {
+            document.body.style.overflow = '';
+            document.body.style.paddingRight = '';
+            document.body.style.backgroundColor = '';
+
+            this.dialog.close()
+        };
     }
 
     clearContent() {

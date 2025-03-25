@@ -1,12 +1,12 @@
-export default class RestApiMenuAccount {
+export default class RestApiMenuAccountRegistration {
     constructor(paths) {
         this.paths = paths;
         
     }
 
-    // отправка данных на сервер
+    // создание аккаунта
     async create(data) {
-        return false
+        return true;
         try {
             const response = await fetch(`${this.paths.create}`, {
                 method: 'POST',
@@ -47,7 +47,7 @@ export default class RestApiMenuAccount {
 
     async delete() {
         try {
-            const response = await fetch(`${this.paths.delete}`);
+            const response = await fetch(`${this.path.delete}`);
             const data = response.json();
         } catch (error) {
             throw new Error('');

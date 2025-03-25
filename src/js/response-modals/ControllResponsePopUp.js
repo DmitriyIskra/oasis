@@ -17,10 +17,7 @@ export default class ControllResponsePopUp {
         // слушатель для кнопки закрытия модалки 
         if(param === 'close') this.redraw.buttonClose.addEventListener('click', this.closeModal);
          
-        // Временные слушатели (снимаются с контента модалки при ее закрытии
-        // для того чтобы в дальнейшем могла быть модалка с другим контентом и другим функционалом)
-        // данные профиля успешно отредактированы
-
+        // навешиваем слушатели на контент попап
         if(this.click) this.redraw.wrContentDialog.addEventListener('click', this.click);
         if(this.focus) this.redraw.wrContentDialog.addEventListener('focus', this.focus, {capture:true});
     }
@@ -39,18 +36,22 @@ export default class ControllResponsePopUp {
         // наполняем контент модалного окна
         contentModal.forEach(el => this.redraw.wrContentDialog.append(el));
 
-        // регистрируем события по параметру
+        // регистрируем события
         this.registerEvents();
 
         return this.redraw.dialog;
     }
 
-    showModal() {
-        this.redraw.showModal();
+    // если true или ничего не передано, значит попап открывается впервые
+    // и нужны все действия, если false то подложка не исчезает просто в попап меняется контент
+    showModal(fullShow = true) {
+        this.redraw.showModal(fullShow);
     }
 
-    closeModal() {
-        this.redraw.closeModal();
+    // если true или ничего не передано, значит попап закрывается полностью и подложка исчезает
+    // и нужны все действия, если false то подложка не исчезает просто в попап меняется контент
+    closeModal(fullClose = true) {
+        this.redraw.closeModal(fullClose);
         this.removeEvents();
         this.click = null;
         this.focus = null;

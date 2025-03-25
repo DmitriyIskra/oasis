@@ -4,8 +4,8 @@ export default class ControllMenuAccount {
         this.modals = modals;
         this.handlers = handlers;
         this.validation = validation;
-        this.restApi = restApi;
-        
+        this.restApi = restApi; // объект с классами rest api
+
         this.mouseMove = this.mouseMove.bind(this);
         this.mouseOut = this.mouseOut.bind(this);
         this.click = this.click.bind(this);
@@ -53,22 +53,5 @@ export default class ControllMenuAccount {
                 this.modals.showModal();
             })()
         }
-
-        // открытие попап вход регистрация по иконке, по кнопке войти
-        // if(e.target.closest('')) {
-            // const resp = await this.restApi.profile.create(formData);
-
-            // if(resp) {
-            //     this.activeModal = await this.modals.getModal('account', 'success-edit-profile');
-            // } else {
-            //     this.activeModal = await this.modals.getModal('fail');
-            // }
-
-            // this.modals.showModal();
-        // }
-
-        // if(e.target.closest('')) {
-
-        // }
     }
 }
