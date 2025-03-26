@@ -103,7 +103,7 @@ export default class RedrawBasket {
             
         // Десктоп версия
         if(valTransition === 'all') {
-            form.style.display = ''; 
+            form.style.display = '';  
             return;
         }
 

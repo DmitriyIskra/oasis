@@ -38,7 +38,7 @@ https://dmitriyiskra.github.io/oasis/product-card-broths.html
 https://dmitriyiskra.github.io/oasis/product-card-coffee-machines.html
 
 ## ОСтановился
-второй этап регистрации: сделать активацию стрелки при открытии и дописать handler
+второй этап регистрации: дописать хендлер для стрелки, reg1 при этом вызове заполнять
 
 ## ЗАМЕТКИ
 -- Нужен popup для восстановления пароля (макет)

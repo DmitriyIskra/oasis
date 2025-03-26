@@ -67,7 +67,6 @@
 }
 
 .dialog__back {
-    display: none;
     height: 1.56vw;
     width: 1vw;
     grid-row: 1;
@@ -78,10 +77,12 @@
     background-position: center;
 
     cursor: pointer;
+
+    visibility: hidden;
 }
 
 .dialog__back_active {
-    display: block;
+    visibility: visible;
 }
 
 .dialog__content {
@@ -322,7 +323,6 @@
 /* reg2 */
 .dialog__item-checkmarks {
     display: flex;
-    width: 69.4%;
     margin-top: 1.98vw;
     gap: 0.78vw;
     flex-direction: column;
@@ -337,7 +337,7 @@
     display: none;
 }
 
-.dialog__checkmarks-text {
+.dialog__checkmarks-body{
     display: flex;
     gap: 0.47vw;
     align-items: end;
@@ -350,11 +350,11 @@
     cursor: pointer;
 }
 
-.dialog__checkmarks-input:disabled + .dialog__checkmarks-text {
+.dialog__checkmarks-input:disabled + .dialog__checkmarks-body{
     cursor: default;
 }
 
-.dialog__checkmarks-text::before {
+.dialog__checkmarks-body::before {
     content: "";
 
     display: inline-block;
@@ -367,27 +367,36 @@
     border: 1px solid #4D96AB;
 }
 
-.dialog__checkmarks-input_invalid + .dialog__checkmarks-text::before {
+.dialog__checkmarks-label[invalid] > .dialog__checkmarks-body::before {
     border: 1px solid #F00;
 }
 
-.dialog__checkmarks-input:checked + .dialog__checkmarks-text::before {
-    border: 1px solid #4D96AB;
+.dialog__checkmarks-input:checked + .dialog__checkmarks-body::before {
     background-image: url('../../svg/checkmark-green.svg');
     background-repeat: no-repeat;
     background-size: 60% auto;
     background-position: center;
 }
 
-.dialog__reg2-doc {
-    display: inline-block;
-    width: 1.51vw;
-    height: 1.35vw;
-    flex-shrink: 0;
+.dialog__wr-personal-text {
+    display: flex;
+    flex-direction: column;
+}
 
-    background: no-repeat url('../../svg/icon-pdf.svg');
-    background-size: contain;
-    background-position: center;
+.dialog__checkmarks-label[invalid] .dialog__wr-personal-text {
+    color: #F00;
+}
+
+.dialog__personal-link {
+    font-family: 'Play';
+    font-size: 0.63vw;
+    text-decoration: underline;
+
+    color: #615F5D;
+}
+
+.dialog__checkmarks-label[invalid] .dialog__personal-link {
+    color: #F00;
 }
 
 .dialog__wr-reg2-buttons {
@@ -661,22 +670,21 @@
 /* reg2 */
 @media(max-width: 961px) {
     .dialog__item-checkmarks {
-        width: 85.3%;
         margin-top: 9.07vw;
         gap: 4vw;
     }
 }
 
 @media(max-width: 961px) {
-    .dialog__checkmarks-text {
+    .dialog__checkmarks-body{
         gap: 3.47vw;
 
-        font-size: 3.20vw;
+        font-size: 3.05vw;
     }
 }
 
 @media(max-width: 961px) {
-    .dialog__checkmarks-text::before {
+    .dialog__checkmarks-body::before {
         width: 6.2vw;
         height: 6.2vw;
         border-radius: 1.07vw;
@@ -684,10 +692,9 @@
 }
 
 @media(max-width: 961px) {
-    .dialog__reg2-doc {
-        width: 7.73vw;
-        height: 6.93vw;
-    }   
+    .dialog__personal-link {
+        font-size: 3.05vw;
+    }
 }
 
 @media(max-width: 961px) {

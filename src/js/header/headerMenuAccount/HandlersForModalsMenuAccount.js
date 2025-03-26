@@ -121,8 +121,8 @@ export default class HandlersForModalsMenuAccount {
                 if(!resultPass) {
                     this.modals.redraw.setError(
                         elPass, 'Введенный пароль не соответствует требованиям'
-                    );
-    
+                        );
+                        
                     isAnyErrors.push(true);
                 }
 
@@ -137,7 +137,7 @@ export default class HandlersForModalsMenuAccount {
                     }
                 }
             }
-// klusdfv!34F - пароль для тестов
+            // klusdfv!34F - пароль для тестов валидации
             // Есть по крайней мере одна ошибка 
             if(Boolean(isAnyErrors.length)) return;
             
@@ -158,6 +158,11 @@ export default class HandlersForModalsMenuAccount {
             // прокидываем ручку в класс с поп ап, для дальнейшей регистрации на актуальном поп ап
             this.modals.saveHandler('focus', this.activeHandler);
 
+            // прикрепляем контекст
+            this.activeHandler = this.handlers.change.bind(this);
+            // прокидываем ручку в класс с поп ап, для дальнейшей регистрации на актуальном поп ап
+            this.modals.saveHandler('change', this.activeHandler);
+
             // показываем соответствующую результату выполнения отправки данных на сервер pop up
             (async () => {
                 this.activeModal = await this.modals.getModal('auth', 'reg2');
@@ -168,14 +173,124 @@ export default class HandlersForModalsMenuAccount {
     }
 
     // второй попап регистрации
-    registration2(e) {
-        console.log('reg2')
+    async registration2(e) {
+        if(e.target.closest('.dialog__button-next')) {
+            const inputs = [...this.activeModal.querySelectorAll('input[type="text"][required]')];
+
+            // Проверка полей на заполненность (получаем не заполненные поля)
+            const resultFill = this.validation.validationRequiredInputs(inputs);
+            
+            // Есть ли хоть одна ошибка
+            const isAnyErrors = [];
+
+            // Установка ошибок на не заполненные поля
+            if(Boolean(resultFill.length)) {
+                resultFill.forEach(input => this.modals.redraw.setError(
+                    input, 'Поле обязательно для заполнения'
+                ));
+
+                isAnyErrors.push(true);
+            }
+
+            // Проверка почты на корректность ввода
+            const elEmail = this.activeModal.querySelector('input[name="email"]')
+            if(elEmail.value) {
+                const resultValidEmail = this.validation.validationEmail(elEmail.value);
+
+                if(!resultValidEmail) {
+                    this.modals.redraw.setError(
+                        elEmail, 'Некорректное значение email'
+                    );
+
+                    isAnyErrors.push(true);
+                }
+            }
+
+            // Проверка телефона
+            const elPhone = this.activeModal.querySelector('input[name="phone"]')
+            if(elPhone.value) {
+                const resultValidPhone = this.validation.validationPhone(elPhone.value);
+
+                if(!resultValidPhone) {
+                    this.modals.redraw.setError(
+                        elPhone, 'Некорректное значение телефон'
+                    );
+
+                    isAnyErrors.push(true);
+                }
+            }
+
+            // Проверка чекбокса о персональных данных
+            const elPersData = this.activeModal.querySelector('input[type="checkbox"][required]')
+            const resultPersData = this.validation.validationCheckbox(elPersData);
+            if(!resultPersData) {
+                this.modals.redraw.setError(elPersData);
+
+                isAnyErrors.push(true);
+            }
+
+            // Есть по крайней мере одна ошибка 
+            if(Boolean(isAnyErrors.length)) return;
+
+            const form = this.activeModal.querySelector('form');
+            const formData = new FormData(form);
+            
+            const sessionData = JSON.parse(sessionStorage.dataReg)
+
+            formData.set('login', sessionData.login);
+            formData.set('password', sessionData.password);
+            formData.set('password-repeat', sessionData['password-repeat']);
+
+            try {
+                const response = await this.restApi.registration.create(formData);
+
+                this.modals.closeModal(false);
+
+                if(!response) {
+                    this.activeModal = await this.modals.getModal('fail', '');
+                    this.modals.showModal(false);
+
+                    return;
+                }
+
+                // прикрепляем контекст
+                this.activeHandler = this.handlers.checkPhone.bind(this);
+                // прокидываем ручку в класс с поп ап, для дальнейшей регистрации на актуальном поп ап
+                this.modals.saveHandler('click', this.activeHandler);
+
+                // прикрепляем контекст
+                this.activeHandler = this.handlers.focus.bind(this);
+                // прокидываем ручку в класс с поп ап, для дальнейшей регистрации на актуальном поп ап
+                this.modals.saveHandler('focus', this.activeHandler);
+
+                // показываем соответствующую результату выполнения отправки данных на сервер pop up
+                this.activeModal = await this.modals.getModal('auth', 'check-phone');
+                this.modals.showModal(false);
+            } catch (error) {
+                throw new Error('Ошибка отправки данных \n', error);
+            }
+        }
+    
+        if(e.target.closest('.dialog__back')) {
+            
+        }
+    }
+
+    async checkPhone(e) {
+        console.log('check')
     }
 
     focus(e) {
         if(e.target.closest('input[required]')) {
             const input = e.target.closest('input[required]');
             if(input.validity.customError) this.modals.redraw.removeError(input);
+        }
+    }
+
+    change(e) {
+        if(e.target.closest('input[type="checkbox"][required]')) {
+            const el = e.target.closest('input[type="checkbox"][required]');
+            if(el.validity.customError) this.modals.redraw.removeError(el)
         }
     }
 }

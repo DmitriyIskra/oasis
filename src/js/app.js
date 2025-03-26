@@ -90,7 +90,7 @@ const dialog = document.querySelector('.dialog');
 let controllRespPopUp
 if(dialog) {
     const restApi = new RestApiResponsePopUp();
-    const redraw = new RedrawResponsePopUp(dialog);
+    const redraw = new RedrawResponsePopUp(dialog, IMask);
     controllRespPopUp = new ControllResponsePopUp(redraw, restApi);
     controllRespPopUp.init();
 }

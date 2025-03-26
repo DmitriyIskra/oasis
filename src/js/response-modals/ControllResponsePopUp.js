@@ -6,6 +6,7 @@ export default class ControllResponsePopUp {
         this.closeModal = this.closeModal.bind(this);
         this.click = null;
         this.focus = null;
+        this.change = null;
     }
 
     init() {
@@ -18,13 +19,15 @@ export default class ControllResponsePopUp {
         if(param === 'close') this.redraw.buttonClose.addEventListener('click', this.closeModal);
          
         // навешиваем слушатели на контент попап
-        if(this.click) this.redraw.wrContentDialog.addEventListener('click', this.click);
-        if(this.focus) this.redraw.wrContentDialog.addEventListener('focus', this.focus, {capture:true});
+        if(this.click) this.redraw.dialog.addEventListener('click', this.click);
+        if(this.focus) this.redraw.dialog.addEventListener('focus', this.focus, {capture:true});
+        if(this.change) this.redraw.dialog.addEventListener('change', this.change, {capture:true});
     }
 
     removeEvents() {
-        this.redraw.wrContentDialog.removeEventListener('click', this.click);
-        this.redraw.wrContentDialog.removeEventListener('focus', this.focus);
+        this.redraw.dialog.removeEventListener('click', this.click);
+        this.redraw.dialog.removeEventListener('focus', this.focus);
+        this.redraw.dialog.removeEventListener('change', this.change);
     }
 
     async getModal(dir, name = null) {
@@ -35,6 +38,14 @@ export default class ControllResponsePopUp {
 
         // наполняем контент модалного окна
         contentModal.forEach(el => this.redraw.wrContentDialog.append(el));
+
+        // показываем стрелку назад
+        if(name === 'reg2') {
+            this.redraw.showArrowBack();
+
+            const elTel = this.redraw.dialog.querySelector('input[name="phone"]');
+            this.redraw.addIMask(elTel);
+        }
 
         // регистрируем события
         this.registerEvents();
@@ -55,6 +66,9 @@ export default class ControllResponsePopUp {
         this.removeEvents();
         this.click = null;
         this.focus = null;
+        this.change = null;
+
+        if(this.redraw.currentImask) this.redraw.removeIMask();
     }
 
 

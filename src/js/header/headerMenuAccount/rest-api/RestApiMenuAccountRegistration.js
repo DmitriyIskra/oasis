@@ -1,7 +1,6 @@
 export default class RestApiMenuAccountRegistration {
     constructor(paths) {
-        this.paths = paths;
-        
+        this.paths = paths;        
     }
 
     // создание аккаунта

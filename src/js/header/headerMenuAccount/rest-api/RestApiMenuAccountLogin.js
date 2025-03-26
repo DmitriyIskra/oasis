@@ -6,7 +6,7 @@ export default class RestApiMenuAccount {
 
     // отправка данных на сервер
     async create(data) {
-        return false
+        return true
         try {
             const response = await fetch(`${this.paths.create}`, {
                 method: 'POST',

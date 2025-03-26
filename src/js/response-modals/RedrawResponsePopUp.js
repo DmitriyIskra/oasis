@@ -1,9 +1,13 @@
 export default class RedrawResponsePopUp {
-    constructor() {
-        this.dialog = document.querySelector('dialog');
+    constructor(dialog, iMask) {
+        this.iMask = iMask;
+
+        this.dialog = dialog;
         this.wrContentDialog = this.dialog.querySelector('.dialog__content');
         this.buttonBack = this.dialog.querySelector('.dialog__back');
         this.buttonClose = this.dialog.querySelector('.dialog__close');
+
+        this.currentIMask = null;
     }
 
     showModal(fullShow = true) {
@@ -40,14 +44,19 @@ export default class RedrawResponsePopUp {
         [...this.wrContentDialog.children].forEach(el => el.remove());
     }
 
+    // включает стрелку назад в попап для второго этапа регистрации
+    showArrowBack() {
+        this.buttonBack.classList.add('dialog__back_active');
+    }
+
     // ОШИБКИ при валидации обязательных полей
-    setError(el, textError) {
+    setError(el, textError = null) {
         const parent = el.parentElement;
         const elError = el.previousElementSibling;
 
         parent.setAttribute('invalid', '');
         el.setCustomValidity('error');
-        elError.textContent = textError; 
+        if(textError) elError.textContent = textError; 
     }
 
     removeError(el) {
@@ -56,6 +65,25 @@ export default class RedrawResponsePopUp {
 
         parent.removeAttribute('invalid');
         el.setCustomValidity('');
-        elError.textContent = '';
+        if(elError) elError.textContent = '';
+    }
+
+    // установки маски на поле телефон
+    addIMask(el) {
+        try {
+            this.currentIMask = new this.iMask(el, {
+                mask: '+{7} (000) 000-00-00',
+                    lazy: false,
+                    placeholderChar: '_',
+            });
+        } catch (error) {
+            throw new Error('Ошибка добавления маски к полю phone')
+        }
+    }
+
+    // удаление маски на поле телефон
+    removeIMask() {
+        this.currentImask.destroy();
+        this.currentImask = null;
     }
 }

@@ -13,14 +13,24 @@ export default class ValidationPlacesForm {
     }
 
     // возвращает Bool
-    validationEmail(el) {
-        if(!el || !Boolean(el.value)) {
-            console.error('Отсутствует значение для проверки email')
+    validationEmail(value) {
+        if(value && typeof value !== 'string') {
+            console.error('Тип данных передаваемого значения должен быть - string')
             return;
         }
-        return /^[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+.+\.[A-Za-z]{2,4}$/i.test(el.value);
+        return /^[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+.+\.[A-Za-z]{2,4}$/i.test(value);
     }
     
+    // возвращает Bool
+    validationPhone(value) {
+        if(value && typeof value !== 'string') {
+            console.error('Тип данных передаваемого значения должен быть - string')
+            return;
+        }
+
+        return /\+7 \(\d\d\d\) \d\d\d-\d\d-\d\d/.test(value);
+    }
+
     // Пароль должен содержать не менее 8 символов.
     // Одна заглавная и одна строчная буква. 
     // Минимум 1 цифра.
