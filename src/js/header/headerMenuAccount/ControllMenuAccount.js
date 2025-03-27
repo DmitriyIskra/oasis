@@ -1,10 +1,11 @@
 export default class ControllMenuAccount {
-    constructor(redraw, modals, handlers, validation, restApi) {
+    constructor(redraw, modals, handlers, validation, restApi, storage) {
         this.redraw = redraw;
         this.modals = modals;
         this.handlers = handlers;
         this.validation = validation;
         this.restApi = restApi; // объект с классами rest api
+        this.storage = storage;
 
         this.mouseMove = this.mouseMove.bind(this);
         this.mouseOut = this.mouseOut.bind(this);

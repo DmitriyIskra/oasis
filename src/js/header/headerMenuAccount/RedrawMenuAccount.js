@@ -2,7 +2,7 @@ export default class RedrawMenuAccount {
     constructor(el) {
         this.el = el;
         this.menu = this.el.querySelector('.header__acc-menu'); 
-        console.log(this.el)
+
         this.isOpen = false;
     }
 

@@ -13,6 +13,7 @@ import RedrawMenuAccount from "./header/headerMenuAccount/RedrawMenuAccount";
 import HandlersForModalsMenuAccount from "./header/headerMenuAccount/HandlersForModalsMenuAccount";
 import RestApiMenuAccountLogin from "./header/headerMenuAccount/rest-api/RestApiMenuAccountLogin";
 import RestApiMenuAccountRegistration from "./header/headerMenuAccount/rest-api/RestApiMenuAccountregistration";
+import StorageMenuAccount from "./header/headerMenuAccount/StorageMenuAccount";
 // Свайпер для слайдеров
 import Swiper from "swiper";
 import { 
@@ -134,9 +135,13 @@ if(iconsHeaderList) {
         registration: new RestApiMenuAccountRegistration(pathsRegistration),
     }
 
+    const storage = new StorageMenuAccount();
     const redraw = new RedrawMenuAccount(iconsHeaderList);
     const handlers = new HandlersForModalsMenuAccount();
-    const controll = new ControllMenuAccount(redraw, controllRespPopUp, handlers, validation, restApi);
+    
+    const controll = new ControllMenuAccount(
+        redraw, controllRespPopUp, handlers, validation, restApi, storage
+    );
     controll.init();
 };
 

@@ -91,7 +91,7 @@ export default class HandlersForModalsMenuAccount {
     }
 
     // первый попап регистрации
-    registration1(e) {
+    async registration1(e) {
         if(e.target.closest('.dialog__button-next')) {
             const inputs = [...this.activeModal.querySelectorAll('input[required]')];
 
@@ -143,8 +143,11 @@ export default class HandlersForModalsMenuAccount {
             
             const form = this.activeModal.querySelector('form');
             const formData = new FormData(form);
-            sessionStorage.dataReg = JSON.stringify(Object.fromEntries(formData));
-            
+
+            const objData = Object.fromEntries(formData);
+
+            // Сохраняем значение
+            this.storage.userData = objData;
 
             this.modals.closeModal(false);
 
@@ -163,11 +166,16 @@ export default class HandlersForModalsMenuAccount {
             // прокидываем ручку в класс с поп ап, для дальнейшей регистрации на актуальном поп ап
             this.modals.saveHandler('change', this.activeHandler);
 
-            // показываем соответствующую результату выполнения отправки данных на сервер pop up
-            (async () => {
-                this.activeModal = await this.modals.getModal('auth', 'reg2');
-                this.modals.showModal(false);
-            })()
+            // собираем новый попап
+            this.activeModal = await this.modals.getModal('auth', 'reg2');
+            // заполняем поля, на случай если пользователь возвращался к первой форме
+            if(this.storage.userData) {
+                const userData = this.storage.userData;
+                const inputsNewPopUp = [...this.activeModal.querySelectorAll('input[type="text"]')];
+                inputsNewPopUp.forEach(item => item.value = userData[item.name] ?? '');
+            }
+            this.modals.showModal(false);
+            
 
         }
     }
@@ -233,13 +241,12 @@ export default class HandlersForModalsMenuAccount {
             if(Boolean(isAnyErrors.length)) return;
 
             const form = this.activeModal.querySelector('form');
-            const formData = new FormData(form);
             
-            const sessionData = JSON.parse(sessionStorage.dataReg)
-
-            formData.set('login', sessionData.login);
-            formData.set('password', sessionData.password);
-            formData.set('password-repeat', sessionData['password-repeat']);
+            // Собираем данные, обновляем в storage и заполняем formData перед отправкой на сервер
+            let formData = new FormData(form);
+            this.storage.userData = Object.fromEntries(formData);
+            const userData = Object.entries(this.storage.userData);
+            userData.forEach(item => formData.set(item[0], item[1]));
 
             try {
                 const response = await this.restApi.registration.create(formData);
@@ -272,7 +279,34 @@ export default class HandlersForModalsMenuAccount {
         }
     
         if(e.target.closest('.dialog__back')) {
+            // Собираем данные и отправляем в storage
+            const form = this.activeModal.querySelector('form');
+            const formData = new FormData(form);
+            this.storage.userData = Object.fromEntries(formData);
+
+            this.modals.closeModal(false);
+            // Открываем и запоняем попап reg1 
+            const userData = this.storage.userData;
+
+            // прикрепляем контекст
+            this.activeHandler = this.handlers.registration1.bind(this);
+            // прокидываем ручку в класс с поп ап, для дальнейшей регистрации на актуальном поп ап
+            this.modals.saveHandler('click', this.activeHandler);
+
+            // прикрепляем контекст
+            this.activeHandler = this.handlers.focus.bind(this);
+            // прокидываем ручку в класс с поп ап, для дальнейшей регистрации на актуальном поп ап
+            this.modals.saveHandler('focus', this.activeHandler);
+
+            // показываем соответствующую результату выполнения отправки данных на сервер pop up
+            this.activeModal = await this.modals.getModal('auth', 'reg1');
+
+            // заполняем поля
+            const inputs = [...this.activeModal.querySelectorAll('input')];
+            inputs.forEach(item => item.value = userData[item.name]);
             
+            this.modals.showModal(false);
+
         }
     }
 
@@ -294,3 +328,4 @@ export default class HandlersForModalsMenuAccount {
         }
     }
 }
+
