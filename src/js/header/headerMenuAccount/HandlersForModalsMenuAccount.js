@@ -1,6 +1,6 @@
 export default class HandlersForModalsMenuAccount {
     // хендлер на самый первый попап где есть выбор вход или регистрация
-    auth(e) {
+    async auth(e) {
         if(e.target.closest('.dialog__button-login')) {
             this.modals.closeModal(false);
 
@@ -15,10 +15,9 @@ export default class HandlersForModalsMenuAccount {
             this.modals.saveHandler('focus', this.activeHandler);
 
             // показываем соответствующую результату выполнения отправки данных на сервер pop up
-            (async () => {
-                this.activeModal = await this.modals.getModal('auth', 'login');
-                this.modals.showModal(false);
-            })()
+            this.activeModal = await this.modals.getModal('auth', 'login');
+            this.modals.showModal(false);
+
         }
 
         if(e.target.closest('.dialog__button-reg')) {
@@ -35,14 +34,12 @@ export default class HandlersForModalsMenuAccount {
             this.modals.saveHandler('focus', this.activeHandler);
 
             // показываем соответствующую результату выполнения отправки данных на сервер pop up
-            (async () => {
-                this.activeModal = await this.modals.getModal('auth', 'reg1');
-                this.modals.showModal(false);
-            })()
+            this.activeModal = await this.modals.getModal('auth', 'reg1');
+            this.modals.showModal(false);
         }
     }
     // попап входа в аккаунт
-    login(e) {
+    async login(e) {
         // вход в аккаунт
         if(e.target.closest('.dialog__button-login')) {
             const inputs = [...this.activeModal.querySelectorAll('input[required]')];
@@ -62,21 +59,21 @@ export default class HandlersForModalsMenuAccount {
             const form = this.activeModal.querySelector('form');
             const formData = new FormData(form);
             
-            (async () => {
-                try {
-                    const response = await this.restApi.login.create(formData);
-                    
-                    if(!response) {
-                        this.modals.redraw.setError(inputs[0], 'Неверный логин');
-                        this.modals.redraw.setError(inputs[1], 'Неверный пароль');
-                        return;    
-                    }
 
-                    location.href = './account.html';
-                } catch (error) {
-                    console.error('Запрос на вход в аккаунт завершился ошибкой: \n', error);
+            try {
+                const response = await this.restApi.login.create(formData);
+                
+                if(!response) {
+                    this.modals.redraw.setError(inputs[0], 'Неверный логин');
+                    this.modals.redraw.setError(inputs[1], 'Неверный пароль');
+                    return;    
                 }
-            })()
+
+                location.href = './account.html';
+            } catch (error) {
+                console.error('Запрос на вход в аккаунт завершился ошибкой: \n', error);
+            }
+
         }
 
         // Восстановление пароля
@@ -311,7 +308,35 @@ export default class HandlersForModalsMenuAccount {
     }
 
     async checkPhone(e) {
-        console.log('check')
+        if(e.target.closest('.dialog__button-send')) {
+            const input = [this.activeModal.querySelector('input[type="text"]')];
+            // Проверка полей на заполненность (получаем не заполненные поля)
+            const resultFill = this.validation.validationRequiredInputs(input);
+            // Установка ошибок на не заполненные поля
+            if(Boolean(resultFill.length)) {
+                resultFill.forEach(input => this.modals.redraw.setError(
+                    input, 'Поле обязательно для заполнения'
+                ));
+
+                return;
+            }
+
+            const form = this.activeModal.querySelector('form');
+            const formData = new FormData(form);
+            const response = await this.restApi.phone.create(formData);
+
+            
+            if(!response) {
+                this.modals.closeModal(false);
+
+                this.activeModal = await this.modals.getModal('fail', '');
+                this.modals.showModal(false);
+
+                return;
+            }
+
+            location = './account.html';
+        }
     }
 
     focus(e) {

@@ -41,7 +41,8 @@ export default class ControllMenuAccount {
 
     click(e) {
         // открытие попап вход регистрация по иконке, если пользователь не в аккаунте 
-        if(e.target.closest('.header__account-icon-link') && Boolean(e.target.hash)) {
+        if((e.target.closest('.header__account-icon-link') || e.target.closest('.header__acc-menu-login'))
+         && Boolean(e.target.hash)) {
             this.redraw.close();
             // прикрепляем контекст
             this.activeHandler = this.handlers.auth.bind(this);

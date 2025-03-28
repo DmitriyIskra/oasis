@@ -42,11 +42,11 @@ block header
                         
                         //- .header__acc-menu_active
                         .header__acc-menu
-                            .header__acc-menu-item.header__acc-menu-item_active
-                                a.header__acc-menu-link(href="#0" title="Войти") Войти
                             .header__acc-menu-item
-                                a.header__acc-menu-link(href="./account.html" title="Личный кабинет") Личный кабинет
-                                a.header__acc-menu-link(href="#0" title="Выйти") Выйти
+                                a.header__acc-menu-link.header__acc-menu-login(href="#0" title="Войти") Войти
+                            .header__acc-menu-item.header__acc-menu-item_active
+                                a.header__acc-menu-link.header__acc-menu-acc(href="./account.html" title="Личный кабинет") Личный кабинет
+                                a.header__acc-menu-link.header__acc-menu-logout(href="#0" title="Выйти") Выйти
                     .header__wr-group-icon.header__wr-basket-icon
                         //- .header__basket-icon_active
                         .header__basket-icon.icon-scale-filter.header__basket-icon_active
