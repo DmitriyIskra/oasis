@@ -4,7 +4,6 @@ export default class RestApiAccountPageProfile {
     }
 
     async create(data) {
-        return false;
         try {
             const response = await fetch(this.paths.create, {
                 method: 'POST',
@@ -31,6 +30,7 @@ export default class RestApiAccountPageProfile {
     }
 
     async update() {
+        return true;
         try {
             const response = await fetch(this.paths.update, {
                 method: 'PATCH',
@@ -47,7 +47,7 @@ export default class RestApiAccountPageProfile {
     }
 
     async delete() {
-        return true;
+        return false;
         try {
             const response = await fetch(this.paths.delete, {
                 method: 'DELETE',

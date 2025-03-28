@@ -74,7 +74,7 @@ export default class ControllAccountPage {
 
             let resultEmail = true;
             if(!elEmail) {
-                resultEmail = this.validation.validationEmail(this.redraws.profile.emailInputs);
+                resultEmail = this.validation.validationEmail(this.redraws.profile.emailInputs.value);
 
                 if(!resultEmail) {
                     this.redraws
@@ -91,7 +91,7 @@ export default class ControllAccountPage {
 
             // показываем соответствующую результату выполнения отправки данных на сервер pop up
             (async () => {
-                const resp = await this.restApi.profile.create(formData);
+                const resp = await this.restApi.profile.update(formData);
 
                 this.redraws.profile.disableProfile(); // блокируем поля
 
@@ -110,11 +110,11 @@ export default class ControllAccountPage {
             // прикрепляем контекст
             this.activeHandler = this.handlers.deleteAcc.bind(this);
             // прокидываем ручку в класс с поп ап, для дальнейшей регистрации на актуальном поп ап
-            this.modals.registerHandlerOnClick('click', this.activeHandler);
+            this.modals.saveHandler('click', this.activeHandler);
 
             (async () => {
                 this.activeModal = await this.modals.getModal('account', 'delete-profile');
-                this.modals.showModal();
+                this.modals.showModal(); 
             })()
         }
     }

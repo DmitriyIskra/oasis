@@ -53,6 +53,21 @@ export default class ControllMenuAccount {
             (async () => {
                 this.activeModal = await this.modals.getModal('auth');
                 this.modals.showModal();
+            })() 
+        }
+
+        if(e.target.closest('.header__acc-menu-logout')) {
+            this.redraw.close();
+
+            // прикрепляем контекст
+            this.activeHandler = this.handlers.logout.bind(this);
+            // прокидываем ручку в класс с поп ап, для дальнейшей регистрации на актуальном поп ап
+            this.modals.saveHandler('click', this.activeHandler);
+
+            // показываем соответствующую результату выполнения отправки данных на сервер pop up
+            (async () => {
+                this.activeModal = await this.modals.getModal('auth', 'logout');
+                this.modals.showModal();
             })()
         }
     }

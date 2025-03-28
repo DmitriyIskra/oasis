@@ -4,14 +4,15 @@ export default class HandlersModalRequest {
     
     // ПОДТВЕРЖДЕНИЕ УДАЛЕНИЯ АККАУНТА
     deleteAcc(e) {
-        // удалить аккаунт
+        // УДАЛИТЬ АККАУНТ (УДАЛИТЬ ОТМЕНА)
         if(e.target.closest('.dialog__button-send')) {
             (async () => {
                 const resp = await this.restApi.profile.delete();
-                this.modals.closeModal();
+                this.modals.closeModal(false);
 
                 if(resp) {
-                    this.modals.registerHandlerOnClick('click', this.handlerModalClick);
+                    this.activeHandler = this.handlers.deleteAccSuccess.bind(this);
+                    this.modals.saveHandler('click', this.activeHandler);
                     this.activeModal = await this.modals.getModal('account', 'success-delete-profile');
                 } else {
                     this.activeModal = await this.modals.getModal('fail');
@@ -20,10 +21,15 @@ export default class HandlersModalRequest {
                 this.modals.showModal();
             })()
         }
+
         // отменить удаление аккаунта
         if(e.target.closest('.dialog__button-cancel')) {
             this.modals.closeModal();
         }
+
+    }
+
+    deleteAccSuccess(e) {
         // ПОФИЛЬ УДАЛЕН УСПЕШНО
         // редирект при клике на кнопку на главную 
         if(e.target.closest('.dialog__button_redirect')) {

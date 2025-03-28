@@ -14,6 +14,7 @@ import HandlersForModalsMenuAccount from "./header/headerMenuAccount/HandlersFor
 import RestApiMenuAccountLogin from "./header/headerMenuAccount/rest-api/RestApiMenuAccountLogin";
 import RestApiMenuAccountRegistration from "./header/headerMenuAccount/rest-api/RestApiMenuAccountregistration";
 import RestApiCheckPhone from "./header/headerMenuAccount/rest-api/RestApiCheckPhone";
+import RestApiLogout from "./header/headerMenuAccount/rest-api/RestApiLogout";
 import StorageMenuAccount from "./header/headerMenuAccount/StorageMenuAccount";
 // Свайпер для слайдеров
 import Swiper from "swiper";
@@ -130,7 +131,13 @@ if(iconsHeaderList) {
         update: '',
         delete: '',
     }
-    const pathsCheckPhone ={
+    const pathsCheckPhone = {
+        create: '',
+        read: '',
+        update: '',
+        delete: '',
+    }
+    const pathsLogout = {
         create: '',
         read: '',
         update: '',
@@ -141,6 +148,7 @@ if(iconsHeaderList) {
         login: new RestApiMenuAccountLogin(pathsLogin),
         registration: new RestApiMenuAccountRegistration(pathsRegistration),
         phone: new RestApiCheckPhone(pathsCheckPhone),
+        logout: new RestApiLogout(pathsLogout),
     }
 
     const storage = new StorageMenuAccount();

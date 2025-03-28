@@ -172,8 +172,6 @@ export default class HandlersForModalsMenuAccount {
                 inputsNewPopUp.forEach(item => item.value = userData[item.name] ?? '');
             }
             this.modals.showModal(false);
-            
-
         }
     }
 
@@ -338,6 +336,27 @@ export default class HandlersForModalsMenuAccount {
             location = './account.html';
         }
     }
+
+    async logout(e) {
+        if(e.target.closest('.dialog__button-cancel')) {
+            this.modals.closeModal();
+        }
+
+        if(e.target.closest('.dialog__button-logout')) {
+            const response = await this.restApi.logout.read();
+
+            if(!response) {
+                this.modals.closeModal(false);
+                this.activeModal = await this.modals.getModal('fail', '');
+                this.modals.showModal(false);
+
+                return;
+            }
+
+            if(location.pathname.includes('account')) location = '/';
+            if(!location.pathname.includes('account')) location.reload();
+        }
+    } 
 
     focus(e) {
         if(e.target.closest('input[required]')) {

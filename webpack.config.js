@@ -394,6 +394,7 @@ module.exports = {
             { from: 'src/html/modals/account/modal-account-success-edit-profile.html', to: 'modals/account/' },
 
             { from: 'src/html/modals/auth/modal-auth.html', to: 'modals/auth/' }, 
+            { from: 'src/html/modals/auth/modal-auth-logout.html', to: 'modals/auth/' }, 
             { from: 'src/html/modals/auth/modal-auth-check-phone.html', to: 'modals/auth/' }, 
             { from: 'src/html/modals/auth/modal-auth-login.html', to: 'modals/auth/' }, 
             { from: 'src/html/modals/auth/modal-auth-reg1.html', to: 'modals/auth/' }, 
