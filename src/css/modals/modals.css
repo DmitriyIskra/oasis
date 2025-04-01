@@ -131,18 +131,13 @@
 .dialog__timer {
     display: flex;
     justify-content: center;
+    gap: 0.1vw;
 
     font-family: 'Play';
     font-size: 0.57vw;
     text-align: center;
 
     color: #2F5F6D;
-
-    visibility: hidden;
-}
-
-.dialog__timer_active {
-    visibility: visible;
 }
 
 .dialog__wr-buttons {
@@ -485,6 +480,7 @@
 @media(max-width: 961px) {
     .dialog__timer {
         margin-top: 8vw;
+        gap: 0.3vw;
 
         font-size: 2.93vw;
     }

@@ -86,4 +86,44 @@ export default class RedrawResponsePopUp {
         this.currentImask.destroy();
         this.currentImask = null;
     }
+
+    /**
+     * @description запускае timer в попап
+     * @param activeModal активный попап
+     * @param repeat принимает true если код отправлен повторно и таймер нужно перезапустить
+     * */ 
+    startTimer(activeModal, seconds, repeat = false) {
+        // Проверка на наличие переданного попап
+        if(!activeModal || !activeModal instanceof HTMLElement) {
+            throw new Error('Первый передаваемый параметр обязателен, и должен быть HTMLElement');
+        }
+
+        if(!seconds || !Number.isInteger(+seconds)) {
+            throw new Error('Первый передаваемый параметр обязателен, и должен быть целым числом');
+        }
+
+        const buttonRepeat = activeModal.querySelector('.dialog__button-repeat');
+
+        // если кнопка уже была разблокирована, повторная блокировка, на время работы таймера
+        if(repeat === true) buttonRepeat.classList.add('dialog__button_disabled');
+
+        // элемент с числовым значением таймера
+        let timerNum = activeModal.querySelector('.dialog__timer-num');
+        // установка количества секунд для отсчета
+        timerNum.textContent = seconds;
+        
+        // Запускаем таймер обратного отсчета
+        let timeOutId = setInterval(() => {
+            const timerValue = +timerNum.textContent;
+
+            const newValue = timerValue - 1
+            timerNum.textContent = newValue;
+
+            if(newValue === 0) {
+                buttonRepeat.classList.remove('dialog__button_disabled');
+
+                clearInterval(timeOutId);
+            }
+        }, 1000);
+    }
 }

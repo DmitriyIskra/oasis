@@ -1,4 +1,8 @@
 export default class HandlersForModalsMenuAccount {
+    constructor() {
+        this.timeForTimer = 30;
+    }
+
     // хендлер на самый первый попап где есть выбор вход или регистрация
     async auth(e) {
         if(e.target.closest('.dialog__button-login')) {
@@ -257,17 +261,20 @@ export default class HandlersForModalsMenuAccount {
 
                 // прикрепляем контекст
                 this.activeHandler = this.handlers.checkPhone.bind(this);
-                // прокидываем ручку в класс с поп ап, для дальнейшей регистрации на актуальном поп ап
+                // прокидываем ручку в класс с попап, для дальнейшей регистрации на актуальном поп ап
                 this.modals.saveHandler('click', this.activeHandler);
 
                 // прикрепляем контекст
                 this.activeHandler = this.handlers.focus.bind(this);
-                // прокидываем ручку в класс с поп ап, для дальнейшей регистрации на актуальном поп ап
+                // прокидываем ручку в класс с попап, для дальнейшей регистрации на актуальном поп ап
                 this.modals.saveHandler('focus', this.activeHandler);
 
                 // показываем соответствующую результату выполнения отправки данных на сервер pop up
                 this.activeModal = await this.modals.getModal('auth', 'check-phone');
+
                 this.modals.showModal(false);
+
+                this.modals.redraw.startTimer(this.activeModal, this.timeForTimer);
             } catch (error) {
                 throw new Error('Ошибка отправки данных \n', error);
             }
@@ -334,6 +341,10 @@ export default class HandlersForModalsMenuAccount {
             }
 
             location = './account.html';
+        }
+
+        if(e.target.closest('.dialog__button-repeat')) {
+            this.modals.redraw.startTimer(this.activeModal, this.timeForTimer, true);
         }
     }
 
