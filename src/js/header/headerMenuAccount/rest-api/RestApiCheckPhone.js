@@ -5,7 +5,7 @@ export default class RestApiCheckPhone {
     }
 
     async create(data) {
-        return true
+        return false
         try {
             const response = await fetch(`${this.paths.create}`, {
                 method: 'POST',

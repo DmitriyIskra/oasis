@@ -169,12 +169,20 @@ export default class HandlersForModalsMenuAccount {
 
             // собираем новый попап
             this.activeModal = await this.modals.getModal('auth', 'reg2');
+
             // заполняем поля, на случай если пользователь возвращался к первой форме
             if(this.storage.userData) {
                 const userData = this.storage.userData;
                 const inputsNewPopUp = [...this.activeModal.querySelectorAll('input[type="text"]')];
                 inputsNewPopUp.forEach(item => item.value = userData[item.name] ?? '');
             }
+
+            // Включаем стрелку назад в шапке попапа
+            this.modals.redraw.showArrowBack();
+            // вешаем маску на поле с телефоном
+            const elTel = this.activeModal.querySelector('input[name="phone"]');
+            this.modals.redraw.addIMask(elTel);
+
             this.modals.showModal(false);
         }
     }
@@ -272,9 +280,12 @@ export default class HandlersForModalsMenuAccount {
                 // показываем соответствующую результату выполнения отправки данных на сервер pop up
                 this.activeModal = await this.modals.getModal('auth', 'check-phone');
 
-                this.modals.showModal(false);
+                // Включаем стрелку назад в шапке попапа
+                this.modals.redraw.showArrowBack();
 
-                this.modals.redraw.startTimer(this.activeModal, this.timeForTimer);
+                this.modals.showModal(false);
+                
+                this.modals.redraw.startTimer(this.activeModal, this.handlers.timeForTimer);
             } catch (error) {
                 throw new Error('Ошибка отправки данных \n', error);
             }
@@ -328,14 +339,16 @@ export default class HandlersForModalsMenuAccount {
 
             const form = this.activeModal.querySelector('form');
             const formData = new FormData(form);
+            formData.set('phone', this.storage.userData.phone);
+            console.log(Object.fromEntries(formData))
             const response = await this.restApi.phone.create(formData);
 
             
             if(!response) {
-                this.modals.closeModal(false);
-
-                this.activeModal = await this.modals.getModal('fail', '');
-                this.modals.showModal(false);
+                const input = form.code;
+                this.modals.redraw.setError(
+                    input, 'Некорректно введен код'
+                )
 
                 return;
             }
@@ -344,7 +357,44 @@ export default class HandlersForModalsMenuAccount {
         }
 
         if(e.target.closest('.dialog__button-repeat')) {
-            this.modals.redraw.startTimer(this.activeModal, this.timeForTimer, true);
+            this.modals.redraw.startTimer(this.activeModal, this.handlers.timeForTimer, true);
+        }
+
+        if(e.target.closest('.dialog__back')) {
+            this.modals.closeModal(false);
+
+            // прикрепляем контекст
+            this.activeHandler = this.handlers.registration2.bind(this);
+            // прокидываем ручку в класс с поп ап, для дальнейшей регистрации на актуальном поп ап
+            this.modals.saveHandler('click', this.activeHandler);
+
+            // прикрепляем контекст
+            this.activeHandler = this.handlers.focus.bind(this);
+            // прокидываем ручку в класс с поп ап, для дальнейшей регистрации на актуальном поп ап
+            this.modals.saveHandler('focus', this.activeHandler);
+
+            // прикрепляем контекст
+            this.activeHandler = this.handlers.change.bind(this);
+            // прокидываем ручку в класс с поп ап, для дальнейшей регистрации на актуальном поп ап
+            this.modals.saveHandler('change', this.activeHandler);
+
+            // собираем новый попап
+            this.activeModal = await this.modals.getModal('auth', 'reg2');
+
+            // заполняем поля, на случай если пользователь возвращался к первой форме
+            if(this.storage.userData) {
+                const userData = this.storage.userData;
+                const inputsNewPopUp = [...this.activeModal.querySelectorAll('input[type="text"]')];
+                inputsNewPopUp.forEach(item => item.value = userData[item.name] ?? '');
+            }
+
+            // Включаем стрелку назад в шапке попапа
+            this.modals.redraw.showArrowBack();
+            // вешаем маску на поле с телефоном
+            const elTel = this.activeModal.querySelector('input[name="phone"]');
+            this.modals.redraw.addIMask(elTel);
+
+            this.modals.showModal(false);
         }
     }
 

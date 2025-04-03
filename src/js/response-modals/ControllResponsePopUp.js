@@ -39,13 +39,16 @@ export default class ControllResponsePopUp {
         // наполняем контент модалного окна
         contentModal.forEach(el => this.redraw.wrContentDialog.append(el));
 
-        // показываем стрелку назад
-        if(name === 'reg2') {
-            this.redraw.showArrowBack();
-
-            const elTel = this.redraw.dialog.querySelector('input[name="phone"]');
-            this.redraw.addIMask(elTel);
-        }
+        // let elTel;
+        // switch (name) {
+        //     case 'reg2':
+        //         this.redraw.showArrowBack();
+        //         elTel = this.redraw.dialog.querySelector('input[name="phone"]');
+        //         this.redraw.addIMask(elTel);
+        //     break;
+        //     case 'check-phone':
+        //         this.redraw.showArrowBack();
+        // }
 
         // регистрируем события
         this.registerEvents();

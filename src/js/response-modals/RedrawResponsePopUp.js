@@ -94,9 +94,9 @@ export default class RedrawResponsePopUp {
      * */ 
     startTimer(activeModal, seconds, repeat = false) {
         // Проверка на наличие переданного попап
-        if(!activeModal || !activeModal instanceof HTMLElement) {
-            throw new Error('Первый передаваемый параметр обязателен, и должен быть HTMLElement');
-        }
+        // if(!activeModal || !activeModal instanceof HTMLElement) {
+        //     throw new Error('Первый передаваемый параметр обязателен, и должен быть HTMLElement');
+        // }
 
         if(!seconds || !Number.isInteger(+seconds)) {
             throw new Error('Первый передаваемый параметр обязателен, и должен быть целым числом');
